@@ -13,13 +13,13 @@ import Page404 from './components/Page404'
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
-        <Route path='*' element={<Page404 />} />
+        <Route path="*" element={<Page404 />} />
 
-        <Route path='/' element={<Landing />} />
-        <Route path='/shop' element={<Storefront />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/shop" element={<Storefront />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   )
