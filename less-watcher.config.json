@@ -1,7 +1,10 @@
 {
   "watchFolder": "less/",
   "outputFolder": "src/",
-  "sourceMap": true,
+  "mainFile": "main.less",
+  "includeHidden": true,
+  "sourceMap": false,
   "runOnce": false,
-  "enableJs": true
+  "enableJs": true,
+  "minified": false
 }

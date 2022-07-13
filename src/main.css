@@ -1,0 +1,16 @@
+.landing {
+  background-color: aliceblue;
+  color: green;
+}
+.cart {
+  background-color: #70d7dc;
+  color: black;
+}
+.storefront {
+  background-color: #e4a6ca;
+  color: #e82a2a;
+}
+.not-found {
+  background-color: #ffa153;
+  color: #2230f4;
+}

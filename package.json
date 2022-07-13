@@ -13,7 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run sd-build && react-scripts start",
+    "start": "npm run sd-build && concurrently --kill-others \"less-watch-compiler --config less-watcher.config.json\" \"react-scripts start\"",
     "sd-build": "node ./style_dictionary/build.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
