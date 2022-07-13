@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Storefront = () => {
-  return <div>Storefront</div>
+  return <div className="storefront">Storefront</div>
 }
 
 export default Storefront
