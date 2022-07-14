@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 
 // CSS and asets
 import './App.css'
+import './main.css'
 
 // Components
 import Landing from './components/Landing'

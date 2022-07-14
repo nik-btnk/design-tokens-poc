@@ -1,13 +1,15 @@
 {
-    "source":["tokens/*.tokens.json"],
-    "platforms": {
-        "less": {
-            "transformGroup": ["less"],
-            "buildPath": "build/less/",
-            "files": [{
-                "destination": "_variables.less",
-                "format": "less/variables"
-            }]
+  "source": ["tokens/*.tokens.json"],
+  "platforms": {
+    "less": {
+      "transformGroup": ["less"],
+      "buildPath": "less/_tokens/",
+      "files": [
+        {
+          "destination": "_variables.less",
+          "format": "less/variables"
         }
+      ]
     }
+  }
 }
