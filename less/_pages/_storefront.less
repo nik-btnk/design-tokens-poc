@@ -1,4 +1,71 @@
+@import './less/_tokens/_variables.less';
+
 .storefront {
-  background-color: rgb(228, 166, 202);
-  color: rgb(232, 42, 42);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: @color-brand-blue-0;
+
+  a {
+    text-decoration: @typography-h4-quatt-text-decoration;
+  }
+
+  &__title {
+    font: @typography-h2-quatt-font-style @typography-h2-quatt-font-weight
+      @typography-h2-quatt-font-stretch @typography-h2-quatt-font-size /
+      @typography-h2-quatt-line-height @typography-h2-quatt-font-family;
+    color: @color-brand-orange-4;
+    margin-bottom: 50px;
+  }
+
+  &__nav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 50px;
+
+    &--shop,
+    &--cart {
+      height: 50px;
+      min-width: 148px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font: @typography-h4-quatt-font-style @typography-h4-quatt-font-weight
+        @typography-h4-quatt-font-stretch @typography-h4-quatt-font-size /
+        @typography-h4-quatt-line-height @typography-h4-quatt-font-family;
+      background-color: @color-brand-blue-0;
+      border: solid @sizes-xxxs @color-brand-blue-2;
+      border-radius: @sizes-xs;
+      padding: @sizes-xxs @sizes-xs;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px rgba(45, 49, 52, 0.5);
+
+      &::after {
+        content: '+';
+        display: inline-block;
+        width: @sizes-m;
+        height: @sizes-m;
+        background-color: @color-brand-orange-2;
+        border-radius: 50%;
+        margin-left: 12px;
+        color: @color-brand-black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      &:hover {
+        background-color: @color-brand-blue-3;
+        border: solid @sizes-xxxs @color-brand-blue-4;
+      }
+
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
 }
