@@ -87,10 +87,6 @@
 .cart__nav--cart:active {
   box-shadow: none;
 }
-#test {
-  color: red;
-  background-color: blue;
-}
 .landing {
   height: 100vh;
   display: flex;

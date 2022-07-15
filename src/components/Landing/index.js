@@ -13,7 +13,6 @@ const Landing = () => {
         <Link to="/cart">
           <button className="landing__nav--cart">To Cart</button>
         </Link>
-        <button id="test">TEST</button>
       </div>
     </div>
   )
