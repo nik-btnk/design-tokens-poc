@@ -54,6 +54,7 @@ StyleDictionary.registerFormat({
       targetArray.includes(token.type)
     )
 
+    const generatedMessage = `\n// Do not edit directly \n// Generated on ${new Date().toUTCString()}\n\n`
     let tokenValue = ''
 
     filteredTokens.forEach((token, index) => {
@@ -72,7 +73,7 @@ StyleDictionary.registerFormat({
       )
     })
 
-    return tokenValue
+    return generatedMessage + tokenValue
   }
 })
 ////////////////////////////////
