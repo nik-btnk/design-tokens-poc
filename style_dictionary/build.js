@@ -36,7 +36,7 @@ StyleDictionary.registerFormat({
   name: 'mixin-less/variables',
   formatter: ({ dictionary }) => {
     // Add the custom token type you are targeting to this array.
-    const targetArray = ['custom-grid', 'custom-shadow']
+    const targetArray = ['custom-fontStyle']
 
     const formatName = (name) => {
       const isUpperCase = (string) => /^[A-Z]*$/.test(string)
@@ -53,6 +53,7 @@ StyleDictionary.registerFormat({
     const filteredTokens = dictionary.allTokens.filter((token) =>
       targetArray.includes(token.type)
     )
+    // console.log(dictionary.allTokens)
 
     const generatedMessage = `\n// Do not edit directly \n// Generated on ${new Date().toUTCString()}\n\n`
     let tokenValue = ''
@@ -60,10 +61,10 @@ StyleDictionary.registerFormat({
     filteredTokens.forEach((token, index) => {
       let value = ''
       let loop = 0
-      for (tokenName in token.value) {
+      for (tokenName in token.original.value) {
         value = value.concat(
           `${loop === 0 ? '' : '\n'}\u0020\u0020${formatName(tokenName)}: ${
-            token.value[tokenName]
+            token.original.value[tokenName]
           };`
         )
         loop++
