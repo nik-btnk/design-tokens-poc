@@ -6,5 +6,6 @@
   "sourceMap": false,
   "runOnce": false,
   "enableJs": true,
-  "minified": false
+  "minified": false,
+  "plugins": "less-plugin-glob"
 }
