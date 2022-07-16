@@ -11,19 +11,25 @@ module.exports = {
     less: {
       transformGroup: ['less'],
       buildPath: 'less/_tokens/',
-      files: tokensArray.map((token) => {
-        const tokenCategory = Object.keys(token)[0]
+      files: [
+        ...tokensArray.map((token) => {
+          const tokenCategory = Object.keys(token)[0]
 
-        return {
-          destination: `_${tokenCategory}.less`,
-          format: 'less/variables',
-          filter: {
-            attributes: {
-              category: tokenCategory
+          return {
+            destination: `_${tokenCategory}.less`,
+            format: 'less/variables',
+            filter: {
+              attributes: {
+                category: tokenCategory
+              }
             }
           }
+        }),
+        {
+          destination: '_mixins.less',
+          format: 'mixin-less/variables'
         }
-      })
+      ]
     }
   }
 }
