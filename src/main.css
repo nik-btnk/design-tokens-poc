@@ -149,8 +149,27 @@
   box-shadow: none;
 }
 .not-found {
-  background-color: #ffa153;
-  color: #2230f4;
+  background-color: #2d3134;
+  height: 100vh;
+}
+.not-found__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.not-found__container h2 {
+  font: normal 400 normal 48px / 57.6px Quattrocento Sans;
+  color: #f1b669;
+}
+.not-found__container h2:hover {
+  transform: scale(1.2);
+}
+.not-found__container h3 {
+  font: normal 400 normal 32px / 44.8px Quattrocento Sans;
+  color: #a65809;
 }
 .storefront {
   height: 100vh;

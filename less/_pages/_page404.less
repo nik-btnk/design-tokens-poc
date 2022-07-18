@@ -1,4 +1,34 @@
+@import '../_tokens/_color.less';
+@import '../_tokens/_typography.less';
+@import '../_tokens/_sizes.less';
+
 .not-found {
-  background-color: rgb(255, 161, 83);
-  color: rgb(34, 48, 244);
+  background-color: @color-brand-black;
+  height: 100vh;
+
+  &__container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      font: @typography-h2-quatt-font-style @typography-h2-quatt-font-weight
+        @typography-h2-quatt-font-stretch @typography-h2-quatt-font-size /
+        @typography-h2-quatt-line-height @typography-h2-quatt-font-family;
+      color: @color-brand-orange-2;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    h3 {
+      font: @typography-h3-quatt-font-style @typography-h3-quatt-font-weight
+        @typography-h3-quatt-font-stretch @typography-h3-quatt-font-size /
+        @typography-h3-quatt-line-height @typography-h3-quatt-font-family;
+      color: @color-brand-orange-4;
+    }
+  }
 }
