@@ -10,8 +10,8 @@ const Cart = () => {
         <Link to="/">
           <button className="cart__nav--shop">To Landing</button>
         </Link>
-        <Link to="/shop">
-          <button className="cart__nav--cart">To Shop</button>
+        <Link to="/productList">
+          <button className="cart__nav--productList">To Product List</button>
         </Link>
       </div>
     </div>
