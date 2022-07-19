@@ -5,6 +5,9 @@ const Nav = () => {
   return (
     <nav>
       <div className="nav-container">
+        <div className="nav-menu-icon">
+          <img src={require('../assets/Icon=menu-bars.png')} alt="" />
+        </div>
         <div className="nav-brand-logo">
           <Link to="/">
             <img src={require('../assets/logo.png')} alt="" />

@@ -16,6 +16,15 @@ nav {
     justify-content: center;
     align-items: center;
 
+    .nav-menu-icon {
+      position: absolute;
+      left: 0;
+      display: none;
+
+      @media screen and (max-width: 834px) {
+        display: block;
+      }
+    }
     .nav-brand-logo {
       width: 32px;
       height: 64px;
@@ -36,7 +45,7 @@ nav {
         height: 100%;
       }
 
-      &:hover{
+      &:hover {
         transform: scale(1.1);
       }
     }
