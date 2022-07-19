@@ -7,8 +7,8 @@ const Landing = () => {
       <span className="landing__title">Landing Page</span>
 
       <div className="landing__nav">
-        <Link to="/shop">
-          <button className="landing__nav--shop">To Shop</button>
+        <Link to="/productList">
+          <button className="landing__nav--productList">To Product List</button>
         </Link>
         <Link to="/cart">
           <button className="landing__nav--cart">To Cart</button>

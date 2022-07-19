@@ -1,0 +1,59 @@
+@import '../_tokens/_color.less';
+@import '../_tokens/_typography.less';
+@import '../_tokens/_sizes.less';
+
+footer {
+  height: 20vh;
+  background-color: @color-brand-white;
+    border-top: 1px solid @color-brand-grey-2;
+  .footer {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &-contact {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 50px;
+
+      span {
+        font: @typography-body-quatt-font-style
+          @typography-body-quatt-font-weight @typography-body-quatt-font-stretch
+          @typography-body-quatt-font-size / @typography-body-quatt-line-height
+          @typography-body-quatt-font-family;
+      }
+    }
+
+    &-logo {
+      text-align: center;
+      img {
+        width: 15%;
+      }
+      /* background-color: blue; */
+    }
+
+    &-social {
+      text-align: center;
+      /* background-color: white; */
+
+      img:first-child {
+        margin-right: 1em;
+      }
+
+      img{
+        cursor: pointer;
+        transition: transform 0.1s ease;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
