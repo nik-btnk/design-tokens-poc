@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
   return (
     <nav>
-      <div className="nav-container">
+      <div className="nav">
         <div className="nav-menu-icon">
           <img src={require('../assets/Icon=menu-bars.png')} alt="" />
         </div>

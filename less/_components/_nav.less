@@ -7,7 +7,7 @@ nav {
   width: 100%;
   background-color: @color-brand-white;
 
-  .nav-container {
+  .nav {
     position: relative;
     width: 80%;
     height: 100%;
@@ -16,7 +16,7 @@ nav {
     justify-content: center;
     align-items: center;
 
-    .nav-menu-icon {
+    &-menu-icon {
       position: absolute;
       left: 0;
       display: none;
@@ -25,7 +25,7 @@ nav {
         display: block;
       }
     }
-    .nav-brand-logo {
+    &-brand-logo {
       width: 32px;
       height: 64px;
       img {
@@ -34,7 +34,7 @@ nav {
       }
     }
 
-    .nav-cart-logo {
+    &-cart-logo {
       position: absolute;
       right: 0%;
       width: 40px;

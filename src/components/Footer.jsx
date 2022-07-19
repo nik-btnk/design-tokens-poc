@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -9,7 +10,9 @@ const Footer = () => {
           <span className="footer-contact__phone">+1 (999) 123-12-12</span>
         </div>
         <div className="footer-logo">
-          <img src={require('../assets/logo.png')} alt="" />
+          <Link to="/">
+            <img src={require('../assets/logo.png')} alt="" />
+          </Link>
         </div>
         <div className="footer-social">
           <img
@@ -18,6 +21,9 @@ const Footer = () => {
             alt=""
           />
           <img src={require('../assets/carbon_logo-instagram.png')} alt="" />
+        </div>
+        <div className="footer-copy">
+          <p>Design Token&apos;s Lonely Hearts Club Band &copy;2022</p>
         </div>
       </div>
     </footer>

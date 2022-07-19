@@ -237,7 +237,7 @@ nav {
   width: 100%;
   background-color: #fcfbf4;
 }
-nav .nav-container {
+nav .nav {
   position: relative;
   width: 80%;
   height: 100%;
@@ -246,36 +246,36 @@ nav .nav-container {
   justify-content: center;
   align-items: center;
 }
-nav .nav-container .nav-menu-icon {
+nav .nav-menu-icon {
   position: absolute;
   left: 0;
   display: none;
 }
 @media screen and (max-width: 834px) {
-  nav .nav-container .nav-menu-icon {
+  nav .nav-menu-icon {
     display: block;
   }
 }
-nav .nav-container .nav-brand-logo {
+nav .nav-brand-logo {
   width: 32px;
   height: 64px;
 }
-nav .nav-container .nav-brand-logo img {
+nav .nav-brand-logo img {
   width: 100%;
   height: 100%;
 }
-nav .nav-container .nav-cart-logo {
+nav .nav-cart-logo {
   position: absolute;
   right: 0%;
   width: 40px;
   height: 32px;
   transition: transform 0.1s ease;
 }
-nav .nav-container .nav-cart-logo img {
+nav .nav-cart-logo img {
   width: 100%;
   height: 100%;
 }
-nav .nav-container .nav-cart-logo:hover {
+nav .nav-cart-logo:hover {
   transform: scale(1.1);
 }
 footer {
@@ -289,32 +289,20 @@ footer .footer {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr 0.2fr;
   justify-content: space-evenly;
   align-items: center;
 }
-@media screen and (max-width: 420px) {
-  footer .footer {
-    grid-template-areas: 'logo logo' 'contact social';
-    grid-template-columns: 1fr 1fr;
-  }
-  footer .footer-contact {
-    grid-area: contact;
-  }
-  footer .footer-logo {
-    grid-area: logo;
-  }
-  footer .footer-social {
-    grid-area: social;
-  }
-}
 footer .footer-contact {
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 50px;
+  align-items: center;
 }
 footer .footer-contact span {
+  display: inline-block;
+  width: 145px;
+  text-align: right;
   font: normal 400 normal 16px / 22.4px Quattrocento Sans;
 }
 footer .footer-logo {
@@ -322,7 +310,6 @@ footer .footer-logo {
   justify-content: center;
   align-items: center;
   height: 100%;
-  /* background-color: blue; */
 }
 footer .footer-logo img {
   width: 44px;
@@ -340,4 +327,34 @@ footer .footer-social img {
 }
 footer .footer-social img:hover {
   transform: scale(1.1);
+}
+footer .footer-copy {
+  text-align: center;
+  grid-column: 1/4;
+}
+footer .footer-copy p {
+  font: normal 400 normal 16px / 22.4px Quattrocento Sans;
+}
+@media screen and (max-width: 420px) {
+  footer .footer {
+    grid-template-areas: 'logo logo' 'contact social';
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 0.5fr;
+  }
+  footer .footer-contact {
+    grid-area: contact;
+  }
+  footer .footer-logo {
+    grid-area: logo;
+  }
+  footer .footer-logo img {
+    height: 64px;
+    width: 32px;
+  }
+  footer .footer-social {
+    grid-area: social;
+  }
+  footer .footer-copy p {
+    font-size: 8px;
+  }
 }
