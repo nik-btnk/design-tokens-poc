@@ -15,9 +15,7 @@ const Page404 = () => {
           </p>
         </div>
         <div className="not-found__text2">
-          <p>
-            <b>Maybe spin the Wheel O’ Color and find a new favorite?</b>
-          </p>
+          <p>Maybe spin the Wheel O’ Color and find a new favorite?</p>
         </div>
       </div>
     </div>

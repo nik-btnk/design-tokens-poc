@@ -35,21 +35,40 @@
       }
     }
 
-    &__text1 {
+    &__text1,
+    &__text2 {
       text-align: center;
       font: @typography-h3-quatt-font-style @typography-h3-quatt-font-weight
         @typography-h3-quatt-font-stretch @typography-h3-quatt-font-size /
         @typography-h3-quatt-line-height @typography-h3-quatt-font-family;
     }
 
-    &__text2 {
-      font: @typography-h4-quatt-font-style @typography-h4-quatt-font-weight
-        @typography-h4-quatt-font-stretch @typography-h4-quatt-font-size /
-        @typography-h4-quatt-line-height @typography-h4-quatt-font-family;
-
-      @media screen and (max-width: 834px) {
+    @media screen and (max-width: 834px) {
+      &__text1,
+      &__text2 {
         width: 80%;
         text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 420px) {
+      &__logo {
+        width: 180px;
+        height: 80px;
+
+        span {
+          font-size: @typography-h1-abril-font-size;
+        }
+
+        img {
+          width: 80px;
+          left: 55px;
+        }
+      }
+
+      &__text1,
+      &__text2 {
+        font-size: @typography-h4-abril-font-size;
       }
     }
   }
