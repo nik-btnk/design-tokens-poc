@@ -1,0 +1,46 @@
+@import '../../_tokens/_color.less';
+@import '../../_tokens/_typography.less';
+@import '../../_tokens/_sizes.less';
+
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: @sizes-xs;
+  background-color: @color-brand-blue-0;
+  border: solid @sizes-xxxs @color-brand-blue-2;
+  font: @typography-body-quatt-font-style 700
+    @typography-body-quatt-font-stretch @typography-body-quatt-font-size /
+    @typography-body-quatt-line-height @typography-body-quatt-font-family;
+  padding: @sizes-xxs @sizes-xs;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px darken(@color-brand-blue-2,20%);
+
+  &::before {
+    content: '+';
+    display: inline-block;
+    width: @sizes-m;
+    height: @sizes-m;
+    background-color: @color-brand-blue-3;
+    border-radius: 50%;
+    margin-right: 12px;
+    color: @color-brand-black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &:hover {
+    border: (@sizes-xxs*0.8) solid @color-brand-blue-2;
+    box-shadow: 0px 4px 8px darken(@color-brand-blue-2,10%);
+
+  }
+
+  &:active {
+    border: solid @sizes-xxxs @color-brand-blue-4;
+  }
+}

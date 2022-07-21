@@ -274,6 +274,9 @@
 .productList__nav--cart:active {
   box-shadow: none;
 }
+.test {
+  height: 70vh;
+}
 footer {
   height: 20vh;
   background-color: #fcfbf4;
@@ -400,4 +403,40 @@ nav .nav-cart-logo img {
 }
 nav .nav-cart-logo:hover {
   transform: scale(1.1);
+}
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background-color: #cafdfc;
+  border: solid 4px #60d6d4;
+  font: normal 700 normal 16px / 22.4px Quattrocento Sans;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px #2ba5a3;
+}
+.button::before {
+  content: '+';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-color: #37ccc9;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: #2d3134;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.button:hover {
+  border: 6.4px solid #60d6d4;
+  box-shadow: 0px 4px 8px #37ccc9;
+}
+.button:active {
+  border: solid 4px #077a77;
 }
