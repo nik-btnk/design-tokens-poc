@@ -26,6 +26,13 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/quattrocentosans/v18/va9Z4lja2NVIDdIAAoMR5MfuElaRB0RykmrW.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/abrilfatface/v19/zOL64pLDlL1D99S8g8PtiKchm-A.ttf) format('truetype');
+}
 .cart {
   height: 70vh;
   display: flex;
@@ -148,11 +155,11 @@
 .landing__nav--cart:active {
   box-shadow: none;
 }
-.not-found {
-  background-color: #2d3134;
+.not-found-wrapper {
+  background-color: #fcfbf4;
   height: 70vh;
 }
-.not-found__container {
+.not-found-wrapper .not-found {
   height: 100%;
   width: 100%;
   display: flex;
@@ -160,16 +167,51 @@
   align-items: center;
   flex-direction: column;
 }
-.not-found__container h2 {
-  font: normal 400 normal 48px / 57.6px Quattrocento Sans;
-  color: #f1b669;
+.not-found-wrapper .not-found__logo {
+  height: 140px;
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
-.not-found__container h2:hover {
-  transform: scale(1.2);
+.not-found-wrapper .not-found__logo img {
+  width: 140px;
+  align-self: flex-end;
+  position: absolute;
+  left: 100px;
 }
-.not-found__container h3 {
+.not-found-wrapper .not-found__logo span {
+  font: normal 400 normal 128px / 70.4px Abril Fatface;
+}
+.not-found-wrapper .not-found__text1,
+.not-found-wrapper .not-found__text2 {
+  text-align: center;
   font: normal 400 normal 32px / 44.8px Quattrocento Sans;
-  color: #a65809;
+}
+@media screen and (max-width: 834px) {
+  .not-found-wrapper .not-found__text1,
+  .not-found-wrapper .not-found__text2 {
+    width: 80%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 420px) {
+  .not-found-wrapper .not-found__logo {
+    width: 180px;
+    height: 80px;
+  }
+  .not-found-wrapper .not-found__logo span {
+    font-size: 64px;
+  }
+  .not-found-wrapper .not-found__logo img {
+    width: 80px;
+    left: 55px;
+  }
+  .not-found-wrapper .not-found__text1,
+  .not-found-wrapper .not-found__text2 {
+    font-size: 24px;
+  }
 }
 .productList {
   height: 70vh;
@@ -291,6 +333,7 @@ footer .footer-copy p {
 }
 @media screen and (max-width: 420px) {
   footer .footer {
+    padding: 8px;
     grid-template-areas: 'logo logo' 'contact social';
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr 1fr 0.5fr;

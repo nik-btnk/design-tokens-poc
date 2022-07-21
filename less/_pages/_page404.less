@@ -2,33 +2,74 @@
 @import '../_tokens/_typography.less';
 @import '../_tokens/_sizes.less';
 
-.not-found {
-  background-color: @color-brand-black;
+.not-found-wrapper {
+  background-color: @color-brand-white;
   height: 70vh;
 
-  &__container {
+  .not-found {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    h2 {
-      font: @typography-h2-quatt-font-style @typography-h2-quatt-font-weight
-        @typography-h2-quatt-font-stretch @typography-h2-quatt-font-size /
-        @typography-h2-quatt-line-height @typography-h2-quatt-font-family;
-      color: @color-brand-orange-2;
 
-      &:hover {
-        transform: scale(1.2);
+    &__logo {
+      height: 140px;
+      width: 320px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      img {
+        width: 140px;
+        align-self: flex-end;
+        position: absolute;
+        left: 100px;
+      }
+      span {
+        font: @typography-h1-abril-font-style @typography-h1-abril-font-weight
+          @typography-h1-abril-font-stretch 128px /
+          @typography-h1-abril-line-height @typography-h1-abril-font-family;
       }
     }
 
-    h3 {
+    &__text1,
+    &__text2 {
+      text-align: center;
       font: @typography-h3-quatt-font-style @typography-h3-quatt-font-weight
         @typography-h3-quatt-font-stretch @typography-h3-quatt-font-size /
         @typography-h3-quatt-line-height @typography-h3-quatt-font-family;
-      color: @color-brand-orange-4;
+    }
+
+    @media screen and (max-width: 834px) {
+      &__text1,
+      &__text2 {
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 420px) {
+      &__logo {
+        width: 180px;
+        height: 80px;
+
+        span {
+          font-size: @typography-h1-abril-font-size;
+        }
+
+        img {
+          width: 80px;
+          left: 55px;
+        }
+      }
+
+      &__text1,
+      &__text2 {
+        font-size: @typography-h4-abril-font-size;
+      }
     }
   }
 }

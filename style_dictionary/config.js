@@ -18,6 +18,7 @@ module.exports = {
           return {
             destination: `_${tokenCategory}.less`,
             format: 'less/variables',
+            options: { showFileHeader: false },
             filter: {
               attributes: {
                 category: tokenCategory
@@ -27,7 +28,8 @@ module.exports = {
         }),
         {
           destination: '_mixins.less',
-          format: 'mixin-less/variables'
+          format: 'mixin-less/variables',
+          options: { showFileHeader: false }
         }
       ]
     }

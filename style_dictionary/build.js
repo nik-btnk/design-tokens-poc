@@ -74,7 +74,8 @@ StyleDictionary.registerFormat({
       )
     })
 
-    return generatedMessage + tokenValue
+    return tokenValue
+    //return generatedMessage + tokenValue
   }
 })
 ////////////////////////////////
