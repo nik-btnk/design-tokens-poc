@@ -5,7 +5,20 @@ const Test = () => {
   return (
     <div className="test">
       <h2>Test page</h2>
-      <Button />
+      <div
+        className="buttons"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          backgroundColor: '#eee'
+        }}>
+        <b>Buttons</b>
+        <Button type="pink" />
+        <Button type="blue" />
+        <Button type="orange" />
+        <Button type="green" />
+      </div>
     </div>
   )
 }

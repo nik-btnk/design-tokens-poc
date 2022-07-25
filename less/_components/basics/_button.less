@@ -9,21 +9,18 @@
   justify-content: center;
   align-items: center;
   border-radius: @sizes-xs;
-  background-color: @color-brand-blue-0;
-  border: solid @sizes-xxxs @color-brand-blue-2;
+  
   font: @typography-body-quatt-font-style 700
     @typography-body-quatt-font-stretch @typography-body-quatt-font-size /
     @typography-body-quatt-line-height @typography-body-quatt-font-family;
   padding: @sizes-xxs @sizes-xs;
   cursor: pointer;
-  box-shadow: 0px 4px 8px darken(@color-brand-blue-2,20%);
 
   &::before {
     content: '+';
     display: inline-block;
     width: @sizes-m;
     height: @sizes-m;
-    background-color: @color-brand-blue-3;
     border-radius: 50%;
     margin-right: 12px;
     color: @color-brand-black;
@@ -32,15 +29,73 @@
     align-items: center;
     font-size: 32px;
     font-weight: 700;
+  } 
+
+  &-blue{
+    background-color: @color-brand-blue-0;
+    border: solid @sizes-xxxs @color-brand-blue-2;
+    box-shadow: 0px 4px 8px darken(@color-brand-blue-2,20%);
+    &:hover {
+      border: (@sizes-xxs*0.8) solid @color-brand-blue-2;
+      box-shadow: 0px 4px 8px darken(@color-brand-blue-2,10%);
+  
+    }
+    &:active {
+      border: solid @sizes-xxxs @color-brand-blue-4;
+    }
+    &::before{
+      background-color: @color-brand-blue-3;
+    }
   }
 
-  &:hover {
-    border: (@sizes-xxs*0.8) solid @color-brand-blue-2;
-    box-shadow: 0px 4px 8px darken(@color-brand-blue-2,10%);
-
+  &-pink{
+    background-color: @color-brand-pink-0;
+    border: solid @sizes-xxxs @color-brand-pink-2;
+    box-shadow: 0px 4px 8px darken(@color-brand-pink-2,20%);
+    &:hover {
+      border: (@sizes-xxs*0.8) solid @color-brand-pink-2;
+      box-shadow: 0px 4px 8px darken(@color-brand-pink-2,10%);
+  
+    }
+    &:active {
+      border: solid @sizes-xxxs @color-brand-pink-4;
+    }
+    &::before{
+      background-color: @color-brand-pink-3;
+    }
   }
 
-  &:active {
-    border: solid @sizes-xxxs @color-brand-blue-4;
+  &-green{
+    background-color: @color-brand-green-0;
+    border: solid @sizes-xxxs @color-brand-green-2;
+    box-shadow: 0px 4px 8px darken(@color-brand-green-2,20%);
+    &:hover {
+      border: (@sizes-xxs*0.8) solid @color-brand-green-2;
+      box-shadow: 0px 4px 8px darken(@color-brand-green-2,10%);
+  
+    }
+    &:active {
+      border: solid @sizes-xxxs @color-brand-green-4;
+    }
+    &::before{
+      background-color: @color-brand-green-3;
+    }
+  }
+
+  &-orange{
+    background-color: @color-brand-orange-0;
+    border: solid @sizes-xxxs @color-brand-orange-2;
+    box-shadow: 0px 4px 8px darken(@color-brand-orange-2,20%);
+    &:hover {
+      border: (@sizes-xxs*0.8) solid @color-brand-orange-2;
+      box-shadow: 0px 4px 8px darken(@color-brand-orange-2,10%);
+  
+    }
+    &:active {
+      border: solid @sizes-xxxs @color-brand-orange-4;
+    }
+    &::before{
+      background-color: @color-brand-orange-3;
+    }
   }
 }

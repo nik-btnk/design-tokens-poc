@@ -411,19 +411,15 @@ nav .nav-cart-logo:hover {
   justify-content: center;
   align-items: center;
   border-radius: 16px;
-  background-color: #cafdfc;
-  border: solid 4px #60d6d4;
   font: normal 700 normal 16px / 22.4px Quattrocento Sans;
   padding: 8px 16px;
   cursor: pointer;
-  box-shadow: 0px 4px 8px #2ba5a3;
 }
 .button::before {
   content: '+';
   display: inline-block;
   width: 32px;
   height: 32px;
-  background-color: #37ccc9;
   border-radius: 50%;
   margin-right: 12px;
   color: #2d3134;
@@ -433,10 +429,63 @@ nav .nav-cart-logo:hover {
   font-size: 32px;
   font-weight: 700;
 }
-.button:hover {
+.button-blue {
+  background-color: #cafdfc;
+  border: solid 4px #60d6d4;
+  box-shadow: 0px 4px 8px #2ba5a3;
+}
+.button-blue:hover {
   border: 6.4px solid #60d6d4;
   box-shadow: 0px 4px 8px #37ccc9;
 }
-.button:active {
+.button-blue:active {
   border: solid 4px #077a77;
+}
+.button-blue::before {
+  background-color: #37ccc9;
+}
+.button-pink {
+  background-color: #fff5f5;
+  border: solid 4px #ffb8b5;
+  box-shadow: 0px 4px 8px #ff564f;
+}
+.button-pink:hover {
+  border: 6.4px solid #ffb8b5;
+  box-shadow: 0px 4px 8px #ff8782;
+}
+.button-pink:active {
+  border: solid 4px #bc443f;
+}
+.button-pink::before {
+  background-color: #ff8782;
+}
+.button-green {
+  background-color: #f5fff5;
+  border: solid 4px #60d665;
+  box-shadow: 0px 4px 8px #2ba530;
+}
+.button-green:hover {
+  border: 6.4px solid #60d665;
+  box-shadow: 0px 4px 8px #37cc3e;
+}
+.button-green:active {
+  border: solid 4px #207d1a;
+}
+.button-green::before {
+  background-color: #5ecc37;
+}
+.button-orange {
+  background-color: #fdedd7;
+  border: solid 4px #f1b669;
+  box-shadow: 0px 4px 8px #df8715;
+}
+.button-orange:hover {
+  border: 6.4px solid #f1b669;
+  box-shadow: 0px 4px 8px #ed9f3a;
+}
+.button-orange:active {
+  border: solid 4px #a65809;
+}
+.button-orange::before {
+  background-color: #ed9f3a;
 }
