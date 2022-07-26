@@ -1,9 +1,4 @@
 const config = require('./config')
-const supports = require('css-supports')
-const { JSDOM } = require('jsdom')
-
-//Node has no access to DOM, therefore create global document variable to check valid CSS.
-global.document = new JSDOM('<!DOCTYPE html><p>Hello world</p>').window.document
 
 //Create Style Dictionary by extending a configuration file
 const StyleDictionary = require('style-dictionary').extend(config)
@@ -13,9 +8,13 @@ const sizes = require('./custom/transforms/sizes')
 const spacings = require('./custom/transforms/spacings')
 const fonts = require('./custom/transforms/fonts')
 
-//Register transforms
-const transforms = [sizes, spacings, fonts]
+//Import custom formatters
+const fontFormatter = require('./custom/formatters/fonts')
 
+const transforms = [sizes, spacings, fonts]
+const formatters = [fontFormatter]
+
+//Register transforms
 transforms.map((val) => {
   StyleDictionary.registerTransform({
     name: val.name,
@@ -33,61 +32,13 @@ StyleDictionary.registerTransformGroup({
   )
 })
 
-////////////////////////////////
-// EXPERIMENTAL FUNCTIONALITY //
-////////////////////////////////
-// Custom formatter to create mixins for tokens with multiple properties in 'value'.
-StyleDictionary.registerFormat({
-  name: 'mixin-less/variables',
-  formatter: ({ dictionary }) => {
-    // Add the custom token type you are targeting to this array.
-    const targetArray = ['custom-fontStyle']
-
-    const formatName = (name) => {
-      const isUpperCase = (string) => /^[A-Z]*$/.test(string)
-      const letters = name.split('')
-      return letters
-        .map((letter) => {
-          if (isUpperCase(letter)) {
-            return `-${letter.toLowerCase()}`
-          } else return letter
-        })
-        .join('')
-    }
-
-    const filteredTokens = dictionary.allTokens.filter((token) =>
-      targetArray.includes(token.type)
-    )
-
-    // const generatedMessage = `\n// Do not edit directly \n// Generated on ${new Date().toUTCString()}\n\n`
-    let tokenValue = ''
-
-    filteredTokens.forEach((token, index) => {
-      let value = ''
-      let loop = 0
-      for (tokenName in token.original.value) {
-        // Check if token is a supported CSS property.
-        if (supports(formatName(tokenName), token.original.value[tokenName])) {
-          value = value.concat(
-            `${loop === 0 ? '' : '\n'}\u0020\u0020${formatName(tokenName)}: ${
-              token.original.value[tokenName]
-            };`
-          )
-          loop++
-        }
-      }
-      tokenValue = tokenValue.concat(
-        `${index === 0 ? '' : '\n'}@${token.name}: {\n${value}\n};\n`
-      )
-    })
-
-    return tokenValue
-    //return generatedMessage + tokenValue
-  }
+//Register formatters
+formatters.map((val) => {
+  StyleDictionary.registerFormat({
+    name: val.name,
+    formatter: val.formatter
+  })
 })
-////////////////////////////////
-////////////////////////////////
-////////////////////////////////
 
 //This function will run once we execute npm run build script and will build the design files for every chosen platform at configuration file
 StyleDictionary.buildAllPlatforms()
