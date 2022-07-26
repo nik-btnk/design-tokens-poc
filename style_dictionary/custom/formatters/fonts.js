@@ -1,5 +1,6 @@
 const supports = require('css-supports')
 const { JSDOM } = require('jsdom')
+const { cssNoUnits, units } = require('../constants/constants')
 
 //Node has no access to DOM, therefore create global document variable to check valid CSS.
 global.document = new JSDOM('<!DOCTYPE html><p>Hello world</p>').window.document
@@ -7,35 +8,12 @@ global.document = new JSDOM('<!DOCTYPE html><p>Hello world</p>').window.document
 // Custom formatter to create mixins for tokens with multiple properties in 'value'.
 module.exports = {
   name: 'mixin-less/variables',
+  target: '_mixins.less',
   formatter: ({ dictionary }) => {
     // Add the custom token type you are targeting to this array.
     const targetArray = ['custom-fontStyle']
-    // CSS properties that do not require specified units.
-    const cssNoUnits = [
-      'font-weight',
-      'line-height',
-      'z-index',
-      'animation-iteration-count',
-      'border-image-slice',
-      'border-image-width',
-      'column-count',
-      'counter-increment',
-      'counter-reset',
-      'flex',
-      'flex-grow',
-      'flex-shrink',
-      'font-size-adjust',
-      'nav-index',
-      'opacity',
-      'order',
-      'orphans',
-      'tab-size',
-      'windows'
-    ]
     // CSS properties to omit from mixin creation.
     const skipProperty = ['line-height']
-    // Specified value units.
-    const units = 'px'
 
     const formatName = (name) => {
       const isUpperCase = (string) => /^[A-Z]*$/.test(string)

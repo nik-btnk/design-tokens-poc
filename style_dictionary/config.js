@@ -1,9 +1,12 @@
 const tokens = require('../tokens/design-tokens.tokens.json')
+const fontFormatter = require('./custom/formatters/fonts')
 
 const tokensArray = []
 for (x in tokens) {
   tokensArray.push({ [x]: tokens[x] })
 }
+
+const formatterArray = [fontFormatter]
 
 module.exports = {
   source: ['tokens/*.tokens.json'],
@@ -26,11 +29,13 @@ module.exports = {
             }
           }
         }),
-        {
-          destination: '_mixins.less',
-          format: 'mixin-less/variables',
-          options: { showFileHeader: false }
-        }
+        ...formatterArray.map((formatter) => {
+          return {
+            destination: formatter.target,
+            format: formatter.name,
+            options: { showFileHeader: false }
+          }
+        })
       ]
     }
   }
