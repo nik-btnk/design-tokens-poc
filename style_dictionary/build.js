@@ -1,4 +1,9 @@
 const config = require('./config')
+const supports = require('css-supports')
+const { JSDOM } = require('jsdom')
+
+//Node has no access to DOM, therefore create global document variable to check valid CSS.
+global.document = new JSDOM('<!DOCTYPE html><p>Hello world</p>').window.document
 
 //Create Style Dictionary by extending a configuration file
 const StyleDictionary = require('style-dictionary').extend(config)
@@ -53,21 +58,23 @@ StyleDictionary.registerFormat({
     const filteredTokens = dictionary.allTokens.filter((token) =>
       targetArray.includes(token.type)
     )
-    // console.log(dictionary.allTokens)
 
-    const generatedMessage = `\n// Do not edit directly \n// Generated on ${new Date().toUTCString()}\n\n`
+    // const generatedMessage = `\n// Do not edit directly \n// Generated on ${new Date().toUTCString()}\n\n`
     let tokenValue = ''
 
     filteredTokens.forEach((token, index) => {
       let value = ''
       let loop = 0
       for (tokenName in token.original.value) {
-        value = value.concat(
-          `${loop === 0 ? '' : '\n'}\u0020\u0020${formatName(tokenName)}: ${
-            token.original.value[tokenName]
-          };`
-        )
-        loop++
+        // Check if token is a supported CSS property.
+        if (supports(formatName(tokenName), token.original.value[tokenName])) {
+          value = value.concat(
+            `${loop === 0 ? '' : '\n'}\u0020\u0020${formatName(tokenName)}: ${
+              token.original.value[tokenName]
+            };`
+          )
+          loop++
+        }
       }
       tokenValue = tokenValue.concat(
         `${index === 0 ? '' : '\n'}@${token.name}: {\n${value}\n};\n`
