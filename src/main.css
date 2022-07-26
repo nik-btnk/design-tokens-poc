@@ -489,6 +489,102 @@ nav .nav-cart-logo:hover {
 .button-orange::before {
   background-color: #ed9f3a;
 }
+.filter-control-dropdown {
+  display: inline-block;
+  position: relative;
+}
+.filter-control-dropdown__anchor {
+  display: flex;
+}
+.filter-control-dropdown__anchor::before {
+  content: none !important;
+}
+.filter-control-dropdown__anchor-arrow {
+  margin-left: auto;
+}
+.filter-control-dropdown__anchor-arrow.rotated {
+  transform: rotate(90deg);
+}
+.filter-control-dropdown__items {
+  display: none;
+  position: absolute;
+  width: 100%;
+  margin-top: 8px;
+  border: 4px solid #f1b669;
+  border-radius: 16px;
+  background-color: #fdedd7;
+  font: normal 400 normal 16px / 22.4px Quattrocento Sans;
+  padding: 8px 16px;
+  box-shadow: 0px 4px 8px #ed9f3a;
+}
+.filter-control-dropdown__items li {
+  display: flex;
+  list-style: none;
+  margin-bottom: 8px;
+}
+.filter-control-dropdown__items li:last-child {
+  margin-bottom: 0;
+}
+.filter-control-dropdown__items li:hover {
+  filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.25));
+}
+.filter-control-dropdown__items li img {
+  width: 25.5px;
+  margin-right: 10px;
+}
+.filter-control-dropdown__items li .checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.filter-control-dropdown__items li .checkbox-container input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.filter-control-dropdown__items li .checkbox-container input[type='checkbox']:checked {
+  /* When the checkbox is checked, add a blue background */
+}
+.filter-control-dropdown__items li .checkbox-container input[type='checkbox']:checked ~ .checkmark {
+  /* Show the checkmark when checked */
+}
+.filter-control-dropdown__items li .checkbox-container input[type='checkbox']:checked ~ .checkmark:after {
+  display: block;
+}
+.filter-control-dropdown__items li .checkbox-container .checkmark {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border: 2px solid #2d3134;
+  border-radius: 4px;
+  /* Create the checkmark/indicator (hidden when not checked) */
+}
+.filter-control-dropdown__items li .checkbox-container .checkmark:hover {
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+}
+.filter-control-dropdown__items li .checkbox-container .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 2px;
+  left: 2px;
+  border-radius: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #2d3134;
+}
+.filter-control-dropdown.visible .filter-control-dropdown__items {
+  display: block;
+}
 .price-slider-container {
   position: relative;
   width: 128px;

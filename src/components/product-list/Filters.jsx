@@ -6,9 +6,9 @@ export const Filters = () => {
     <div className="filter">
       <h2>Filters</h2>
       <FilterControl type="price" />
-      <FilterControl type="allergies" />
+      {/* <FilterControl type="allergies" />
       <FilterControl type="nutrition" />
-      <FilterControl type="category" />
+      <FilterControl type="category" /> */}
     </div>
   )
 }
