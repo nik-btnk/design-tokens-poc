@@ -29,18 +29,15 @@
         left: 100px;
       }
       span {
-        font: @typography-h1-abril-font-style @typography-h1-abril-font-weight
-          @typography-h1-abril-font-stretch 128px /
-          @typography-h1-abril-line-height @typography-h1-abril-font-family;
+        @font-h1-abril();
+        font-size: 128px;
       }
     }
 
     &__text1,
     &__text2 {
+      @font-h3-quatt();
       text-align: center;
-      font: @typography-h3-quatt-font-style @typography-h3-quatt-font-weight
-        @typography-h3-quatt-font-stretch @typography-h3-quatt-font-size /
-        @typography-h3-quatt-line-height @typography-h3-quatt-font-family;
     }
 
     @media screen and (max-width: 834px) {

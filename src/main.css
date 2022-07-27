@@ -45,7 +45,13 @@
   text-decoration: none;
 }
 .cart__title {
-  font: normal 400 normal 48px / 57.6px Quattrocento Sans;
+  font-size: 48px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
   color: #207d1a;
   margin-bottom: 50px;
 }
@@ -56,12 +62,18 @@
 }
 .cart__nav--shop,
 .cart__nav--productList {
+  font-size: 24px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
   height: 50px;
   min-width: 148px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font: normal 400 normal 24px / 33.6px Quattrocento Sans;
   background-color: #cafdfc;
   border: solid 4px #60d6d4;
   border-radius: 16px;
@@ -106,7 +118,13 @@
   text-decoration: none;
 }
 .landing__title {
-  font: normal 400 normal 48px / 57.6px Quattrocento Sans;
+  font-size: 48px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
   color: #077a77;
   margin-bottom: 50px;
 }
@@ -117,12 +135,18 @@
 }
 .landing__nav--productList,
 .landing__nav--cart {
+  font-size: 24px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
   height: 50px;
   min-width: 148px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font: normal 400 normal 24px / 33.6px Quattrocento Sans;
   background-color: #cafdfc;
   border: solid 4px #60d6d4;
   border-radius: 16px;
@@ -182,12 +206,25 @@
   left: 100px;
 }
 .not-found-wrapper .not-found__logo span {
-  font: normal 400 normal 128px / 70.4px Abril Fatface;
+  font-size: 64px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  font-size: 128px;
 }
 .not-found-wrapper .not-found__text1,
 .not-found-wrapper .not-found__text2 {
+  font-size: 32px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
   text-align: center;
-  font: normal 400 normal 32px / 44.8px Quattrocento Sans;
 }
 @media screen and (max-width: 834px) {
   .not-found-wrapper .not-found__text1,
@@ -225,7 +262,13 @@
   text-decoration: none;
 }
 .productList__title {
-  font: normal 400 normal 48px / 57.6px Quattrocento Sans;
+  font-size: 48px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
   color: #a65809;
   margin-bottom: 50px;
 }
@@ -236,12 +279,18 @@
 }
 .productList__nav--shop,
 .productList__nav--cart {
+  font-size: 24px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
   height: 50px;
   min-width: 148px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font: normal 400 normal 24px / 33.6px Quattrocento Sans;
   background-color: #cafdfc;
   border: solid 4px #60d6d4;
   border-radius: 16px;
@@ -296,10 +345,16 @@ footer .footer-contact {
   align-items: center;
 }
 footer .footer-contact span {
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
   display: inline-block;
   width: 145px;
   text-align: right;
-  font: normal 400 normal 16px / 22.4px Quattrocento Sans;
 }
 footer .footer-logo {
   display: flex;
@@ -329,7 +384,13 @@ footer .footer-copy {
   grid-column: 1/4;
 }
 footer .footer-copy p {
-  font: normal 400 normal 16px / 22.4px Quattrocento Sans;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
 }
 @media screen and (max-width: 420px) {
   footer .footer {
