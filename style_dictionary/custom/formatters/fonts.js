@@ -1,39 +1,22 @@
 const supports = require('css-supports')
 const { JSDOM } = require('jsdom')
-const { cssNoUnits, units } = require('../constants/constants')
+const {
+  formatName,
+  formatValue
+} = require('../helperFunctions/helperFunctions')
 
-//Node has no access to DOM, therefore create global document variable to check valid CSS.
+// Node has no access to DOM, therefore create global document variable to check valid CSS.
 global.document = new JSDOM('<!DOCTYPE html><p>Hello world</p>').window.document
 
-// Custom formatter to create mixins for tokens with multiple properties in 'value'.
+// Custom formatter to create mixins for tokens with multiple properties in typography 'value'.
 module.exports = {
   name: 'mixin-less/variables',
-  target: '_mixins.less',
+  target: '_mixins.less', // Destination file name
   formatter: ({ dictionary }) => {
     // Add the custom token type you are targeting to this array.
     const targetArray = ['custom-fontStyle']
     // CSS properties to omit from mixin creation.
     const skipProperty = ['line-height']
-
-    const formatName = (name) => {
-      const isUpperCase = (string) => /^[A-Z]*$/.test(string)
-      const letters = name.split('')
-      return letters
-        .map((letter) => {
-          if (isUpperCase(letter)) {
-            return `-${letter.toLowerCase()}`
-          } else return letter
-        })
-        .join('')
-    }
-
-    const formatValue = (name, value) => {
-      if (value === 0) return value
-      if (typeof value !== 'number') return value
-      if (cssNoUnits.includes(formatName(name))) return value
-
-      return value + units
-    }
 
     const filteredTokens = dictionary.allTokens.filter((token) =>
       targetArray.includes(token.type)
