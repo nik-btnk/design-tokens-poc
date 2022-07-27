@@ -39,7 +39,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fdedd7;
+  background-color: #fff5e7;
 }
 .cart a {
   text-decoration: none;
@@ -74,7 +74,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #cafdfc;
+  background-color: #e9ffff;
   border: solid 4px #60d6d4;
   border-radius: 16px;
   padding: 8px 16px;
@@ -147,7 +147,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #cafdfc;
+  background-color: #e9ffff;
   border: solid 4px #60d6d4;
   border-radius: 16px;
   padding: 8px 16px;
@@ -256,7 +256,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #cafdfc;
+  background-color: #e9ffff;
 }
 .productList a {
   text-decoration: none;
@@ -291,7 +291,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #cafdfc;
+  background-color: #e9ffff;
   border: solid 4px #60d6d4;
   border-radius: 16px;
   padding: 8px 16px;
