@@ -1,4 +1,5 @@
 import React from 'react'
+
 //Component that represents a checkbox list for filtering products by category (prrice, allergies, nutrition, category)
 export const FilterControl = () => {
   const handleOnClick = () => {
@@ -17,8 +18,8 @@ export const FilterControl = () => {
   }
   return (
     <div className="filter-control-dropdown">
-      <label
-        className="filter-control-dropdown__anchor button button-orange"
+      <button
+        className="filter-control-dropdown__anchor"
         onClick={handleOnClick}>
         Allergies
         <img
@@ -26,7 +27,7 @@ export const FilterControl = () => {
           src={require('../../../src/assets/icons/caret/Icon=circle-caret-right.png')}
           alt=""
         />
-      </label>
+      </button>
       <ul className="filter-control-dropdown__items">
         <li>
           <label className="checkbox-container">
