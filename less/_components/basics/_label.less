@@ -1,0 +1,44 @@
+@import '../../_tokens/_color.less';
+@import '../../_tokens/_typography.less';
+@import '../../_tokens/_sizes.less';
+
+/* 
+To do
+
+- [ ] Default
+- [ ] Hover
+- [ ] Disabled
+- [ ] Valid
+- [ ] Active 
+*/
+
+//change button for label
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: @sizes-xs;
+
+  font: @typography-body-quatt-font-style 700
+    @typography-body-quatt-font-stretch @typography-body-quatt-font-size /
+    @typography-body-quatt-line-height @typography-body-quatt-font-family;
+  padding: @sizes-xxs @sizes-xs;
+  cursor: pointer;
+
+  &::before {
+    content: '+';
+    display: inline-block;
+    width: @sizes-m;
+    height: @sizes-m;
+    border-radius: 50%;
+    margin-right: 12px;
+    color: @color-brand-black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+  }
+}

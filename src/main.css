@@ -278,7 +278,9 @@
   height: 70vh;
 }
 footer {
-  height: 20vh;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
   background-color: #fcfbf4;
   border-top: 1px solid #98a1a8;
 }
@@ -359,15 +361,16 @@ footer .footer-copy p {
   }
 }
 nav {
-  height: 10vh;
+  min-height: 100px;
   width: 100%;
   background-color: #fcfbf4;
+  display: flex;
 }
 nav .nav {
   position: relative;
-  width: 80%;
   height: 100%;
-  margin: 0 auto;
+  width: 80%;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -488,6 +491,40 @@ nav .nav-cart-logo:hover {
 }
 .button-orange::before {
   background-color: #ed9f3a;
+}
+/* 
+To do
+
+- [ ] Default
+- [ ] Hover
+- [ ] Disabled
+- [ ] Valid
+- [ ] Active 
+*/
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font: normal 700 normal 16px / 22.4px Quattrocento Sans;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.button::before {
+  content: '+';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: #2d3134;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
 }
 .filter-control-dropdown {
   display: inline-block;
