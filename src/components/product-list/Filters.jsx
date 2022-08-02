@@ -5,10 +5,10 @@ export const Filters = () => {
   return (
     <div className="filter">
       <h2>Filters</h2>
-      <FilterControl type="price" />
-      {/* <FilterControl type="allergies" />
-      <FilterControl type="nutrition" />
-      <FilterControl type="category" /> */}
+      <FilterControl type="Nutrition" />
+      <FilterControl type="Category" />
+      <FilterControl type="Allergies" />
+      <FilterControl type="Price" />
     </div>
   )
 }

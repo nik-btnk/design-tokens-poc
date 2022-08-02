@@ -1,13 +1,13 @@
 import React from 'react'
+import generalData from '../../general-data'
+import { PriceSlider } from './PriceSlider'
 
 //Component that represents a checkbox list for filtering products by category (prrice, allergies, nutrition, category)
-export const FilterControl = () => {
+export const FilterControl = ({ type }) => {
+  const filterName = type
   const handleOnClick = () => {
-    const checkList = document.querySelector('.filter-control-dropdown')
-    const arrow = document.querySelector(
-      '.filter-control-dropdown__anchor-arrow'
-    )
-    console.log(arrow)
+    const checkList = document.getElementById(`${filterName}-dropdown`)
+    const arrow = document.getElementById(`${filterName}-arrow`)
     if (checkList.classList.contains('visible')) {
       checkList.classList.remove('visible')
       arrow.classList.remove('rotated')
@@ -17,73 +17,36 @@ export const FilterControl = () => {
     }
   }
   return (
-    <div className="filter-control-dropdown">
+    <div className="filter-control-dropdown" id={`${filterName}-dropdown`}>
       <button
         className="filter-control-dropdown__anchor"
         onClick={handleOnClick}>
-        Allergies
+        {filterName}
         <img
           className="filter-control-dropdown__anchor-arrow"
+          id={`${filterName}-arrow`}
           src={require('../../../src/assets/icons/caret/Icon=circle-caret-right.png')}
           alt=""
         />
       </button>
       <ul className="filter-control-dropdown__items">
-        <li>
-          <label className="checkbox-container">
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <img
-            src={require('../../assets/icons/health/Icon=allergy-milk.png')}
-            alt=""
-          />
-          <span className="item-name">Milk</span>
-        </li>
-        <li>
-          <label className="checkbox-container">
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <img
-            src={require('../../assets/icons/health/Icon=allergy-egg.png')}
-            alt=""
-          />
-          <span className="item-name">Eggs</span>
-        </li>
-        <li>
-          <label className="checkbox-container">
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <img
-            src={require('../../assets/icons/health/Icon=allergy-fish.png')}
-            alt=""
-          />
-          <span className="item-name">Fish</span>
-        </li>
-        <li>
-          <label className="checkbox-container">
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <img
-            src={require('../../assets/icons/health/Icon=allergy-nuts.png')}
-            alt=""
-          />
-          <span className="item-name">Nuts</span>
-        </li>
-        <li>
-          <label className="checkbox-container">
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-          </label>
-          <img
-            src={require('../../assets/icons/health/Icon=allergy-wheat.png')}
-            alt=""
-          />
-          <span className="item-name">Wheat</span>
-        </li>
+        {filterName !== 'Price' ? (
+          generalData[type].map((item) => (
+            <li key={item}>
+              <label className="checkbox-container">
+                <input type="checkbox" />
+                <span className="checkmark"></span>
+              </label>
+              <img
+                src={require(`../../assets/icons/descriptive/icon-${item}.png`)}
+                alt=""
+              />
+              <span className="item-name">{item}</span>
+            </li>
+          ))
+        ) : (
+          <PriceSlider />
+        )}
       </ul>
     </div>
   )
