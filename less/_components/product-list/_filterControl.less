@@ -6,11 +6,10 @@
   &-dropdown {
     display: inline-block;
     position: relative;
-    width: 100%;
 
     &-btn {
       height: 50px;
-      width: 100%;
+      min-width: 190px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -38,10 +37,10 @@
       }
     }
     &-items {
+      width: 190px;
       overflow: scroll;
       display: block;
       position: absolute;
-      width: 100%;
       margin-top: @sizes-xxs;
       border: @sizes-xxxs solid @color-brand-orange-2;
       border-radius: @sizes-xs;

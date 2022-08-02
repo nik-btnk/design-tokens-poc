@@ -407,20 +407,104 @@ nav .nav-cart-logo img {
 nav .nav-cart-logo:hover {
   transform: scale(1.1);
 }
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font: normal 700 normal 16px / 22.4px Quattrocento Sans;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.button::before {
+  content: '+';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: #2d3134;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.button-blue {
+  background-color: #cafdfc;
+  border: solid 4px #60d6d4;
+  box-shadow: 0px 4px 8px #2ba5a3;
+}
+.button-blue:hover {
+  border: 6.4px solid #60d6d4;
+  box-shadow: 0px 4px 8px #37ccc9;
+}
+.button-blue:active {
+  border: solid 4px #077a77;
+}
+.button-blue::before {
+  background-color: #37ccc9;
+}
+.button-pink {
+  background-color: #fff5f5;
+  border: solid 4px #ffb8b5;
+  box-shadow: 0px 4px 8px #ff564f;
+}
+.button-pink:hover {
+  border: 6.4px solid #ffb8b5;
+  box-shadow: 0px 4px 8px #ff8782;
+}
+.button-pink:active {
+  border: solid 4px #bc443f;
+}
+.button-pink::before {
+  background-color: #ff8782;
+}
+.button-green {
+  background-color: #f5fff5;
+  border: solid 4px #60d665;
+  box-shadow: 0px 4px 8px #2ba530;
+}
+.button-green:hover {
+  border: 6.4px solid #60d665;
+  box-shadow: 0px 4px 8px #37cc3e;
+}
+.button-green:active {
+  border: solid 4px #207d1a;
+}
+.button-green::before {
+  background-color: #5ecc37;
+}
+.button-orange {
+  background-color: #fdedd7;
+  border: solid 4px #f1b669;
+  box-shadow: 0px 4px 8px #df8715;
+}
+.button-orange:hover {
+  border: 6.4px solid #f1b669;
+  box-shadow: 0px 4px 8px #ed9f3a;
+}
+.button-orange:active {
+  border: solid 4px #a65809;
+}
+.button-orange::before {
+  background-color: #ed9f3a;
+}
 .filters {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  width: 90%;
+  width: 890px;
 }
 .filter-dropdown {
   display: inline-block;
   position: relative;
-  width: 100%;
 }
 .filter-dropdown-btn {
   height: 50px;
-  width: 100%;
+  min-width: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -444,10 +528,10 @@ nav .nav-cart-logo:hover {
   transform: rotate(90deg);
 }
 .filter-dropdown-items {
+  width: 190px;
   overflow: scroll;
   display: block;
   position: absolute;
-  width: 100%;
   margin-top: 8px;
   border: 4px solid #f1b669;
   border-radius: 16px;
@@ -589,89 +673,4 @@ nav .nav-cart-logo:hover {
   left: 0;
   transform: translateX(-50%);
   font: normal 400 normal 16px / 22.4px Quattrocento Sans;
-}
-.button {
-  height: 50px;
-  min-width: 148px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  font: normal 700 normal 16px / 22.4px Quattrocento Sans;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-.button::before {
-  content: '+';
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 12px;
-  color: #2d3134;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  font-weight: 700;
-}
-.button-blue {
-  background-color: #cafdfc;
-  border: solid 4px #60d6d4;
-  box-shadow: 0px 4px 8px #2ba5a3;
-}
-.button-blue:hover {
-  border: 6.4px solid #60d6d4;
-  box-shadow: 0px 4px 8px #37ccc9;
-}
-.button-blue:active {
-  border: solid 4px #077a77;
-}
-.button-blue::before {
-  background-color: #37ccc9;
-}
-.button-pink {
-  background-color: #fff5f5;
-  border: solid 4px #ffb8b5;
-  box-shadow: 0px 4px 8px #ff564f;
-}
-.button-pink:hover {
-  border: 6.4px solid #ffb8b5;
-  box-shadow: 0px 4px 8px #ff8782;
-}
-.button-pink:active {
-  border: solid 4px #bc443f;
-}
-.button-pink::before {
-  background-color: #ff8782;
-}
-.button-green {
-  background-color: #f5fff5;
-  border: solid 4px #60d665;
-  box-shadow: 0px 4px 8px #2ba530;
-}
-.button-green:hover {
-  border: 6.4px solid #60d665;
-  box-shadow: 0px 4px 8px #37cc3e;
-}
-.button-green:active {
-  border: solid 4px #207d1a;
-}
-.button-green::before {
-  background-color: #5ecc37;
-}
-.button-orange {
-  background-color: #fdedd7;
-  border: solid 4px #f1b669;
-  box-shadow: 0px 4px 8px #df8715;
-}
-.button-orange:hover {
-  border: 6.4px solid #f1b669;
-  box-shadow: 0px 4px 8px #ed9f3a;
-}
-.button-orange:active {
-  border: solid 4px #a65809;
-}
-.button-orange::before {
-  background-color: #ed9f3a;
 }
