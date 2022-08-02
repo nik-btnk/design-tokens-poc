@@ -1,53 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import generalData from '../../general-data'
 import { PriceSlider } from './PriceSlider'
 
-//Component that represents a checkbox list for filtering products by category (prrice, allergies, nutrition, category)
-export const FilterControl = ({ type }) => {
+export const FilterControl = ({
+  type,
+  selected,
+  setSelected,
+  priceRange,
+  setPriceRange
+}) => {
   const filterName = type
-  const handleOnClick = () => {
-    const checkList = document.getElementById(`${filterName}-dropdown`)
-    const arrow = document.getElementById(`${filterName}-arrow`)
-    if (checkList.classList.contains('visible')) {
-      checkList.classList.remove('visible')
-      arrow.classList.remove('rotated')
+  const [isActive, setIsActive] = useState(false)
+  const handleCheck = (event) => {
+    let updatedList = [...selected]
+    if (event.target.checked) {
+      updatedList = [...selected, event.target.value]
     } else {
-      checkList.classList.add('visible')
-      arrow.classList.add('rotated')
+      updatedList.splice(selected.indexOf(event.target.value), 1)
     }
+    setSelected(updatedList)
   }
   return (
-    <div className="filter-control-dropdown" id={`${filterName}-dropdown`}>
+    <div className="filter-dropdown">
       <button
-        className="filter-control-dropdown__anchor"
-        onClick={handleOnClick}>
+        className="filter-dropdown-btn"
+        onClick={() => setIsActive(!isActive)}>
         {filterName}
         <img
-          className="filter-control-dropdown__anchor-arrow"
-          id={`${filterName}-arrow`}
+          className={
+            isActive
+              ? 'filter-dropdown-btn__arrow rotated'
+              : 'filter-dropdown-btn__arrow'
+          }
           src={require('../../../src/assets/icons/caret/Icon=circle-caret-right.png')}
           alt=""
         />
       </button>
-      <ul className="filter-control-dropdown__items">
-        {filterName !== 'Price' ? (
-          generalData[type].map((item) => (
-            <li key={item}>
-              <label className="checkbox-container">
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-              <img
-                src={require(`../../assets/icons/descriptive/icon-${item}.png`)}
-                alt=""
-              />
-              <span className="item-name">{item}</span>
-            </li>
-          ))
-        ) : (
-          <PriceSlider />
-        )}
-      </ul>
+      {isActive && (
+        <ul className="filter-dropdown-items">
+          {filterName !== 'Price' ? (
+            generalData[type].map((item, index) => (
+              <li key={index}>
+                <label className="checkbox-container">
+                  <input type="checkbox" value={item} onChange={handleCheck} />
+                  <span className="checkmark"></span>
+                </label>
+                <img
+                  src={require(`../../assets/icons/descriptive/icon-${item}.png`)}
+                  alt=""
+                />
+                <span className="item-name">{item}</span>
+              </li>
+            ))
+          ) : (
+            <PriceSlider
+              priceRange={priceRange}
+              setPriceRange={setPriceRange}
+            />
+          )}
+        </ul>
+      )}
     </div>
   )
 }

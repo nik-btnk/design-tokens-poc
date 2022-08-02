@@ -2,13 +2,15 @@
 @import '../../_tokens/_typography.less';
 @import '../../_tokens/_sizes.less';
 
-.filter-control {
+.filter {
   &-dropdown {
     display: inline-block;
     position: relative;
-    &__anchor {
+    width: 100%;
+
+    &-btn {
       height: 50px;
-      min-width: 190px;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,20 +24,22 @@
       padding: @sizes-xxs @sizes-xs;
       cursor: pointer;
 
-      &:active {
+      &:active,
+      &:focus {
         border: 2px solid @color-brand-orange-4;
         box-shadow: 0px 4px 4px @color-brand-orange-4;
       }
 
-      &-arrow {
+      &__arrow {
         margin-left: auto;
         &.rotated {
           transform: rotate(90deg);
         }
       }
     }
-    &__items {
-      display: none;
+    &-items {
+      overflow: scroll;
+      display: block;
       position: absolute;
       width: 100%;
       margin-top: @sizes-xxs;
@@ -123,11 +127,10 @@
             }
           }
         }
-      }
-    }
-    &.visible {
-      .filter-control-dropdown__items {
-        display: block;
+
+        .item-name {
+          white-space: nowrap;
+        }
       }
     }
   }
