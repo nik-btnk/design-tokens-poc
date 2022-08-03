@@ -1,6 +1,7 @@
 @import '../_tokens/_color.less';
 @import '../_tokens/_typography.less';
 @import '../_tokens/_sizes.less';
+@import '../_tokens/_mixins.less';
 
 footer {
   min-height: 200px;
@@ -26,13 +27,10 @@ footer {
       align-items: center;
 
       span {
+        @font-desktop-body-quatt();
         display: inline-block;
         width: 145px;
         text-align: right;
-        font: @typography-body-quatt-font-style
-          @typography-body-quatt-font-weight @typography-body-quatt-font-stretch
-          @typography-body-quatt-font-size / @typography-body-quatt-line-height
-          @typography-body-quatt-font-family;
       }
     }
 
@@ -70,10 +68,7 @@ footer {
       grid-column: 1/4;
 
       p {
-        font: @typography-body-quatt-font-style
-          @typography-body-quatt-font-weight @typography-body-quatt-font-stretch
-          @typography-body-quatt-font-size / @typography-body-quatt-line-height
-          @typography-body-quatt-font-family;
+        @font-desktop-body-quatt();
       }
     }
     @media screen and (max-width: 420px) {
