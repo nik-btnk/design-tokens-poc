@@ -7,7 +7,7 @@ export const Filters = () => {
   return (
     <>
       <div className="filters">
-        <h2>Filters</h2>
+        <h4>Filters:</h4>
         <FilterControl
           type="Price"
           priceRange={priceRange}
@@ -35,7 +35,9 @@ export const Filters = () => {
         {selected.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
-        Price Range: From ${priceRange[0]} to ${priceRange[1]}
+        Price Range: From ${priceRange[0]} to ${priceRange[1]} <br></br>
+        Note: I couldn&apos;t figure out how to build a double-ranged filter for
+        the price yet
       </div>
     </>
   )

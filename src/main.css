@@ -492,19 +492,12 @@ nav .nav-cart-logo:hover {
 .button-orange::before {
   background-color: #ed9f3a;
 }
-.filters {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  width: 890px;
-}
 .filter-dropdown {
-  display: inline-block;
   position: relative;
 }
 .filter-dropdown-btn {
   height: 50px;
-  min-width: 190px;
+  width: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -609,6 +602,27 @@ nav .nav-cart-logo:hover {
 .filter-dropdown-items li .item-name {
   white-space: nowrap;
 }
+.filter-dropdown .size-price {
+  width: 160px;
+}
+.filter-dropdown .size-allergies {
+  width: 145px;
+}
+.filter-dropdown .size-nutrition {
+  width: 180px;
+}
+.filter-dropdown .size-category {
+  width: 180px;
+}
+.filters {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 900px;
+}
+.filters h4 {
+  font: normal 400 normal 24px / 33.6px Abril Fatface;
+}
 .price-slider-container {
   position: relative;
   width: 128px;
@@ -673,4 +687,13 @@ nav .nav-cart-logo:hover {
   left: 0;
   transform: translateX(-50%);
   font: normal 400 normal 16px / 22.4px Quattrocento Sans;
+}
+.product-list {
+  background-color: #fcfbf4;
+  /* arbitrary height */
+  height: 70vh;
+}
+.product-list-container {
+  width: 80%;
+  margin: 0 auto;
 }
