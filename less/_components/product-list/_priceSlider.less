@@ -1,6 +1,7 @@
 @import '../../_tokens/_color.less';
 @import '../../_tokens/_typography.less';
 @import '../../_tokens/_sizes.less';
+@import '../../_tokens/_mixins.less';
 
 .price-slider-container {
   position: relative;
@@ -93,7 +94,5 @@
   top: -28px;
   left: 0;
   transform: translateX(-50%);
-  font: @typography-body-quatt-font-style @typography-body-quatt-font-weight
-    @typography-body-quatt-font-stretch @typography-body-quatt-font-size /
-    @typography-body-quatt-line-height @typography-body-quatt-font-family;
+  @font-desktop-body-quatt();
 }

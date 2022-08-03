@@ -1,6 +1,7 @@
 @import '../../_tokens/_color.less';
 @import '../../_tokens/_typography.less';
 @import '../../_tokens/_sizes.less';
+@import '../../_tokens/_mixins.less';
 
 .filter {
   &-dropdown {
@@ -16,9 +17,8 @@
       border: 2px solid @color-light-mode-border-button-orange;
       background-color: @color-light-mode-background-page-orange;
       box-shadow: 0px 2px 2px @color-brand-orange-3;
-      font: @typography-body-quatt-font-style 700
-        @typography-body-quatt-font-stretch @typography-body-quatt-font-size /
-        @typography-body-quatt-line-height @typography-body-quatt-font-family;
+      @font-desktop-body-quatt();
+      font-weight: 700;
       padding: @sizes-xxs @sizes-xs;
       cursor: pointer;
 
@@ -45,9 +45,7 @@
       border: @sizes-xxxs solid @color-brand-orange-2;
       border-radius: @sizes-xs;
       background-color: @color-brand-orange-0;
-      font: @typography-body-quatt-font-style @typography-body-quatt-font-weight
-        @typography-body-quatt-font-stretch @typography-body-quatt-font-size /
-        @typography-body-quatt-line-height @typography-body-quatt-font-family;
+      @font-desktop-body-quatt();
       padding: @sizes-xxs @sizes-xs;
       box-shadow: 0px 4px 8px darken(@color-brand-orange-2, 10%);
 
