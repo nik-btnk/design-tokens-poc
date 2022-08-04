@@ -1,8 +1,31 @@
 .filters {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 900px;
+  position: relative;
+
+  h4 {
+    @font-desktop-h4-abril();
+  }
+
+  .filters-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .mobile-arrow {
+    display: none;
+  }
+
+  .mobile-divider {
+    display: none;
+  }
+
+  .apply-filters {
+    display: none;
+  }
 
   @media screen and (max-width: 834px) {
     margin: 0 auto;
@@ -13,7 +36,58 @@
     width: initial;
   }
 
-  h4 {
-    @font-desktop-h4-abril();
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    h4 {
+      margin: 0 0 @sizes-xs @sizes-xs;
+    }
+
+    .filters-container {
+      position: absolute;
+      flex-direction: column;
+    }
+
+    .mobile-arrow {
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: @sizes-xs;
+    }
+
+    .mobile-divider {
+      background-color: @color-brand-blue-3;
+      box-shadow: 0px 4px 4px @color-brand-blue-3;
+      position: absolute;
+      left: 0;
+      bottom: -@sizes-xs;
+      z-index: 0;
+      height: 2px;
+      width: 100%;
+      display: block;
+    }
+
+    .apply-filters {
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 2px 8px @color-brand-blue-4;
+      background-color: @color-light-mode-background-page-white;
+      border: 1px solid @color-light-mode-border-button-blue;
+      border-right: 3px solid @color-light-mode-border-button-blue;
+      border-left: 3px solid @color-light-mode-border-button-blue;
+
+      #apply-filters-btn {
+        @font-desktop-body-quatt();
+        font-weight: 700;
+        height: 38px;
+        width: 80%;
+        border-radius: @sizes-xs;
+      }
+    }
   }
 }

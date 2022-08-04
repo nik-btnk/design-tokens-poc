@@ -6,6 +6,7 @@
 .filter {
   &-dropdown {
     position: relative;
+    z-index: 1;
 
     &-btn {
       height: 40px;
@@ -142,6 +143,48 @@
       }
       &-category {
         width: 180px;
+      }
+    }
+
+    @media screen and (max-width: 425px) {
+      display: block;
+      border-right: 2px solid @color-light-mode-border-button-blue;
+      border-left: 2px solid @color-light-mode-border-button-blue;
+
+      &-btn {
+        border-radius: 0;
+        background-color: @color-light-mode-background-page-white;
+        border: 1px solid @color-light-mode-border-button-blue;
+        border-bottom: none;
+        box-shadow: none;
+        position: relative;
+        &:hover,
+        &:focus {
+          box-shadow: none;
+          border: 1px solid @color-light-mode-border-button-blue;
+          border-bottom: none;
+        }
+      }
+      &-items {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        background-color: @color-light-mode-background-page-white;
+        @font-desktop-body-quatt();
+        padding: @sizes-xxs @sizes-xs;
+        box-shadow: none;
+        border-right: 1px solid @color-light-mode-border-button-blue;
+        border-left: 1px solid @color-light-mode-border-button-blue;
+      }
+      .size {
+        &-price,
+        &-allergies,
+        &-nutrition,
+        &-category {
+          width: 100%;
+        }
       }
     }
   }

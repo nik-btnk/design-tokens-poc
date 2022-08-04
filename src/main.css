@@ -468,6 +468,26 @@ nav .nav-cart-logo img {
 nav .nav-cart-logo:hover {
   transform: scale(1.1);
 }
+@media screen and (max-width: 425px) {
+  nav {
+    min-height: 70px;
+  }
+  nav .nav {
+    justify-content: space-between;
+  }
+  nav .nav-menu-icon {
+    position: relative;
+    height: 28px;
+    width: 34px;
+  }
+  nav .nav-brand-logo {
+    height: 40px;
+    width: 20px;
+  }
+  nav .nav-cart-logo {
+    display: none;
+  }
+}
 .button {
   height: 50px;
   min-width: 148px;
@@ -561,6 +581,7 @@ nav .nav-cart-logo:hover {
 }
 .filter-dropdown {
   position: relative;
+  z-index: 1;
 }
 .filter-dropdown-btn {
   height: 40px;
@@ -695,11 +716,81 @@ nav .nav-cart-logo:hover {
 .filter-dropdown .size-category {
   width: 180px;
 }
+@media screen and (max-width: 425px) {
+  .filter-dropdown {
+    display: block;
+    border-right: 2px solid #37ccc9;
+    border-left: 2px solid #37ccc9;
+  }
+  .filter-dropdown-btn {
+    border-radius: 0;
+    background-color: #fcfbf4;
+    border: 1px solid #37ccc9;
+    border-bottom: none;
+    box-shadow: none;
+    position: relative;
+  }
+  .filter-dropdown-btn:hover,
+  .filter-dropdown-btn:focus {
+    box-shadow: none;
+    border: 1px solid #37ccc9;
+    border-bottom: none;
+  }
+  .filter-dropdown-items {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background-color: #fcfbf4;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: Quattrocento Sans;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+    padding: 8px 16px;
+    box-shadow: none;
+    border-right: 1px solid #37ccc9;
+    border-left: 1px solid #37ccc9;
+  }
+  .filter-dropdown .size-price,
+  .filter-dropdown .size-allergies,
+  .filter-dropdown .size-nutrition,
+  .filter-dropdown .size-category {
+    width: 100%;
+  }
+}
 .filters {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 900px;
+  position: relative;
+}
+.filters h4 {
+  font-size: 24px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+}
+.filters .filters-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.filters .mobile-arrow {
+  display: none;
+}
+.filters .mobile-divider {
+  display: none;
+}
+.filters .apply-filters {
+  display: none;
 }
 @media screen and (max-width: 834px) {
   .filters {
@@ -712,14 +803,61 @@ nav .nav-cart-logo:hover {
     width: initial;
   }
 }
-.filters h4 {
-  font-size: 24px;
-  text-decoration: none;
-  font-family: Abril Fatface;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
+@media screen and (max-width: 425px) {
+  .filters {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  .filters h4 {
+    margin: 0 0 16px 16px;
+  }
+  .filters .filters-container {
+    position: absolute;
+    flex-direction: column;
+  }
+  .filters .mobile-arrow {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 16px;
+  }
+  .filters .mobile-divider {
+    background-color: #37ccc9;
+    box-shadow: 0px 4px 4px #37ccc9;
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+    z-index: 0;
+    height: 2px;
+    width: 100%;
+    display: block;
+  }
+  .filters .apply-filters {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 8px #077a77;
+    background-color: #fcfbf4;
+    border: 1px solid #37ccc9;
+    border-right: 3px solid #37ccc9;
+    border-left: 3px solid #37ccc9;
+  }
+  .filters .apply-filters #apply-filters-btn {
+    font-size: 16px;
+    text-decoration: none;
+    font-family: Quattrocento Sans;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+    font-weight: 700;
+    height: 38px;
+    width: 80%;
+    border-radius: 16px;
+  }
 }
 .price-slider-container {
   position: relative;
@@ -804,5 +942,10 @@ nav .nav-cart-logo:hover {
 @media screen and (max-width: 834px) {
   .product-list-container {
     width: 95%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .product-list-container {
+    width: 100%;
   }
 }

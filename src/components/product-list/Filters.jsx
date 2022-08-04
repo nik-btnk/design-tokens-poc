@@ -4,30 +4,60 @@ import { FilterControl } from './FilterControl'
 export const Filters = () => {
   const [selected, setSelected] = useState([])
   const [priceRange, setPriceRange] = useState([0, 0])
+  const [isArrowActive, setArrowActive] = useState(true)
+  const handleOnClick = () => {
+    setArrowActive(!isArrowActive)
+  }
   return (
     <>
       <div className="filters">
         <h4>Filters:</h4>
-        <FilterControl
-          type="Price"
-          priceRange={priceRange}
-          setPriceRange={setPriceRange}
-        />
-        <FilterControl
-          type="Allergies"
-          selected={selected}
-          setSelected={setSelected}
-        />
-        <FilterControl
-          type="Nutrition"
-          selected={selected}
-          setSelected={setSelected}
-        />
-        <FilterControl
-          type="Category"
-          selected={selected}
-          setSelected={setSelected}
-        />
+        <div
+          className="filters-container"
+          style={isArrowActive ? { display: 'flex' } : { display: 'none' }}>
+          <FilterControl
+            type="Price"
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+          />
+          <FilterControl
+            type="Allergies"
+            selected={selected}
+            setSelected={setSelected}
+          />
+          <FilterControl
+            type="Nutrition"
+            selected={selected}
+            setSelected={setSelected}
+          />
+          <FilterControl
+            type="Category"
+            selected={selected}
+            setSelected={setSelected}
+          />
+          <div className="apply-filters">
+            <button
+              id="apply-filters-btn"
+              className="button-blue"
+              onClick={handleOnClick}>
+              Apply Filters
+            </button>
+          </div>
+        </div>
+        <div
+          className="mobile-arrow"
+          onClick={handleOnClick}
+          style={
+            isArrowActive
+              ? { transform: 'rotate(90deg)' }
+              : { transform: 'initial' }
+          }>
+          <img
+            src={require('../../../src/assets/icons/caret/Icon=circle-caret-right.png')}
+            alt=""
+          />
+        </div>
+        <div className="mobile-divider"></div>
       </div>
       <br></br>
       <div className="active-test">
