@@ -4,7 +4,7 @@ import { FilterControl } from './FilterControl'
 export const Filters = () => {
   const [selected, setSelected] = useState([])
   const [priceRange, setPriceRange] = useState([0, 0])
-  const [isArrowActive, setArrowActive] = useState(true)
+  const [isArrowActive, setArrowActive] = useState(false)
   const handleOnClick = () => {
     setArrowActive(!isArrowActive)
   }
@@ -12,9 +12,32 @@ export const Filters = () => {
     <>
       <div className="filters">
         <h4>Filters:</h4>
+        <div className="filters-container">
+          <FilterControl
+            type="Price"
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+          />
+          <FilterControl
+            type="Allergies"
+            selected={selected}
+            setSelected={setSelected}
+          />
+          <FilterControl
+            type="Nutrition"
+            selected={selected}
+            setSelected={setSelected}
+          />
+          <FilterControl
+            type="Category"
+            selected={selected}
+            setSelected={setSelected}
+          />
+        </div>
         <div
-          className="filters-container"
-          style={isArrowActive ? { display: 'flex' } : { display: 'none' }}>
+          className={`filters-container-mobile ${
+            isArrowActive ? 'visible' : 'hide'
+          }`}>
           <FilterControl
             type="Price"
             priceRange={priceRange}

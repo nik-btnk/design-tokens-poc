@@ -5,6 +5,14 @@
   width: 900px;
   position: relative;
 
+  .visible {
+    display: flex;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
   h4 {
     @font-desktop-h4-abril();
   }
@@ -12,6 +20,11 @@
   .filters-container {
     display: flex;
     justify-content: space-around;
+    width: 100%;
+  }
+
+  .filters-container-mobile {
+    display: none;
     width: 100%;
   }
 
@@ -46,6 +59,11 @@
     }
 
     .filters-container {
+      display: none;
+    }
+
+    .filters-container-mobile {
+      display: flex;
       position: absolute;
       flex-direction: column;
     }
