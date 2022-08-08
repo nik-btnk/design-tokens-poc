@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../../components/basics/Button'
-import { PriceSlider } from '../../components/product-list/PriceSlider'
-
+import DoubleRangeSlider from '../../components/product-list/DoubleRangeSlider'
+/* import { PriceSlider } from '../../components/product-list/PriceSlider'
+ */
 const flexCenter = {
   height: '10vh',
   width: '50%',
@@ -12,6 +13,8 @@ const flexCenter = {
 }
 
 const Test = () => {
+  const [priceRange, setPriceRange] = useState([0, 10])
+
   return (
     <div className="test">
       <h2>Test page</h2>
@@ -25,7 +28,20 @@ const Test = () => {
       <div style={flexCenter}>
         <b>Price Slider</b>
         <br />
-        <PriceSlider />
+        {/* <PriceSlider priceRange={priceRange} setPriceRange={setPriceRange} /> */}
+      </div>
+      <div style={flexCenter}>
+        <b>Double Range Price Slider</b>
+        <br />
+        <DoubleRangeSlider
+          min={0}
+          max={10}
+          priceRange={priceRange}
+          setPriceRange={setPriceRange}
+        />
+        <span>
+          {priceRange[0]} - {priceRange[1]}
+        </span>
       </div>
     </div>
   )

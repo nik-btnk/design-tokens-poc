@@ -579,6 +579,110 @@ nav .nav-cart-logo:hover {
 .button-orange::before {
   background-color: #ed9f3a;
 }
+.slider-container {
+  position: relative;
+  background-color: green;
+  width: 128px;
+  height: 20px;
+  /* Removing the default appearance */
+}
+.slider-container .slider__track {
+  border-radius: 3px;
+  position: absolute;
+  background-color: #2d3134;
+  height: 4px;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.slider-container .slider__track::-webkit-slider-runnable-track,
+.slider-container .slider__track::-moz-range-track {
+  -webkit-appearance: none;
+  border-radius: 3px;
+  position: absolute;
+  background-color: #2d3134;
+  height: 4px;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.slider-container .thumb,
+.slider-container .thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.slider-container .thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 100%;
+  outline: none;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /* For Chrome browsers */
+  /* For Firefox browsers */
+}
+.slider-container .thumb--zindex-3 {
+  z-index: 3;
+}
+.slider-container .thumb--zindex-4 {
+  z-index: 4;
+}
+.slider-container .thumb::-webkit-slider-thumb {
+  background-image: radial-gradient(circle, #fcfbf4 25%, #ed9f3a 30%);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px #a65809;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+.slider-container .thumb::-moz-range-thumb {
+  background-image: radial-gradient(circle, #fcfbf4 25%, #ed9f3a 30%);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px #a65809;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+.slider-container .price-value__left {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  transform: translateX(-50%);
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+}
+.slider-container .price-value__right {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  transform: translateX(-14px);
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+}
 .filter-dropdown {
   position: relative;
   z-index: 1;
