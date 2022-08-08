@@ -397,15 +397,20 @@ footer .footer-copy p {
   font-stretch: normal;
   letter-spacing: 0;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
   footer .footer {
     padding: 8px;
-    grid-template-areas: 'logo logo' 'contact social';
+    grid-template-areas: 'contact social' 'logo logo';
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr 1fr 0.5fr;
   }
   footer .footer-contact {
     grid-area: contact;
+    height: 50px;
+  }
+  footer .footer-contact span {
+    text-align: left;
+    font-size: 12px;
   }
   footer .footer-logo {
     grid-area: logo;
@@ -416,6 +421,9 @@ footer .footer-copy p {
   }
   footer .footer-social {
     grid-area: social;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 16px;
   }
   footer .footer-copy p {
     font-size: 8px;

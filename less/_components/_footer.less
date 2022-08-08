@@ -71,17 +71,22 @@ footer {
         @font-desktop-body-quatt();
       }
     }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 500px) {
       padding: @sizes-xxs;
       grid-template-areas:
-        'logo logo'
-        'contact social';
+        'contact social'
+        'logo logo';
 
       grid-template-columns: 1fr 1fr;
       grid-auto-rows: 1fr 1fr 0.5fr;
 
       &-contact {
         grid-area: contact;
+        height: 50px;
+        span {
+          text-align: left;
+          font-size: 12px;
+        }
       }
 
       &-logo {
@@ -94,6 +99,9 @@ footer {
 
       &-social {
         grid-area: social;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0 @sizes-xs;
       }
 
       &-copy {
