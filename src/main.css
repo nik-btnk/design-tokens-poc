@@ -581,9 +581,9 @@ nav .nav-cart-logo:hover {
 }
 .slider-container {
   position: relative;
-  background-color: green;
   width: 128px;
   height: 20px;
+  margin: 32px auto 8px;
   /* Removing the default appearance */
 }
 .slider-container .slider__track {
@@ -641,7 +641,6 @@ nav .nav-cart-logo:hover {
   cursor: pointer;
   width: 24px;
   height: 24px;
-  margin-top: 4px;
   pointer-events: all;
   position: relative;
 }
@@ -653,7 +652,6 @@ nav .nav-cart-logo:hover {
   cursor: pointer;
   width: 24px;
   height: 24px;
-  margin-top: 4px;
   pointer-events: all;
   position: relative;
 }

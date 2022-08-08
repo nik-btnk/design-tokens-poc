@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { FilterControl } from './FilterControl'
 //Filters menu
 export const Filters = () => {
+  const min = 0
+  const max = 10
   const [selected, setSelected] = useState([])
-  const [priceRange, setPriceRange] = useState([0, 0])
+  const [priceRange, setPriceRange] = useState([min, max])
   const [isArrowActive, setArrowActive] = useState(false)
   const handleOnClick = () => {
     setArrowActive(!isArrowActive)
@@ -40,6 +42,8 @@ export const Filters = () => {
           }`}>
           <FilterControl
             type="Price"
+            min={min}
+            max={max}
             priceRange={priceRange}
             setPriceRange={setPriceRange}
           />

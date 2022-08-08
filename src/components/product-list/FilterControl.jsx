@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import generalData from '../../general-data'
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
-import { PriceSlider } from './PriceSlider'
+import DoubleRangeSlider from './DoubleRangeSlider'
 
 export const FilterControl = ({
   type,
@@ -67,7 +67,7 @@ export const FilterControl = ({
               </li>
             ))
           ) : (
-            <PriceSlider
+            <DoubleRangeSlider
               priceRange={priceRange}
               setPriceRange={setPriceRange}
             />

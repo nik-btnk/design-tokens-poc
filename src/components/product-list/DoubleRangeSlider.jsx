@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
-const DoubleRangeSlider = ({ min, max, priceRange, setPriceRange }) => {
+const DoubleRangeSlider = ({ priceRange, setPriceRange }) => {
   const thumbWidth = 24
+  const min = 0
+  const max = 10
   const [percL, setPercL] = useState((priceRange[0] - min) / (max - min))
   const [percR, setPercR] = useState((priceRange[1] - min) / (max - min))
   const [offsetL, setOffsetL] = useState(thumbWidth / 2 - thumbWidth * percL)
@@ -10,8 +12,6 @@ const DoubleRangeSlider = ({ min, max, priceRange, setPriceRange }) => {
   const handleChange = (e) => {
     const { min, max } = e.target
     const range = e.target.getAttribute('data-range')
-    console.log(range)
-    console.log(priceRange)
     const total = Number(max) - Number(min)
 
     if (range === 'left') {
@@ -31,8 +31,8 @@ const DoubleRangeSlider = ({ min, max, priceRange, setPriceRange }) => {
       <input
         type="range"
         data-range="left"
-        min={min}
-        max={max}
+        min={0}
+        max={10}
         value={priceRange[0]}
         onChange={handleChange}
         className="thumb thumb--zindex-3"
@@ -40,8 +40,8 @@ const DoubleRangeSlider = ({ min, max, priceRange, setPriceRange }) => {
       <input
         type="range"
         data-range="right"
-        min={min}
-        max={max}
+        min={0}
+        max={10}
         value={priceRange[1]}
         onChange={handleChange}
         className="thumb thumb--zindex-4"
