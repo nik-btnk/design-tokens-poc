@@ -3,15 +3,16 @@
 @import '../_tokens/_sizes.less';
 
 nav {
-  height: 10vh;
+  min-height: 100px;
   width: 100%;
   background-color: @color-brand-white;
+  display: flex;
 
   .nav {
     position: relative;
-    width: 80%;
     height: 100%;
-    margin: 0 auto;
+    width: 80%;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +34,6 @@ nav {
         height: 100%;
       }
     }
-
     &-cart-logo {
       position: absolute;
       right: 0%;
@@ -47,6 +47,25 @@ nav {
 
       &:hover {
         transform: scale(1.1);
+      }
+    }
+  }
+  @media screen and (max-width: 425px) {
+    min-height: 70px;
+    .nav {
+      justify-content: space-between;
+
+      &-menu-icon {
+        position: relative;
+        height: 28px;
+        width: 34px;
+      }
+      &-brand-logo {
+        height: 40px;
+        width: 20px;
+      }
+      &-cart-logo {
+        display: none;
       }
     }
   }
