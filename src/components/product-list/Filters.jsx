@@ -7,8 +7,9 @@ export const Filters = () => {
   const [selected, setSelected] = useState([])
   const [priceRange, setPriceRange] = useState([min, max])
   const [isArrowActive, setArrowActive] = useState(false)
+
   const handleOnClick = () => {
-    setArrowActive(!isArrowActive)
+    setArrowActive((previousState) => !previousState)
   }
   return (
     <>
