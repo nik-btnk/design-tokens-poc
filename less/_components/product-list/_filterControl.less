@@ -2,6 +2,7 @@
 @import '../../_tokens/_typography.less';
 @import '../../_tokens/_sizes.less';
 @import '../../_tokens/_mixins.less';
+@import '../_mixins/_breakpoints.less';
 
 .filter {
   &-dropdown {
@@ -39,7 +40,6 @@
     }
     &-items {
       width: 190px;
-      overflow: scroll;
       display: block;
       position: absolute;
       margin-top: @sizes-xxs;
@@ -131,6 +131,7 @@
         }
       }
     }
+
     .size {
       &-price {
         width: 165px;
@@ -146,7 +147,7 @@
       }
     }
 
-    @media screen and (max-width: 425px) {
+    .breakpoint-mobile({
       display: block;
       border-right: 2px solid @color-light-mode-border-button-blue;
       border-left: 2px solid @color-light-mode-border-button-blue;
@@ -186,6 +187,6 @@
           width: 100%;
         }
       }
-    }
+    });
   }
 }

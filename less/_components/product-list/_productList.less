@@ -1,22 +1,23 @@
 @import '../../_tokens/_color.less';
 @import '../../_tokens/_typography.less';
 @import '../../_tokens/_sizes.less';
+@import '../_mixins/_breakpoints.less';
 
 .product-list {
   background-color: @color-light-mode-background-page-white;
   /* arbitrary height */
-  height: 70vh;
+  min-height: 70vh;
 
   &-container {
     width: 80%;
     margin: 0 auto;
 
-    @media screen and (max-width: 834px) {
+    .breakpoint-tablet({
       width: 95%;
-    }
+    });
 
-    @media screen and (max-width: 425px) {
+    .breakpoint-mobile({
       width: 100%;
-    }
+    });
   }
 }

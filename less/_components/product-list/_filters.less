@@ -1,3 +1,5 @@
+@import '../_mixins/_breakpoints.less';
+
 .filters {
   display: flex;
   justify-content: space-between;
@@ -40,16 +42,16 @@
     display: none;
   }
 
-  @media screen and (max-width: 834px) {
+  .breakpoint-tablet({
     margin: 0 auto;
     width: 780px;
-  }
+  });
 
   @media screen and (max-width: 768px) {
     width: initial;
   }
 
-  @media screen and (max-width: 425px) {
+  .breakpoint-mobile({
     width: 100%;
     display: block;
     position: relative;
@@ -107,5 +109,5 @@
         border-radius: @sizes-xs;
       }
     }
-  }
+  });
 }

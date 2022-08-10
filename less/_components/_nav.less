@@ -1,6 +1,7 @@
 @import '../_tokens/_color.less';
 @import '../_tokens/_typography.less';
 @import '../_tokens/_sizes.less';
+@import '../_mixins/_breakpoints.less';
 
 nav {
   min-height: 100px;
@@ -50,7 +51,7 @@ nav {
       }
     }
   }
-  @media screen and (max-width: 425px) {
+  .breakpoint-mobile({
     min-height: 70px;
     .nav {
       justify-content: space-between;
@@ -68,5 +69,5 @@ nav {
         display: none;
       }
     }
-  }
+  });
 }

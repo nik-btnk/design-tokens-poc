@@ -1,6 +1,7 @@
 @import '../_tokens/_color.less';
 @import '../_tokens/_typography.less';
 @import '../_tokens/_sizes.less';
+@import '../_mixins/_breakpoints.less';
 
 .not-found-wrapper {
   background-color: @color-brand-white;
@@ -40,15 +41,14 @@
       text-align: center;
     }
 
-    @media screen and (max-width: 834px) {
+    .breakpoint-tablet({
       &__text1,
       &__text2 {
         width: 80%;
         text-align: center;
       }
-    }
-
-    @media screen and (max-width: 420px) {
+    });
+    .breakpoint-mobile({
       &__logo {
         width: 180px;
         height: 80px;
@@ -67,6 +67,7 @@
       &__text2 {
         font-size: @typography-desktop-h4-abril-font-size;
       }
-    }
+    });
+
   }
 }
