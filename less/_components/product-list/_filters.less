@@ -1,3 +1,5 @@
+@import '../../_mixins/_breakpoints.less';
+
 .filters {
   display: flex;
   justify-content: space-between;
@@ -40,16 +42,16 @@
     display: none;
   }
 
-  @media screen and (max-width: 834px) {
+  .breakpoint-tablet({
     margin: 0 auto;
     width: 780px;
-  }
+  });
 
   @media screen and (max-width: 768px) {
     width: initial;
   }
 
-  @media screen and (max-width: 425px) {
+  .breakpoint-mobile({
     width: 100%;
     display: block;
     position: relative;
@@ -89,11 +91,12 @@
     }
 
     .apply-filters {
+      z-index: 1;
       height: 80px;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0px 2px 8px @color-brand-blue-4;
+      box-shadow: 0px 6px 8px @color-brand-blue-3;
       background-color: @color-light-mode-background-page-white;
       border: 1px solid @color-light-mode-border-button-blue;
       border-right: 3px solid @color-light-mode-border-button-blue;
@@ -107,5 +110,5 @@
         border-radius: @sizes-xs;
       }
     }
-  }
+  });
 }

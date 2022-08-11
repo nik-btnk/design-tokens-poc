@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 import { FilterControl } from './FilterControl'
 //Filters menu
-export const Filters = () => {
-  const min = 0
-  const max = 10
-  const [selected, setSelected] = useState([])
-  const [priceRange, setPriceRange] = useState([min, max])
+export const Filters = ({
+  min,
+  max,
+  priceRange,
+  setPriceRange,
+  selected,
+  setSelected
+}) => {
   const [isArrowActive, setArrowActive] = useState(false)
+
   const handleOnClick = () => {
-    setArrowActive(!isArrowActive)
+    setArrowActive((previousState) => !previousState)
   }
   return (
     <>
@@ -85,16 +89,6 @@ export const Filters = () => {
           />
         </div>
         <div className="mobile-divider"></div>
-      </div>
-      <br></br>
-      <div className="active-test">
-        Selected Filters:
-        {selected.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-        Price Range: From ${priceRange[0]} to ${priceRange[1]} <br></br>
-        Note: I couldn&apos;t figure out how to build a double-ranged filter for
-        the price yet
       </div>
     </>
   )
