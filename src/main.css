@@ -712,6 +712,11 @@ nav .nav-cart-logo:hover {
   max-height: 25px;
   margin-right: 4px;
 }
+.active-filter__prohibition {
+  position: absolute;
+  height: 25px;
+  left: 12px;
+}
 .active-filter__cross {
   position: absolute;
   right: -5px;
@@ -721,6 +726,30 @@ nav .nav-cart-logo:hover {
 .active-filter__spacer {
   height: 32px;
   width: 32px;
+}
+@media screen and (max-width: 425px) {
+  .active-filter {
+    height: 24px;
+    min-width: 100px;
+  }
+  .active-filter span {
+    font-size: 12px;
+  }
+  .active-filter__icon {
+    max-height: 20px;
+    margin-right: 4px;
+  }
+  .active-filter__prohibition {
+    height: 20px;
+    left: 10px;
+  }
+  .active-filter__cross {
+    height: 24px;
+  }
+  .active-filter__spacer {
+    height: 24px;
+    width: 24px;
+  }
 }
 .slider-container {
   position: relative;
@@ -1097,11 +1126,12 @@ nav .nav-cart-logo:hover {
     display: block;
   }
   .filters .apply-filters {
+    z-index: 1;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 2px 8px #077a77;
+    box-shadow: 0px 6px 8px #37ccc9;
     background-color: #fcfbf4;
     border: 1px solid #37ccc9;
     border-right: 3px solid #37ccc9;

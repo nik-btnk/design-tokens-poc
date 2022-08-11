@@ -47,6 +47,12 @@
     margin-right: @sizes-xxxs;
   }
 
+  &__prohibition {
+    position: absolute;
+    height: 25px;
+    left: 12px;
+  }
+
   &__cross {
     position: absolute;
     right: -5px;
@@ -58,4 +64,32 @@
     height: 32px;
     width: 32px;
   }
+
+  .breakpoint-mobile({
+    height: 24px;
+    min-width: 100px;
+
+    span{
+      font-size: 12px;
+    }
+
+    &__icon {
+      max-height: 20px;
+      margin-right: @sizes-xxxs;
+    }
+
+    &__prohibition {
+      height: 20px;
+      left: 10px;
+    }
+
+    &__cross{
+      height: 24px
+    }
+    
+    &__spacer{
+      height: 24px;
+      width: 24px
+    }
+  });
 }
