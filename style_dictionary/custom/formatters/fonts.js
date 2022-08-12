@@ -11,7 +11,7 @@ global.document = new JSDOM('<!DOCTYPE html><p>Hello world</p>').window.document
 // Custom formatter to create mixins for tokens with multiple properties in typography 'value'.
 module.exports = {
   name: 'mixin-less/variables',
-  target: '_mixins.less', // Destination file name
+  target: '_typography-mixins.less', // Destination file name
   formatter: ({ dictionary }) => {
     // Add the custom token type you are targeting to this array.
     const targetArray = ['custom-fontStyle']
