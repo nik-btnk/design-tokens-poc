@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ActiveFilter from '../../components/product-list/ActiveFilter'
 import { Filters } from '../../components/product-list/Filters'
+import ProductCard from '../../components/product-list/ProductCard'
 
 const Storefront = () => {
   const min = 0
@@ -49,6 +50,9 @@ const Storefront = () => {
               No filters selected
             </span>
           )}
+        </div>
+        <div className="product-cards-container">
+          <ProductCard name={'Pink Panter'} price={2.99} />
         </div>
       </div>
     </div>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { FilterControl } from './FilterControl'
-//Filters menu
+
+//assets
+import iconRight from '../../../src/assets/icons/caret/Icon=circle-caret-right.png'
+
 export const Filters = ({
   min,
   max,
@@ -83,10 +86,7 @@ export const Filters = ({
               ? { transform: 'rotate(90deg)' }
               : { transform: 'initial' }
           }>
-          <img
-            src={require('../../../src/assets/icons/caret/Icon=circle-caret-right.png')}
-            alt=""
-          />
+          <img src={iconRight} alt="" />
         </div>
         <div className="mobile-divider"></div>
       </div>

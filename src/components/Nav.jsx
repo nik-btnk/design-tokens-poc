@@ -1,22 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//assets
+import menuBars from '../assets/Icon=menu-bars.png'
+import logo from '../assets/logo.png'
+import iconCart from '../assets/Icon=cart-menu.png'
+
 const Nav = () => {
   return (
     <nav>
       <div className="nav">
         <div className="nav-menu-icon">
-          <img src={require('../assets/Icon=menu-bars.png')} alt="" />
+          <img src={menuBars} alt="" />
         </div>
         <div className="nav-brand-logo">
           <Link to="/">
-            <img src={require('../assets/logo.png')} alt="" />
+            <img src={logo} alt="" />
           </Link>
         </div>
 
         <div className="nav-cart-logo">
           <Link to="/cart">
-            <img src={require('../assets/Icon=cart-menu.png')} alt="" />
+            <img src={iconCart} alt="" />
           </Link>
         </div>
       </div>

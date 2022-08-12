@@ -1,12 +1,15 @@
 import React from 'react'
 
+//assets
+import mascot from '../../assets/404-mascot.png'
+
 const Page404 = () => {
   return (
     <div className="not-found-wrapper">
       <div className="not-found">
         <div className="not-found__logo">
           <span>4</span>
-          <img src={require('../../assets/404-mascot.png')}></img>
+          <img src={mascot}></img>
           <span>4</span>
         </div>
         <div className="not-found__text1">
