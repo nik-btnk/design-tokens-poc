@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import ActiveFilter from '../../components/product-list/ActiveFilter'
 import { Filters } from '../../components/product-list/Filters'
 import ProductCard from '../../components/product-list/ProductCard'
+import products from '../../product-storage'
 
 const Storefront = () => {
   const min = 0
   const max = 10
   const [priceRange, setPriceRange] = useState([min, max])
   const [selected, setSelected] = useState([])
+  /* const [productList, setProductList] = useState(products) */
 
   const removeFilter = (filter) => {
     setSelected((old) => old.filter((i) => i !== filter))
@@ -52,7 +54,27 @@ const Storefront = () => {
           )}
         </div>
         <div className="product-cards-container">
-          <ProductCard name={'Pink Panter'} price={2.99} />
+          {products['hot-n-spicy'].map((iceCream, index) => (
+            <ProductCard
+              pic={`../../assets/ice-creams/pic-${iceCream.name}.png`}
+              key={index}
+              name={iceCream.name}
+              price={iceCream.price}
+              nutrition={iceCream.nutrition}
+              allergy={iceCream.allergy}
+              category={'hot'}
+            />
+          ))}
+          {products['cool-as-ice-colors'].map((iceCream, index) => (
+            <ProductCard
+              key={index}
+              name={iceCream.name}
+              price={iceCream.price}
+              nutrition={iceCream.nutrition}
+              allergy={iceCream.allergy}
+              category={'cold'}
+            />
+          ))}
         </div>
       </div>
     </div>

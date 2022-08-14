@@ -4,8 +4,8 @@ const products = {
       name: 'Clockwork Orange',
       description: '',
       price: 4.99,
-      nutrition: 'high protein',
-      allergy: ['milk', 'eggs']
+      nutrition: 'High Protein',
+      allergy: ['Milk', 'Eggs']
     },
     {
       name: 'Red Planet',
@@ -18,21 +18,21 @@ const products = {
       name: 'Green Land',
       description: '',
       price: 7.99,
-      nutrition: 'low fat',
-      allergy: ['milk', 'nuts', 'wheat']
+      nutrition: 'Low Fat',
+      allergy: ['Milk', 'Nuts', 'Wheat']
     },
     {
       name: 'Yellow Submarine',
       description: '',
       price: 4.2,
-      nutrition: 'low fat',
-      allergy: ['fish']
+      nutrition: 'Low Fat',
+      allergy: ['Fish']
     },
     {
       name: 'Vivacious Violet',
       description: '',
       price: 2.99,
-      nutrition: 'high protein',
+      nutrition: 'High Protein',
       allergy: null
     }
   ],
@@ -41,36 +41,36 @@ const products = {
       name: 'Pink Panther',
       description: '',
       price: 4.99,
-      nutrition: 'low fat',
-      allergy: ['milk', 'eggs']
+      nutrition: 'Low Fat',
+      allergy: ['Milk', 'Eggs']
     },
     {
       name: 'Feeling Blue',
       description: '',
       price: 5.99,
-      nutrition: 'high protein',
-      allergy: ['milk', 'eggs', 'nuts']
+      nutrition: 'High Protein',
+      allergy: ['Milk', 'Eggs', 'Nuts']
     },
     {
       name: 'Blue Clue',
       description: '',
       price: 2.99,
-      nutrition: 'no sugar',
-      allergy: ['milk', 'nuts']
+      nutrition: 'No Sugar',
+      allergy: ['Milk', 'Nuts']
     },
     {
       name: 'Gray Anatomy',
       description: '',
       price: 6.9,
-      nutrition: 'high protein',
-      allergy: ['nuts']
+      nutrition: 'High Protein',
+      allergy: ['Nuts']
     },
     {
       name: 'Puzzled Plum',
       description: '',
       price: 8.37,
-      nutrition: 'low fat',
-      allergy: ['wheat']
+      nutrition: 'Low Fat',
+      allergy: ['Wheat']
     }
   ]
 }

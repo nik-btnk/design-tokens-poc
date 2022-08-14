@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
+import useOutsideAlerter from '../../hooks/useOutsideAlerter'
 
 //assets
 import iconInfo from '../../assets/icons/control/Icon=circle-info.png'
 import iconCross from '../../assets/icons/control/icon-x.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
-import iconMilk from '../../assets/icons/descriptive/icon-Milk.png'
-import iconEggs from '../../assets/icons/descriptive/icon-Eggs.png'
-import iconNuts from '../../assets/icons/descriptive/icon-Nuts.png'
-import iconLowFat from '../../assets/icons/descriptive/icon-Low Fat.png'
-import pinkPanther from '../../assets/ice-creams/pink-panther.png'
+import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
 
-const ProductCard = ({ name, price }) => {
+import iconCart from '../../assets/Icon=cart-add.png'
+import { useRef } from 'react'
+
+const ProductCard = ({ name, price, nutrition, allergy, category }) => {
   const [isInfo, setInfo] = useState(false)
+  const infoButton = useRef(null)
+  useOutsideAlerter(infoButton, setInfo)
+
   const handleClick = () => {
     setInfo((prevState) => !prevState)
   }
@@ -20,7 +23,10 @@ const ProductCard = ({ name, price }) => {
     <article className="product-card">
       <div className="product-card__background">
         <div className="product-card__img">
-          <img src={pinkPanther} alt="" />
+          <img
+            src={require(`../../assets/ice-creams/pic-${name}.png`)}
+            alt=""
+          />
         </div>
         <div
           className="product-card__name-price-container"
@@ -28,24 +34,31 @@ const ProductCard = ({ name, price }) => {
           <span className="product-card__name">{name}</span>
           <span className="product-card__price">${price}</span>
         </div>
-        <button className="product-card__info-button" onClick={handleClick}>
+        <button
+          className="product-card__info-button"
+          ref={infoButton}
+          onClick={handleClick}>
           <img src={isInfo ? iconCross : iconInfo} alt="" />
         </button>
         <div
           className="product-card__properties"
           style={isInfo ? { display: 'none' } : { display: 'flex' }}>
           <div className="product-card__property-container">
-            <img src={iconMilk} alt="" />
+            <img
+              src={require(`../../assets/icons/descriptive/icon-${nutrition}.png`)}
+              alt=""
+            />
           </div>
-          <div className="product-card__property-container">
-            <img src={iconEggs} alt="" />
-          </div>
-          <div className="product-card__property-container">
-            <img src={iconNuts} alt="" />
-          </div>
-          <div className="product-card__property-container">
-            <img src={iconLowFat} alt="" />
-          </div>
+          {allergy !== null &&
+            allergy.map((item, index) => (
+              <div key={index} className="product-card__property-container">
+                <img
+                  src={require(`../../assets/icons/descriptive/icon-${item}.png`)}
+                  alt={item}
+                  title={item}
+                />
+              </div>
+            ))}
         </div>
 
         <div
@@ -56,12 +69,24 @@ const ProductCard = ({ name, price }) => {
               Color description. Nice and short. Three lines max.
             </p>
           </div>
-          <div className="product-card__category cold">
-            <img src={iconCool} alt="" />
-            <span>Cool as Ice</span>
-          </div>
+
+          {category === 'cold' ? (
+            <div className="product-card__category cold">
+              <img src={iconCool} alt="" />
+              <span>Cool as Ice</span>
+            </div>
+          ) : (
+            <div className="product-card__category hot">
+              <img src={iconHot} alt="" />
+              <span>Hot `n Spicy</span>
+            </div>
+          )}
         </div>
       </div>
+      <button className="product-card__cta">
+        <img src={iconCart} alt="" />
+        Add to Cart
+      </button>
     </article>
   )
 }

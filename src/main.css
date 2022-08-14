@@ -1042,6 +1042,7 @@ nav .nav-cart-logo:hover {
   align-items: center;
   width: 900px;
   position: relative;
+  z-index: 200;
 }
 .filters .visible {
   display: flex;
@@ -1149,10 +1150,11 @@ nav .nav-cart-logo:hover {
   }
 }
 .product-card {
-  display: inline-block;
-  /*   background-color: greenyellow;
- */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 1;
+  margin: 24px;
 }
 .product-card__background {
   width: 180px;
@@ -1164,6 +1166,7 @@ nav .nav-cart-logo:hover {
   position: relative;
   z-index: 3;
   pointer-events: none;
+  margin-bottom: 24px;
 }
 .product-card__background:before {
   content: '';
@@ -1187,6 +1190,9 @@ nav .nav-cart-logo:hover {
 .product-card__img {
   bottom: 25px;
   left: -8px;
+}
+.product-card__img img {
+  width: 73%;
 }
 .product-card__name-price-container {
   position: absolute;
@@ -1227,6 +1233,10 @@ nav .nav-cart-logo:hover {
   z-index: 2;
   cursor: pointer;
   pointer-events: all;
+}
+.product-card__info-button:active {
+  border: 2px solid #a65809;
+  box-shadow: 0px 4px 4px #a65809;
 }
 .product-card__info-button img {
   margin-top: 2.5px;
@@ -1331,14 +1341,42 @@ nav .nav-cart-logo:hover {
   font-stretch: normal;
   letter-spacing: 0;
 }
+.product-card__cta {
+  width: 150px;
+  height: 40px;
+  border-radius: 16px;
+  background-color: #fff5e7;
+  border: 2px solid #ed9f3a;
+  box-shadow: 0px 4px 4px #ed9f3a;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.product-card__cta:active {
+  border: 2px solid #a65809;
+  box-shadow: 0px 4px 4px #a65809;
+}
+.product-card__cta img {
+  transform: scale(0.8);
+}
 .product-list {
   background-color: #fcfbf4;
-  /* arbitrary height */
-  min-height: 70vh;
 }
 .product-list-container {
   width: 80%;
   margin: 0 auto;
+}
+.product-list-container .product-cards-container {
+  margin-top: 24px;
 }
 @media screen and (max-width: 834px) {
   .product-list-container {
