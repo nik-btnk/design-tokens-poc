@@ -19,7 +19,7 @@ const excludeArray = ['effect', 'font', 'typography']
 
 // Add new transformers and formatters to these arrays
 const transforms = [sizes, spacings, fonts]
-const formatters = [fontFormatter]
+const formatters = [fontFormatter, effectsFormatter]
 
 module.exports = {
   transforms,
