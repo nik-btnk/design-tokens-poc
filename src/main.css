@@ -237,6 +237,12 @@
   }
   .not-found-wrapper .not-found__logo span {
     font-size: 64px;
+    text-decoration: none;
+    font-family: Abril Fatface;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
   }
   .not-found-wrapper .not-found__logo img {
     width: 80px;
@@ -245,6 +251,12 @@
   .not-found-wrapper .not-found__text1,
   .not-found-wrapper .not-found__text2 {
     font-size: 24px;
+    text-decoration: none;
+    font-family: Abril Fatface;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
   }
 }
 .productList {

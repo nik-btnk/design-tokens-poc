@@ -1,20 +1,9 @@
-const config = require('./config')
+const { settings, transforms, formatters } = require('./config')
 
-//Create Style Dictionary by extending a configuration file
-const StyleDictionary = require('style-dictionary').extend(config)
+// Create Style Dictionary by extending a configuration file
+const StyleDictionary = require('style-dictionary').extend(settings)
 
-//Import custom transforms
-const sizes = require('./custom/transforms/sizes')
-const spacings = require('./custom/transforms/spacings')
-const fonts = require('./custom/transforms/fonts')
-
-//Import custom formatters
-const fontFormatter = require('./custom/formatters/fonts')
-
-const transforms = [sizes, spacings, fonts]
-const formatters = [fontFormatter]
-
-//Register transforms
+// Register transforms
 transforms.map((val) => {
   StyleDictionary.registerTransform({
     name: val.name,
@@ -24,7 +13,7 @@ transforms.map((val) => {
   })
 })
 
-//Update Less transformGroup
+// Update Less transformGroup
 StyleDictionary.registerTransformGroup({
   name: 'less',
   transforms: StyleDictionary.transformGroup['less'].concat(
@@ -32,7 +21,7 @@ StyleDictionary.registerTransformGroup({
   )
 })
 
-//Register formatters
+// Register formatters
 formatters.map((val) => {
   StyleDictionary.registerFormat({
     name: val.name,
@@ -40,5 +29,5 @@ formatters.map((val) => {
   })
 })
 
-//This function will run once we execute npm run build script and will build the design files for every chosen platform at configuration file
+// This function will run once we execute npm run build script and will build the design files for every chosen platform at configuration file
 StyleDictionary.buildAllPlatforms()
