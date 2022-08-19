@@ -70,7 +70,7 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
             </p>
           </div>
 
-          {category === 'cold' ? (
+          {category === 'Cool as Ice' ? (
             <div className="product-card__category cold">
               <img src={iconCool} alt="" />
               <span>Cool as Ice</span>

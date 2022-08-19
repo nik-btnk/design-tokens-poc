@@ -9,7 +9,6 @@ const Storefront = () => {
   const max = 10
   const [priceRange, setPriceRange] = useState([min, max])
   const [selected, setSelected] = useState([])
-  /* const [productList, setProductList] = useState(products) */
 
   const removeFilter = (filter) => {
     setSelected((old) => old.filter((i) => i !== filter))
@@ -54,7 +53,32 @@ const Storefront = () => {
           )}
         </div>
         <div className="product-cards-container">
-          {products['hot-n-spicy'].map((iceCream, index) => (
+          {selected.length > 0
+            ? products
+                .filter((product) => selected.includes(product.category))
+                .map((iceCream, index) => (
+                  <ProductCard
+                    pic={`../../assets/ice-creams/pic-${iceCream.name}.png`}
+                    key={index}
+                    name={iceCream.name}
+                    price={iceCream.price}
+                    nutrition={iceCream.nutrition}
+                    allergy={iceCream.allergy}
+                    category={iceCream.category}
+                  />
+                ))
+            : products.map((iceCream, index) => (
+                <ProductCard
+                  pic={`../../assets/ice-creams/pic-${iceCream.name}.png`}
+                  key={index}
+                  name={iceCream.name}
+                  price={iceCream.price}
+                  nutrition={iceCream.nutrition}
+                  allergy={iceCream.allergy}
+                  category={iceCream.category}
+                />
+              ))}
+          {/* {products.map((iceCream, index) => (
             <ProductCard
               pic={`../../assets/ice-creams/pic-${iceCream.name}.png`}
               key={index}
@@ -62,19 +86,9 @@ const Storefront = () => {
               price={iceCream.price}
               nutrition={iceCream.nutrition}
               allergy={iceCream.allergy}
-              category={'hot'}
+              category={iceCream.category}
             />
-          ))}
-          {products['cool-as-ice-colors'].map((iceCream, index) => (
-            <ProductCard
-              key={index}
-              name={iceCream.name}
-              price={iceCream.price}
-              nutrition={iceCream.nutrition}
-              allergy={iceCream.allergy}
-              category={'cold'}
-            />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
