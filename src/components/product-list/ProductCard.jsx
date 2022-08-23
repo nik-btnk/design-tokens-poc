@@ -32,7 +32,7 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
           className="product-card__name-price-container"
           style={isInfo ? { display: 'none' } : { display: 'flex' }}>
           <span className="product-card__name">{name}</span>
-          <span className="product-card__price">${price}</span>
+          <span className="product-card__price">${price.toFixed(2)}</span>
         </div>
         <button
           className="product-card__info-button"
