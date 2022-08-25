@@ -3,6 +3,9 @@ import generalData from '../../general-data'
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
 import DoubleRangeSlider from './DoubleRangeSlider'
 
+//assets
+import iconRight from '../../../src/assets/icons/caret/Icon=circle-caret-right.png'
+
 export const FilterControl = ({
   type,
   selected,
@@ -40,7 +43,7 @@ export const FilterControl = ({
               ? 'filter-dropdown-btn__arrow rotated'
               : 'filter-dropdown-btn__arrow'
           }
-          src={require('../../../src/assets/icons/caret/Icon=circle-caret-right.png')}
+          src={iconRight}
           alt=""
         />
       </button>

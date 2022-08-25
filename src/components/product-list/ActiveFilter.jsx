@@ -1,6 +1,10 @@
 import React from 'react'
 import generalData from '../../general-data'
 
+//assets
+import allergyIcon from '../../assets/icons/descriptive/icon-Allergy.png'
+import crossIcon from '../../assets/icons/control/icon-x.png'
+
 const ActiveFilters = ({ priceRange, removeAll, removeFilter, type }) => {
   const filterName = type
   return (
@@ -16,7 +20,7 @@ const ActiveFilters = ({ priceRange, removeAll, removeFilter, type }) => {
           {generalData.Allergies.find((item) => item === filterName) ? (
             <>
               <img
-                src={require('../../assets/icons/descriptive/icon-Allergy.png')}
+                src={allergyIcon}
                 alt=""
                 className="active-filter__prohibition"
               />
@@ -27,7 +31,7 @@ const ActiveFilters = ({ priceRange, removeAll, removeFilter, type }) => {
           )}
           <div className="active-filter__spacer"></div>
           <img
-            src={require('../../assets/icons/control/icon-x.png')}
+            src={crossIcon}
             alt=""
             className="active-filter__cross"
             onClick={() => {
@@ -46,7 +50,7 @@ const ActiveFilters = ({ priceRange, removeAll, removeFilter, type }) => {
           <span>{filterName} All</span>
           <div className="active-filter__spacer"></div>
           <img
-            src={require('../../assets/icons/control/icon-x.png')}
+            src={crossIcon}
             alt=""
             className="active-filter__cross"
             onClick={() => removeAll()}

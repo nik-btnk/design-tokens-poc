@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//assets
+import logo from '../assets/logo.png'
+import iconTikTok from '../assets/cib_tiktok.png'
+import iconIg from '../assets/carbon_logo-instagram.png'
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -10,20 +15,12 @@ const Footer = () => {
       </div>
       <div className="footer__logo">
         <Link to="/">
-          <img src={require('../assets/logo.png')} alt="" />
+          <img src={logo} alt="" />
         </Link>
       </div>
       <div className="footer__social-container">
-        <img
-          className="footer__tiktok"
-          src={require('../assets/cib_tiktok.png')}
-          alt=""
-        />
-        <img
-          className="footer__instagram"
-          src={require('../assets/carbon_logo-instagram.png')}
-          alt=""
-        />
+        <img className="footer__tiktok" src={iconTikTok} alt="" />
+        <img className="footer__instagram" src={iconIg} alt="" />
       </div>
       <div className="footer__copy">
         <p>Design Token&apos;s Lonely Hearts Club Band &copy;2022</p>

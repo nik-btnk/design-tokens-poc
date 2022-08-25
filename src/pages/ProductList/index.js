@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import ActiveFilter from '../../components/product-list/ActiveFilter'
 import { Filters } from '../../components/product-list/Filters'
+import ProductCard from '../../components/product-list/ProductCard'
+import products from '../../product-storage'
 
 const Storefront = () => {
   const min = 0
@@ -49,6 +51,44 @@ const Storefront = () => {
               No filters selected
             </span>
           )}
+        </div>
+        <div className="product-cards-container">
+          {selected.length > 0
+            ? products
+                .filter((product) => selected.includes(product.category))
+                .map((iceCream, index) => (
+                  <ProductCard
+                    pic={`../../assets/ice-creams/pic-${iceCream.name}.png`}
+                    key={index}
+                    name={iceCream.name}
+                    price={iceCream.price}
+                    nutrition={iceCream.nutrition}
+                    allergy={iceCream.allergy}
+                    category={iceCream.category}
+                  />
+                ))
+            : products.map((iceCream, index) => (
+                <ProductCard
+                  pic={`../../assets/ice-creams/pic-${iceCream.name}.png`}
+                  key={index}
+                  name={iceCream.name}
+                  price={iceCream.price}
+                  nutrition={iceCream.nutrition}
+                  allergy={iceCream.allergy}
+                  category={iceCream.category}
+                />
+              ))}
+          {/* {products.map((iceCream, index) => (
+            <ProductCard
+              pic={`../../assets/ice-creams/pic-${iceCream.name}.png`}
+              key={index}
+              name={iceCream.name}
+              price={iceCream.price}
+              nutrition={iceCream.nutrition}
+              allergy={iceCream.allergy}
+              category={iceCream.category}
+            />
+          ))} */}
         </div>
       </div>
     </div>

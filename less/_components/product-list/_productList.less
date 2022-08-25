@@ -4,12 +4,15 @@
 
 .product-list {
   background-color: @color-light-mode-background-page-white;
-  /* arbitrary height */
-  min-height: 70vh;
+
 
   &-container {
     width: 80%;
     margin: 0 auto;
+
+    .product-cards-container{
+      margin-top: @sizes-s;
+    }
 
     .breakpoint-tablet({
       width: 95%;
