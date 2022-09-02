@@ -9,6 +9,7 @@ import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
 
 import iconCart from '../../assets/Icon=cart-add.png'
 import { useRef } from 'react'
+import { useEffect } from 'react'
 
 const ProductCard = ({ name, price, nutrition, allergy, category }) => {
   const [isInfo, setInfo] = useState(false)
@@ -19,14 +20,20 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
     setInfo((prevState) => !prevState)
   }
 
+  useEffect(() => {
+    console.log(isInfo)
+  }, [isInfo])
+
   return (
     <article className="product-card">
       <div className="product-card__background">
-        <div className="product-card__img">
-          <img
-            src={require(`../../assets/ice-creams/pic-${name}.png`)}
-            alt=""
-          />
+        <div className="product-card__img-container">
+          <div className="product-card__img">
+            <img
+              src={require(`../../assets/ice-creams/pic-${name}.png`)}
+              alt=""
+            />
+          </div>
         </div>
         <div
           className="product-card__name-price-container"
@@ -41,8 +48,9 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
           <img src={isInfo ? iconCross : iconInfo} alt="" />
         </button>
         <div
-          className="product-card__properties"
-          style={isInfo ? { display: 'none' } : { display: 'flex' }}>
+          className={`product-card__properties${
+            isInfo ? ' hide-properties' : ''
+          }`}>
           <div className="product-card__property-container">
             <img
               src={require(`../../assets/icons/descriptive/icon-${nutrition}.png`)}

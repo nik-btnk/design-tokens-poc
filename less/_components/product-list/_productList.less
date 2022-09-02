@@ -1,17 +1,21 @@
 @import '../../_tokens/_color.less';
 @import '../../_tokens/_sizes.less';
-@import '../../_mixins/_breakpoints.less';
+@import '../../_variables/_breakpoints.less';
 
 .product-list {
   background-color: @color-light-mode-background-page-white;
-
 
   &-container {
     width: 80%;
     margin: 0 auto;
 
-    .product-cards-container{
+    .product-cards-container {
       margin-top: @sizes-s;
+      display: grid;
+
+      @media @break-tablet {
+        display: block;
+      }
     }
 
     .breakpoint-tablet({
