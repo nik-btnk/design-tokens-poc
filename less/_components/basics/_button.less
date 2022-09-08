@@ -1,6 +1,7 @@
 @import '../../_tokens/_color.less';
 @import '../../_tokens/_sizes.less';
 @import '../../_tokens/_font-mixins.less';
+@import '../../_tokens/_effects.less';
 
 .button {
   height: 50px;
@@ -32,10 +33,10 @@
   &-blue {
     background-color: @color-brand-blue-0;
     border: solid @sizes-small-1 @color-brand-blue-2;
-    box-shadow: 0px 4px 8px darken(@color-brand-blue-2, 20%);
+    box-shadow: @effect-shadow-button-blue-default-0;
     &:hover {
       border: (@sizes-small-2*0.8) solid @color-brand-blue-2;
-      box-shadow: 0px 4px 8px darken(@color-brand-blue-2, 10%);
+      box-shadow: @effect-shadow-button-blue-default-0;
     }
     &:active {
       border: solid @sizes-small-1 @color-brand-blue-4;
@@ -48,13 +49,13 @@
   &-pink {
     background-color: @color-brand-pink-0;
     border: solid @sizes-small-1 @color-brand-pink-2;
-    box-shadow: 0px 4px 8px darken(@color-brand-pink-2, 20%);
+    box-shadow: @effect-shadow-button-pink-default-0;
     &:hover {
       border: (@sizes-small-2*0.8) solid @color-brand-pink-2;
-      box-shadow: 0px 4px 8px darken(@color-brand-pink-2, 10%);
     }
     &:active {
       border: solid @sizes-small-1 @color-brand-pink-4;
+      box-shadow: @effect-shadow-button-pink-default-1;
     }
     &::before {
       background-color: @color-brand-pink-3;
@@ -64,13 +65,13 @@
   &-green {
     background-color: @color-brand-green-0;
     border: solid @sizes-small-1 @color-brand-green-2;
-    box-shadow: 0px 4px 8px darken(@color-brand-green-2, 20%);
+    box-shadow: @effect-shadow-button-green-default-0;
     &:hover {
       border: (@sizes-small-2*0.8) solid @color-brand-green-2;
-      box-shadow: 0px 4px 8px darken(@color-brand-green-2, 10%);
     }
     &:active {
       border: solid @sizes-small-1 @color-brand-green-4;
+      box-shadow: @effect-shadow-button-green-default-1;
     }
     &::before {
       background-color: @color-brand-green-3;
@@ -80,13 +81,13 @@
   &-orange {
     background-color: @color-brand-orange-0;
     border: solid @sizes-small-1 @color-brand-orange-2;
-    box-shadow: 0px 4px 8px darken(@color-brand-orange-2, 20%);
+    box-shadow: @effect-shadow-button-orange-default-0;
     &:hover {
       border: (@sizes-small-2*0.8) solid @color-brand-orange-2;
-      box-shadow: 0px 4px 8px darken(@color-brand-orange-2, 10%);
     }
     &:active {
       border: solid @sizes-small-1 @color-brand-orange-4;
+      box-shadow: @effect-shadow-button-orange-default-1;
     }
     &::before {
       background-color: @color-brand-orange-3;
