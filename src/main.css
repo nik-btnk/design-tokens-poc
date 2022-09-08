@@ -339,7 +339,7 @@
   width: 100%;
   display: flex;
   background-color: #fcfbf4;
-  border-top: 1px solid #98a1a8;
+  border-top: 2px solid #ff8782;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -420,8 +420,8 @@
     grid-area: logo;
   }
   .footer__logo img {
-    height: 64px;
-    width: 32px;
+    height: 48px;
+    width: 53.33px;
   }
   .footer__social-container {
     grid-area: social;
