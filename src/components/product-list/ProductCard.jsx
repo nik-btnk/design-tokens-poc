@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
 
 //assets
-import iconInfo from '../../assets/icons/control/Icon=circle-info.png'
-import iconCross from '../../assets/icons/control/icon-x.png'
+import iconInfo from '../../assets/icons/status/info.png'
+import iconCross from '../../assets/icons/status/cross.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
 import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
 import iconCart from '../../assets/Icon=cart-add.png'
@@ -43,7 +43,9 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
           className="product-card__info-button"
           ref={infoButton}
           onClick={handleClick}>
-          <img src={isInfo ? iconCross : iconInfo} alt="" />
+          <div className="product-card__info-icon-container">
+            <img src={isInfo ? iconCross : iconInfo} alt="" />
+          </div>
         </button>
         <div
           className={`product-card__properties${

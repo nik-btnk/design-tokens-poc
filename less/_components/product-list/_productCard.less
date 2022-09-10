@@ -8,7 +8,11 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  margin: @sizes-medium-3;
+  margin: @sizes-medium-1;
+
+  @media @break-desktop {
+    margin: @sizes-medium-3;
+  }
 
   &__background {
     width: 100%;
@@ -118,6 +122,24 @@
     cursor: pointer;
     pointer-events: all;
 
+    .product-card__info-icon-container {
+      margin: auto;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      padding: 6px;
+
+      img {
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
     @media @break-tablet {
       top: 3px;
     }
@@ -221,12 +243,6 @@
     height: 100%;
     padding: @sizes-small-2 36px;
     z-index: 1;
-    background: linear-gradient(
-        0deg,
-        rgba(255, 184, 181, 0.5),
-        rgba(255, 184, 181, 0.5)
-      ),
-      rgba(45, 49, 52, 0.75);
 
     .product-card__description {
       text-align: center;
@@ -311,9 +327,8 @@
       }
     }
 
-    //Having same issue as with mixed box-shadows. Can't mix tokenxs
     .product-card__info-container {
-      background: @color-flavor-pink-panther-fill-back-0 0.5, @color-flavor-pink-panther-fill-back-1 0.25;
+      background-color: fade(@color-flavor-pink-panther-fill-back-1, 50%);
     }
   }
 
@@ -325,6 +340,10 @@
         box-shadow: inset @effect-shadow-product-card-clockwork-orange;
       }
     }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-clockwork-orange-fill-back-1, 50%);
+    }
   }
 
   &.red-planet {
@@ -334,6 +353,10 @@
       &:before {
         box-shadow: inset @effect-shadow-product-card-red-planet;
       }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-red-planet-fill-back-1, 50%);
     }
   }
 
@@ -345,6 +368,10 @@
         box-shadow: inset @effect-shadow-product-card-feeling-blue;
       }
     }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-feeling-blue-fill-back-1, 50%);
+    }
   }
 
   &.blue-clue {
@@ -354,6 +381,10 @@
       &:before {
         box-shadow: inset @effect-shadow-product-card-blue-clue;
       }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-blue-clue-fill-back-1, 50%);
     }
   }
 
@@ -365,6 +396,10 @@
         box-shadow: inset @effect-shadow-product-card-green-land;
       }
     }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-green-land-fill-back-1, 50%);
+    }
   }
 
   &.yellow-submarine {
@@ -374,6 +409,10 @@
       &:before {
         box-shadow: inset @effect-shadow-product-card-yellow-submarine;
       }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-yellow-submarine-fill-back-1, 50%);
     }
   }
 
@@ -386,7 +425,13 @@
       }
     }
 
-    &.puzzled-plum {
+    .product-card__info-container {
+      background-color: fade(@color-flavor-gray-anatomy-fill-back-1, 50%);
+    }
+  }
+
+  &.puzzled-plum {
+    .product-card__background {
       box-shadow: @effect-shadow-product-card-puzzled-plum;
 
       &:before {
@@ -394,13 +439,22 @@
       }
     }
 
-    //this effect is missing
-    &.vivacious-violet {
-      box-shadow: @effect-shadow-product-card-puzzled-plum;
+    .product-card__info-container {
+      background-color: fade(@color-flavor-gray-anatomy-fill-back-1, 50%);
+    }
+  }
 
+  //this effect is missing
+  &.vivacious-violet {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-puzzled-plum;
       &:before {
         box-shadow: inset @effect-shadow-product-card-puzzled-plum;
       }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-vivacious-violet-fill-back-1, 50%);
     }
   }
 }
