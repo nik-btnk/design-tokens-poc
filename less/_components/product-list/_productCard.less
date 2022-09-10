@@ -301,4 +301,106 @@
       transform: scale(0.8);
     }
   }
+
+  &.pink-panther {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-pink-panther;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-pink-panther;
+      }
+    }
+
+    //Having same issue as with mixed box-shadows. Can't mix tokenxs
+    .product-card__info-container {
+      background: @color-flavor-pink-panther-fill-back-0 0.5, @color-flavor-pink-panther-fill-back-1 0.25;
+    }
+  }
+
+  &.clockwork-orange {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-clockwork-orange;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-clockwork-orange;
+      }
+    }
+  }
+
+  &.red-planet {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-red-planet;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-red-planet;
+      }
+    }
+  }
+
+  &.feeling-blue {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-feeling-blue;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-feeling-blue;
+      }
+    }
+  }
+
+  &.blue-clue {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-blue-clue;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-blue-clue;
+      }
+    }
+  }
+
+  &.green-land {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-green-land;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-green-land;
+      }
+    }
+  }
+
+  &.yellow-submarine {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-yellow-submarine;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-yellow-submarine;
+      }
+    }
+  }
+
+  &.gray-anatomy {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-gray-anatomy;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-gray-anatomy;
+      }
+    }
+
+    &.puzzled-plum {
+      box-shadow: @effect-shadow-product-card-puzzled-plum;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-puzzled-plum;
+      }
+    }
+
+    //this effect is missing
+    &.vivacious-violet {
+      box-shadow: @effect-shadow-product-card-puzzled-plum;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-puzzled-plum;
+      }
+    }
+  }
 }

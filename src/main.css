@@ -1374,6 +1374,69 @@ nav .nav-cart-logo:hover {
 .product-card__cta img {
   transform: scale(0.8);
 }
+.product-card.pink-panther .product-card__background {
+  box-shadow: 0 2px 8px 0 #ffb8b5ff;
+}
+.product-card.pink-panther .product-card__background:before {
+  box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
+}
+.product-card.pink-panther .product-card__info-container {
+  background: #2d3134 0.5, #ffb8b5 0.25;
+}
+.product-card.clockwork-orange .product-card__background {
+  box-shadow: 0 2px 8px 0 #f1b669ff;
+}
+.product-card.clockwork-orange .product-card__background:before {
+  box-shadow: inset 0 2px 8px 0 #f1b669ff;
+}
+.product-card.red-planet .product-card__background {
+  box-shadow: 0 2px 8px 0 #e9322aff;
+}
+.product-card.red-planet .product-card__background:before {
+  box-shadow: inset 0 2px 8px 0 #e9322aff;
+}
+.product-card.feeling-blue .product-card__background {
+  box-shadow: 0 2px 8px 0 #5d78d0ff;
+}
+.product-card.feeling-blue .product-card__background:before {
+  box-shadow: inset 0 2px 8px 0 #5d78d0ff;
+}
+.product-card.blue-clue .product-card__background {
+  box-shadow: 0 2px 8px 0 #3db1c9ff;
+}
+.product-card.blue-clue .product-card__background:before {
+  box-shadow: inset 0 2px 8px 0 #3db1c9ff;
+}
+.product-card.green-land .product-card__background {
+  box-shadow: 0 2px 8px 0 #60d665ff;
+}
+.product-card.green-land .product-card__background:before {
+  box-shadow: inset 0 2px 8px 0 #60d665ff;
+}
+.product-card.yellow-submarine .product-card__background {
+  box-shadow: 0 2px 8px 0 #fec513ff;
+}
+.product-card.yellow-submarine .product-card__background:before {
+  box-shadow: inset 0 2px 8px 0 #fec513ff;
+}
+.product-card.gray-anatomy .product-card__background {
+  box-shadow: 0 2px 8px 0 #98a1a8ff;
+}
+.product-card.gray-anatomy .product-card__background:before {
+  box-shadow: inset 0 2px 8px 0 #98a1a8ff;
+}
+.product-card.gray-anatomy.puzzled-plum {
+  box-shadow: 0 2px 8px 0 #ba9cffff;
+}
+.product-card.gray-anatomy.puzzled-plum:before {
+  box-shadow: inset 0 2px 8px 0 #ba9cffff;
+}
+.product-card.gray-anatomy.vivacious-violet {
+  box-shadow: 0 2px 8px 0 #ba9cffff;
+}
+.product-card.gray-anatomy.vivacious-violet:before {
+  box-shadow: inset 0 2px 8px 0 #ba9cffff;
+}
 .product-list {
   background-color: #fcfbf4;
 }

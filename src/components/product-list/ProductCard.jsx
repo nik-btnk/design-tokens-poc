@@ -6,10 +6,8 @@ import iconInfo from '../../assets/icons/control/Icon=circle-info.png'
 import iconCross from '../../assets/icons/control/icon-x.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
 import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
-
 import iconCart from '../../assets/Icon=cart-add.png'
 import { useRef } from 'react'
-import { useEffect } from 'react'
 
 const ProductCard = ({ name, price, nutrition, allergy, category }) => {
   const [isInfo, setInfo] = useState(false)
@@ -20,13 +18,13 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
     setInfo((prevState) => !prevState)
   }
 
-  useEffect(() => {
-    console.log(isInfo)
-  }, [isInfo])
+  const className = `${name.split(' ')[0].toLowerCase()}-${name
+    .split(' ')[1]
+    .toLowerCase()} `
 
   return (
-    <article className="product-card">
-      <div className="product-card__background">
+    <article className={`product-card ${className}`}>
+      <div className={`product-card__background ${className}`}>
         <div className="product-card__img-container">
           <div className="product-card__img">
             <img
