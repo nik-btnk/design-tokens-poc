@@ -10,11 +10,74 @@
     margin: 0 auto;
 
     .product-cards-container {
-      margin-top: @sizes-s;
+      margin-top: @sizes-medium-1;
       display: grid;
 
       @media @break-tablet {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media @break-desktop {
         display: block;
+      }
+
+      .product-card:nth-child(3n + 1) {
+        .product-card__info-button {
+          background-color: @color-light-mode-background-button-blue;
+          border: 2px solid @color-light-mode-border-button-blue;
+          box-shadow: @effect-shadow-button-blue-default-0,
+            @effect-shadow-button-blue-default-1;
+
+          .product-card__info-icon-container {
+            background-color: @color-brand-blue-3;
+          }
+        }
+
+        .product-card__cta {
+          background-color: @color-light-mode-background-button-blue;
+          border: 2px solid @color-light-mode-border-button-blue;
+          box-shadow: @effect-shadow-button-blue-default-0,
+            @effect-shadow-button-blue-default-1;
+        }
+      }
+
+      .product-card:nth-child(3n + 2) {
+        .product-card__info-button {
+          background-color: @color-light-mode-background-button-pink;
+          border: 2px solid @color-light-mode-border-button-pink;
+          box-shadow: @effect-shadow-button-pink-default-0,
+            @effect-shadow-button-pink-default-1;
+
+          .product-card__info-icon-container {
+            background-color: @color-brand-pink-3;
+          }
+        }
+
+        .product-card__cta {
+          background-color: @color-light-mode-background-button-pink;
+          border: 2px solid @color-light-mode-border-button-pink;
+          box-shadow: @effect-shadow-button-pink-default-0,
+            @effect-shadow-button-pink-default-1;
+        }
+      }
+
+      .product-card:nth-child(3n + 3) {
+        .product-card__info-button {
+          background-color: @color-light-mode-background-button-green;
+          border: 2px solid @color-light-mode-border-button-green;
+          box-shadow: @effect-shadow-button-green-default-0,
+            @effect-shadow-button-green-default-1;
+
+          .product-card__info-icon-container {
+            background-color: @color-brand-green-3;
+          }
+        }
+        .product-card__cta {
+          background-color: @color-light-mode-background-button-green;
+          border: 2px solid @color-light-mode-border-button-green;
+          box-shadow: @effect-shadow-button-green-default-0,
+            @effect-shadow-button-green-default-1;
+        }
       }
     }
 

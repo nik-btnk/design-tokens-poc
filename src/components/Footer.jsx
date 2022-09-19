@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 //assets
-import logo from '../assets/logo.png'
+import mascot from '../assets/mascot.png'
 import iconTikTok from '../assets/cib_tiktok.png'
 import iconIg from '../assets/carbon_logo-instagram.png'
 
@@ -15,7 +15,7 @@ const Footer = () => {
       </div>
       <div className="footer__logo">
         <Link to="/">
-          <img src={logo} alt="" />
+          <img src={mascot} alt="" />
         </Link>
       </div>
       <div className="footer__social-container">

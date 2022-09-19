@@ -8,19 +8,23 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  margin: @sizes-s;
+  margin: @sizes-medium-1;
+
+  @media @break-desktop {
+    margin: @sizes-medium-3;
+  }
 
   &__background {
     width: 100%;
     height: 120px;
     border: 5px solid @color-brand-pink-0;
-    box-shadow: 0px 0px 8px @color-brand-pink-3;
+    box-shadow: @effect-shadow-product-card-pink-panther;
     background-color: transparent;
     border-radius: 50%;
     position: relative;
     z-index: 3;
     pointer-events: none;
-    margin-bottom: @sizes-s;
+    margin-bottom: @sizes-small-3;
 
     @media @break-tablet {
       width: 180px;
@@ -39,7 +43,7 @@
       height: calc(100% - 5px);
       border-radius: 50%;
       background-color: transparent;
-      box-shadow: inset 0px 0px 8px @color-brand-pink-3;
+      box-shadow: inset @effect-shadow-product-card-pink-panther;
 
       @media @break-tablet {
         width: 170px;
@@ -96,12 +100,12 @@
     }
 
     .product-card__name {
-      margin-bottom: @sizes-xxs;
-      @font-mobile-h4-abril();
+      margin-bottom: @sizes-small-2;
+      @font-mobile-title-small-abril();
     }
 
     .product-card__price {
-      @font-mobile-h3-abril();
+      @font-mobile-title-small-abril();
     }
   }
 
@@ -110,21 +114,43 @@
     top: 35px;
     width: 62px;
     height: 40px;
-    border-radius: @sizes-xs;
+    border-radius: @sizes-small-3;
     background-color: @color-light-mode-background-button-orange;
     border: 2px solid @color-light-mode-border-button-orange;
-    box-shadow: 0px 4px 4px @color-light-mode-border-button-orange;
+    box-shadow: @effect-shadow-button-orange-default-0;
     z-index: 2;
     cursor: pointer;
     pointer-events: all;
+
+    .product-card__info-icon-container {
+      margin: auto;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      padding: 6px;
+
+      img {
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
 
     @media @break-tablet {
       top: 3px;
     }
 
+    &:hover {
+      box-shadow: @effect-shadow-button-orange-hover;
+    }
+
     &:active {
       border: 2px solid @color-brand-orange-4;
-      box-shadow: 0px 4px 4px @color-brand-orange-4;
+      box-shadow: @effect-shadow-button-orange-active;
     }
 
     img {
@@ -162,7 +188,7 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0px 2px 8px @color-brand-orange-2;
+      box-shadow: @effect-shadow-button-orange-default-0;
       position: relative;
 
       &:first-child {
@@ -215,20 +241,14 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: @sizes-xxs 36px;
+    padding: @sizes-small-2 36px;
     z-index: 1;
-    background: linear-gradient(
-        0deg,
-        rgba(255, 184, 181, 0.5),
-        rgba(255, 184, 181, 0.5)
-      ),
-      rgba(45, 49, 52, 0.75);
 
     .product-card__description {
       text-align: center;
       &--text {
         color: @color-brand-white;
-        @font-mobile-h4-quatt();
+        @font-mobile-title-small-quatt();
         font-weight: 700;
       }
     }
@@ -251,15 +271,15 @@
 
       &.cold {
         background-color: @color-brand-blue-4;
-        border-radius: @sizes-xs;
-        box-shadow: 0px 2px 8px @color-brand-blue-3;
+        border-radius: @sizes-small-3;
+        box-shadow: @effect-shadow-button-blue-default-0;
         color: @color-brand-white;
       }
 
       &.hot {
         background-color: @color-brand-pink-0;
-        border-radius: @sizes-xs;
-        box-shadow: 0px 2px 8px @color-brand-pink-3;
+        border-radius: @sizes-small-3;
+        box-shadow: @effect-shadow-button-pink-default-0;
         color: @color-brand-black;
       }
 
@@ -277,11 +297,11 @@
   &__cta {
     width: 150px;
     height: 40px;
-    border-radius: @sizes-xs;
+    border-radius: @sizes-small-3;
     background-color: @color-light-mode-background-button-orange;
     border: 2px solid @color-light-mode-border-button-orange;
-    box-shadow: 0px 4px 4px @color-light-mode-border-button-orange;
-    @font-mobile-h4-quatt();
+    box-shadow: @effect-shadow-button-orange-default-0;
+    @font-mobile-title-small-quatt();
     font-weight: 700;
     display: flex;
     justify-content: space-around;
@@ -290,11 +310,151 @@
 
     &:active {
       border: 2px solid @color-brand-orange-4;
-      box-shadow: 0px 4px 4px @color-brand-orange-4;
+      box-shadow: @effect-shadow-button-orange-active;
     }
 
     img {
       transform: scale(0.8);
+    }
+  }
+
+  &.pink-panther {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-pink-panther;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-pink-panther;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-pink-panther-fill-back-1, 50%);
+    }
+  }
+
+  &.clockwork-orange {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-clockwork-orange;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-clockwork-orange;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-clockwork-orange-fill-back-1, 50%);
+    }
+  }
+
+  &.red-planet {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-red-planet;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-red-planet;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-red-planet-fill-back-1, 50%);
+    }
+  }
+
+  &.feeling-blue {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-feeling-blue;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-feeling-blue;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-feeling-blue-fill-back-1, 50%);
+    }
+  }
+
+  &.blue-clue {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-blue-clue;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-blue-clue;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-blue-clue-fill-back-1, 50%);
+    }
+  }
+
+  &.green-land {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-green-land;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-green-land;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-green-land-fill-back-1, 50%);
+    }
+  }
+
+  &.yellow-submarine {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-yellow-submarine;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-yellow-submarine;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-yellow-submarine-fill-back-1, 50%);
+    }
+  }
+
+  &.gray-anatomy {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-gray-anatomy;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-gray-anatomy;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-gray-anatomy-fill-back-1, 50%);
+    }
+  }
+
+  &.puzzled-plum {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-puzzled-plum;
+
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-puzzled-plum;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-gray-anatomy-fill-back-1, 50%);
+    }
+  }
+
+  //this effect is missing
+  &.vivacious-violet {
+    .product-card__background {
+      box-shadow: @effect-shadow-product-card-puzzled-plum;
+      &:before {
+        box-shadow: inset @effect-shadow-product-card-puzzled-plum;
+      }
+    }
+
+    .product-card__info-container {
+      background-color: fade(@color-flavor-vivacious-violet-fill-back-1, 50%);
     }
   }
 }
