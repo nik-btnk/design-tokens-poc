@@ -9,7 +9,14 @@ import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
 import iconCart from '../../assets/Icon=cart-add.png'
 import { useRef } from 'react'
 
-const ProductCard = ({ name, price, nutrition, allergy, category }) => {
+const ProductCard = ({
+  name,
+  price,
+  nutrition,
+  allergy,
+  category,
+  showInfo = true
+}) => {
   const [isInfo, setInfo] = useState(false)
   const infoButton = useRef(null)
   useOutsideAlerter(infoButton, setInfo)
@@ -39,28 +46,34 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
           <span className="product-card__name">{name}</span>
           <span className="product-card__price">${price.toFixed(2)}</span>
         </div>
-        <button
-          className="product-card__info-button"
-          ref={infoButton}
-          onClick={handleClick}>
-          <div className="product-card__info-icon-container">
-            <img src={isInfo ? iconCross : iconInfo} alt="" />
-          </div>
-        </button>
-        <div
-          className={`product-card__properties${
-            isInfo ? ' hide-properties' : ''
-          }`}>
-          <div className="product-card__property-container">
-            <img src={nutrition.icon} alt={nutrition.name} />
-          </div>
-          {allergy !== null &&
-            allergy.map((item, index) => (
-              <div key={index} className="product-card__property-container">
-                <img src={item.icon} alt={item.name} title={item.name} />
+
+        {showInfo && (
+          <>
+            <button
+              className="product-card__info-button"
+              ref={infoButton}
+              onClick={handleClick}>
+              <div className="product-card__info-icon-container">
+                <img src={isInfo ? iconCross : iconInfo} alt="" />
               </div>
-            ))}
-        </div>
+            </button>
+
+            <div
+              className={`product-card__properties${
+                isInfo ? ' hide-properties' : ''
+              }`}>
+              <div className="product-card__property-container">
+                <img src={nutrition.icon} alt={nutrition.name} />
+              </div>
+              {allergy !== null &&
+                allergy.map((item, index) => (
+                  <div key={index} className="product-card__property-container">
+                    <img src={item.icon} alt={item.name} title={item.name} />
+                  </div>
+                ))}
+            </div>
+          </>
+        )}
 
         <div
           className="product-card__info-container"

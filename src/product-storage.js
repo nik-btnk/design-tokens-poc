@@ -55,7 +55,8 @@ const noSugar = {
 const products = [
   {
     name: 'Clockwork Orange',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 4.99,
     nutrition: highProtein,
     allergy: [milk, eggs],
@@ -64,7 +65,8 @@ const products = [
   },
   {
     name: 'Red Planet',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 9.99,
     nutrition: noSugar,
     allergy: null,
@@ -73,7 +75,8 @@ const products = [
   },
   {
     name: 'Green Land',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 7.99,
     nutrition: lowFat,
     allergy: [milk, nuts, wheat],
@@ -82,7 +85,8 @@ const products = [
   },
   {
     name: 'Yellow Submarine',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 4.2,
     nutrition: lowFat,
     allergy: [fish],
@@ -91,7 +95,8 @@ const products = [
   },
   {
     name: 'Vivacious Violet',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 2.99,
     nutrition: highProtein,
     allergy: null,
@@ -101,7 +106,8 @@ const products = [
 
   {
     name: 'Pink Panther',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 4.99,
     nutrition: lowFat,
     allergy: [milk, eggs],
@@ -110,7 +116,8 @@ const products = [
   },
   {
     name: 'Feeling Blue',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 5.99,
     nutrition: highProtein,
     allergy: [milk, eggs, nuts],
@@ -119,7 +126,8 @@ const products = [
   },
   {
     name: 'Blue Clue',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 2.99,
     nutrition: noSugar,
     allergy: [milk, nuts],
@@ -128,7 +136,8 @@ const products = [
   },
   {
     name: 'Gray Anatomy',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 6.9,
     nutrition: highProtein,
     allergy: [nuts],
@@ -137,7 +146,8 @@ const products = [
   },
   {
     name: 'Puzzled Plum',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 8.37,
     nutrition: lowFat,
     allergy: [wheat],
