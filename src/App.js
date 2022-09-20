@@ -14,6 +14,7 @@ import Page404 from './pages/Page404'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Test from './pages/Test'
+import ProductDetails from './pages/ProductDetails'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/productDetails" element={<ProductDetails />} />
       </Routes>
       <Footer />
     </div>
