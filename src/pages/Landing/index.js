@@ -1,9 +1,19 @@
+// Modules
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// Components
+import HealthInformation from '../../components/product-details/HealthInformation'
+
+// Utils
+import products from '../../product-storage'
+
 const Landing = () => {
+  const testProduct = products[2]
+
   return (
     <div className="landing">
+      <HealthInformation product={testProduct} />
       <span className="landing__title">Landing Page</span>
 
       <div className="landing__nav">

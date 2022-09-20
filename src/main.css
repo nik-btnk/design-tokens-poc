@@ -500,11 +500,103 @@ nav .nav-cart-logo:hover {
     display: none;
   }
 }
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.button::before {
+  content: '+';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: #2d3134;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.button-blue {
+  background-color: #e9ffff;
+  border: solid 4px #60d6d4;
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:hover {
+  border: 6.4px solid #60d6d4;
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:active {
+  border: solid 4px #077a77;
+}
+.button-blue::before {
+  background-color: #37ccc9;
+}
+.button-pink {
+  background-color: #fff5f5;
+  border: solid 4px #ffb8b5;
+  box-shadow: 0 4px 4px 0 #ff878280;
+}
+.button-pink:hover {
+  border: 6.4px solid #ffb8b5;
+}
+.button-pink:active {
+  border: solid 4px #bc443f;
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-pink::before {
+  background-color: #ff8782;
+}
+.button-green {
+  background-color: #f5fff5;
+  border: solid 4px #60d665;
+  box-shadow: 0 4px 4px 0 #5ecc37ff;
+}
+.button-green:hover {
+  border: 6.4px solid #60d665;
+}
+.button-green:active {
+  border: solid 4px #207d1a;
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-green::before {
+  background-color: #5ecc37;
+}
+.button-orange {
+  background-color: #fff5e7;
+  border: solid 4px #f1b669;
+  box-shadow: 0 4px 4px 0 #ed9f3a80;
+}
+.button-orange:hover {
+  border: 6.4px solid #f1b669;
+}
+.button-orange:active {
+  border: solid 4px #a65809;
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-orange::before {
+  background-color: #ed9f3a;
+}
 .health-info {
   padding: 40px 16px;
   background-color: #fff5e7;
   border-top: 4px solid #ed9f3a;
   border-bottom: 4px solid #ed9f3a;
+  width: 100%;
 }
 @media screen and (min-width: 425px) {
   .health-info {
@@ -636,97 +728,6 @@ nav .nav-cart-logo:hover {
   font-stretch: normal;
   letter-spacing: 0;
   color: #2d3134;
-}
-.button {
-  height: 50px;
-  min-width: 148px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-.button::before {
-  content: '+';
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 12px;
-  color: #2d3134;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  font-weight: 700;
-}
-.button-blue {
-  background-color: #e9ffff;
-  border: solid 4px #60d6d4;
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:hover {
-  border: 6.4px solid #60d6d4;
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:active {
-  border: solid 4px #077a77;
-}
-.button-blue::before {
-  background-color: #37ccc9;
-}
-.button-pink {
-  background-color: #fff5f5;
-  border: solid 4px #ffb8b5;
-  box-shadow: 0 4px 4px 0 #ff878280;
-}
-.button-pink:hover {
-  border: 6.4px solid #ffb8b5;
-}
-.button-pink:active {
-  border: solid 4px #bc443f;
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-pink::before {
-  background-color: #ff8782;
-}
-.button-green {
-  background-color: #f5fff5;
-  border: solid 4px #60d665;
-  box-shadow: 0 4px 4px 0 #5ecc37ff;
-}
-.button-green:hover {
-  border: 6.4px solid #60d665;
-}
-.button-green:active {
-  border: solid 4px #207d1a;
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-green::before {
-  background-color: #5ecc37;
-}
-.button-orange {
-  background-color: #fff5e7;
-  border: solid 4px #f1b669;
-  box-shadow: 0 4px 4px 0 #ed9f3a80;
-}
-.button-orange:hover {
-  border: 6.4px solid #f1b669;
-}
-.button-orange:active {
-  border: solid 4px #a65809;
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-orange::before {
-  background-color: #ed9f3a;
 }
 .price-slider-container {
   position: relative;
