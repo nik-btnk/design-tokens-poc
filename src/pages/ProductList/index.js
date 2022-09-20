@@ -4,7 +4,6 @@ import { Filters } from '../../components/product-list/Filters'
 import ProductCard from '../../components/product-list/ProductCard'
 import products from '../../product-storage'
 import { filterProduct } from './filterProduct'
-import HealthInformation from '../../components/product-details/HealthInformation'
 
 const Storefront = () => {
   const min = 0
@@ -20,11 +19,8 @@ const Storefront = () => {
     setSelected([])
   }
 
-  const testProduct = products[0]
-
   return (
     <div className="product-list">
-      <HealthInformation product={testProduct} />
       <div className="product-list-container">
         <Filters
           min={min}

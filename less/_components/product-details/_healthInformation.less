@@ -3,16 +3,21 @@
   background-color: @color-brand-orange-0;
   border-top: @sizes-small-1 solid @color-light-mode-border-button-orange;
   border-bottom: @sizes-small-1 solid @color-light-mode-border-button-orange;
-  display: grid;
-  grid-auto-flow: row;
-  gap: @sizes-medium-1;
 
   @media @break-tablet {
     padding: @sizes-medium-3 @sizes-medium-2;
   }
 
-  @media @break-desktop {
-    padding: @sizes-medium-3 0;
+  &__wrapper {
+    display: grid;
+    grid-auto-flow: row;
+    gap: @sizes-medium-1;
+
+    @media @break-desktop {
+      max-width: 1032px;
+      width: 100%;
+      margin: auto;
+    }
   }
 
   &__title {
