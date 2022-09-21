@@ -52,19 +52,12 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
             isInfo ? ' hide-properties' : ''
           }`}>
           <div className="product-card__property-container">
-            <img
-              src={require(`../../assets/icons/descriptive/icon-${nutrition}.png`)}
-              alt=""
-            />
+            <img src={nutrition.icon} alt={nutrition.name} />
           </div>
           {allergy !== null &&
             allergy.map((item, index) => (
               <div key={index} className="product-card__property-container">
-                <img
-                  src={require(`../../assets/icons/descriptive/icon-${item}.png`)}
-                  alt={item}
-                  title={item}
-                />
+                <img src={item.icon} alt={item.name} title={item.name} />
               </div>
             ))}
         </div>

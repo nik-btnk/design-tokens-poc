@@ -1,0 +1,88 @@
+.health-info {
+  padding: @sizes-medium-3 @sizes-small-3;
+  background-color: @color-brand-orange-0;
+  border-top: @sizes-small-1 solid @color-light-mode-border-button-orange;
+  border-bottom: @sizes-small-1 solid @color-light-mode-border-button-orange;
+  width: 100%;
+
+  @media @break-tablet {
+    padding: @sizes-medium-3 @sizes-medium-2;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-auto-flow: row;
+    gap: @sizes-medium-1;
+
+    @media @break-desktop {
+      max-width: 1032px;
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  &__title {
+    @font-desktop-title-small-abril();
+    color: @color-light-mode-text-orange;
+
+    @media @break-tablet {
+      @font-desktop-title-medium-abril();
+    }
+  }
+
+  &__calories-container {
+    &--title {
+      @font-mobile-title-small-abril();
+      color: @color-light-mode-text-orange;
+
+      @media @break-tablet {
+        @font-desktop-title-small-abril();
+      }
+    }
+
+    &--calories {
+      @font-desktop-body-quatt();
+      color: @color-light-mode-text-black;
+
+      @media @break-tablet {
+        @font-desktop-title-small-quatt();
+      }
+    }
+  }
+
+  &__items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media @break-tablet {
+      justify-content: flex-start;
+    }
+
+    &--item {
+      justify-items: center;
+      display: grid;
+      grid-auto-flow: row;
+      gap: @sizes-small-3;
+      margin: @sizes-small-3;
+
+      .icon {
+        height: @sizes-medium-3;
+      }
+
+      .name {
+        @font-mobile-title-small-abril();
+        color: @color-light-mode-text-black;
+
+        @media @break-tablet {
+          @font-desktop-title-small-abril();
+        }
+      }
+
+      .description {
+        @font-desktop-caption-quatt();
+        color: @color-brand-black;
+      }
+    }
+  }
+}
