@@ -97,10 +97,13 @@ const ProductCard = ({
           )}
         </div>
       </div>
-      <button className="product-card__cta">
-        <img src={iconCart} alt="" />
-        Add to Cart
-      </button>
+
+      {showInfo && (
+        <button className="product-card__cta">
+          <img src={iconCart} alt="" />
+          Add to Cart
+        </button>
+      )}
     </article>
   )
 }
