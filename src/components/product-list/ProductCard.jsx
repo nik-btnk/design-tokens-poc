@@ -29,8 +29,37 @@ const ProductCard = ({
     .split(' ')[1]
     .toLowerCase()} `
 
+  // NOTE: improve logic of space adding.
+  // Calculate available remaining space and distribute white spaces evenly.
+  const makeWrappingText = (text) => {
+    const space = '\u00A0\u00A0\u00A0\u00A0'
+    const characterCapacity = 75
+    let characterString = text
+    if (characterCapacity > characterString.split('').length) {
+      return makeWrappingText(characterString + space + name)
+    } else {
+      return characterString
+    }
+  }
+
   return (
     <article className={`product-card ${className}`}>
+      {!showInfo && (
+        <svg className="product-card__wrapping-text" viewBox="0 0 190 190">
+          <defs>
+            <path
+              id="MyPath"
+              d="M 95, 95
+             m -100, 0
+             a 100,100 0 1,1 200,0
+             a 100,100 0 1,1 -200,0"
+            />
+          </defs>
+          <text>
+            <textPath xlinkHref="#MyPath">{makeWrappingText(name)}</textPath>
+          </text>
+        </svg>
+      )}
       <div className={`product-card__background ${className}`}>
         <div className="product-card__img-container">
           <div className="product-card__img">

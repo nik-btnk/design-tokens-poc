@@ -9,9 +9,35 @@
   align-items: center;
   z-index: 1;
   margin: @sizes-medium-1;
+  position: relative;
 
   @media @break-desktop {
     margin: @sizes-medium-3;
+  }
+
+  &__wrapping-text {
+    position: absolute;
+    overflow: visible;
+    display: none;
+    animation: spin 20s linear infinite;
+
+    @media @break-tablet {
+      display: block;
+    }
+
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    text {
+      @font-desktop-title-medium-abril();
+      fill: @color-light-mode-background-button-pink;
+      stroke: @color-light-mode-text-pink;
+      font-size: @sizes-small-3;
+    }
   }
 
   &__background {
@@ -73,7 +99,7 @@
   &__img {
     bottom: -110px;
     left: 50px;
-    transform: scale(1.7);
+    transform: scale(1.6);
 
     img {
       width: 73%;

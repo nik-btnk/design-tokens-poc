@@ -8,16 +8,18 @@ import ProductCard from '../product-list/ProductCard'
 import iconCart from '../../assets/Icon=cart-add.png'
 
 const ProductInfo = ({ product: { name, description, price } }) => {
-  console.log(description)
-
   return (
     <div className="product-info">
-      <ProductCard showInfo={false} name={name} price={price} />
-      <button className="product-info__cta">
-        <img src={iconCart} alt={`${name} ice cream.`} />
-        Add to Cart
-      </button>
-      <span className="product-info__description">{description}</span>
+      <div className="product-info__content-wrapper">
+        <span className="product-info__title">Some Sort of Title</span>
+        <ProductCard showInfo={false} name={name} price={price} />
+        <span className="product-info__price">{`$${price}`}</span>
+        <button className="product-info__cta">
+          <img src={iconCart} alt={`${name} ice cream.`} />
+          Add to Cart
+        </button>
+        <span className="product-info__description">{description}</span>
+      </div>
     </div>
   )
 }
