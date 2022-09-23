@@ -9,7 +9,7 @@ import ProductInfo from '../../components/product-details/ProductInfo'
 import products from '../../product-storage'
 
 const ProductDetails = () => {
-  const testProduct = products[0]
+  const testProduct = products[1]
   // This will need to be redone. Each product will need to be assigned a unique ID. ID of
   // the product will be obtained from URL, and the relevant product will be fetched from store.
 
