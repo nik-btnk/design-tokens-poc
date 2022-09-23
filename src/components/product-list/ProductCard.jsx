@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
 
@@ -29,18 +30,33 @@ const ProductCard = ({
     .split(' ')[1]
     .toLowerCase()} `
 
-  // NOTE: improve logic of space adding.
-  // Calculate available remaining space and distribute white spaces evenly.
+  const getTextWidth = (text, font) => {
+    const canvas =
+      getTextWidth.canvas ||
+      (getTextWidth.canvas = document.createElement('canvas'))
+    const context = canvas.getContext('2d')
+    context.font = font
+    const metrics = context.measureText(text)
+    return metrics.width
+  }
+
   const makeWrappingText = (text) => {
-    const space = '\u00A0\u00A0\u00A0\u00A0'
-    const characterCapacity = 75
+    const spacer = '\u00A0\u00A0\u00A0' // calculate spacer
+    const targetTextLength = 610
     let characterString = text
-    if (characterCapacity > characterString.split('').length) {
-      return makeWrappingText(characterString + space + name)
+    const textWidth = getTextWidth(characterString, 'normal 14px Abril Fatface')
+    if (
+      textWidth + getTextWidth(name, 'normal 14px Abril Fatface') <
+      targetTextLength
+    ) {
+      return makeWrappingText(characterString + spacer + name)
     } else {
-      return characterString
+      return characterString + spacer
     }
   }
+
+  console.log(getTextWidth('\u00A0', 'normal 14px Abril Fatface'))
+  console.log(getTextWidth(makeWrappingText(name), 'normal 14px Abril Fatface'))
 
   return (
     <article className={`product-card ${className}`}>
@@ -138,3 +154,4 @@ const ProductCard = ({
 }
 
 export default ProductCard
+/* eslint-enable no-unused-vars */
