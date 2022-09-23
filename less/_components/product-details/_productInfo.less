@@ -14,7 +14,7 @@
 
   @media @break-desktop {
     max-width: 1032px;
-    padding: @sizes-large-2 0 @sizes-large-2 0;
+    padding: calc(@sizes-large-2 + @sizes-small-3) 0;
   }
 
   &__title-mobile {
@@ -59,11 +59,11 @@
       @media @break-tablet {
         width: fit-content !important;
         margin: 0;
+        align-self: center;
       }
 
       @media @break-desktop {
         transform: scale(1.23);
-        align-self: center;
       }
 
       &__background {
@@ -144,8 +144,11 @@
       margin-top: @sizes-medium-2;
 
       @media @break-tablet {
-        @font-desktop-title-large-abril();
         display: block;
+      }
+
+      @media @break-desktop {
+        @font-desktop-title-large-abril();
       }
     }
 

@@ -747,7 +747,7 @@ nav .nav-cart-logo:hover {
 @media screen and (min-width: 1440px) {
   .product-info {
     max-width: 1032px;
-    padding: 80px 0 80px 0;
+    padding: calc(80px + 16px) 0;
   }
 }
 .product-info__title-mobile {
@@ -803,12 +803,12 @@ nav .nav-cart-logo:hover {
   .product-info__content-wrapper .product-card {
     width: fit-content !important;
     margin: 0;
+    align-self: center;
   }
 }
 @media screen and (min-width: 1440px) {
   .product-info__content-wrapper .product-card {
     transform: scale(1.23);
-    align-self: center;
   }
 }
 .product-info__content-wrapper .product-card__background {
@@ -900,6 +900,11 @@ nav .nav-cart-logo:hover {
 }
 @media screen and (min-width: 425px) {
   .product-info__content--price {
+    display: block;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .product-info__content--price {
     font-size: 48px;
     text-decoration: none;
     font-family: Abril Fatface;
@@ -907,7 +912,6 @@ nav .nav-cart-logo:hover {
     font-style: normal;
     font-stretch: normal;
     letter-spacing: 0;
-    display: block;
   }
 }
 .product-info__content--description {
