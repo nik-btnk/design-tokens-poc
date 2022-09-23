@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
 
@@ -41,27 +40,43 @@ const ProductCard = ({
   }
 
   const makeWrappingText = (text) => {
-    const spacer = '\u00A0\u00A0\u00A0' // calculate spacer
-    const targetTextLength = 610
+    const spacer = '*'
+    const targetTextLength = 620
     let characterString = text
     const textWidth = getTextWidth(characterString, 'normal 14px Abril Fatface')
+
     if (
       textWidth + getTextWidth(name, 'normal 14px Abril Fatface') <
       targetTextLength
     ) {
       return makeWrappingText(characterString + spacer + name)
     } else {
-      return characterString + spacer
+      let finalString = characterString + spacer
+      const availableSpace =
+        targetTextLength -
+        getTextWidth(
+          finalString.replaceAll(spacer, ''),
+          'normal 14px Abril Fatface'
+        )
+      const spaceWidth = getTextWidth('\u00A0', 'normal 14px Abril Fatface')
+      const numberOfInsertionPoints = finalString
+        .split('')
+        .filter((letter) => letter === spacer).length
+      const numberOfSpacesToInsert = Math.ceil(
+        availableSpace / spaceWidth / numberOfInsertionPoints
+      )
+
+      return finalString.replaceAll(
+        spacer,
+        '\u00A0'.repeat(numberOfSpacesToInsert)
+      )
     }
   }
-
-  console.log(getTextWidth('\u00A0', 'normal 14px Abril Fatface'))
-  console.log(getTextWidth(makeWrappingText(name), 'normal 14px Abril Fatface'))
 
   return (
     <article className={`product-card ${className}`}>
       {!showInfo && (
-        <svg className="product-card__wrapping-text" viewBox="0 0 190 190">
+        <svg className={'product-card__wrapping-text'} viewBox="0 0 190 190">
           <defs>
             <path
               id="MyPath"
@@ -71,7 +86,7 @@ const ProductCard = ({
              a 100,100 0 1,1 -200,0"
             />
           </defs>
-          <text>
+          <text className={className}>
             <textPath xlinkHref="#MyPath">{makeWrappingText(name)}</textPath>
           </text>
         </svg>
@@ -154,4 +169,3 @@ const ProductCard = ({
 }
 
 export default ProductCard
-/* eslint-enable no-unused-vars */

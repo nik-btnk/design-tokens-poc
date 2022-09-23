@@ -13,7 +13,7 @@ const ProductInfo = ({ product: { name, description, price } }) => {
       <div className="product-info__content-wrapper">
         <span className="product-info__title">Some Sort of Title</span>
         <ProductCard showInfo={false} name={name} price={price} />
-        <span className="product-info__price">{`$${price}`}</span>
+        <span className="product-info__price">{`$${price.toFixed(2)}`}</span>
         <button className="product-info__cta">
           <img src={iconCart} alt={`${name} ice cream.`} />
           Add to Cart
