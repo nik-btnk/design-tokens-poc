@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // Modules
 import React from 'react'
 
@@ -8,13 +7,14 @@ import ProductCard from '../product-list/ProductCard'
 // Utils
 import products from '../../product-storage'
 
-const indexArray = []
-while (indexArray.length < 4) {
-  const r = Math.floor(Math.random() * products.length)
-  if (indexArray.indexOf(r) === -1) indexArray.push(r)
-}
+const MoreProducts = ({ product: { name } }) => {
+  const indexArray = []
+  while (indexArray.length < 4) {
+    const r = Math.floor(Math.random() * products.length)
+    if (indexArray.indexOf(r) === -1 && name !== products[r].name)
+      indexArray.push(r)
+  }
 
-const MoreProducts = () => {
   return (
     <div className="more-products">
       <span className="more-products__title">More Adventure</span>
@@ -37,4 +37,3 @@ const MoreProducts = () => {
 }
 
 export default MoreProducts
-/* eslint-enable no-unused-vars */

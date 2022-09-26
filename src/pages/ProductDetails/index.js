@@ -35,7 +35,7 @@ const ProductDetails = () => {
       </div>
       <ProductInfo product={products[testProductIndex]} />
       <HealthInformation product={products[testProductIndex]} />
-      <MoreProducts />
+      <MoreProducts product={products[testProductIndex]} />
     </div>
   )
 }
