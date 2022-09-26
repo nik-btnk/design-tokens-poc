@@ -103,7 +103,6 @@ const products = [
     category: "Hot 'n Spicy",
     calories: 205
   },
-
   {
     name: 'Pink Panther',
     description:

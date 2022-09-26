@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 // Components
 import HealthInformation from '../../components/product-details/HealthInformation'
 import ProductInfo from '../../components/product-details/ProductInfo'
+import MoreProducts from '../../components/product-details/MoreProducts'
 
 // Utils
 import products from '../../product-storage'
@@ -34,6 +35,7 @@ const ProductDetails = () => {
       </div>
       <ProductInfo product={products[testProductIndex]} />
       <HealthInformation product={products[testProductIndex]} />
+      <MoreProducts />
     </div>
   )
 }

@@ -12,7 +12,12 @@ const ProductInfo = ({ product: { name, description, price } }) => {
     <div className="product-info">
       <div className="product-info__content-wrapper">
         <span className="product-info__title-mobile">Some Sort of Title</span>
-        <ProductCard showInfo={false} name={name} price={price} />
+        <ProductCard
+          showInfo={false}
+          showTextWrap={true}
+          name={name}
+          price={price}
+        />
         <div className="product-info__content">
           <span className="product-info__content--title">
             Some Sort of Title

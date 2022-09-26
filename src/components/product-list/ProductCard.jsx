@@ -15,7 +15,8 @@ const ProductCard = ({
   nutrition,
   allergy,
   category,
-  showInfo = true
+  showInfo = true,
+  showTextWrap = false
 }) => {
   const [isInfo, setInfo] = useState(false)
   const infoButton = useRef(null)
@@ -75,7 +76,7 @@ const ProductCard = ({
 
   return (
     <article className={`product-card ${className}`}>
-      {!showInfo && (
+      {showTextWrap && (
         <svg className={'product-card__wrapping-text'} viewBox="0 0 190 190">
           <defs>
             <path
