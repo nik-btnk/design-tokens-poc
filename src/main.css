@@ -778,7 +778,7 @@ nav .nav-cart-logo:hover {
   flex-direction: column;
   justify-content: space-between;
   max-width: 800px;
-  row-gap: 40px;
+  gap: 40px;
 }
 @media screen and (min-width: 425px) {
   .more-products__container {
@@ -793,9 +793,6 @@ nav .nav-cart-logo:hover {
     justify-content: space-between;
     max-width: none;
   }
-}
-.more-products__container article {
-  margin-right: 40px !important;
 }
 .more-products .product-card {
   margin: 0;
