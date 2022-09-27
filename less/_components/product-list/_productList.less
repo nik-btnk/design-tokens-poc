@@ -38,6 +38,11 @@
           border: 2px solid @color-light-mode-border-button-blue;
           box-shadow: @effect-shadow-button-blue-default-0,
             @effect-shadow-button-blue-default-1;
+
+          svg path:first-child {
+            filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg)
+              brightness(95%) contrast(97%);
+          }
         }
       }
 
@@ -58,6 +63,11 @@
           border: 2px solid @color-light-mode-border-button-pink;
           box-shadow: @effect-shadow-button-pink-default-0,
             @effect-shadow-button-pink-default-1;
+
+          svg path:first-child {
+            filter: invert(51%) sepia(56%) saturate(389%) hue-rotate(314deg)
+              brightness(110%) contrast(108%);
+          }
         }
       }
 
@@ -77,6 +87,11 @@
           border: 2px solid @color-light-mode-border-button-green;
           box-shadow: @effect-shadow-button-green-default-0,
             @effect-shadow-button-green-default-1;
+
+          svg path:first-child {
+            filter: invert(81%) sepia(11%) saturate(4195%) hue-rotate(50deg)
+              brightness(95%) contrast(70%);
+          }
         }
       }
     }

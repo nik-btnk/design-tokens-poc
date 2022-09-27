@@ -182,9 +182,14 @@
         box-shadow: @effect-shadow-button-blue-active;
       }
 
-      img {
+      svg {
         transform: scale(0.8);
         margin-right: @sizes-small-2;
+
+        path:first-child {
+          filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg)
+            brightness(95%) contrast(97%);
+        }
       }
 
       @media @break-tablet {

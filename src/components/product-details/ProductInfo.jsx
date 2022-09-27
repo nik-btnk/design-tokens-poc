@@ -5,7 +5,7 @@ import React from 'react'
 import ProductCard from '../product-list/ProductCard'
 
 // Assets
-import iconCart from '../../assets/Icon=cart-add.png'
+import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
 
 const ProductInfo = ({ product: { name, description, price } }) => {
   return (
@@ -29,7 +29,7 @@ const ProductInfo = ({ product: { name, description, price } }) => {
             2
           )}`}</span>
           <button className="product-info__content--cta">
-            <img src={iconCart} alt={`${name} ice cream.`} />
+            <IconCart />
             Add to Cart
           </button>
         </div>

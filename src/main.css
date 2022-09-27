@@ -806,13 +806,19 @@ nav .nav-cart-logo:hover {
     width: auto;
   }
 }
-.more-products article:nth-child(1) button {
+.more-products article:nth-child(1) button,
+.more-products article:nth-child(4) button {
   background-color: #fff5f5;
   border: 2px solid #ff8782;
   box-shadow: 0 4px 4px 0 #ff878280;
 }
-.more-products article:nth-child(1) button .product-card__info-icon-container {
+.more-products article:nth-child(1) button .product-card__info-icon-container,
+.more-products article:nth-child(4) button .product-card__info-icon-container {
   background-color: #ff8782;
+}
+.more-products article:nth-child(1) button svg path:first-child,
+.more-products article:nth-child(4) button svg path:first-child {
+  filter: invert(51%) sepia(56%) saturate(389%) hue-rotate(314deg) brightness(110%) contrast(108%);
 }
 .more-products article:nth-child(2) button {
   background-color: #e9ffff;
@@ -822,6 +828,9 @@ nav .nav-cart-logo:hover {
 .more-products article:nth-child(2) button .product-card__info-icon-container {
   background-color: #37ccc9;
 }
+.more-products article:nth-child(2) button svg path:first-child {
+  filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg) brightness(95%) contrast(97%);
+}
 .more-products article:nth-child(3) button {
   background-color: #f5fff5;
   border: 2px solid #5ecc37;
@@ -830,16 +839,11 @@ nav .nav-cart-logo:hover {
 .more-products article:nth-child(3) button .product-card__info-icon-container {
   background-color: #5ecc37;
 }
+.more-products article:nth-child(3) button svg path:first-child {
+  filter: invert(81%) sepia(11%) saturate(4195%) hue-rotate(50deg) brightness(95%) contrast(70%);
+}
 .more-products article:nth-child(4) {
   display: none;
-}
-.more-products article:nth-child(4) button {
-  background-color: #fff5f5;
-  border: 2px solid #ff8782;
-  box-shadow: 0 4px 4px 0 #ff878280;
-}
-.more-products article:nth-child(4) button .product-card__info-icon-container {
-  background-color: #ff8782;
 }
 @media screen and (min-width: 1440px) {
   .more-products article:nth-child(4) {
@@ -1072,9 +1076,12 @@ nav .nav-cart-logo:hover {
   border: 2px solid #077a77;
   box-shadow: 0 4px 4px 0 #077a7780;
 }
-.product-info__content--cta img {
+.product-info__content--cta svg {
   transform: scale(0.8);
   margin-right: 8px;
+}
+.product-info__content--cta svg path:first-child {
+  filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg) brightness(95%) contrast(97%);
 }
 @media screen and (min-width: 425px) {
   .product-info__content--cta {
@@ -2040,7 +2047,7 @@ nav .nav-cart-logo:hover {
   border: 2px solid #a65809;
   box-shadow: 0 4px 4px 0 #a6580980;
 }
-.product-card__cta img {
+.product-card__cta svg {
   transform: scale(0.8);
   margin-right: 8px;
 }
@@ -2168,6 +2175,9 @@ nav .nav-cart-logo:hover {
   border: 2px solid #37ccc9;
   box-shadow: 0 4px 4px 0 #37ccc980, 0 4px 4px 0 #2d313440;
 }
+.product-list-container .product-cards-container .product-card:nth-child(3n + 1) .product-card__cta svg path:first-child {
+  filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg) brightness(95%) contrast(97%);
+}
 .product-list-container .product-cards-container .product-card:nth-child(3n + 2) .product-card__info-button {
   background-color: #fff5f5;
   border: 2px solid #ff8782;
@@ -2181,6 +2191,9 @@ nav .nav-cart-logo:hover {
   border: 2px solid #ff8782;
   box-shadow: 0 4px 4px 0 #ff878280, 0 4px 4px 0 #2d313440;
 }
+.product-list-container .product-cards-container .product-card:nth-child(3n + 2) .product-card__cta svg path:first-child {
+  filter: invert(51%) sepia(56%) saturate(389%) hue-rotate(314deg) brightness(110%) contrast(108%);
+}
 .product-list-container .product-cards-container .product-card:nth-child(3n + 3) .product-card__info-button {
   background-color: #f5fff5;
   border: 2px solid #5ecc37;
@@ -2193,6 +2206,9 @@ nav .nav-cart-logo:hover {
   background-color: #f5fff5;
   border: 2px solid #5ecc37;
   box-shadow: 0 4px 4px 0 #5ecc37ff, 0 4px 4px 0 #2d313440;
+}
+.product-list-container .product-cards-container .product-card:nth-child(3n + 3) .product-card__cta svg path:first-child {
+  filter: invert(81%) sepia(11%) saturate(4195%) hue-rotate(50deg) brightness(95%) contrast(70%);
 }
 @media screen and (max-width: 834px) {
   .product-list-container {

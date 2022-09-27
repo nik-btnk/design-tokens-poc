@@ -6,7 +6,7 @@ import iconInfo from '../../assets/icons/status/info.png'
 import iconCross from '../../assets/icons/status/cross.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
 import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
-import iconCart from '../../assets/Icon=cart-add.png'
+import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
 import { useRef } from 'react'
 
 const ProductCard = ({
@@ -161,7 +161,7 @@ const ProductCard = ({
 
       {showInfo && (
         <button className="product-card__cta">
-          <img src={iconCart} alt="" />
+          <IconCart />
           Add to Cart
         </button>
       )}
