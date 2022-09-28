@@ -6,10 +6,10 @@
   height: @sizes-large-1;
   width: 100%;
   background-color: @color-brand-white;
-  display: flex;
   padding: 0 @sizes-medium-1;
-  align-items: center;
-  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
   @media @break-tablet {
     height: @sizes-large-2;
@@ -17,9 +17,20 @@
   }
 
   @media @break-desktop {
-    max-width: 1032px;
-    margin: auto;
     padding: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    @media @break-desktop {
+      max-width: 1032px;
+      margin: auto;
+      padding: 0;
+    }
   }
 
   &__menu-button {
