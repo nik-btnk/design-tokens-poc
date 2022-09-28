@@ -6,10 +6,18 @@ import iconInfo from '../../assets/icons/status/info.png'
 import iconCross from '../../assets/icons/status/cross.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
 import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
-import iconCart from '../../assets/Icon=cart-add.png'
+import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
 import { useRef } from 'react'
 
-const ProductCard = ({ name, price, nutrition, allergy, category }) => {
+const ProductCard = ({
+  name,
+  price,
+  nutrition,
+  allergy,
+  category,
+  showInfo = true,
+  showTextWrap = false
+}) => {
   const [isInfo, setInfo] = useState(false)
   const infoButton = useRef(null)
   useOutsideAlerter(infoButton, setInfo)
@@ -22,8 +30,68 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
     .split(' ')[1]
     .toLowerCase()} `
 
+  const getTextWidth = (text, font) => {
+    const canvas =
+      getTextWidth.canvas ||
+      (getTextWidth.canvas = document.createElement('canvas'))
+    const context = canvas.getContext('2d')
+    context.font = font
+    const metrics = context.measureText(text)
+    return metrics.width
+  }
+
+  const makeWrappingText = (text) => {
+    const spacer = '*'
+    const targetTextLength = 620
+    let characterString = text
+    const textWidth = getTextWidth(characterString, 'normal 14px Abril Fatface')
+
+    if (
+      textWidth + getTextWidth(name, 'normal 14px Abril Fatface') <
+      targetTextLength
+    ) {
+      return makeWrappingText(characterString + spacer + name)
+    } else {
+      let finalString = characterString + spacer
+      const availableSpace =
+        targetTextLength -
+        getTextWidth(
+          finalString.replaceAll(spacer, ''),
+          'normal 14px Abril Fatface'
+        )
+      const spaceWidth = getTextWidth('\u00A0', 'normal 14px Abril Fatface')
+      const numberOfInsertionPoints = finalString
+        .split('')
+        .filter((letter) => letter === spacer).length
+      const numberOfSpacesToInsert = Math.ceil(
+        availableSpace / spaceWidth / numberOfInsertionPoints
+      )
+
+      return finalString.replaceAll(
+        spacer,
+        '\u00A0'.repeat(numberOfSpacesToInsert)
+      )
+    }
+  }
+
   return (
     <article className={`product-card ${className}`}>
+      {showTextWrap && (
+        <svg className={'product-card__wrapping-text'} viewBox="0 0 190 190">
+          <defs>
+            <path
+              id="MyPath"
+              d="M 95, 95
+             m -100, 0
+             a 100,100 0 1,1 200,0
+             a 100,100 0 1,1 -200,0"
+            />
+          </defs>
+          <text className={className}>
+            <textPath xlinkHref="#MyPath">{makeWrappingText(name)}</textPath>
+          </text>
+        </svg>
+      )}
       <div className={`product-card__background ${className}`}>
         <div className="product-card__img-container">
           <div className="product-card__img">
@@ -39,28 +107,34 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
           <span className="product-card__name">{name}</span>
           <span className="product-card__price">${price.toFixed(2)}</span>
         </div>
-        <button
-          className="product-card__info-button"
-          ref={infoButton}
-          onClick={handleClick}>
-          <div className="product-card__info-icon-container">
-            <img src={isInfo ? iconCross : iconInfo} alt="" />
-          </div>
-        </button>
-        <div
-          className={`product-card__properties${
-            isInfo ? ' hide-properties' : ''
-          }`}>
-          <div className="product-card__property-container">
-            <img src={nutrition.icon} alt={nutrition.name} />
-          </div>
-          {allergy !== null &&
-            allergy.map((item, index) => (
-              <div key={index} className="product-card__property-container">
-                <img src={item.icon} alt={item.name} title={item.name} />
+
+        {showInfo && (
+          <>
+            <button
+              className="product-card__info-button"
+              ref={infoButton}
+              onClick={handleClick}>
+              <div className="product-card__info-icon-container">
+                <img src={isInfo ? iconCross : iconInfo} alt="" />
               </div>
-            ))}
-        </div>
+            </button>
+
+            <div
+              className={`product-card__properties${
+                isInfo ? ' hide-properties' : ''
+              }`}>
+              <div className="product-card__property-container">
+                <img src={nutrition.icon} alt={nutrition.name} />
+              </div>
+              {allergy !== null &&
+                allergy.map((item, index) => (
+                  <div key={index} className="product-card__property-container">
+                    <img src={item.icon} alt={item.name} title={item.name} />
+                  </div>
+                ))}
+            </div>
+          </>
+        )}
 
         <div
           className="product-card__info-container"
@@ -84,10 +158,13 @@ const ProductCard = ({ name, price, nutrition, allergy, category }) => {
           )}
         </div>
       </div>
-      <button className="product-card__cta">
-        <img src={iconCart} alt="" />
-        Add to Cart
-      </button>
+
+      {showInfo && (
+        <button className="product-card__cta">
+          <IconCart />
+          Add to Cart
+        </button>
+      )}
     </article>
   )
 }

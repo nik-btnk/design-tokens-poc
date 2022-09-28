@@ -1,0 +1,200 @@
+.product-info {
+  width: 100%;
+  padding: @sizes-medium-3 @sizes-small-3;
+  margin: auto;
+
+  @media screen and (min-width: @size-tablet) and (max-width: 700px) {
+    padding: @sizes-large-1 @sizes-medium-2 !important;
+  }
+
+  @media @break-tablet {
+    padding: @sizes-large-1 @sizes-medium-2 @sizes-large-1
+      calc(@sizes-medium-2 + @sizes-small-3);
+  }
+
+  @media @break-desktop {
+    max-width: 1032px;
+    padding: calc(@sizes-large-2 + @sizes-small-3) 0;
+  }
+
+  &__title-mobile {
+    @font-desktop-title-small-abril();
+    color: @color-light-mode-text-black;
+    display: block;
+    margin-bottom: @sizes-medium-1;
+
+    @media @break-tablet {
+      display: none;
+    }
+  }
+
+  &__content-wrapper {
+    display: grid;
+    column-gap: calc(@sizes-medium-1 + @sizes-small-3);
+
+    @media screen and (min-width: @size-tablet) and (max-width: 700px) {
+      grid-auto-flow: row !important;
+    }
+
+    @media @break-tablet {
+      grid-auto-flow: column;
+    }
+
+    @media @break-desktop {
+      max-width: 1032px;
+      width: 100%;
+      margin: auto;
+      column-gap: calc(@sizes-large-3 + @sizes-small-3);
+      grid-template-rows: minmax(400px, auto);
+    }
+
+    .product-card {
+      width: 100%;
+      margin: 0 0 @sizes-medium-1 0;
+
+      @media screen and (min-width: @size-tablet) and (max-width: 700px) {
+        margin: auto auto @sizes-medium-2 auto !important;
+      }
+
+      @media @break-tablet {
+        width: fit-content !important;
+        margin: 0;
+        align-self: center;
+      }
+
+      @media @break-desktop {
+        transform: scale(1.23);
+      }
+
+      &__background {
+        margin: 0;
+
+        @media @break-tablet {
+          height: 325px;
+          width: 325px;
+        }
+
+        &::before {
+          @media @break-tablet {
+            width: 305px;
+            height: 305px;
+          }
+        }
+      }
+
+      &__name-price-container {
+        @media @break-desktop {
+          right: 83px !important;
+          top: 91px !important;
+        }
+      }
+
+      &__name {
+        @media @break-tablet {
+          font-size: @sizes-medium-2 !important;
+        }
+
+        @media @break-desktop {
+          font-size: 48px !important;
+          transform: scale(0.77);
+        }
+      }
+
+      &__price {
+        @media @break-tablet {
+          display: none;
+        }
+      }
+
+      &__name-price-container {
+        @media @break-tablet {
+          right: 65px;
+          top: 112px;
+        }
+      }
+
+      &__img {
+        @media @break-tablet {
+          transform: scale(1.9);
+          bottom: 91px;
+          left: 46px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    &--title {
+      @font-desktop-title-small-abril();
+      color: @color-light-mode-text-black;
+      display: none;
+      margin-bottom: @sizes-medium-1;
+
+      @media @break-tablet {
+        @font-desktop-title-medium-abril();
+        margin-bottom: @sizes-small-3;
+        display: block;
+      }
+    }
+
+    &--price {
+      @font-desktop-title-medium-abril();
+      color: @color-light-mode-text-pink;
+      display: none;
+      margin-top: @sizes-medium-2;
+
+      @media @break-tablet {
+        display: block;
+      }
+
+      @media @break-desktop {
+        @font-desktop-title-large-abril();
+      }
+    }
+
+    &--description {
+      @font-desktop-body-quatt();
+      color: @color-light-mode-text-black;
+    }
+
+    &--cta {
+      width: 100%;
+      height: 40px;
+      border-radius: @sizes-small-3;
+      background-color: @color-light-mode-background-button-blue;
+      border: 2px solid @color-light-mode-border-button-blue;
+      box-shadow: @effect-shadow-button-blue-default-0;
+      @font-mobile-title-small-quatt();
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin: @sizes-medium-1 0 @sizes-medium-3 0;
+
+      @media @break-tablet {
+        width: 180px;
+        margin: @sizes-medium-2 0 0 0;
+      }
+
+      &:active {
+        border: 2px solid @color-brand-blue-4;
+        box-shadow: @effect-shadow-button-blue-active;
+      }
+
+      svg {
+        transform: scale(0.8);
+        margin-right: @sizes-small-2;
+
+        path:first-child {
+          filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg)
+            brightness(95%) contrast(97%);
+        }
+      }
+
+      @media @break-tablet {
+        width: 180px;
+      }
+    }
+  }
+}

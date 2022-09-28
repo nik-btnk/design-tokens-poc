@@ -9,9 +9,83 @@
   align-items: center;
   z-index: 1;
   margin: @sizes-medium-1;
+  position: relative;
 
   @media @break-desktop {
     margin: @sizes-medium-3;
+  }
+
+  &__wrapping-text {
+    position: absolute;
+    overflow: visible;
+    display: none;
+    animation: spin 30s linear infinite;
+
+    @media @break-tablet {
+      display: block;
+    }
+
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    text {
+      @font-desktop-title-medium-abril();
+      font-size: 14px;
+    }
+
+    .clockwork-orange {
+      fill: @color-flavor-clockwork-orange-fill-front;
+      stroke: @color-flavor-clockwork-orange-border;
+    }
+
+    .red-planet {
+      fill: @color-flavor-red-planet-fill-front;
+      stroke: @color-flavor-red-planet-border;
+    }
+
+    .green-land {
+      fill: @color-flavor-green-land-fill-front;
+      stroke: @color-flavor-green-land-border;
+    }
+
+    .yellow-submarine {
+      fill: @color-flavor-yellow-submarine-fill-front;
+      stroke: @color-flavor-yellow-submarine-border;
+    }
+
+    .vivacious-violet {
+      fill: @color-flavor-vivacious-violet-fill-front;
+      stroke: @color-flavor-vivacious-violet-border;
+    }
+
+    .pink-panther {
+      fill: @color-flavor-pink-panther-fill-front;
+      stroke: @color-flavor-pink-panther-border;
+    }
+
+    .feeling-blue {
+      fill: @color-flavor-feeling-blue-fill-front;
+      stroke: @color-flavor-feeling-blue-border;
+    }
+
+    .blue-clue {
+      fill: @color-flavor-blue-clue-fill-front;
+      stroke: @color-flavor-blue-clue-border;
+    }
+
+    .gray-anatomy {
+      fill: @color-flavor-gray-anatomy-fill-front;
+      stroke: @color-flavor-gray-anatomy-border;
+    }
+
+    .puzzled-plum {
+      fill: @color-flavor-puzzled-plum-fill-front;
+      stroke: @color-flavor-puzzled-plum-border;
+    }
   }
 
   &__background {
@@ -24,7 +98,7 @@
     position: relative;
     z-index: 3;
     pointer-events: none;
-    margin-bottom: @sizes-small-3;
+    margin-bottom: @sizes-medium-1;
 
     @media @break-tablet {
       width: 180px;
@@ -73,7 +147,7 @@
   &__img {
     bottom: -110px;
     left: 50px;
-    transform: scale(1.7);
+    transform: scale(1.6);
 
     img {
       width: 73%;
@@ -105,12 +179,12 @@
     }
 
     .product-card__price {
-      @font-mobile-title-small-abril();
+      @font-desktop-title-small-abril();
     }
   }
 
   &__info-button {
-    right: -22px;
+    right: -15px;
     top: 35px;
     width: 62px;
     height: 40px;
@@ -313,8 +387,9 @@
       box-shadow: @effect-shadow-button-orange-active;
     }
 
-    img {
+    svg {
       transform: scale(0.8);
+      margin-right: @sizes-small-2;
     }
   }
 

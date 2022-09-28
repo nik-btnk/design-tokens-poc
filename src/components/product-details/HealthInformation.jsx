@@ -2,7 +2,7 @@
 import React from 'react'
 
 const HealthInformation = ({ product: { allergy, nutrition, calories } }) => {
-  const iconList = [nutrition, ...allergy]
+  const iconList = !allergy ? [nutrition] : [nutrition, ...allergy]
 
   return (
     <div className="health-info">

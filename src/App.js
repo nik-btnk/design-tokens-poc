@@ -11,7 +11,7 @@ import Landing from './pages/Landing'
 import ProductList from './pages/ProductList'
 import Cart from './pages/Cart'
 import Page404 from './pages/Page404'
-import Nav from './components/Nav'
+import Header from './components/Header'
 import Footer from './components/Footer'
 import Test from './pages/Test'
 import ProductDetails from './pages/ProductDetails'
@@ -19,7 +19,7 @@ import ProductDetails from './pages/ProductDetails'
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <Header />
 
       <Routes>
         <Route path="*" element={<Page404 />} />
@@ -29,6 +29,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/productDetails" element={<ProductDetails />} />
       </Routes>
+
       <Footer />
     </div>
   )

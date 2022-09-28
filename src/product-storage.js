@@ -55,94 +55,113 @@ const noSugar = {
 const products = [
   {
     name: 'Clockwork Orange',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 4.99,
     nutrition: highProtein,
     allergy: [milk, eggs],
     category: "Hot 'n Spicy",
-    calories: 220
+    calories: 220,
+    id: 465505
   },
   {
     name: 'Red Planet',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 9.99,
     nutrition: noSugar,
     allergy: null,
     category: "Hot 'n Spicy",
-    calories: 175
+    calories: 175,
+    id: 857537
   },
   {
     name: 'Green Land',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 7.99,
     nutrition: lowFat,
     allergy: [milk, nuts, wheat],
     category: "Hot 'n Spicy",
-    calories: 275
+    calories: 275,
+    id: 273168
   },
   {
     name: 'Yellow Submarine',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 4.2,
     nutrition: lowFat,
     allergy: [fish],
     category: "Hot 'n Spicy",
-    calories: 195
+    calories: 195,
+    id: 939085
   },
   {
     name: 'Vivacious Violet',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 2.99,
     nutrition: highProtein,
     allergy: null,
     category: "Hot 'n Spicy",
-    calories: 205
+    calories: 205,
+    id: 942287
   },
-
   {
     name: 'Pink Panther',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 4.99,
     nutrition: lowFat,
     allergy: [milk, eggs],
     category: 'Cool as Ice',
-    calories: 210
+    calories: 210,
+    id: 991571
   },
   {
     name: 'Feeling Blue',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 5.99,
     nutrition: highProtein,
     allergy: [milk, eggs, nuts],
     category: 'Cool as Ice',
-    calories: 235
+    calories: 235,
+    id: 197156
   },
   {
     name: 'Blue Clue',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 2.99,
     nutrition: noSugar,
     allergy: [milk, nuts],
     category: 'Cool as Ice',
-    calories: 220
+    calories: 220,
+    id: 467522
   },
   {
     name: 'Gray Anatomy',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 6.9,
     nutrition: highProtein,
     allergy: [nuts],
     category: 'Cool as Ice',
-    calories: 240
+    calories: 240,
+    id: 948055
   },
   {
     name: 'Puzzled Plum',
-    description: '',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
     price: 8.37,
     nutrition: lowFat,
     allergy: [wheat],
     category: 'Cool as Ice',
-    calories: 235
+    calories: 235,
+    id: 847737
   }
 ]
 
