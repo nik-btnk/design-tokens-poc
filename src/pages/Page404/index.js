@@ -1,6 +1,7 @@
+// Modules
 import React from 'react'
 
-//assets
+// Assets
 import mascot from '../../assets/404-mascot.png'
 
 const Page404 = () => {
@@ -12,14 +13,12 @@ const Page404 = () => {
           <img src={mascot}></img>
           <span>4</span>
         </div>
-        <div className="not-found__text1">
-          <p>
-            Sorry, we couldn’t find the <br></br>page you’re looking for!
-          </p>
-        </div>
-        <div className="not-found__text2">
-          <p>Maybe spin the Wheel O’ Color and find a new favorite?</p>
-        </div>
+        <span className="not-found__text1">
+          Sorry, we couldn’t find the page you’re looking for!
+        </span>
+        <span className="not-found__text2">
+          Maybe spin the Wheel O’ Color and find a new favorite?
+        </span>
       </div>
     </div>
   )

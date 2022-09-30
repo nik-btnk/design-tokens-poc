@@ -4,67 +4,76 @@
 
 .not-found-wrapper {
   background-color: @color-brand-white;
+  padding: @sizes-medium-1 @sizes-small-3 @sizes-large-1 @sizes-small-3;
+
+  @media @break-tablet {
+    padding: @sizes-medium-3 @sizes-medium-2;
+  }
+
+  @media @break-desktop {
+    max-width: 1032px;
+    margin: 0 auto;
+  }
 
   .not-found {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+    gap: @sizes-small-3;
+
+    @media @break-tablet {
+      justify-content: flex-start;
+      gap: @sizes-medium-2;
+    }
 
     &__logo {
-      height: 140px;
-      width: 320px;
-      display: flex;
+      height: 70px;
+      display: inline-flex;
       justify-content: space-between;
-      align-items: center;
-      position: relative;
+      align-self: center;
+      // padding-bottom: @sizes-small-2;
+      gap: @sizes-small-2;
+
+      @media @break-tablet {
+        height: 141px;
+        gap: @sizes-small-3;
+      }
 
       img {
-        width: 140px;
-        align-self: flex-end;
-        position: absolute;
-        left: 100px;
+        height: 70px;
+
+        @media @break-tablet {
+          height: 141px;
+        }
       }
+
       span {
         @font-desktop-title-hero-abril();
-        font-size: 128px;
+        line-height: 44px;
+
+        @media @break-tablet {
+          font-size: 128px;
+          line-height: 90px;
+        }
       }
     }
 
     &__text1,
     &__text2 {
-      @font-desktop-title-medium-quatt();
-      text-align: center;
+      @font-desktop-body-quatt();
+
+      @media @break-tablet {
+        @font-desktop-title-medium-quatt();
+        max-width: 377px;
+        width: 100%;
+        align-self: center;
+      }
+
+      @media @break-desktop {
+        max-width: 455px;
+      }
     }
-
-    .breakpoint-tablet({
-      &__text1,
-      &__text2 {
-        width: 80%;
-        text-align: center;
-      }
-    });
-    .breakpoint-mobile({
-      &__logo {
-        width: 180px;
-        height: 80px;
-
-        span {
-          @font-desktop-title-hero-abril();
-        }
-
-        img {
-          width: 80px;
-          left: 55px;
-        }
-      }
-
-      &__text1,
-      &__text2 {
-        @font-desktop-title-small-abril();
-      }
-    });
   }
 }
