@@ -44,6 +44,13 @@ const ActiveFilters = ({ priceRange, removeAll, removeFilter, type }) => {
           <span>
             Price Range: ${priceRange[0]} - ${priceRange[1]}
           </span>
+          <div className="active-filter__spacer"></div>
+          <img
+            src={crossIcon}
+            alt=""
+            className="active-filter__cross"
+            onClick={() => removeFilter(filterName)}
+          />
         </div>
       ) : (
         <div className="active-filter">
