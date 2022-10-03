@@ -1,7 +1,6 @@
 // Modules
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 // CSS and asets
 import './App.css'
@@ -16,24 +15,26 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Test from './pages/Test'
 import ProductDetails from './pages/ProductDetails'
+import Checkout from './pages/Checkout'
 
 // Utils
 import { path } from './constants'
 
 function App() {
-  const location = useLocation()
-
   return (
     <div className="App">
-      <Header isVertical={location.pathname === path.CHECKOUT ? false : true} />
+      <Header />
 
       <Routes>
-        <Route path="*" element={<Page404 />} />
-        <Route path="/" element={<Landing />} />
-        <Route path="/test" element={<Test />} />
-        <Route path="/productList" element={<ProductList />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/productDetails" element={<ProductDetails />} />
+        <Route path={path.LANDING} element={<Landing />} />
+        <Route path={path.TEST} element={<Test />} />
+        <Route path={path.PRODUCTS} element={<ProductList />} />
+        <Route path={path.CART} element={<Cart />} />
+        <Route path={path.DETAILS} element={<ProductDetails />} />
+        <Route path={path.CHECKOUT} element={<Checkout />} />
+        <Route path={path.NOTFOUND} element={<Page404 />} />
+
+        <Route path="*" element={<Navigate replace to={path.NOTFOUND} />} />
       </Routes>
 
       <Footer />

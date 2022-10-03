@@ -5,5 +5,6 @@ export const path = {
   CHECKOUT: '/checkout',
   PRODUCTS: '/productList',
   DETAILS: '/productDetails',
-  TEST: '/test'
+  TEST: '/test',
+  NOTFOUND: '/404'
 }
