@@ -6,7 +6,7 @@ import menuBars from '../assets/Icon=menu-bars.png'
 import logo from '../assets/logo.png'
 import iconCart from '../assets/Icon=cart-menu.png'
 
-const Header = () => {
+const Header = ({ isVertical }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Header = () => {
   }, [menuOpen])
 
   return (
-    <header className="header">
+    <header className={`header${isVertical ? '--vertical' : ''}`}>
       <div className="header__wrapper">
         <button
           className="header__menu-button"

@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 // Modules
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 // CSS and asets
 import './App.css'
@@ -16,10 +18,15 @@ import Footer from './components/Footer'
 import Test from './pages/Test'
 import ProductDetails from './pages/ProductDetails'
 
+// Utils
+import { path } from './constants'
+
 function App() {
+  const location = useLocation()
+
   return (
     <div className="App">
-      <Header />
+      <Header isVertical={location.pathname === path.CHECKOUT ? false : true} />
 
       <Routes>
         <Route path="*" element={<Page404 />} />

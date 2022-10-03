@@ -20,6 +20,44 @@
     padding: 0;
   }
 
+  &--vertical {
+    &:extend(.header);
+
+    @media @break-desktop {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      right: 50%;
+      background-color: transparent;
+      margin-left: 540px;
+      height: 100%;
+      width: 72px;
+      padding-top: @sizes-small-3;
+
+      .header__wrapper {
+        display: grid;
+        height: auto;
+        justify-content: center;
+        justify-items: center;
+      }
+
+      .header__logo {
+        grid-row: 1;
+        margin-bottom: 72px;
+      }
+
+      .header__cart {
+        grid-row: 2;
+        margin-bottom: 332px;
+      }
+
+      .header__menu-button {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
