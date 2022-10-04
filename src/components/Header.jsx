@@ -41,16 +41,18 @@ const Header = () => {
         </header>
       ) : (
         <header className="header-checkout">
-          <Link to={path.CART}>
-            <button className="header-checkout__back-btn">
-              <img src={caretLeft} />
-              <span>Back to Cart</span>
-            </button>
-          </Link>
-          <span className="header-checkout__title">Checkout</span>
-          <Link to={path.LANDING} className="header-checkout__logo">
-            <img src={logo} alt="Cream Colors logo." />
-          </Link>
+          <div className="header-checkout__wrapper">
+            <Link to={path.CART}>
+              <button className="header-checkout__back-btn">
+                <img src={caretLeft} />
+                <span>Back to Cart</span>
+              </button>
+            </Link>
+            <span className="header-checkout__title">Checkout</span>
+            <Link to={path.LANDING} className="header-checkout__logo">
+              <img src={logo} alt="Cream Colors logo." />
+            </Link>
+          </div>
         </header>
       )}
     </>
