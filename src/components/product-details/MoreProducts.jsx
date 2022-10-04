@@ -28,6 +28,7 @@ const MoreProducts = ({ product: { name } }) => {
               price={products[itemIndex].price}
               nutrition={products[itemIndex].nutrition}
               allergy={products[itemIndex].allergy}
+              id={products[itemIndex].id}
             />
           )
         })}

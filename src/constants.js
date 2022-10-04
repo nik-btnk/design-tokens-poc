@@ -3,8 +3,8 @@ export const path = {
   LANDING: '/',
   CART: '/cart',
   CHECKOUT: '/checkout',
-  PRODUCTS: '/productList',
-  DETAILS: '/productDetails',
+  PRODUCTS: '/products',
+  DETAILS: '/product/:id',
   TEST: '/test',
   NOTFOUND: '/404'
 }

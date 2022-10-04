@@ -65,6 +65,7 @@ const Storefront = () => {
                 nutrition={iceCream.nutrition}
                 allergy={iceCream.allergy}
                 category={iceCream.category}
+                id={iceCream.id}
               />
             ))}
         </div>
