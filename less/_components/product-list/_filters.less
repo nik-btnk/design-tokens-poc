@@ -1,12 +1,30 @@
 @import '../../_variables/_breakpoints.less';
 
 .filters {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 900px;
   position: relative;
-  z-index: 2;
+  width: 100%;
+  display: block;
+  padding: 0 20px 0 16px;
+
+  @media @break-tablet {
+    padding: 36px @sizes-medium-2 0 @sizes-medium-2;
+    display: inline-flex;
+  }
+
+  @media @break-desktop {
+    display: flex;
+    max-width: 1032px;
+    margin: auto;
+    padding: 36px 0 0 0;
+  }
+
+  &__title {
+    @media @break-tablet {
+      display: none;
+    }
+  }
 
   .visible {
     display: flex;
@@ -18,98 +36,85 @@
 
   h4 {
     @font-desktop-title-small-abril();
+    margin: 0;
   }
 
   .filters-container {
-    display: flex;
-    justify-content: space-around;
+    display: none;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     width: 100%;
+    gap: @sizes-medium-1;
+
+    @media @break-tablet {
+      display: flex;
+    }
   }
 
   .filters-container-mobile {
-    display: none;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
     width: 100%;
+    z-index: 2;
+    left: 0;
+    top: 48px;
+
+    @media @break-tablet {
+      display: none;
+    }
   }
 
   .mobile-arrow {
-    display: none;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: @sizes-small-3;
+
+    @media @break-tablet {
+      display: none;
+    }
   }
 
   .mobile-divider {
-    display: none;
+    background-color: @color-brand-blue-3;
+    box-shadow: @effect-shadow-button-blue-default-0;
+    position: absolute;
+    left: 0;
+    bottom: -@sizes-small-3;
+    z-index: 0;
+    height: 2px;
+    width: 100%;
+    display: block;
+
+    @media @break-tablet {
+      display: none;
+    }
   }
 
   .apply-filters {
-    display: none;
-  }
+    z-index: 1;
+    height: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: @effect-shadow-button-blue-default-0;
+    background-color: @color-light-mode-background-page-white;
+    border: 1px solid @color-light-mode-border-button-blue;
+    border-right: 3px solid @color-light-mode-border-button-blue;
+    border-left: 3px solid @color-light-mode-border-button-blue;
 
-  .breakpoint-tablet({
-    margin: 0 auto;
-    width: 780px;
-  });
-
-  @media screen and (max-width: 768px) {
-    width: initial;
-  }
-
-  .breakpoint-mobile({
-    width: 100%;
-    display: block;
-    position: relative;
-
-    h4 {
-      margin: 0 0 @sizes-small-3 @sizes-small-3;
-    }
-
-    .filters-container {
+    @media @break-tablet {
       display: none;
     }
 
-    .filters-container-mobile {
-      display: flex;
-      position: absolute;
-      flex-direction: column;
+    #apply-filters-btn {
+      @font-desktop-body-quatt();
+      font-weight: 700;
+      height: 38px;
+      width: 80%;
+      border-radius: @sizes-small-3;
     }
-
-    .mobile-arrow {
-      display: block;
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      right: @sizes-small-3;
-    }
-
-    .mobile-divider {
-      background-color: @color-brand-blue-3;
-      box-shadow: @effect-shadow-button-blue-default-0;
-      position: absolute;
-      left: 0;
-      bottom: -@sizes-small-3;
-      z-index: 0;
-      height: 2px;
-      width: 100%;
-      display: block;
-    }
-
-    .apply-filters {
-      z-index: 1;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: @effect-shadow-button-blue-default-0;
-      background-color: @color-light-mode-background-page-white;
-      border: 1px solid @color-light-mode-border-button-blue;
-      border-right: 3px solid @color-light-mode-border-button-blue;
-      border-left: 3px solid @color-light-mode-border-button-blue;
-
-      #apply-filters-btn {
-        @font-desktop-body-quatt();
-        font-weight: 700;
-        height: 38px;
-        width: 80%;
-        border-radius: @sizes-small-3;
-      }
-    }
-  });
+  }
 }

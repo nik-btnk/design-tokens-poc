@@ -7,88 +7,86 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: @sizes-small-1;
-  &__title {
-    @font-desktop-title-small-abril();
-    margin: 0;
+  padding: @sizes-medium-2 @sizes-small-3 0 @sizes-small-3;
+  justify-content: flex-start;
+  row-gap: 16px;
+  column-gap: 20px;
+
+  @media @break-tablet {
+    row-gap: 20px;
+    padding: @sizes-medium-2 @sizes-medium-2 0 @sizes-medium-2;
   }
 
-  .breakpoint-mobile({
-    justify-content:space-evenly;
-    &__title{
-        @font-desktop-body-quatt();
-    }    
-    });
+  @media @break-desktop {
+    max-width: 1032px;
+    padding: @sizes-medium-2 0 0 0;
+    margin: auto;
+  }
+
+  &__title {
+    @font-desktop-body-quatt();
+    margin: 0;
+
+    @media @break-tablet {
+      @font-desktop-title-small-abril();
+    }
+  }
 }
 
 .active-filter {
   display: inline-flex;
   justify-content: space-around;
   align-items: center;
-  padding-left: @sizes-small-1;
   background-color: @color-brand-orange-0;
   border-radius: @sizes-small-3;
   border: 2px solid @color-brand-orange-2;
   box-shadow: @effect-shadow-button-orange-default-0;
   min-width: 130px;
-  height: @sizes-medium-2;
+  height: @sizes-medium-1;
   position: relative;
-  margin: @sizes-small-2;
-  padding: @sizes-small-2;
+  padding: 0 0 0 @sizes-small-2;
+
+  @media @break-tablet {
+    height: @sizes-medium-2;
+  }
 
   span {
     @font-desktop-body-quatt();
-    margin-left: @sizes-small-1;
+    margin: 0 @sizes-small-2 0 @sizes-small-1;
   }
 
   &__icon {
-    max-height: 25px;
-    margin-right: @sizes-small-1;
+    height: @sizes-medium-1;
+    margin-right: @sizes-small-2;
+
+    @media @break-tablet {
+      height: @sizes-medium-2;
+    }
   }
 
   &__prohibition {
+    height: @sizes-medium-1;
     position: absolute;
-    height: 25px;
-    left: 12px;
+    left: 11px;
+
+    @media @break-tablet {
+      height: @sizes-medium-2;
+    }
   }
 
   &__cross {
+    height: @sizes-medium-1;
     position: absolute;
     right: -5px;
-    top: -2px;
     cursor: pointer;
+
+    @media @break-tablet {
+      height: @sizes-medium-2;
+    }
   }
 
   &__spacer {
     height: 32px;
     width: 32px;
   }
-
-  .breakpoint-mobile({
-    height: 24px;
-    min-width: 100px;
-
-    span{
-      font-size: 12px;
-    }
-
-    &__icon {
-      max-height: 20px;
-      margin-right: @sizes-small-1;
-    }
-
-    &__prohibition {
-      height: 20px;
-      left: 10px;
-    }
-
-    &__cross{
-      height: 24px
-    }
-    
-    &__spacer{
-      height: 24px;
-      width: 24px
-    }
-  });
 }

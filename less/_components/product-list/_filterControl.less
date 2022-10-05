@@ -6,27 +6,32 @@
 .filter {
   &-dropdown {
     position: relative;
-    z-index: 1;
+    display: block;
+    border-right: 2px solid @color-light-mode-border-button-blue;
+    border-left: 2px solid @color-light-mode-border-button-blue;
+
+    @media @break-tablet {
+      border: none;
+    }
 
     &-btn {
-      height: 40px;
-      width: 190px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: @sizes-small-3;
-      border: 2px solid @color-light-mode-border-button-orange;
-      background-color: @color-light-mode-background-page-orange;
-      box-shadow: @effect-shadow-button-orange-default-0;
       @font-desktop-body-quatt();
       font-weight: 700;
-      padding: @sizes-small-2 @sizes-small-3;
-      cursor: pointer;
+      background-color: @color-light-mode-background-page-white;
+      border: 1px solid @color-light-mode-border-button-blue;
+      border-bottom: none;
+      height: 48px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 @sizes-medium-1 0 @sizes-small-3;
 
-      &:active,
+      &:hover,
       &:focus {
-        border: 2px solid @color-brand-orange-4;
-        box-shadow: @effect-shadow-button-orange-active;
+        box-shadow: none;
+        border: 1px solid @color-light-mode-border-button-blue;
+        border-bottom: none;
       }
 
       &__arrow {
@@ -36,18 +41,50 @@
           transform: rotate(90deg);
         }
       }
+
+      @media @break-tablet {
+        height: 40px;
+        align-items: center;
+        border-radius: @sizes-small-3;
+        border: 2px solid @color-light-mode-border-button-orange;
+        background-color: @color-light-mode-background-page-orange;
+        box-shadow: @effect-shadow-button-orange-default-0;
+        cursor: pointer;
+
+        &:active,
+        &:hover,
+        &:focus {
+          border: 2px solid @color-brand-orange-4;
+          box-shadow: @effect-shadow-button-orange-active;
+        }
+      }
     }
+
     &-items {
-      width: 190px;
-      display: block;
-      position: absolute;
-      margin-top: @sizes-small-2;
-      border: @sizes-small-1 solid @color-brand-orange-2;
-      border-radius: @sizes-small-3;
-      background-color: @color-brand-orange-0;
+      position: relative;
+      width: 100%;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      background-color: @color-light-mode-background-page-white;
       @font-desktop-body-quatt();
-      padding: @sizes-small-2 @sizes-small-3;
-      box-shadow: @effect-shadow-button-orange-default-0;
+      padding: @sizes-small-2 @sizes-small-3 @sizes-small-3 @sizes-small-3;
+      box-shadow: none;
+      border-right: 1px solid @color-light-mode-border-button-blue;
+      border-left: 1px solid @color-light-mode-border-button-blue;
+
+      @media @break-tablet {
+        display: block;
+        position: absolute;
+        margin-top: @sizes-small-2;
+        border: @sizes-small-1 solid @color-brand-orange-2;
+        border-radius: @sizes-small-3;
+        background-color: @color-brand-orange-0;
+        @font-desktop-body-quatt();
+        padding: @sizes-small-2 @sizes-small-3;
+        box-shadow: @effect-shadow-button-orange-default-0;
+        z-index: 2;
+      }
 
       li {
         position: relative;
@@ -135,61 +172,21 @@
       }
     }
 
-    .size {
-      &-price {
-        width: 165px;
-      }
-      &-allergies {
-        width: 145px;
-      }
-      &-nutrition {
-        width: 180px;
-      }
-      &-category {
-        width: 180px;
+    @media @break-tablet {
+      .size {
+        &-price {
+          width: 165px;
+        }
+        &-allergies {
+          width: 145px;
+        }
+        &-nutrition {
+          width: 180px;
+        }
+        &-category {
+          width: 180px;
+        }
       }
     }
-
-    .breakpoint-mobile({
-      display: block;
-      border-right: 2px solid @color-light-mode-border-button-blue;
-      border-left: 2px solid @color-light-mode-border-button-blue;
-
-      &-btn {
-        border-radius: 0;
-        background-color: @color-light-mode-background-page-white;
-        border: 1px solid @color-light-mode-border-button-blue;
-        border-bottom: none;
-        box-shadow: none;
-        position: relative;
-        &:hover,
-        &:focus {
-          box-shadow: none;
-          border: 1px solid @color-light-mode-border-button-blue;
-          border-bottom: none;
-        }
-      }
-      &-items {
-        position: relative;
-        width: 100%;
-        margin: 0;
-        border: none;
-        border-radius: 0;
-        background-color: @color-light-mode-background-page-white;
-        @font-desktop-body-quatt();
-        padding: @sizes-small-2 @sizes-small-3;
-        box-shadow: none;
-        border-right: 1px solid @color-light-mode-border-button-blue;
-        border-left: 1px solid @color-light-mode-border-button-blue;
-      }
-      .size {
-        &-price,
-        &-allergies,
-        &-nutrition,
-        &-category {
-          width: 100%;
-        }
-      }
-    });
   }
 }

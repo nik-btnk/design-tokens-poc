@@ -20,8 +20,9 @@ export const Filters = ({
   return (
     <>
       <div className="filters">
-        <h4>Filters:</h4>
+        <h4 className="filters__title">Filters:</h4>
         <div className="filters-container">
+          <h4>Filters:</h4>
           <FilterControl
             type="Price"
             priceRange={priceRange}

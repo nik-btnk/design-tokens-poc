@@ -4,21 +4,41 @@
 
 .product-list {
   background-color: @color-light-mode-background-page-white;
+  padding-top: 5px;
+
+  @media @break-tablet {
+    padding: 0;
+  }
 
   &-container {
-    width: 80%;
-    margin: 0 auto;
-
     .product-cards-container {
-      margin-top: @sizes-medium-1;
       display: grid;
+      gap: @sizes-medium-3;
+      padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
 
       @media @break-tablet {
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: @sizes-medium-3 @sizes-medium-2 96px @sizes-medium-2;
+        row-gap: calc(@sizes-medium-3 + @sizes-small-2);
+      }
+
+      @media screen and (min-width: @size-tablet) and (max-width: 1000px) {
+        justify-content: space-between;
+      }
+
+      @media screen and (min-width: 900px) {
+        column-gap: @sizes-large-3;
       }
 
       @media @break-desktop {
-        display: block;
+        max-width: 1032px;
+        margin: auto;
+        display: grid;
+        column-gap: 103px;
+        grid-template-columns: auto auto auto auto;
+        padding: calc(@sizes-medium-3 + 12px) 0 @sizes-large-3 0;
       }
 
       .product-card:nth-child(3n + 1) {
@@ -40,8 +60,7 @@
             @effect-shadow-button-blue-default-1;
 
           svg path:first-child {
-            filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg)
-              brightness(95%) contrast(97%);
+            fill: @color-brand-blue-3;
           }
         }
       }
@@ -65,8 +84,7 @@
             @effect-shadow-button-pink-default-1;
 
           svg path:first-child {
-            filter: invert(51%) sepia(56%) saturate(389%) hue-rotate(314deg)
-              brightness(110%) contrast(108%);
+            fill: @color-brand-pink-3;
           }
         }
       }
@@ -89,19 +107,10 @@
             @effect-shadow-button-green-default-1;
 
           svg path:first-child {
-            filter: invert(81%) sepia(11%) saturate(4195%) hue-rotate(50deg)
-              brightness(95%) contrast(70%);
+            fill: @color-brand-green-3;
           }
         }
       }
     }
-
-    .breakpoint-tablet({
-      width: 95%;
-    });
-
-    .breakpoint-mobile({
-      width: 100%;
-    });
   }
 }
