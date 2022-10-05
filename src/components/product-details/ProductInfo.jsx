@@ -11,7 +11,7 @@ const ProductInfo = ({ product: { name, description, price, subtitle } }) => {
   return (
     <div className="product-info">
       <div className="product-info__content-wrapper">
-        <span className="product-info__title-mobile">Some Sort of Title</span>
+        <span className="product-info__title-mobile">{subtitle}</span>
         <ProductCard
           showInfo={false}
           showTextWrap={true}
