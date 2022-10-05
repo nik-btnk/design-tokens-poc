@@ -1,13 +1,15 @@
+// Modules
 import React, { useState } from 'react'
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
+import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-//assets
+// Assets
 import iconInfo from '../../assets/icons/status/info.png'
 import iconCross from '../../assets/icons/status/cross.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
 import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
 import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
-import { useRef } from 'react'
 
 const ProductCard = ({
   name,
@@ -15,10 +17,12 @@ const ProductCard = ({
   nutrition,
   allergy,
   category,
+  id,
   showInfo = true,
   showTextWrap = false
 }) => {
   const [isInfo, setInfo] = useState(false)
+  const navigate = useNavigate()
   const infoButton = useRef(null)
   useOutsideAlerter(infoButton, setInfo)
 
@@ -75,97 +79,106 @@ const ProductCard = ({
   }
 
   return (
-    <article className={`product-card ${className}`}>
-      {showTextWrap && (
-        <svg className={'product-card__wrapping-text'} viewBox="0 0 190 190">
-          <defs>
-            <path
-              id="MyPath"
-              d="M 95, 95
+    <div className="wrapper">
+      <article
+        className={`product-card ${className}`}
+        onClick={() => navigate(`/product/${id}`)}
+        style={{ pointerEvents: isInfo ? 'none' : 'auto' }}>
+        {showTextWrap && (
+          <svg className={'product-card__wrapping-text'} viewBox="0 0 190 190">
+            <defs>
+              <path
+                id="MyPath"
+                d="M 95, 95
              m -100, 0
              a 100,100 0 1,1 200,0
              a 100,100 0 1,1 -200,0"
-            />
-          </defs>
-          <text className={className}>
-            <textPath xlinkHref="#MyPath">{makeWrappingText(name)}</textPath>
-          </text>
-        </svg>
-      )}
-      <div className={`product-card__background ${className}`}>
-        <div className="product-card__img-container">
-          <div className="product-card__img">
-            <img
-              src={require(`../../assets/ice-creams/pic-${name}.png`)}
-              alt=""
-            />
-          </div>
-        </div>
-        <div
-          className="product-card__name-price-container"
-          style={isInfo ? { display: 'none' } : { display: 'flex' }}>
-          <span className="product-card__name">{name}</span>
-          <span className="product-card__price">${price.toFixed(2)}</span>
-        </div>
-
-        {showInfo && (
-          <>
-            <button
-              className="product-card__info-button"
-              ref={infoButton}
-              onClick={handleClick}>
-              <div className="product-card__info-icon-container">
-                <img src={isInfo ? iconCross : iconInfo} alt="" />
-              </div>
-            </button>
-
-            <div
-              className={`product-card__properties${
-                isInfo ? ' hide-properties' : ''
-              }`}>
-              <div className="product-card__property-container">
-                <img src={nutrition.icon} alt={nutrition.name} />
-              </div>
-              {allergy !== null &&
-                allergy.map((item, index) => (
-                  <div key={index} className="product-card__property-container">
-                    <img src={item.icon} alt={item.name} title={item.name} />
-                  </div>
-                ))}
-            </div>
-          </>
+              />
+            </defs>
+            <text className={className}>
+              <textPath xlinkHref="#MyPath">{makeWrappingText(name)}</textPath>
+            </text>
+          </svg>
         )}
-
-        <div
-          className="product-card__info-container"
-          style={isInfo ? { display: 'flex' } : { display: 'none' }}>
-          <div className="product-card__description">
-            <p className="product-card__description--text">
-              Color description. Nice and short. Three lines max.
-            </p>
+        <div className={`product-card__background ${className}`}>
+          <div className="product-card__img-container">
+            <div className="product-card__img">
+              <img
+                src={require(`../../assets/ice-creams/pic-${name}.png`)}
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            className="product-card__name-price-container"
+            style={isInfo ? { display: 'none' } : { display: 'flex' }}>
+            <span className="product-card__name">{name}</span>
+            <span className="product-card__price">${price.toFixed(2)}</span>
           </div>
 
-          {category === 'Cool as Ice' ? (
-            <div className="product-card__category cold">
-              <img src={iconCool} alt="" />
-              <span>Cool as Ice</span>
-            </div>
-          ) : (
-            <div className="product-card__category hot">
-              <img src={iconHot} alt="" />
-              <span>Hot `n Spicy</span>
-            </div>
+          {showInfo && (
+            <>
+              <div
+                className={`product-card__properties${
+                  isInfo ? ' hide-properties' : ''
+                }`}>
+                <div className="product-card__property-container">
+                  <img src={nutrition.icon} alt={nutrition.name} />
+                </div>
+                {allergy !== null &&
+                  allergy.map((item, index) => (
+                    <div
+                      key={index}
+                      className="product-card__property-container">
+                      <img src={item.icon} alt={item.name} title={item.name} />
+                    </div>
+                  ))}
+              </div>
+            </>
           )}
+
+          <div
+            className="product-card__info-container"
+            style={isInfo ? { display: 'flex' } : { display: 'none' }}>
+            <div className="product-card__description">
+              <p className="product-card__description--text">
+                Color description. Nice and short. Three lines max.
+              </p>
+            </div>
+
+            {category === 'Cool as Ice' ? (
+              <div className="product-card__category cold">
+                <img src={iconCool} alt="" />
+                <span>Cool as Ice</span>
+              </div>
+            ) : (
+              <div className="product-card__category hot">
+                <img src={iconHot} alt="" />
+                <span>Hot `n Spicy</span>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </article>
 
       {showInfo && (
-        <button className="product-card__cta">
-          <IconCart />
-          Add to Cart
-        </button>
+        <>
+          <button
+            className="product-info-btn"
+            ref={infoButton}
+            onClick={handleClick}>
+            <div className="product-info-btn__info-icon-container">
+              <img src={isInfo ? iconCross : iconInfo} alt="" />
+            </div>
+          </button>
+
+          <button className="add-to-cart-btn">
+            <IconCart />
+            Add to Cart
+          </button>
+        </>
       )}
-    </article>
+    </div>
   )
 }
 

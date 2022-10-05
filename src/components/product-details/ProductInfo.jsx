@@ -7,11 +7,11 @@ import ProductCard from '../product-list/ProductCard'
 // Assets
 import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
 
-const ProductInfo = ({ product: { name, description, price } }) => {
+const ProductInfo = ({ product: { name, description, price, subtitle } }) => {
   return (
     <div className="product-info">
       <div className="product-info__content-wrapper">
-        <span className="product-info__title-mobile">Some Sort of Title</span>
+        <span className="product-info__title-mobile">{subtitle}</span>
         <ProductCard
           showInfo={false}
           showTextWrap={true}
@@ -19,9 +19,7 @@ const ProductInfo = ({ product: { name, description, price } }) => {
           price={price}
         />
         <div className="product-info__content">
-          <span className="product-info__content--title">
-            Some Sort of Title
-          </span>
+          <span className="product-info__content--title">{subtitle}</span>
           <span className="product-info__content--description">
             {description}
           </span>

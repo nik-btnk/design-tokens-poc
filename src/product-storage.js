@@ -5,7 +5,7 @@ import iconMilk from './assets/icons/health/Icon=allergy-milk.png'
 import iconNuts from './assets/icons/health/Icon=allergy-nuts.png'
 import iconWheat from './assets/icons/health/Icon=allergy-wheat.png'
 
-// Nutrition Items
+// Nutrition Icons
 import iconLowFat from './assets/icons/health/Icon=nutrition-fat.png'
 import iconHighProtein from './assets/icons/health/Icon=nutrition-protein.png'
 import iconNoSugar from './assets/icons/health/Icon=nutrition-sugar.png'
@@ -55,8 +55,9 @@ const noSugar = {
 const products = [
   {
     name: 'Clockwork Orange',
+    subtitle: 'Fancy a bit of the ultra-flavor?',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Brownie bits peanut butter blueberries cookies and cream mint marshmallows cake batter. Peanut butter cups vanilla french vanilla, chocolate chip cookie dough chocolate syrup cake batter rainbow sprinkles neopolitan kitkat. Chocolate sprinkles chocolate chip cookie dough cookies and cream.',
     price: 4.99,
     nutrition: highProtein,
     allergy: [milk, eggs],
@@ -66,8 +67,9 @@ const products = [
   },
   {
     name: 'Red Planet',
+    subtitle: 'The rockiest road.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Mint chocolate chip neopolitan french vanilla peanut butter strawberry chocolate. Cookies and cream Mint chocolate chip strawberry, dark chocolate pistachio mint peanut butter french vanilla chocolate chocolate chip vanilla mint chocolate vanilla french vanilla. Strawberry cake batter chocolate cookies and cream, mint chocolate chip neopolitan vanilla mint chocolate chip chocolate peanut butter.',
     price: 9.99,
     nutrition: noSugar,
     allergy: null,
@@ -77,8 +79,9 @@ const products = [
   },
   {
     name: 'Green Land',
+    subtitle: 'Because "Ice Cream Land" attracts Vikings.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Peanut butter coffee neopolitan dark chocolate, vanilla mint french vanilla. Rocky road mint peanut butter vanilla pistachio neopolitan coffee dark chocolate dark chocolate chocolate chip cookie dough cookies and cream mint chocolate chip rocky road cake batter. Mint chocolate chip rocky road cake batter, pistachio strawberry.',
     price: 7.99,
     nutrition: lowFat,
     allergy: [milk, nuts, wheat],
@@ -88,8 +91,9 @@ const products = [
   },
   {
     name: 'Yellow Submarine',
+    subtitle: "Hey Jude, don't get us sued...",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Chocolate chip cookie dough cookies and cream coffee rocky road strawberry french vanilla. Coffee vanilla peanut butter dark chocolate rocky road neopolitan chocolate chip. Vanilla cake batter mint chocolate chip dark chocolate, mint chocolate chip mint rocky road dark chocolate cake batter.',
     price: 4.2,
     nutrition: lowFat,
     allergy: [fish],
@@ -99,8 +103,9 @@ const products = [
   },
   {
     name: 'Vivacious Violet',
+    subtitle: 'Veni, vidi, violeti!',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Pistachio vanilla mint chocolate chip, peanut butter chocolate mint chocolate chip neopolitan dark chocolate. Vanilla rocky road strawberry french vanilla mint chocolate chip. Neopolitan Pistachio rocky road, coffee chocolate chip rocky road rocky road french vanilla cookies and cream chocolate chocolate chip cookie dough. Pistachio peanut butter dark chocolate peanut butter peanut butter.',
     price: 2.99,
     nutrition: highProtein,
     allergy: null,
@@ -110,8 +115,9 @@ const products = [
   },
   {
     name: 'Pink Panther',
+    subtitle: 'No dead ants here.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Coffee vanilla dark chocolate, mint strawberry french vanilla peanut butter pistachio chocolate chip. Mint chocolate dark chocolate coffee. Strawberry strawberry pistachio, cake batter french vanilla rocky road strawberry french vanilla peanut butter rocky road peanut butter. Dark chocolate chocolate chip pistachio, chocolate mint chocolate chip coffee dark chocolate.',
     price: 4.99,
     nutrition: lowFat,
     allergy: [milk, eggs],
@@ -121,8 +127,9 @@ const products = [
   },
   {
     name: 'Feeling Blue',
+    subtitle: 'Let Scoops cheer you up!',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Pistachio coffee dark chocolate, neopolitan cookies and cream cake batter mint chocolate chip rocky road. Peanut butter dark chocolate french vanilla, mint chocolate chip cookie dough coffee mint cookies and cream chocolate strawberry coffee french vanilla pistachio. Neopolitan Pistachio strawberry, strawberry chocolate chip cookie dough.',
     price: 5.99,
     nutrition: highProtein,
     allergy: [milk, eggs, nuts],
@@ -132,8 +139,9 @@ const products = [
   },
   {
     name: 'Blue Clue',
+    subtitle: 'We just got a lawsuit, we just got a lawsuit!',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Cake batter chocolate chip peanut butter, vanilla french vanilla pistachio rocky road coffee. Neopolitan chocolate peanut butter peanut butter vanilla, Cake batter rocky road cookies and cream coffee chocolate dark chocolate mint chocolate chip strawberry mint mint chocolate chip. Neopolitan strawberry chocolate peanut butter cookies and cream vanilla.',
     price: 2.99,
     nutrition: noSugar,
     allergy: [milk, nuts],
@@ -143,8 +151,9 @@ const products = [
   },
   {
     name: 'Gray Anatomy',
+    subtitle: 'A more appealing color than skin-toned.',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'Chocolate chip cookie dough mint strawberry cookies and cream mint chocolate chip chocolate. Chocolate chip cookie dough peanut butter rocky road, mint chocolate chip neopolitan pistachio chocolate cookies and cream mint french vanilla french vanilla neopolitan strawberry chocolate chip mint chocolate chip.',
     price: 6.9,
     nutrition: highProtein,
     allergy: [nuts],
@@ -154,8 +163,9 @@ const products = [
   },
   {
     name: 'Puzzled Plum',
+    subtitle: 'What do you mean, we forgot plum?',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id tempor velit. Nunc mi sapien, dictum vel tristique quis, pulvinar in felis. Aenean posuere dignissim ligula, in porta ante finibus eu. Sed rhoncus lacus sit amet ligula scelerisque, sit amet eleifend velit interdum. Praesent rutrum urna eu laoreet viverra.',
+      'French vanilla dark chocolate peanut butter pistachio chocolate chip coffee neopolitan strawberry cookies and cream cake batter chocolate. Peanut butter mint cookies and cream chocolate chip cookie dough strawberry rocky road. Mint chocolate chip cookies and cream mint chocolate chip, chocolate chip pistachio rocky road neopolitan strawberry.',
     price: 8.37,
     nutrition: lowFat,
     allergy: [wheat],

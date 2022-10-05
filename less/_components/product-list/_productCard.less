@@ -3,12 +3,18 @@
 @import '../../_tokens/_font-mixins.less';
 @import '../../_variables/_breakpoints.less';
 
+.wrapper {
+  position: relative;
+}
+
 .product-card {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   z-index: 1;
   position: relative;
+  cursor: pointer;
+  width: 100%;
 
   &__wrapping-text {
     position: absolute;
@@ -122,7 +128,6 @@
   }
 
   &__img,
-  &__info-button,
   &__properties {
     position: absolute;
   }
@@ -175,56 +180,6 @@
 
     .product-card__price {
       @font-desktop-title-small-abril();
-    }
-  }
-
-  &__info-button {
-    right: -15px;
-    top: 35px;
-    width: 62px;
-    height: 40px;
-    border-radius: @sizes-small-3;
-    background-color: @color-light-mode-background-button-orange;
-    border: 2px solid @color-light-mode-border-button-orange;
-    box-shadow: @effect-shadow-button-orange-default-0;
-    z-index: 2;
-    cursor: pointer;
-    pointer-events: all;
-
-    .product-card__info-icon-container {
-      margin: auto;
-      width: 26px;
-      height: 26px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      padding: 6px;
-
-      img {
-        margin: auto;
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-      }
-    }
-
-    @media @break-tablet {
-      top: 3px;
-    }
-
-    &:hover {
-      box-shadow: @effect-shadow-button-orange-hover;
-    }
-
-    &:active {
-      border: 2px solid @color-brand-orange-4;
-      box-shadow: @effect-shadow-button-orange-active;
-    }
-
-    img {
-      margin-top: 2.5px;
-      width: 30px;
     }
   }
 
@@ -360,35 +315,6 @@
       span {
         @font-mobile-caption-quatt();
       }
-    }
-  }
-
-  &__cta {
-    width: 100%;
-    height: 40px;
-    border-radius: @sizes-small-3;
-    background-color: @color-light-mode-background-button-orange;
-    border: 2px solid @color-light-mode-border-button-orange;
-    box-shadow: @effect-shadow-button-orange-default-0;
-    @font-mobile-title-small-quatt();
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    @media @break-tablet {
-      width: 180px;
-    }
-
-    &:active {
-      border: 2px solid @color-brand-orange-4;
-      box-shadow: @effect-shadow-button-orange-active;
-    }
-
-    svg {
-      transform: scale(0.8);
-      margin-right: @sizes-small-2;
     }
   }
 
@@ -530,5 +456,77 @@
     .product-card__info-container {
       background-color: fade(@color-flavor-vivacious-violet-fill-back-1, 50%);
     }
+  }
+}
+
+.product-info-btn {
+  right: -12px;
+  top: 35px;
+  width: 62px;
+  height: 40px;
+  border-radius: @sizes-small-3;
+  background-color: @color-light-mode-background-button-orange;
+  border: 2px solid @color-light-mode-border-button-orange;
+  box-shadow: @effect-shadow-button-orange-default-0;
+  z-index: 2;
+  cursor: pointer;
+  pointer-events: all;
+  position: absolute;
+
+  &__info-icon-container {
+    margin: auto;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    img {
+      margin: 0;
+      height: 12px;
+    }
+  }
+
+  @media @break-tablet {
+    top: 3px;
+  }
+
+  &:hover {
+    box-shadow: @effect-shadow-button-orange-hover;
+  }
+
+  &:active {
+    border: 2px solid @color-brand-orange-4;
+    box-shadow: @effect-shadow-button-orange-active;
+  }
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  height: 40px;
+  border-radius: @sizes-small-3;
+  background-color: @color-light-mode-background-button-orange;
+  border: 2px solid @color-light-mode-border-button-orange;
+  box-shadow: @effect-shadow-button-orange-default-0;
+  @font-mobile-title-small-quatt();
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @media @break-tablet {
+    width: 180px;
+  }
+
+  &:active {
+    border: 2px solid @color-brand-orange-4;
+    box-shadow: @effect-shadow-button-orange-active;
+  }
+
+  svg {
+    transform: scale(0.8);
+    margin-right: @sizes-small-2;
   }
 }
