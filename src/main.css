@@ -951,7 +951,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #2d3134;
+  color: #fcfbf4;
 }
 .more-products {
   padding: 40px 16px 80px 16px;
@@ -2068,6 +2068,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
+  color: #fcfbf4;
 }
 .product-card__name-price-container .product-card__price {
   font-size: 24px;
@@ -2077,6 +2078,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
+  color: #fcfbf4;
 }
 @media screen and (min-width: 425px) {
   .product-card .hide-properties {
