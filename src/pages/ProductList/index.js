@@ -44,6 +44,7 @@ const Storefront = () => {
             <ActiveFilter removeAll={removeAll} type="Remove" />
           ) : (
             <span
+              className="active-filters-container__no-filters"
               style={{
                 marginLeft: '10px',
                 marginTop: '2px',
