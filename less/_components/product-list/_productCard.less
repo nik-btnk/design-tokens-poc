@@ -92,9 +92,6 @@
   &__background {
     width: 100%;
     height: 120px;
-    border: 5px solid @color-brand-pink-0;
-    box-shadow: @effect-shadow-product-card-pink-panther;
-    background-color: transparent;
     border-radius: 50%;
     position: relative;
     z-index: 3;
@@ -118,7 +115,6 @@
       height: calc(100% - 5px);
       border-radius: 50%;
       background-color: transparent;
-      box-shadow: inset @effect-shadow-product-card-pink-panther;
 
       @media @break-tablet {
         width: 170px;
@@ -135,9 +131,10 @@
   &__img-container {
     position: relative;
     overflow: hidden;
-    height: 150px;
-    border-radius: 42%;
-    bottom: 44px;
+    height: 137px;
+    width: 100%;
+    border-radius: 45%;
+    bottom: 24px;
 
     @media @break-tablet {
       position: static;
@@ -323,6 +320,10 @@
   &.pink-panther {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-pink-panther;
+      border: 1px double @color-flavor-pink-panther-border;
+      outline: 1px solid @color-flavor-pink-panther-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-pink-panther-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-pink-panther;
@@ -337,6 +338,10 @@
   &.clockwork-orange {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-clockwork-orange;
+      border: 1px double @color-flavor-clockwork-orange-border;
+      outline: 1px solid @color-flavor-clockwork-orange-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-clockwork-orange-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-clockwork-orange;
@@ -351,6 +356,10 @@
   &.red-planet {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-red-planet;
+      border: 1px double @color-flavor-red-planet-border;
+      outline: 1px solid @color-flavor-red-planet-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-red-planet-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-red-planet;
@@ -365,6 +374,10 @@
   &.feeling-blue {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-feeling-blue;
+      border: 1px double @color-flavor-feeling-blue-border;
+      outline: 1px solid @color-flavor-feeling-blue-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-feeling-blue-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-feeling-blue;
@@ -379,6 +392,10 @@
   &.blue-clue {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-blue-clue;
+      border: 1px double @color-flavor-blue-clue-border;
+      outline: 1px solid @color-flavor-blue-clue-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-blue-clue-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-blue-clue;
@@ -393,6 +410,10 @@
   &.green-land {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-green-land;
+      border: 1px double @color-flavor-green-land-border;
+      outline: 1px solid @color-flavor-green-land-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-green-land-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-green-land;
@@ -407,6 +428,10 @@
   &.yellow-submarine {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-yellow-submarine;
+      border: 1px double @color-flavor-yellow-submarine-border;
+      outline: 1px solid @color-flavor-yellow-submarine-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-yellow-submarine-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-yellow-submarine;
@@ -421,6 +446,10 @@
   &.gray-anatomy {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-gray-anatomy;
+      border: 1px double @color-flavor-gray-anatomy-border;
+      outline: 1px solid @color-flavor-gray-anatomy-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-gray-anatomy-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-gray-anatomy;
@@ -435,6 +464,10 @@
   &.puzzled-plum {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-puzzled-plum;
+      border: 1px double @color-flavor-puzzled-plum-border;
+      outline: 1px solid @color-flavor-puzzled-plum-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-puzzled-plum-border, 0.1);
 
       &:before {
         box-shadow: inset @effect-shadow-product-card-puzzled-plum;
@@ -446,10 +479,14 @@
     }
   }
 
-  //this effect is missing
   &.vivacious-violet {
     .product-card__background {
       box-shadow: @effect-shadow-product-card-puzzled-plum;
+      border: 1px double @color-flavor-vivacious-violet-border;
+      outline: 1px solid @color-flavor-vivacious-violet-border;
+      outline-offset: -5px;
+      background: rgba(@color-flavor-vivacious-violet-border, 0.1);
+
       &:before {
         box-shadow: inset @effect-shadow-product-card-puzzled-plum;
       }
