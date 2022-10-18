@@ -889,7 +889,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 @media screen and (min-width: 425px) {
   .health-info__calories-container--calories {
@@ -930,7 +930,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 @media screen and (min-width: 425px) {
   .health-info__items-container--item .name {
@@ -951,7 +951,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 .more-products {
   padding: 40px 16px 80px 16px;
@@ -1091,7 +1091,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
   display: block;
   margin-bottom: 24px;
 }
@@ -1208,7 +1208,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
   display: none;
   margin-bottom: 24px;
 }
@@ -1261,7 +1261,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 .product-info__content--cta {
   width: 100%;
@@ -1400,7 +1400,7 @@
   }
 }
 .active-filters-container__no-filters {
-  color: #fcfbf4;
+  color: #2d3134;
 }
 .active-filters-container__title {
   font-size: 16px;
@@ -1411,7 +1411,7 @@
   font-stretch: normal;
   letter-spacing: 0;
   margin: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 @media screen and (min-width: 425px) {
   .active-filters-container__title {
@@ -1574,7 +1574,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 .slider-container .price-value__right {
   position: absolute;
@@ -1588,7 +1588,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 .filter-dropdown {
   position: relative;
@@ -1610,7 +1610,7 @@
   font-stretch: normal;
   letter-spacing: 0;
   font-weight: 700;
-  background-color: #2d3134;
+  background-color: #fcfbf4;
   border: 1px solid #37ccc9;
   border-bottom: none;
   height: 48px;
@@ -1656,7 +1656,7 @@
   margin: 0;
   border: none;
   border-radius: 0;
-  background-color: #2d3134;
+  background-color: #fcfbf4;
   font-size: 16px;
   text-decoration: none;
   font-family: Quattrocento Sans;
@@ -1799,7 +1799,7 @@
   }
 }
 .filters__title {
-  color: #fcfbf4;
+  color: #2d3134;
 }
 @media screen and (min-width: 425px) {
   .filters__title {
@@ -1835,7 +1835,7 @@
   }
 }
 .filters .filters-container h4 {
-  color: #fcfbf4;
+  color: #2d3134;
 }
 .filters .filters-container-mobile {
   display: flex;
@@ -1886,7 +1886,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 4px 0 #37ccc980;
-  background-color: #2d3134;
+  background-color: #fcfbf4;
   border: 1px solid #37ccc9;
   border-right: 3px solid #37ccc9;
   border-left: 3px solid #37ccc9;
@@ -2080,7 +2080,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 .product-card__name-price-container .product-card__price {
   font-size: 24px;
@@ -2090,7 +2090,7 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
-  color: #fcfbf4;
+  color: #2d3134;
 }
 @media screen and (min-width: 425px) {
   .product-card .hide-properties {
@@ -2392,7 +2392,7 @@
   margin-right: 8px;
 }
 .product-list {
-  background-color: #2d3134;
+  background-color: #fcfbf4;
   padding-top: 5px;
 }
 @media screen and (min-width: 425px) {
@@ -2483,5 +2483,5 @@
   fill: #5ecc37;
 }
 body {
-  background-color: #2d3134;
+  background-color: #fcfbf4;
 }
