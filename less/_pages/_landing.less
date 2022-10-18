@@ -7,61 +7,98 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: @color-brand-green-0;
+  background-color: @color-light-mode-background-page-white;
 
-  a {
-    text-decoration: none;
-  }
+  &__popular-colors {
+    padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
 
-  &__title {
-    @font-desktop-title-large-quatt();
-    color: @color-brand-blue-4;
-    margin-bottom: 50px;
-  }
-
-  &__nav {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 50px;
-
-    &--productList,
-    &--cart {
-      @font-desktop-title-small-quatt();
-      height: 50px;
-      min-width: 148px;
+    @media @break-tablet {
+      padding: @sizes-large-1 @sizes-medium-2 96px @sizes-medium-2;
+    }
+    &--container {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: @color-brand-blue-0;
-      border: solid @sizes-small-1 @color-brand-blue-2;
-      border-radius: @sizes-small-3;
-      padding: @sizes-small-2 @sizes-small-3;
-      cursor: pointer;
-      box-shadow: 4px 4px 0px rgba(45, 49, 52, 0.5);
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 40px;
 
-      &::after {
-        content: '+';
-        display: inline-block;
-        width: @sizes-medium-2;
-        height: @sizes-medium-2;
-        background-color: @color-brand-orange-2;
-        border-radius: 50%;
-        margin-left: 12px;
-        color: @color-brand-black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 32px;
-        font-weight: 700;
+      @media @break-tablet {
+        flex-direction: row;
+      }
+    }
+  }
+  section {
+    width: 100%;
+  }
+
+  .wrapper {
+    &:nth-child(3n + 1) {
+      .product-info-btn {
+        background-color: @color-light-mode-background-button-blue;
+        border: 2px solid @color-light-mode-border-button-blue;
+        box-shadow: @effect-shadow-button-blue-default-0,
+          @effect-shadow-button-blue-default-1;
+
+        &__info-icon-container {
+          background-color: @color-brand-blue-3;
+        }
       }
 
-      &:hover {
-        background-color: @color-brand-blue-3;
-        border: solid @sizes-small-1 @color-brand-blue-4;
+      .add-to-cart-btn {
+        background-color: @color-light-mode-background-button-blue;
+        border: 2px solid @color-light-mode-border-button-blue;
+        box-shadow: @effect-shadow-button-blue-default-0,
+          @effect-shadow-button-blue-default-1;
+
+        svg path:first-child {
+          fill: @color-brand-blue-3;
+        }
+      }
+    }
+
+    &:nth-child(3n + 2) {
+      .product-info-btn {
+        background-color: @color-light-mode-background-button-pink;
+        border: 2px solid @color-light-mode-border-button-pink;
+        box-shadow: @effect-shadow-button-pink-default-0,
+          @effect-shadow-button-pink-default-1;
+
+        &__info-icon-container {
+          background-color: @color-brand-pink-3;
+        }
       }
 
-      &:active {
-        box-shadow: none;
+      .add-to-cart-btn {
+        background-color: @color-light-mode-background-button-pink;
+        border: 2px solid @color-light-mode-border-button-pink;
+        box-shadow: @effect-shadow-button-pink-default-0,
+          @effect-shadow-button-pink-default-1;
+
+        svg path:first-child {
+          fill: @color-brand-pink-3;
+        }
+      }
+    }
+
+    &:nth-child(3n + 3) {
+      .product-info-btn {
+        background-color: @color-light-mode-background-button-green;
+        border: 2px solid @color-light-mode-border-button-green;
+        box-shadow: @effect-shadow-button-green-default-0,
+          @effect-shadow-button-green-default-1;
+
+        &__info-icon-container {
+          background-color: @color-brand-green-3;
+        }
+      }
+      .add-to-cart-btn {
+        background-color: @color-light-mode-background-button-green;
+        border: 2px solid @color-light-mode-border-button-green;
+        box-shadow: @effect-shadow-button-green-default-0,
+          @effect-shadow-button-green-default-1;
+
+        svg path:first-child {
+          fill: @color-brand-green-3;
+        }
       }
     }
   }
