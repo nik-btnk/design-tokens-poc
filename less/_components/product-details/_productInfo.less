@@ -73,19 +73,118 @@
         transform: scale(1.23);
       }
 
-      &__background {
-        margin: 0;
+      &::before {
+        display: none;
+        content: '';
+        position: absolute;
+        width: 305px;
+        height: 305px;
+        border-radius: 50%;
+        border: 10px solid;
+        opacity: 0.2;
 
         @media @break-tablet {
+          display: block;
+        }
+      }
+
+      &.red-planet::before {
+        border-color: @color-flavor-red-planet-border;
+      }
+
+      &.yellow-submarine::before {
+        border-color: @color-flavor-yellow-submarine-border;
+      }
+
+      &.clockwork-orange::before {
+        border-color: @color-flavor-clockwork-orange-border;
+      }
+
+      &.green-land::before {
+        border-color: @color-flavor-green-land-border;
+      }
+
+      &.puzzled-plum::before {
+        border-color: @color-flavor-puzzled-plum-border;
+      }
+
+      &.feeling-blue::before {
+        border-color: @color-flavor-feeling-blue-border;
+      }
+
+      &.vivacious-violet::before {
+        border-color: @color-flavor-vivacious-violet-border;
+      }
+
+      &.blue-clue::before {
+        border-color: @color-flavor-blue-clue-border;
+      }
+
+      &.gray-anatomy::before {
+        border-color: @color-flavor-gray-anatomy-border;
+      }
+
+      &.pink-panther::before {
+        border-color: @color-flavor-pink-panther-border;
+      }
+
+      &__background {
+        margin: 0;
+        background-color: transparent !important;
+        z-index: 100;
+
+        @media @break-tablet {
+          outline-offset: -10px !important;
           height: 325px;
           width: 325px;
         }
 
         &::before {
           @media @break-tablet {
+            box-shadow: inset 0 4px 20px !important;
             width: 305px;
             height: 305px;
           }
+        }
+
+        &.red-planet::before {
+          color: @color-flavor-red-planet-border;
+        }
+
+        &.yellow-submarine::before {
+          color: @color-flavor-yellow-submarine-border;
+        }
+
+        &.clockwork-orange::before {
+          color: @color-flavor-clockwork-orange-border;
+        }
+
+        &.green-land::before {
+          color: @color-flavor-green-land-border;
+        }
+
+        &.puzzled-plum::before {
+          color: @color-flavor-puzzled-plum-border;
+        }
+
+        &.feeling-blue::before {
+          color: @color-flavor-feeling-blue-border;
+        }
+
+        &.vivacious-violet::before {
+          color: @color-flavor-vivacious-violet-border;
+        }
+
+        &.blue-clue::before {
+          color: @color-flavor-blue-clue-border;
+        }
+
+        &.gray-anatomy::before {
+          color: @color-flavor-gray-anatomy-border;
+        }
+
+        &.pink-panther::before {
+          color: @color-flavor-pink-panther-border;
         }
       }
 
