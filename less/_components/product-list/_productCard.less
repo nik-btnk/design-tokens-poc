@@ -3,6 +3,29 @@
 @import '../../_tokens/_font-mixins.less';
 @import '../../_variables/_breakpoints.less';
 
+// Mixins______________________________________________________________
+.flavor-neon-selector(@class) {
+  @class-name: ~'.@{class}';
+
+  &:has(@{class-name}) {
+    .product-card__background {
+      box-shadow: ~'@{effect-shadow-product-card-@{class}}';
+      background: ~'@{color-flavor-@{class}-border}1A';
+      border-color: ~'@{color-flavor-@{class}-border}';
+
+      &:before {
+        border-color: ~'@{color-flavor-@{class}-border}';
+        box-shadow: inset ~'@{effect-shadow-product-card-@{class}}';
+      }
+    }
+
+    .product-card__info-container {
+      background-color: ~'@{color-flavor-@{class}-fill-back-1}80';
+    }
+  }
+}
+// ____________________________________________________________________
+
 .wrapper {
   position: relative;
 }
@@ -97,6 +120,7 @@
     z-index: 3;
     pointer-events: none;
     margin-bottom: @sizes-medium-1;
+    border: 1px solid;
 
     @media @break-tablet {
       width: 180px;
@@ -115,6 +139,7 @@
       height: calc(100% - 5px);
       border-radius: 50%;
       background-color: transparent;
+      border: 1px solid;
 
       @media @break-tablet {
         width: 170px;
@@ -317,185 +342,17 @@
     }
   }
 
-  &.pink-panther {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-pink-panther;
-      border: 1px double @color-flavor-pink-panther-border;
-      outline: 1px solid @color-flavor-pink-panther-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-pink-panther-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-pink-panther;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-pink-panther-fill-back-1, 50%);
-    }
-  }
-
-  &.clockwork-orange {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-clockwork-orange;
-      border: 1px double @color-flavor-clockwork-orange-border;
-      outline: 1px solid @color-flavor-clockwork-orange-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-clockwork-orange-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-clockwork-orange;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-clockwork-orange-fill-back-1, 50%);
-    }
-  }
-
-  &.red-planet {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-red-planet;
-      border: 1px double @color-flavor-red-planet-border;
-      outline: 1px solid @color-flavor-red-planet-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-red-planet-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-red-planet;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-red-planet-fill-back-1, 50%);
-    }
-  }
-
-  &.feeling-blue {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-feeling-blue;
-      border: 1px double @color-flavor-feeling-blue-border;
-      outline: 1px solid @color-flavor-feeling-blue-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-feeling-blue-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-feeling-blue;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-feeling-blue-fill-back-1, 50%);
-    }
-  }
-
-  &.blue-clue {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-blue-clue;
-      border: 1px double @color-flavor-blue-clue-border;
-      outline: 1px solid @color-flavor-blue-clue-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-blue-clue-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-blue-clue;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-blue-clue-fill-back-1, 50%);
-    }
-  }
-
-  &.green-land {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-green-land;
-      border: 1px double @color-flavor-green-land-border;
-      outline: 1px solid @color-flavor-green-land-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-green-land-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-green-land;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-green-land-fill-back-1, 50%);
-    }
-  }
-
-  &.yellow-submarine {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-yellow-submarine;
-      border: 1px double @color-flavor-yellow-submarine-border;
-      outline: 1px solid @color-flavor-yellow-submarine-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-yellow-submarine-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-yellow-submarine;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-yellow-submarine-fill-back-1, 50%);
-    }
-  }
-
-  &.gray-anatomy {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-gray-anatomy;
-      border: 1px double @color-flavor-gray-anatomy-border;
-      outline: 1px solid @color-flavor-gray-anatomy-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-gray-anatomy-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-gray-anatomy;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-gray-anatomy-fill-back-1, 50%);
-    }
-  }
-
-  &.puzzled-plum {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-puzzled-plum;
-      border: 1px double @color-flavor-puzzled-plum-border;
-      outline: 1px solid @color-flavor-puzzled-plum-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-puzzled-plum-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-puzzled-plum;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-gray-anatomy-fill-back-1, 50%);
-    }
-  }
-
-  &.vivacious-violet {
-    .product-card__background {
-      box-shadow: @effect-shadow-product-card-puzzled-plum;
-      border: 1px double @color-flavor-vivacious-violet-border;
-      outline: 1px solid @color-flavor-vivacious-violet-border;
-      outline-offset: -5px;
-      background: rgba(@color-flavor-vivacious-violet-border, 0.1);
-
-      &:before {
-        box-shadow: inset @effect-shadow-product-card-puzzled-plum;
-      }
-    }
-
-    .product-card__info-container {
-      background-color: fade(@color-flavor-vivacious-violet-fill-back-1, 50%);
-    }
-  }
+  // Handling of neon ring colors for each flavor.
+  .flavor-neon-selector('clockwork-orange');
+  .flavor-neon-selector('red-planet');
+  .flavor-neon-selector('green-land');
+  .flavor-neon-selector('yellow-submarine');
+  .flavor-neon-selector('vivacious-violet');
+  .flavor-neon-selector('pink-panther');
+  .flavor-neon-selector('feeling-blue');
+  .flavor-neon-selector('blue-clue');
+  .flavor-neon-selector('gray-anatomy');
+  .flavor-neon-selector('puzzled-plum');
 }
 
 .product-info-btn {
