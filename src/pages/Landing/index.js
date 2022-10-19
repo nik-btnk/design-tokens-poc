@@ -81,6 +81,7 @@ const Landing = () => {
           <img src={imgMascot} />
         </div>
       </section>
+
       <section className="landing__presentation">
         <div className="landing__presentation--wrapper">
           <h3 className="landing__presentation--title">
@@ -100,6 +101,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
+
       <section className="landing__find-new-color">
         <div className="landing__find-new-color--wrapper">
           <h2 className="landing__find-new-color--title">
@@ -108,6 +110,7 @@ const Landing = () => {
           <ColorRoulette />
         </div>
       </section>
+
       <section className="landing__popular-colors">
         <div className="landing__popular-colors--wrapper">
           <h2 className="landing__popular-colors--title">
