@@ -17,7 +17,7 @@
   "scripts": {
     "start": "npm run sd-build && concurrently --kill-others \"less-watch-compiler --config less-watcher.config.json\" \"react-scripts start\"",
     "sd-build": "node ./style_dictionary/build.js",
-    "build": "react-scripts build",
+    "build": "less-watch-compiler --config less-watcher.config.json --run-once && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
