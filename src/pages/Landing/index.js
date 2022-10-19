@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 //Assets
 import imgMascot from '../../assets/mascot.png'
 import ProductCard from '../../components/product-list/ProductCard'
+import ColorRoulette from '../../components/landing/ColorRoulette'
 
 const Landing = () => {
   const popularColors = [products[1], products[4], products[3], products[6]]
@@ -104,8 +105,7 @@ const Landing = () => {
           <h2 className="landing__find-new-color--title">
             Find Your New Favorite Color
           </h2>
-          {/* The roulette will probably be a component */}
-          <div className="landing__find-new-color--roulette"></div>
+          <ColorRoulette />
         </div>
       </section>
       <section className="landing__popular-colors">
