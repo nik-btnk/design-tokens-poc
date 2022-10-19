@@ -29,10 +29,10 @@ const Landing = () => {
     const spacer = '*'
     const targetTextLength = 620
     let characterString = text
-    const textWidth = getTextWidth(characterString, 'normal 14px Abril Fatface')
+    const textWidth = getTextWidth(characterString, 'normal 16px Abril Fatface')
 
     if (
-      textWidth + getTextWidth(name, 'normal 14px Abril Fatface') <
+      textWidth + getTextWidth(name, 'normal 16px Abril Fatface') <
       targetTextLength
     ) {
       return makeWrappingText(characterString + spacer + name)
@@ -42,9 +42,9 @@ const Landing = () => {
         targetTextLength -
         getTextWidth(
           finalString.replaceAll(spacer, ''),
-          'normal 14px Abril Fatface'
+          'normal 16px Abril Fatface'
         )
-      const spaceWidth = getTextWidth('\u00A0', 'normal 14px Abril Fatface')
+      const spaceWidth = getTextWidth('\u00A0', 'normal 16x Abril Fatface')
       const numberOfInsertionPoints = finalString
         .split('')
         .filter((letter) => letter === spacer).length
