@@ -2,14 +2,12 @@
 import React from 'react'
 
 // Utils
-import { path } from '../../constants'
 import products from '../../product-storage'
-import { Link } from 'react-router-dom'
 
 //Assets
 import imgMascot from '../../assets/mascot.png'
-import ProductCard from '../../components/product-list/ProductCard'
 import ColorRoulette from '../../components/landing/ColorRoulette'
+import PopularColors from '../../components/landing/PopularColors'
 
 const Landing = () => {
   const popularColors = [products[1], products[4], products[3], products[6]]
@@ -112,30 +110,7 @@ const Landing = () => {
       </section>
 
       <section className="landing__popular-colors">
-        <div className="landing__popular-colors--wrapper">
-          <h2 className="landing__popular-colors--title">
-            Our Most Popular Colors
-          </h2>
-          <div className="landing__popular-colors--container">
-            {popularColors.map((color, index) => (
-              <ProductCard
-                pic={`../../assets/ice-creams/pic-${color.name}.png`}
-                name={color.name}
-                price={color.price}
-                nutrition={color.nutrition}
-                allergy={color.allergy}
-                category={color.category}
-                id={color.id}
-                key={index}
-              />
-            ))}
-          </div>
-          <Link to={path.PRODUCTS}>
-            <button className="landing__popular-colors--more-colors">
-              More colors
-            </button>
-          </Link>
-        </div>
+        <PopularColors popularColors={popularColors} />
       </section>
     </div>
   )

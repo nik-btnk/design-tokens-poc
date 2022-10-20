@@ -110,24 +110,27 @@
     }
 
     &--more-colors {
-      cursor: pointer;
-      margin-top: @sizes-medium-2;
-      height: 38px;
-      width: 100%;
-      border-radius: @sizes-small-3;
-      @font-mobile-title-small-quatt();
-      font-weight: 700;
-      background-color: @color-light-mode-background-button-orange;
-      border: 2px solid @color-light-mode-border-button-orange;
-      box-shadow: @effect-shadow-button-orange-default-0,
-        @effect-shadow-button-orange-default-1;
+      padding: 8px;
+      button {
+        cursor: pointer;
+        margin-top: @sizes-medium-2;
+        height: 38px;
+        width: 100%;
+        border-radius: @sizes-small-3;
+        @font-mobile-title-small-quatt();
+        font-weight: 700;
+        background-color: @color-light-mode-background-button-orange;
+        border: 2px solid @color-light-mode-border-button-orange;
+        box-shadow: @effect-shadow-button-orange-default-0,
+          @effect-shadow-button-orange-default-1;
 
-      &:hover {
-        box-shadow: @effect-shadow-button-orange-hover;
-      }
+        &:hover {
+          box-shadow: @effect-shadow-button-orange-hover;
+        }
 
-      &:active {
-        box-shadow: @effect-shadow-button-orange-active;
+        &:active {
+          box-shadow: @effect-shadow-button-orange-active;
+        }
       }
     }
   }
