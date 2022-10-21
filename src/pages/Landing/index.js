@@ -4,10 +4,12 @@ import React from 'react'
 // Utils
 import products from '../../product-storage'
 
-//Assets
-import imgMascot from '../../assets/mascot.png'
+//Components
 import ColorRoulette from '../../components/landing/ColorRoulette'
 import PopularColors from '../../components/landing/PopularColors'
+
+//Assets
+import imgMascot from '../../assets/mascot.png'
 
 const Landing = () => {
   const popularColors = [products[1], products[4], products[3], products[6]]
