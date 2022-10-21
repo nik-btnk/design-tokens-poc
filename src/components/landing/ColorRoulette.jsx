@@ -31,12 +31,16 @@ const ColorRoulette = () => {
     updateNumber()
     setCircleStyle({ transform: `rotate(-${number}deg)` })
     setTimeout(() => {
-      if (rouletteValue > 330 || rouletteValue <= 30) alert('1')
-      else if (rouletteValue > 30 && rouletteValue <= 90) alert('2')
-      else if (rouletteValue > 90 && rouletteValue <= 150) alert('3')
-      else if (rouletteValue > 150 && rouletteValue <= 210) alert('4')
-      else if (rouletteValue > 210 && rouletteValue <= 270) alert('5')
-      else if (rouletteValue > 270 && rouletteValue <= 330) alert('6')
+      if (rouletteValue > 342 || rouletteValue <= 18) alert('1')
+      else if (rouletteValue > 18 && rouletteValue <= 54) alert('2')
+      else if (rouletteValue > 54 && rouletteValue <= 90) alert('3')
+      else if (rouletteValue > 90 && rouletteValue <= 126) alert('4')
+      else if (rouletteValue > 126 && rouletteValue <= 162) alert('5')
+      else if (rouletteValue > 162 && rouletteValue <= 198) alert('6')
+      else if (rouletteValue > 198 && rouletteValue <= 234) alert('7')
+      else if (rouletteValue > 234 && rouletteValue <= 270) alert('8')
+      else if (rouletteValue > 270 && rouletteValue <= 306) alert('9')
+      else if (rouletteValue > 306 && rouletteValue <= 342) alert('10')
     }, 3000)
   }
   return (
@@ -48,6 +52,10 @@ const ColorRoulette = () => {
         <div className="color-roulette__triangle four">4</div>
         <div className="color-roulette__triangle five">5</div>
         <div className="color-roulette__triangle six">6</div>
+        <div className="color-roulette__triangle seven">7</div>
+        <div className="color-roulette__triangle eight">8</div>
+        <div className="color-roulette__triangle nine">9</div>
+        <div className="color-roulette__triangle ten">10</div>
       </div>
       <span className="mid-item"></span>
       <button id="spin" onClick={handleClick}>
