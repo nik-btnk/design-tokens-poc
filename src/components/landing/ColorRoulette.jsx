@@ -2,8 +2,12 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
+//Assets
+import { ReactComponent as Mascot } from '../../assets/mascot.svg'
+
 const ColorRoulette = () => {
   const [circleStyle, setCircleStyle] = useState({ transform: `rotate(0deg)` })
+  const [buttonDisabled, setButtonDisabled] = useState(false)
   const getRandom = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
@@ -28,10 +32,11 @@ const ColorRoulette = () => {
   }, [number])
 
   const handleClick = () => {
+    setButtonDisabled(true)
     updateNumber()
     setCircleStyle({ transform: `rotate(-${number}deg)` })
     setTimeout(() => {
-      if (rouletteValue > 342 || rouletteValue <= 18) alert('1')
+      if (rouletteValue > 342 || rouletteValue <= 18) alert('Clockwork Orange')
       else if (rouletteValue > 18 && rouletteValue <= 54) alert('2')
       else if (rouletteValue > 54 && rouletteValue <= 90) alert('3')
       else if (rouletteValue > 90 && rouletteValue <= 126) alert('4')
@@ -41,12 +46,18 @@ const ColorRoulette = () => {
       else if (rouletteValue > 234 && rouletteValue <= 270) alert('8')
       else if (rouletteValue > 270 && rouletteValue <= 306) alert('9')
       else if (rouletteValue > 306 && rouletteValue <= 342) alert('10')
+      setButtonDisabled(false)
     }, 3000)
   }
   return (
     <div className="color-roulette">
       <div className="color-roulette__circle" style={circleStyle}>
-        <div className="color-roulette__triangle one">1</div>
+        <div className="color-roulette__triangle one">
+          <img
+            src={require(`../../assets/ice-creams/pic-Clockwork Orange.png`)}
+            alt=""
+          />
+        </div>
         <div className="color-roulette__triangle two">2</div>
         <div className="color-roulette__triangle three">3</div>
         <div className="color-roulette__triangle four">4</div>
@@ -57,11 +68,14 @@ const ColorRoulette = () => {
         <div className="color-roulette__triangle nine">9</div>
         <div className="color-roulette__triangle ten">10</div>
       </div>
-      <span className="mid-item"></span>
-      <button id="spin" onClick={handleClick}>
-        Spin
+      <button
+        className="color-roulette__spin-button"
+        onClick={handleClick}
+        disabled={buttonDisabled}>
+        <Mascot />
+        <span>Click me</span>
       </button>
-      <div className="stopper"></div>
+      <div className="color-roulette__stopper"></div>
     </div>
   )
 }
