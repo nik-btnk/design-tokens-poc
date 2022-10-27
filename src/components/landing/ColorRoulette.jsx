@@ -2,6 +2,9 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
+//Utils
+import products from '../../product-storage'
+
 //Assets
 import { ReactComponent as Mascot } from '../../assets/mascot.svg'
 
@@ -36,37 +39,45 @@ const ColorRoulette = () => {
     updateNumber()
     setCircleStyle({ transform: `rotate(-${number}deg)` })
     setTimeout(() => {
-      if (rouletteValue > 342 || rouletteValue <= 18) alert('Clockwork Orange')
-      else if (rouletteValue > 18 && rouletteValue <= 54) alert('2')
-      else if (rouletteValue > 54 && rouletteValue <= 90) alert('3')
-      else if (rouletteValue > 90 && rouletteValue <= 126) alert('4')
-      else if (rouletteValue > 126 && rouletteValue <= 162) alert('5')
-      else if (rouletteValue > 162 && rouletteValue <= 198) alert('6')
-      else if (rouletteValue > 198 && rouletteValue <= 234) alert('7')
-      else if (rouletteValue > 234 && rouletteValue <= 270) alert('8')
-      else if (rouletteValue > 270 && rouletteValue <= 306) alert('9')
-      else if (rouletteValue > 306 && rouletteValue <= 342) alert('10')
+      if (rouletteValue > 342 || rouletteValue <= 18) console.log(products[0])
+      else if (rouletteValue > 18 && rouletteValue <= 54)
+        console.log(products[1])
+      else if (rouletteValue > 54 && rouletteValue <= 90)
+        console.log(products[2])
+      else if (rouletteValue > 90 && rouletteValue <= 126)
+        console.log(products[3])
+      else if (rouletteValue > 126 && rouletteValue <= 162)
+        console.log(products[4])
+      else if (rouletteValue > 162 && rouletteValue <= 198)
+        console.log(products[5])
+      else if (rouletteValue > 198 && rouletteValue <= 234)
+        console.log(products[6])
+      else if (rouletteValue > 234 && rouletteValue <= 270)
+        console.log(products[7])
+      else if (rouletteValue > 270 && rouletteValue <= 306)
+        console.log(products[8])
+      else if (rouletteValue > 306 && rouletteValue <= 342)
+        console.log(products[9])
+      //open a modal which ice cream depends on raffled ice cream
       setButtonDisabled(false)
     }, 3000)
   }
+
   return (
     <div className="color-roulette">
       <div className="color-roulette__circle" style={circleStyle}>
-        <div className="color-roulette__triangle one">
-          <img
-            src={require(`../../assets/ice-creams/pic-Clockwork Orange.png`)}
-            alt=""
-          />
-        </div>
-        <div className="color-roulette__triangle two">2</div>
-        <div className="color-roulette__triangle three">3</div>
-        <div className="color-roulette__triangle four">4</div>
-        <div className="color-roulette__triangle five">5</div>
-        <div className="color-roulette__triangle six">6</div>
-        <div className="color-roulette__triangle seven">7</div>
-        <div className="color-roulette__triangle eight">8</div>
-        <div className="color-roulette__triangle nine">9</div>
-        <div className="color-roulette__triangle ten">10</div>
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className={`color-roulette__triangle ${`${product.name
+              .split(' ')[0]
+              .toLowerCase()}-${product.name.split(' ')[1].toLowerCase()} `}`}>
+            <img
+              src={require(`../../assets/ice-creams/pic-${product.name}.png`)}
+              alt={product.name}
+            />
+          </div>
+        ))}
       </div>
       <button
         className="color-roulette__spin-button"

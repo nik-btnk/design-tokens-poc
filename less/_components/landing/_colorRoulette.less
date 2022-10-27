@@ -1,3 +1,15 @@
+// Mixins______________________________________________________________
+.flavor-selector(@class, @rotate) {
+  @class-name: ~'.@{class}';
+
+  @{class-name}{
+    background-color: ~'@{color-flavor-@{class}-fill-front}';
+    border: ~'@{color-flavor-@{class}-border}';
+    transform: ~'rotate(@{rotate}deg);';
+  }
+}
+// ____________________________________________________________________
+
 .color-roulette {
   display: inline-block;
   position: relative;
@@ -77,61 +89,24 @@
       line-height: 8px;
       margin-bottom: 4px;
     }
-    
+
     svg {
       filter: brightness(0) saturate(100%) invert(33%) sepia(70%) saturate(986%)
         hue-rotate(360deg) brightness(96%) contrast(94%);
       height: 20px;
     }
   }
-
-  .one {
-    background: @color-flavor-clockwork-orange-fill-front;
-    left: 50%;
-  }
-
-  .two {
-    background: #2c8a81;
-    transform: rotate(36deg);
-  }
-
-  .three {
-    background: #baf4ee;
-    transform: rotate(72deg);
-  }
-
-  .four {
-    background: #2c8a81;
-    transform: rotate(108deg);
-  }
-
-  .five {
-    background: #baf4ee;
-    transform: rotate(144deg);
-  }
-
-  .six {
-    background: #2c8a81;
-    transform: rotate(180deg);
-  }
-
-  .seven {
-    background: #baf4ee;
-    transform: rotate(216deg);
-  }
-
-  .eight {
-    background: #2c8a81;
-    transform: rotate(252deg);
-  }
-
-  .nine {
-    background: #baf4ee;
-    transform: rotate(288deg);
-  }
-
-  .ten {
-    background: #2c8a81;
-    transform: rotate(324deg);
-  }
+  
+  @ice-cream-number: 10;
+  @angle: (360 / @ice-cream-number);
+  .flavor-selector('clockwork-orange','0');
+  .flavor-selector('red-planet',@angle);
+  .flavor-selector('green-land',@angle*2);
+  .flavor-selector('yellow-submarine',@angle*3);
+  .flavor-selector('vivacious-violet',@angle*4);
+  .flavor-selector('pink-panther',@angle*5);
+  .flavor-selector('feeling-blue',@angle*6);
+  .flavor-selector('blue-clue',@angle*7);
+  .flavor-selector('gray-anatomy',@angle*8);
+  .flavor-selector('puzzled-plum',@angle*9);
 }

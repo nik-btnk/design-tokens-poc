@@ -78,7 +78,13 @@
   &__find-new-color {
     padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
 
+    &--wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     &--title {
+      width: 60%;
       @font-mobile-title-large-abril();
       text-align: center;
     }
