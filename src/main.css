@@ -1418,20 +1418,99 @@
     transform: scale(1.23);
   }
 }
+.product-info__content-wrapper .product-card::before {
+  display: none;
+  content: '';
+  position: absolute;
+  width: 305px;
+  height: 305px;
+  border-radius: 50%;
+  border: 10px solid;
+  opacity: 0.2;
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card::before {
+    display: block;
+  }
+}
+.product-info__content-wrapper .product-card.red-planet::before {
+  border-color: #e9322a;
+}
+.product-info__content-wrapper .product-card.yellow-submarine::before {
+  border-color: #fec513;
+}
+.product-info__content-wrapper .product-card.clockwork-orange::before {
+  border-color: #f1b669;
+}
+.product-info__content-wrapper .product-card.green-land::before {
+  border-color: #60d665;
+}
+.product-info__content-wrapper .product-card.puzzled-plum::before {
+  border-color: #ba9cff;
+}
+.product-info__content-wrapper .product-card.feeling-blue::before {
+  border-color: #5d78d0;
+}
+.product-info__content-wrapper .product-card.vivacious-violet::before {
+  border-color: #9154df;
+}
+.product-info__content-wrapper .product-card.blue-clue::before {
+  border-color: #3db1c9;
+}
+.product-info__content-wrapper .product-card.gray-anatomy::before {
+  border-color: #98a1a8;
+}
+.product-info__content-wrapper .product-card.pink-panther::before {
+  border-color: #ffb8b5;
+}
 .product-info__content-wrapper .product-card__background {
   margin: 0;
+  background-color: transparent !important;
+  z-index: 100;
 }
 @media screen and (min-width: 425px) {
   .product-info__content-wrapper .product-card__background {
+    outline-offset: -10px !important;
     height: 325px;
     width: 325px;
   }
 }
 @media screen and (min-width: 425px) {
   .product-info__content-wrapper .product-card__background::before {
+    box-shadow: inset 0 4px 20px !important;
     width: 305px;
     height: 305px;
   }
+}
+.product-info__content-wrapper .product-card__background.red-planet::before {
+  color: #e9322a;
+}
+.product-info__content-wrapper .product-card__background.yellow-submarine::before {
+  color: #fec513;
+}
+.product-info__content-wrapper .product-card__background.clockwork-orange::before {
+  color: #f1b669;
+}
+.product-info__content-wrapper .product-card__background.green-land::before {
+  color: #60d665;
+}
+.product-info__content-wrapper .product-card__background.puzzled-plum::before {
+  color: #ba9cff;
+}
+.product-info__content-wrapper .product-card__background.feeling-blue::before {
+  color: #5d78d0;
+}
+.product-info__content-wrapper .product-card__background.vivacious-violet::before {
+  color: #9154df;
+}
+.product-info__content-wrapper .product-card__background.blue-clue::before {
+  color: #3db1c9;
+}
+.product-info__content-wrapper .product-card__background.gray-anatomy::before {
+  color: #98a1a8;
+}
+.product-info__content-wrapper .product-card__background.pink-panther::before {
+  color: #ffb8b5;
 }
 @media screen and (min-width: 1440px) {
   .product-info__content-wrapper .product-card__name-price-container {
@@ -2188,14 +2267,12 @@
 .product-card__background {
   width: 100%;
   height: 120px;
-  border: 5px solid #fff5f5;
-  box-shadow: 0 2px 8px 0 #ffb8b5ff;
-  background-color: transparent;
   border-radius: 50%;
   position: relative;
   z-index: 3;
   pointer-events: none;
   margin-bottom: 24px;
+  border: 1px solid;
 }
 @media screen and (min-width: 425px) {
   .product-card__background {
@@ -2215,7 +2292,7 @@
   height: calc(100% - 5px);
   border-radius: 50%;
   background-color: transparent;
-  box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
+  border: 1px solid;
 }
 @media screen and (min-width: 425px) {
   .product-card__background:before {
@@ -2230,9 +2307,10 @@
 .product-card__img-container {
   position: relative;
   overflow: hidden;
-  height: 150px;
-  border-radius: 42%;
-  bottom: 44px;
+  height: 137px;
+  width: 100%;
+  border-radius: 45%;
+  bottom: 24px;
 }
 @media screen and (min-width: 425px) {
   .product-card__img-container {
@@ -2426,95 +2504,125 @@
   font-stretch: normal;
   letter-spacing: 0;
 }
-.product-card.pink-panther .product-card__background {
-  box-shadow: 0 2px 8px 0 #ffb8b5ff;
-}
-.product-card.pink-panther .product-card__background:before {
-  box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
-}
-.product-card.pink-panther .product-card__info-container {
-  background-color: rgba(255, 184, 181, 0.5);
-}
-.product-card.clockwork-orange .product-card__background {
+.product-card:has(.clockwork-orange) .product-card__background {
   box-shadow: 0 2px 8px 0 #f1b669ff;
+  background: #f1b6691A;
+  border-color: #f1b669;
 }
-.product-card.clockwork-orange .product-card__background:before {
+.product-card:has(.clockwork-orange) .product-card__background:before {
+  border-color: #f1b669;
   box-shadow: inset 0 2px 8px 0 #f1b669ff;
 }
-.product-card.clockwork-orange .product-card__info-container {
-  background-color: rgba(241, 182, 105, 0.5);
+.product-card:has(.clockwork-orange) .product-card__info-container {
+  background-color: #f1b66980;
 }
-.product-card.red-planet .product-card__background {
+.product-card:has(.red-planet) .product-card__background {
   box-shadow: 0 2px 8px 0 #e9322aff;
+  background: #e9322a1A;
+  border-color: #e9322a;
 }
-.product-card.red-planet .product-card__background:before {
+.product-card:has(.red-planet) .product-card__background:before {
+  border-color: #e9322a;
   box-shadow: inset 0 2px 8px 0 #e9322aff;
 }
-.product-card.red-planet .product-card__info-container {
-  background-color: rgba(233, 50, 42, 0.5);
+.product-card:has(.red-planet) .product-card__info-container {
+  background-color: #e9322a80;
 }
-.product-card.feeling-blue .product-card__background {
-  box-shadow: 0 2px 8px 0 #5d78d0ff;
-}
-.product-card.feeling-blue .product-card__background:before {
-  box-shadow: inset 0 2px 8px 0 #5d78d0ff;
-}
-.product-card.feeling-blue .product-card__info-container {
-  background-color: rgba(93, 120, 208, 0.5);
-}
-.product-card.blue-clue .product-card__background {
-  box-shadow: 0 2px 8px 0 #3db1c9ff;
-}
-.product-card.blue-clue .product-card__background:before {
-  box-shadow: inset 0 2px 8px 0 #3db1c9ff;
-}
-.product-card.blue-clue .product-card__info-container {
-  background-color: rgba(61, 177, 201, 0.5);
-}
-.product-card.green-land .product-card__background {
+.product-card:has(.green-land) .product-card__background {
   box-shadow: 0 2px 8px 0 #60d665ff;
+  background: #60d6651A;
+  border-color: #60d665;
 }
-.product-card.green-land .product-card__background:before {
+.product-card:has(.green-land) .product-card__background:before {
+  border-color: #60d665;
   box-shadow: inset 0 2px 8px 0 #60d665ff;
 }
-.product-card.green-land .product-card__info-container {
-  background-color: rgba(96, 214, 101, 0.5);
+.product-card:has(.green-land) .product-card__info-container {
+  background-color: #60d66580;
 }
-.product-card.yellow-submarine .product-card__background {
+.product-card:has(.yellow-submarine) .product-card__background {
   box-shadow: 0 2px 8px 0 #fec513ff;
+  background: #fec5131A;
+  border-color: #fec513;
 }
-.product-card.yellow-submarine .product-card__background:before {
+.product-card:has(.yellow-submarine) .product-card__background:before {
+  border-color: #fec513;
   box-shadow: inset 0 2px 8px 0 #fec513ff;
 }
-.product-card.yellow-submarine .product-card__info-container {
-  background-color: rgba(254, 197, 19, 0.5);
+.product-card:has(.yellow-submarine) .product-card__info-container {
+  background-color: #fec51380;
 }
-.product-card.gray-anatomy .product-card__background {
+.product-card:has(.vivacious-violet) .product-card__background {
+  box-shadow: 0 2px 8px 0 #9154dfff;
+  background: #9154df1A;
+  border-color: #9154df;
+}
+.product-card:has(.vivacious-violet) .product-card__background:before {
+  border-color: #9154df;
+  box-shadow: inset 0 2px 8px 0 #9154dfff;
+}
+.product-card:has(.vivacious-violet) .product-card__info-container {
+  background-color: #9154df80;
+}
+.product-card:has(.pink-panther) .product-card__background {
+  box-shadow: 0 2px 8px 0 #ffb8b5ff;
+  background: #ffb8b51A;
+  border-color: #ffb8b5;
+}
+.product-card:has(.pink-panther) .product-card__background:before {
+  border-color: #ffb8b5;
+  box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
+}
+.product-card:has(.pink-panther) .product-card__info-container {
+  background-color: #ffb8b580;
+}
+.product-card:has(.feeling-blue) .product-card__background {
+  box-shadow: 0 2px 8px 0 #5d78d0ff;
+  background: #5d78d01A;
+  border-color: #5d78d0;
+}
+.product-card:has(.feeling-blue) .product-card__background:before {
+  border-color: #5d78d0;
+  box-shadow: inset 0 2px 8px 0 #5d78d0ff;
+}
+.product-card:has(.feeling-blue) .product-card__info-container {
+  background-color: #5d78d080;
+}
+.product-card:has(.blue-clue) .product-card__background {
+  box-shadow: 0 2px 8px 0 #3db1c9ff;
+  background: #3db1c91A;
+  border-color: #3db1c9;
+}
+.product-card:has(.blue-clue) .product-card__background:before {
+  border-color: #3db1c9;
+  box-shadow: inset 0 2px 8px 0 #3db1c9ff;
+}
+.product-card:has(.blue-clue) .product-card__info-container {
+  background-color: #3db1c980;
+}
+.product-card:has(.gray-anatomy) .product-card__background {
   box-shadow: 0 2px 8px 0 #98a1a8ff;
+  background: #98a1a81A;
+  border-color: #98a1a8;
 }
-.product-card.gray-anatomy .product-card__background:before {
+.product-card:has(.gray-anatomy) .product-card__background:before {
+  border-color: #98a1a8;
   box-shadow: inset 0 2px 8px 0 #98a1a8ff;
 }
-.product-card.gray-anatomy .product-card__info-container {
-  background-color: rgba(152, 161, 168, 0.5);
+.product-card:has(.gray-anatomy) .product-card__info-container {
+  background-color: #98a1a880;
 }
-.product-card.puzzled-plum .product-card__background {
+.product-card:has(.puzzled-plum) .product-card__background {
   box-shadow: 0 2px 8px 0 #ba9cffff;
+  background: #ba9cff1A;
+  border-color: #ba9cff;
 }
-.product-card.puzzled-plum .product-card__background:before {
+.product-card:has(.puzzled-plum) .product-card__background:before {
+  border-color: #ba9cff;
   box-shadow: inset 0 2px 8px 0 #ba9cffff;
 }
-.product-card.puzzled-plum .product-card__info-container {
-  background-color: rgba(152, 161, 168, 0.5);
-}
-.product-card.vivacious-violet .product-card__background {
-  box-shadow: 0 2px 8px 0 #ba9cffff;
-}
-.product-card.vivacious-violet .product-card__background:before {
-  box-shadow: inset 0 2px 8px 0 #ba9cffff;
-}
-.product-card.vivacious-violet .product-card__info-container {
-  background-color: rgba(145, 84, 223, 0.5);
+.product-card:has(.puzzled-plum) .product-card__info-container {
+  background-color: #ba9cff80;
 }
 .product-info-btn {
   right: -12px;

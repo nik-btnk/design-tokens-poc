@@ -10,6 +10,7 @@ import PopularColors from '../../components/landing/PopularColors'
 
 //Assets
 import imgMascot from '../../assets/mascot.png'
+import { RaffledColor } from '../../components/landing/RaffledColor'
 
 const Landing = () => {
   const popularColors = [products[1], products[4], products[3], products[6]]
@@ -60,6 +61,12 @@ const Landing = () => {
   }
   return (
     <div className="landing">
+      <RaffledColor
+        name={products[0].name}
+        price={products[0].price}
+        nutrition={products[0].nutrition}
+        allergy={products[0].allergy}
+      />
       <section className="landing__hero">
         <div className="landing__hero--banner">
           <svg className={'landing__wrapping-text'} viewBox="0 0 190 190">
