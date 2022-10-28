@@ -1,5 +1,5 @@
 // Modules
-import React from 'react'
+import React, { useState } from 'react'
 
 // Utils
 import products from '../../product-storage'
@@ -15,6 +15,8 @@ import { RaffledColor } from '../../components/landing/RaffledColor'
 const Landing = () => {
   const popularColors = [products[1], products[4], products[3], products[6]]
   const name = 'Creame Colors ·'
+  const [selectedColor, setSelectedColor] = useState()
+  const [showModal, setShowModal] = useState(false)
 
   const getTextWidth = (text, font) => {
     const canvas =
@@ -61,12 +63,16 @@ const Landing = () => {
   }
   return (
     <div className="landing">
-      <RaffledColor
-        name={products[0].name}
-        price={products[0].price}
-        nutrition={products[0].nutrition}
-        allergy={products[0].allergy}
-      />
+      {showModal && (
+        <RaffledColor
+          setShowModal={setShowModal}
+          name={selectedColor.name}
+          price={selectedColor.price}
+          nutrition={selectedColor.nutrition}
+          allergy={selectedColor.allergy}
+        />
+      )}
+
       <section className="landing__hero">
         <div className="landing__hero--banner">
           <svg className={'landing__wrapping-text'} viewBox="0 0 190 190">
@@ -114,7 +120,10 @@ const Landing = () => {
           <h2 className="landing__find-new-color--title">
             Find Your New Favorite Color
           </h2>
-          <ColorRoulette />
+          <ColorRoulette
+            setSelectedColor={setSelectedColor}
+            setShowModal={setShowModal}
+          />
         </div>
       </section>
 

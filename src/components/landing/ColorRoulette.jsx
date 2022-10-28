@@ -8,7 +8,7 @@ import products from '../../product-storage'
 //Assets
 import { ReactComponent as Mascot } from '../../assets/mascot.svg'
 
-const ColorRoulette = () => {
+const ColorRoulette = ({ setSelectedColor, setShowModal }) => {
   const [circleStyle, setCircleStyle] = useState({ transform: `rotate(0deg)` })
   const [buttonDisabled, setButtonDisabled] = useState(false)
   const getRandom = (min, max) => {
@@ -35,30 +35,35 @@ const ColorRoulette = () => {
   }, [number])
 
   const handleClick = () => {
+    let mySelectedColor
     setButtonDisabled(true)
     updateNumber()
     setCircleStyle({ transform: `rotate(-${number}deg)` })
+
+    if (rouletteValue > 342 || rouletteValue <= 18)
+      mySelectedColor = products[0]
+    else if (rouletteValue > 18 && rouletteValue <= 54)
+      mySelectedColor = products[1]
+    else if (rouletteValue > 54 && rouletteValue <= 90)
+      mySelectedColor = products[2]
+    else if (rouletteValue > 90 && rouletteValue <= 126)
+      mySelectedColor = products[3]
+    else if (rouletteValue > 126 && rouletteValue <= 162)
+      mySelectedColor = products[4]
+    else if (rouletteValue > 162 && rouletteValue <= 198)
+      mySelectedColor = products[5]
+    else if (rouletteValue > 198 && rouletteValue <= 234)
+      mySelectedColor = products[6]
+    else if (rouletteValue > 234 && rouletteValue <= 270)
+      mySelectedColor = products[7]
+    else if (rouletteValue > 270 && rouletteValue <= 306)
+      mySelectedColor = products[8]
+    else if (rouletteValue > 306 && rouletteValue <= 342)
+      mySelectedColor = products[9]
+    //open a modal which ice cream depends on raffled ice cream
+    setSelectedColor(mySelectedColor)
+    setShowModal(true)
     setTimeout(() => {
-      if (rouletteValue > 342 || rouletteValue <= 18) console.log(products[0])
-      else if (rouletteValue > 18 && rouletteValue <= 54)
-        console.log(products[1])
-      else if (rouletteValue > 54 && rouletteValue <= 90)
-        console.log(products[2])
-      else if (rouletteValue > 90 && rouletteValue <= 126)
-        console.log(products[3])
-      else if (rouletteValue > 126 && rouletteValue <= 162)
-        console.log(products[4])
-      else if (rouletteValue > 162 && rouletteValue <= 198)
-        console.log(products[5])
-      else if (rouletteValue > 198 && rouletteValue <= 234)
-        console.log(products[6])
-      else if (rouletteValue > 234 && rouletteValue <= 270)
-        console.log(products[7])
-      else if (rouletteValue > 270 && rouletteValue <= 306)
-        console.log(products[8])
-      else if (rouletteValue > 306 && rouletteValue <= 342)
-        console.log(products[9])
-      //open a modal which ice cream depends on raffled ice cream
       setButtonDisabled(false)
     }, 3000)
   }

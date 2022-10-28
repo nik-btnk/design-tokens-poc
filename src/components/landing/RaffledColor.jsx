@@ -5,7 +5,16 @@ import mascot from '../../assets/mascot.png'
 import iconCross from '../../assets/icons/control/icon-x.png'
 import iconCart from '../../assets/Icon=cart-menu.png'
 
-export const RaffledColor = ({ name, price, nutrition, allergy }) => {
+export const RaffledColor = ({
+  setShowModal,
+  name,
+  price,
+  nutrition,
+  allergy
+}) => {
+  const handleClick = () => {
+    setShowModal((prev) => !prev)
+  }
   return (
     <div className="raffled-color__wrapper">
       <article className="raffled-color__card">
@@ -13,6 +22,7 @@ export const RaffledColor = ({ name, price, nutrition, allergy }) => {
           <h4 className="raffled-color__header--title">I found for you</h4>
           <img className="raffled-color__header--logo" src={mascot} alt="" />
           <img
+            onClick={handleClick}
             src={iconCross}
             alt=""
             className="raffled-color__header--cross"
