@@ -3,6 +3,7 @@ import React from 'react'
 //Assets
 import mascot from '../../assets/mascot.png'
 import iconCross from '../../assets/icons/control/icon-x.png'
+import iconCart from '../../assets/Icon=cart-menu.png'
 
 export const RaffledColor = ({ name, price, nutrition, allergy }) => {
   return (
@@ -27,7 +28,7 @@ export const RaffledColor = ({ name, price, nutrition, allergy }) => {
             </div>
             <div className="raffled-color__name-price-container">
               <span className="raffled-color__name">{name}</span>
-              <span className="raffled-color__price">{price}</span>
+              <span className="raffled-color__price">${price}</span>
             </div>
           </div>
         </div>
@@ -42,16 +43,6 @@ export const RaffledColor = ({ name, price, nutrition, allergy }) => {
             Quo, eligendi.
           </p>
           <div className="raffled-color__properties">
-            <div className="raffled-color__nutrition">
-              <img
-                className="raffled-color__nutrition--icon"
-                src={nutrition.icon}
-                alt=""
-              />
-              <span className="raffled-color__nutrition--name">
-                {nutrition.name}
-              </span>
-            </div>
             {allergy.map((allergy, index) => (
               <div key={index} className="raffled-color__allergy">
                 <img
@@ -64,11 +55,21 @@ export const RaffledColor = ({ name, price, nutrition, allergy }) => {
                 </span>
               </div>
             ))}
+            <div className="raffled-color__nutrition">
+              <img
+                className="raffled-color__nutrition--icon"
+                src={nutrition.icon}
+                alt=""
+              />
+              <span className="raffled-color__nutrition--name">
+                {nutrition.name}
+              </span>
+            </div>
           </div>
         </div>
         <div className="raffled-color__cta">
           <button className="raffled-color__add-to-cart-btn">
-            <img className="raffled-color__cart-icon" src="" alt="" />
+            <img className="raffled-color__cart-icon" src={iconCart} alt="" />
             Add to cart
           </button>
         </div>
