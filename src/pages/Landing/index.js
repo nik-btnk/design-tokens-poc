@@ -63,16 +63,6 @@ const Landing = () => {
   }
   return (
     <div className="landing">
-      {showModal && (
-        <RaffledColor
-          setShowModal={setShowModal}
-          name={selectedColor.name}
-          price={selectedColor.price}
-          nutrition={selectedColor.nutrition}
-          allergy={selectedColor.allergy}
-        />
-      )}
-
       <section className="landing__hero">
         <div className="landing__hero--banner">
           <svg className={'landing__wrapping-text'} viewBox="0 0 190 190">
@@ -116,6 +106,15 @@ const Landing = () => {
       </section>
 
       <section className="landing__find-new-color">
+        {showModal && (
+          <RaffledColor
+            setShowModal={setShowModal}
+            name={selectedColor.name}
+            price={selectedColor.price}
+            nutrition={selectedColor.nutrition}
+            allergy={selectedColor.allergy}
+          />
+        )}
         <div className="landing__find-new-color--wrapper">
           <h2 className="landing__find-new-color--title">
             Find Your New Favorite Color

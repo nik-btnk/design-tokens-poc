@@ -62,9 +62,9 @@ const ColorRoulette = ({ setSelectedColor, setShowModal }) => {
       mySelectedColor = products[9]
     //open a modal which ice cream depends on raffled ice cream
     setSelectedColor(mySelectedColor)
-    setShowModal(true)
     setTimeout(() => {
       setButtonDisabled(false)
+      setShowModal(true)
     }, 3000)
   }
 
