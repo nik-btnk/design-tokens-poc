@@ -1,0 +1,112 @@
+// Mixins______________________________________________________________
+.flavor-selector(@class, @rotate) {
+  @class-name: ~'.@{class}';
+
+  @{class-name}{
+    background-color: ~'@{color-flavor-@{class}-fill-front}';
+    border: ~'@{color-flavor-@{class}-border}';
+    transform: ~'rotate(@{rotate}deg);';
+  }
+}
+// ____________________________________________________________________
+
+.color-roulette {
+  display: inline-block;
+  position: relative;
+  //This has to be fixed for better responsive style. I set a margin to avoid stopper from going out the boundaries of the component because of its absolute position
+  margin-top: 30px;
+
+  &__circle {
+    height: 350px;
+    width: 350px;
+    background-color: @color-brand-orange-0;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 3s all;
+    //Little tweak for smooth borders
+    clip-path: circle(49% at 50% 50%);
+  }
+
+  &__triangle {
+    height: 50%;
+    width: 200px;
+    clip-path: polygon(78% 0, 50% 100%, 22% 0);
+    position: absolute;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    left: 21%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 60%;
+      transform: rotate(17deg) translateX(-14px) translateY(-15px);
+    }
+  }
+
+  &__stopper {
+    height: 30px;
+    width: 40px;
+    background-color: @color-brand-orange-3;
+    box-shadow: 0px 4px 4px rgba(166, 88, 9, 0.5),
+      inset 8px 4px 4px rgba(255, 255, 255, 0.25);
+    position: absolute;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    left: 0;
+    right: 0;
+    top: -40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__spin-button {
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    background-color: @color-brand-orange-2;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 2px solid @color-brand-orange-4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.25),
+      inset 0px 4px 4px rgba(255, 255, 255, 0.51);
+
+    span {
+      color: @color-brand-orange-4;
+      @font-mobile-title-small-abril();
+      font-size: 8px;
+      line-height: 8px;
+      margin-bottom: 4px;
+    }
+
+    svg {
+      filter: brightness(0) saturate(100%) invert(33%) sepia(70%) saturate(986%)
+        hue-rotate(360deg) brightness(96%) contrast(94%);
+      height: 20px;
+    }
+  }
+  
+  @ice-cream-number: 10;
+  @angle: (360 / @ice-cream-number);
+  .flavor-selector('clockwork-orange','0');
+  .flavor-selector('red-planet',@angle);
+  .flavor-selector('green-land',@angle*2);
+  .flavor-selector('yellow-submarine',@angle*3);
+  .flavor-selector('vivacious-violet',@angle*4);
+  .flavor-selector('pink-panther',@angle*5);
+  .flavor-selector('feeling-blue',@angle*6);
+  .flavor-selector('blue-clue',@angle*7);
+  .flavor-selector('gray-anatomy',@angle*8);
+  .flavor-selector('puzzled-plum',@angle*9);
+}

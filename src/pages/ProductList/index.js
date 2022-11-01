@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import ActiveFilter from '../../components/product-list/ActiveFilter'
 import { Filters } from '../../components/product-list/Filters'
 import ProductCard from '../../components/product-list/ProductCard'
@@ -6,6 +7,12 @@ import products from '../../product-storage'
 import { filterProduct } from './filterProduct'
 
 const Storefront = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
   const min = 0
   const max = 10
   const [priceRange, setPriceRange] = useState([min, max])

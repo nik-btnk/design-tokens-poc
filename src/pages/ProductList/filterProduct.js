@@ -6,7 +6,7 @@ export const filterProduct = (product, selected, priceRange) => {
   //If the product contains allergy ingredient, filter it
   if (product.allergy !== null) {
     product.allergy.forEach((allergy) => {
-      if (selected.includes(allergy)) filter = false
+      if (selected.includes(allergy.name)) filter = false
     })
   }
 
@@ -20,7 +20,7 @@ export const filterProduct = (product, selected, priceRange) => {
   //If the product doesn't contain nutrition fact, filter it
   generalData.Nutrition.forEach((nutrition) => {
     if (selected.includes(nutrition)) {
-      if (!selected.includes(product.nutrition)) filter = false
+      if (!selected.includes(product.nutrition.name)) filter = false
     }
   })
 
