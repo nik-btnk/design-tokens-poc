@@ -10,6 +10,7 @@ import PopularColors from '../../components/landing/PopularColors'
 
 //Assets
 import imgMascot from '../../assets/mascot.png'
+import imgMascotXl from '../../assets/mascot-xl.png'
 import { RaffledColor } from '../../components/landing/RaffledColor'
 
 const Landing = () => {
@@ -87,20 +88,23 @@ const Landing = () => {
 
       <section className="landing__presentation">
         <div className="landing__presentation--wrapper">
-          <h3 className="landing__presentation--title">
-            “Life’s better in color.”
-          </h3>
-          <p className="landing__presentation--description">
-            That’s the motto of our founding brothers Bill and Ted, and what we
-            reaffirm with every vibrant scoop we’ve served since 1994. We’re
-            delighted to finally offer our unique perspective to the world with
-            direct-to-your-door shipping and guaranteed no-melt packaging.
-            <br />
-            <br />
-            Seeing is believing- so give us a look and see for yourself!
-          </p>
+          <div>
+            <h3 className="landing__presentation--title">
+              “Life’s better in color.”
+            </h3>
+            <p className="landing__presentation--description">
+              That’s the motto of our founding brothers Bill and Ted, and what
+              we reaffirm with every vibrant scoop we’ve served since 1994.
+              We’re delighted to finally offer our unique perspective to the
+              world with direct-to-your-door shipping and guaranteed no-melt
+              packaging.
+              <br />
+              <br />
+              Seeing is believing- so give us a look and see for yourself!
+            </p>
+          </div>
           <div className="landing__presentation--mascot">
-            <img src={imgMascot} />
+            <img src={imgMascotXl} />
           </div>
         </div>
       </section>
