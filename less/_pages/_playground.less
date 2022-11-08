@@ -1,5 +1,35 @@
 @import '../_tokens/_testTokens.less';
 
 .playground {
-  background-color: var(--color-test-feeling-blue);
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  button {
+    background-color: var(--color-button-background);
+    color: var(--color-button-text);
+    font-size: 18px;
+    font-weight: 600;
+    width: 250px;
+    height: 80px;
+    border-radius: 20px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &--title {
+      color: var(--color-text-primary);
+    }
+
+    &--article {
+      max-width: 600px;
+      color: var(--color-text-primary);
+    }
+  }
 }
