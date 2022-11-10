@@ -2,6 +2,11 @@
 @import '../_tokens/_sizes.less';
 @import '../_tokens/_font-mixins.less';
 
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
 .landing {
   display: flex;
   flex-direction: column;
@@ -13,10 +18,6 @@
     h2 {
       margin-bottom: @sizes-medium-3;
     }
-  }
-
-  @media @break-desktop {
-    width: 90%;
   }
 
   &__wrapping-text {
@@ -74,7 +75,7 @@
         width: 80%;
         margin: 0 auto;
       }
-      
+
       @media @break-desktop {
         width: 70%;
       }
@@ -128,9 +129,25 @@
     }
   }
 
-  //Sections must have a width of 100% in order to implement smooth scroll effect in the future
+  &__popular-colors {
+    overflow: scroll;
+  }
+
   section {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media @break-tablet {
+      width: 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+
+      &:nth-of-type(4){
+        //Substract the height of footer to it
+        height: calc(100vh - 158px);
+      }
+    }
   }
 
   .wrapper {
