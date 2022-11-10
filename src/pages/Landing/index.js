@@ -64,6 +64,7 @@ const Landing = () => {
   }
   return (
     <div className="landing">
+      <div className="spacer"></div>
       <section className="landing__hero">
         <div className="landing__hero--banner">
           <svg className={'landing__wrapping-text'} viewBox="0 0 190 190">
@@ -85,7 +86,7 @@ const Landing = () => {
           <img src={imgMascot} />
         </div>
       </section>
-
+      <div className="spacer"></div>
       <section className="landing__presentation">
         <div className="landing__presentation--wrapper">
           <div>
@@ -108,6 +109,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
+      <div className="spacer"></div>
 
       <section className="landing__find-new-color">
         {showModal && (
@@ -129,10 +131,12 @@ const Landing = () => {
           />
         </div>
       </section>
+      <div className="spacer"></div>
 
       <section className="landing__popular-colors">
         <PopularColors popularColors={popularColors} />
       </section>
+      <div className="spacer"></div>
     </div>
   )
 }

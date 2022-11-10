@@ -20,6 +20,16 @@ html {
     }
   }
 
+  .spacer {
+    height: 64px;
+    width: 100%;
+    scroll-snap-align: start;
+
+    @media @break-desktop{
+      height: 0px;
+    }
+  }
+
   &__wrapping-text {
     position: absolute;
     overflow: visible;
@@ -48,11 +58,15 @@ html {
       justify-content: center;
       align-items: center;
       height: 350px;
-      max-width: 350px;
+      width: 350px;
       margin: auto;
 
       svg {
-        width: 288px;
+        width: 265px;
+
+        @media @break-tablet{
+          width: 288px;
+        }
       }
 
       img {
@@ -112,6 +126,7 @@ html {
   &__find-new-color {
     padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
     position: relative;
+    overflow: hidden;
 
     &--wrapper {
       display: flex;
@@ -122,6 +137,7 @@ html {
       width: 70%;
       @font-mobile-title-large-abril();
       text-align: center;
+      margin-top: 0;
 
       @media @break-tablet {
         width: 100%;
@@ -129,24 +145,21 @@ html {
     }
   }
 
-  &__popular-colors {
-    overflow: scroll;
-  }
-
   section {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: calc(100vh - 64px);
 
-    @media @break-tablet {
-      width: 100vw;
-      height: 100vh;
-      scroll-snap-align: start;
-
+    @media @break-tablet{
       &:nth-of-type(4){
-        //Substract the height of footer to it
-        height: calc(100vh - 158px);
+        height: 100vh;
       }
+    }
+
+    @media @break-desktop{
+      height: 100vh;
     }
   }
 
