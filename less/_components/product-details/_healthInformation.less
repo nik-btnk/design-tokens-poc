@@ -1,8 +1,9 @@
 .health-info {
   padding: @sizes-medium-3 @sizes-small-3;
-  background-color: @color-light-mode-background-page-orange;
-  border-top: @sizes-small-1 solid @color-light-mode-border-button-orange;
-  border-bottom: @sizes-small-1 solid @color-light-mode-border-button-orange;
+  background-color: var(--color-light-mode-background-page-orange);
+  border-top: @sizes-small-1 solid var(--color-light-mode-border-button-orange);
+  border-bottom: @sizes-small-1 solid
+    var(--color-light-mode-border-button-orange);
   width: 100%;
 
   @media @break-tablet {
@@ -23,7 +24,7 @@
 
   &__title {
     @font-desktop-title-small-abril();
-    color: @color-light-mode-text-orange;
+    color: var(--color-light-mode-text-orange);
 
     @media @break-tablet {
       @font-desktop-title-medium-abril();
@@ -33,7 +34,7 @@
   &__calories-container {
     &--title {
       @font-mobile-title-small-abril();
-      color: @color-light-mode-text-orange;
+      color: var(--color-light-mode-text-orange);
 
       @media @break-tablet {
         @font-desktop-title-small-abril();
@@ -42,7 +43,7 @@
 
     &--calories {
       @font-desktop-body-quatt();
-      color: @color-light-mode-text-black;
+      color: var(--color-light-mode-text-black);
 
       @media @break-tablet {
         @font-desktop-title-small-quatt();
@@ -72,7 +73,7 @@
 
       .name {
         @font-mobile-title-small-abril();
-        color: @color-light-mode-text-black;
+        color: var(--color-light-mode-text-black);
 
         @media @break-tablet {
           @font-desktop-title-small-abril();
@@ -81,7 +82,7 @@
 
       .description {
         @font-desktop-caption-quatt();
-        color: @color-light-mode-text-black;
+        color: var(--color-light-mode-text-black);
       }
     }
   }

@@ -21,6 +21,10 @@ const excludeArray = ['effect', 'font', 'typography']
 const transforms = [sizes, spacings, fonts]
 const formatters = [fontFormatter, effectsFormatter]
 
+// Define which token categories would use CSS variables instead of less variables.
+// This is needed mainly for colors to set up theming capabilities.
+const useThemableTokens = ['color']
+
 module.exports = {
   transforms,
   formatters,
@@ -37,8 +41,10 @@ module.exports = {
             if (!excludeArray.includes(tokenCategory)) {
               return {
                 destination: `_${tokenCategory}.less`,
-                format: 'less/variables',
-                options: { showFileHeader: false },
+                format: useThemableTokens.includes(tokenCategory)
+                  ? 'css/variables'
+                  : 'less/variables',
+                options: { showFileHeader: false, selector: '.light-theme' },
                 filter: {
                   attributes: {
                     category: tokenCategory

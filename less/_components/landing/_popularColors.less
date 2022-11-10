@@ -24,10 +24,10 @@
       flex-direction: row;
     }
 
-    div:nth-child(4){
+    div:nth-child(4) {
       display: none;
 
-      @media @break-desktop{
+      @media @break-desktop {
         display: block;
       }
     }
@@ -35,12 +35,12 @@
 
   &__more-colors {
     padding: 8px;
-    
-    @media @break-tablet{
+
+    @media @break-tablet {
       display: flex;
       justify-content: center;
     }
-    
+
     button {
       cursor: pointer;
       margin-top: @sizes-medium-2;
@@ -49,8 +49,8 @@
       border-radius: @sizes-small-3;
       @font-mobile-title-small-quatt();
       font-weight: 700;
-      background-color: @color-light-mode-background-button-orange;
-      border: 2px solid @color-light-mode-border-button-orange;
+      background-color: var(--color-light-mode-background-button-orange);
+      border: 2px solid var(--color-light-mode-border-button-orange);
       box-shadow: @effect-shadow-button-orange-default-0,
         @effect-shadow-button-orange-default-1;
 

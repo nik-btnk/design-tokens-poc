@@ -8,19 +8,43 @@
   @class-name: ~'.@{class}';
 
   &:has(@{class-name}) {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: calc(100% - 24px);
+      border-radius: 50%;
+      background-color: var(~'--color-flavor-@{class}-border');
+      opacity: 10%;
+    }
+
     .product-card__background {
       box-shadow: ~'@{effect-shadow-product-card-@{class}}';
-      background: ~'@{color-flavor-@{class}-border}1A';
-      border-color: ~'@{color-flavor-@{class}-border}';
+      border-color: var(~'--color-flavor-@{class}-border');
 
       &:before {
-        border-color: ~'@{color-flavor-@{class}-border}';
+        border-color: var(~'--color-flavor-@{class}-border');
         box-shadow: inset ~'@{effect-shadow-product-card-@{class}}';
       }
     }
 
-    .product-card__info-container {
-      background-color: ~'@{color-flavor-@{class}-fill-back-1}80';
+    .product-card__info-container:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: ~'var(--color-flavor-@{class}-fill-back-1)';
+      opacity: 80%;
+      z-index: 0;
     }
   }
 }
@@ -62,53 +86,53 @@
     }
 
     .clockwork-orange {
-      fill: @color-flavor-clockwork-orange-fill-front;
-      stroke: @color-flavor-clockwork-orange-border;
+      fill: var(--color-flavor-clockwork-orange-fill-front);
+      stroke: var(--color-flavor-clockwork-orange-border);
     }
 
     .red-planet {
-      fill: @color-flavor-red-planet-fill-front;
-      stroke: @color-flavor-red-planet-border;
+      fill: var(--color-flavor-red-planet-fill-front);
+      stroke: var(--color-flavor-red-planet-border);
     }
 
     .green-land {
-      fill: @color-flavor-green-land-fill-front;
-      stroke: @color-flavor-green-land-border;
+      fill: var(--color-flavor-green-land-fill-front);
+      stroke: var(--color-flavor-green-land-border);
     }
 
     .yellow-submarine {
-      fill: @color-flavor-yellow-submarine-fill-front;
-      stroke: @color-flavor-yellow-submarine-border;
+      fill: var(--color-flavor-yellow-submarine-fill-front);
+      stroke: var(--color-flavor-yellow-submarine-border);
     }
 
     .vivacious-violet {
-      fill: @color-flavor-vivacious-violet-fill-front;
-      stroke: @color-flavor-vivacious-violet-border;
+      fill: var(--color-flavor-vivacious-violet-fill-front);
+      stroke: var(--color-flavor-vivacious-violet-border);
     }
 
     .pink-panther {
-      fill: @color-flavor-pink-panther-fill-front;
-      stroke: @color-flavor-pink-panther-border;
+      fill: var(--color-flavor-pink-panther-fill-front);
+      stroke: var(--color-flavor-pink-panther-border);
     }
 
     .feeling-blue {
-      fill: @color-flavor-feeling-blue-fill-front;
-      stroke: @color-flavor-feeling-blue-border;
+      fill: var(--color-flavor-feeling-blue-fill-front);
+      stroke: var(--color-flavor-feeling-blue-border);
     }
 
     .blue-clue {
-      fill: @color-flavor-blue-clue-fill-front;
-      stroke: @color-flavor-blue-clue-border;
+      fill: var(--color-flavor-blue-clue-fill-front);
+      stroke: var(--color-flavor-blue-clue-border);
     }
 
     .gray-anatomy {
-      fill: @color-flavor-gray-anatomy-fill-front;
-      stroke: @color-flavor-gray-anatomy-border;
+      fill: var(--color-flavor-gray-anatomy-fill-front);
+      stroke: var(--color-flavor-gray-anatomy-border);
     }
 
     .puzzled-plum {
-      fill: @color-flavor-puzzled-plum-fill-front;
-      stroke: @color-flavor-puzzled-plum-border;
+      fill: var(--color-flavor-puzzled-plum-fill-front);
+      stroke: var(--color-flavor-puzzled-plum-border);
     }
   }
 
@@ -198,12 +222,12 @@
     .product-card__name {
       margin-bottom: @sizes-small-2;
       @font-mobile-title-small-abril();
-      color: @color-light-mode-text-black;
+      color: var(--color-light-mode-text-black);
     }
 
     .product-card__price {
       @font-desktop-title-small-abril();
-      color: @color-light-mode-text-black;
+      color: var(--color-light-mode-text-black);
     }
   }
 
@@ -231,8 +255,8 @@
       height: 32px;
       width: 38px;
       border-radius: 32px;
-      background-color: @color-brand-orange-0;
-      border: 1px solid @color-brand-orange-2;
+      background-color: var(--color-brand-orange-0);
+      border: 1px solid var(--color-brand-orange-2);
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -294,8 +318,10 @@
 
     .product-card__description {
       text-align: center;
+      z-index: 1;
+
       &--text {
-        color: @color-brand-white;
+        color: var(--color-brand-white);
         @font-mobile-title-small-quatt();
         font-weight: 700;
       }
@@ -318,17 +344,17 @@
       }
 
       &.cold {
-        background-color: @color-brand-blue-4;
+        background-color: var(--color-brand-blue-4);
         border-radius: @sizes-small-3;
         box-shadow: @effect-shadow-button-blue-default-0;
-        color: @color-brand-white;
+        color: var(--color-brand-white);
       }
 
       &.hot {
-        background-color: @color-brand-pink-0;
+        background-color: var(--color-brand-pink-0);
         border-radius: @sizes-small-3;
         box-shadow: @effect-shadow-button-pink-default-0;
-        color: @color-brand-black;
+        color: var(--color-brand-black);
       }
 
       img {
@@ -361,8 +387,8 @@
   width: 62px;
   height: 40px;
   border-radius: @sizes-small-3;
-  background-color: @color-light-mode-background-button-orange;
-  border: 2px solid @color-light-mode-border-button-orange;
+  background-color: var(--color-light-mode-background-button-orange);
+  border: 2px solid var(--color-light-mode-border-button-orange);
   box-shadow: @effect-shadow-button-orange-default-0;
   z-index: 2;
   cursor: pointer;
@@ -393,7 +419,7 @@
   }
 
   &:active {
-    border: 2px solid @color-brand-orange-4;
+    border: 2px solid var(--color-brand-orange-4);
     box-shadow: @effect-shadow-button-orange-active;
   }
 }
@@ -402,8 +428,8 @@
   width: 100%;
   height: 40px;
   border-radius: @sizes-small-3;
-  background-color: @color-light-mode-background-button-orange;
-  border: 2px solid @color-light-mode-border-button-orange;
+  background-color: var(--color-light-mode-background-button-orange);
+  border: 2px solid var(--color-light-mode-border-button-orange);
   box-shadow: @effect-shadow-button-orange-default-0;
   @font-mobile-title-small-quatt();
   font-weight: 700;
@@ -418,7 +444,7 @@
   }
 
   &:active {
-    border: 2px solid @color-brand-orange-4;
+    border: 2px solid var(--color-brand-orange-4);
     box-shadow: @effect-shadow-button-orange-active;
   }
 

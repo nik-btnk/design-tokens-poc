@@ -1,5 +1,5 @@
 // Modules
-import React from 'react'
+import React, { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
 // CSS and asets
@@ -22,24 +22,30 @@ import Playground from './pages/Playground'
 import { path } from './constants'
 
 function App() {
+  const ThemeContext = React.createContext()
+
+  const [theme, setTheme] = useState('light-theme')
+
   return (
-    <div className="App">
-      <Header />
+    <div className={`App ${theme}`}>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <Header />
 
-      <Routes>
-        <Route path={path.LANDING} element={<Landing />} />
-        <Route path={path.TEST} element={<Test />} />
-        <Route path={path.PRODUCTS} element={<ProductList />} />
-        <Route path={path.CART} element={<Cart />} />
-        <Route path={path.DETAILS} element={<ProductDetails />} />
-        <Route path={path.CHECKOUT} element={<Checkout />} />
-        <Route path={path.NOTFOUND} element={<Page404 />} />
-        <Route path="/playground" element={<Playground />} />
+        <Routes>
+          <Route path={path.LANDING} element={<Landing />} />
+          <Route path={path.TEST} element={<Test />} />
+          <Route path={path.PRODUCTS} element={<ProductList />} />
+          <Route path={path.CART} element={<Cart />} />
+          <Route path={path.DETAILS} element={<ProductDetails />} />
+          <Route path={path.CHECKOUT} element={<Checkout />} />
+          <Route path={path.NOTFOUND} element={<Page404 />} />
+          <Route path="/playground" element={<Playground />} />
 
-        <Route path="*" element={<Navigate replace to={path.NOTFOUND} />} />
-      </Routes>
+          <Route path="*" element={<Navigate replace to={path.NOTFOUND} />} />
+        </Routes>
 
-      <Footer />
+        <Footer />
+      </ThemeContext.Provider>
     </div>
   )
 }

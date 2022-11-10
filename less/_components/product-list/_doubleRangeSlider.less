@@ -7,7 +7,7 @@
   .slider__track {
     border-radius: 3px;
     position: absolute;
-    background-color: @color-brand-black;
+    background-color: var(--color-brand-black);
     height: @sizes-small-1;
     width: 100%;
     z-index: 1;
@@ -20,7 +20,7 @@
       -webkit-appearance: none;
       border-radius: 3px;
       position: absolute;
-      background-color: @color-brand-black;
+      background-color: var(--color-brand-black);
       height: @sizes-small-1;
       width: 100%;
       z-index: 1;
@@ -59,8 +59,8 @@
     &::-webkit-slider-thumb {
       background-image: radial-gradient(
         circle,
-        @color-brand-white 25%,
-        @color-brand-orange-3 30%
+        var(--color-brand-white) 25%,
+        var(--color-brand-orange-3) 30%
       );
       border: none;
       border-radius: 50%;
@@ -76,8 +76,8 @@
     &::-moz-range-thumb {
       background-image: radial-gradient(
         circle,
-        @color-brand-white 25%,
-        @color-brand-orange-3 30%
+        var(--color-brand-white) 25%,
+        var(--color-brand-orange-3) 30%
       );
       border: none;
       border-radius: 50%;
@@ -98,7 +98,7 @@
       transform: translateX(-50%);
       @font-desktop-body-quatt();
       /* Commented this for demo because dark mode is not fully implemented and font has same color as background
-      color: @color-light-mode-text-black; */
+      color: var(--color-light-mode-text-black); */
     }
     &__right {
       position: absolute;
@@ -107,7 +107,7 @@
       transform: translateX(-14px);
       @font-desktop-body-quatt();
       /* Commented this for demo because dark mode is not fully implemented and font has same color as background
-      color: @color-light-mode-text-black; */
+      color: var(--color-light-mode-text-black); */
     }
   }
 }
