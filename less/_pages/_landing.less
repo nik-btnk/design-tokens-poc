@@ -3,7 +3,7 @@
 @import '../_tokens/_font-mixins.less';
 
 html {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   overflow-y: scroll;
 }
 
@@ -25,7 +25,7 @@ html {
     width: 100%;
     scroll-snap-align: start;
 
-    @media @break-desktop{
+    @media @break-desktop {
       height: 0px;
     }
   }
@@ -64,7 +64,11 @@ html {
       svg {
         width: 265px;
 
-        @media @break-tablet{
+        @media screen and (max-width: 374px) {
+          width: 200px;
+        }
+
+        @media @break-tablet {
           width: 288px;
         }
       }
@@ -108,7 +112,8 @@ html {
       margin-left: auto;
       margin-top: @sizes-medium-3;
       img {
-        width: 100%;
+        width: 136px;
+        height: 122px;
       }
 
       @media screen and (min-width: 1024px) {
@@ -152,13 +157,13 @@ html {
     width: 100vw;
     height: calc(100vh - 64px);
 
-    @media @break-tablet{
-      &:nth-of-type(4){
+    @media @break-tablet {
+      &:nth-of-type(4) {
         height: 100vh;
       }
     }
 
-    @media @break-desktop{
+    @media @break-desktop {
       height: 100vh;
     }
   }
