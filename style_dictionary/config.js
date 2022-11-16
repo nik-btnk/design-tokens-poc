@@ -1,4 +1,9 @@
-const tokens = require('../tokens/design-tokens.tokens.json')
+// Add any token categories to be excluded from processing by Style Dictionary
+const excludeArray = ['effect', 'font', 'typography', 'grid']
+
+// Define which token categories would use CSS variables instead of less variables.
+// This is needed mainly for colors to set up theming capabilities.
+const themableTokens = ['color']
 
 // Import custom transforms
 const sizes = require('./custom/transforms/sizes')
@@ -9,21 +14,13 @@ const fonts = require('./custom/transforms/fonts')
 const fontFormatter = require('./custom/formatters/fonts')
 const effectsFormatter = require('./custom/formatters/effects')
 
-const tokensArray = []
-for (x in tokens) {
-  tokensArray.push({ [x]: tokens[x] })
-}
-
-// Add any token categories to be excluded from processing by Style Dictionary
-const excludeArray = ['effect', 'font', 'typography']
-
 // Add new transformers and formatters to these arrays
 const transforms = [sizes, spacings, fonts]
 const formatters = [fontFormatter, effectsFormatter]
 
-// Define which token categories would use CSS variables instead of less variables.
-// This is needed mainly for colors to set up theming capabilities.
-const useThemableTokens = ['color']
+const { buildTokenFiles } = require('./custom/helperFunctions/helperFunctions')
+
+// console.log(buildTokenFiles(excludeArray, themableTokens, formatters))
 
 module.exports = {
   transforms,
@@ -34,33 +31,7 @@ module.exports = {
       less: {
         transformGroup: ['less'],
         buildPath: 'less/_tokens/',
-        files: [
-          ...tokensArray.map((token) => {
-            const tokenCategory = Object.keys(token)[0]
-
-            if (!excludeArray.includes(tokenCategory)) {
-              return {
-                destination: `_${tokenCategory}.less`,
-                format: useThemableTokens.includes(tokenCategory)
-                  ? 'css/variables'
-                  : 'less/variables',
-                options: { showFileHeader: false, selector: '.light-theme' },
-                filter: {
-                  attributes: {
-                    category: tokenCategory
-                  }
-                }
-              }
-            }
-          }),
-          ...formatters.map((formatter) => {
-            return {
-              destination: formatter.target,
-              format: formatter.name,
-              options: { showFileHeader: false }
-            }
-          })
-        ]
+        files: buildTokenFiles(excludeArray, themableTokens, formatters)
       }
     }
   }
