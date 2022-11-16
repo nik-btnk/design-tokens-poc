@@ -16,18 +16,26 @@
     padding: @sizes-small-2;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
 
     @media @break-tablet {
       flex-direction: row;
+      overflow-y: visible;
+      flex-wrap: wrap;
     }
 
-    div:nth-child(4){
+    div:nth-child(3) {
+      display: none;
+      @media @break-tablet {
+        display: block;
+      }
+    }
+
+    div:nth-child(4) {
       display: none;
 
-      @media @break-desktop{
+      @media @break-desktop {
         display: block;
       }
     }
@@ -35,12 +43,12 @@
 
   &__more-colors {
     padding: 8px;
-    
-    @media @break-tablet{
+
+    @media @break-tablet {
       display: flex;
       justify-content: center;
     }
-    
+
     button {
       cursor: pointer;
       margin-top: @sizes-medium-2;
