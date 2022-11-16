@@ -2,6 +2,11 @@
 @import '../_tokens/_sizes.less';
 @import '../_tokens/_font-mixins.less';
 
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
 .landing {
   display: flex;
   flex-direction: column;
@@ -15,8 +20,14 @@
     }
   }
 
-  @media @break-desktop {
-    width: 90%;
+  .spacer {
+    height: 64px;
+    width: 100%;
+    scroll-snap-align: start;
+
+    @media @break-desktop {
+      height: 0px;
+    }
   }
 
   &__wrapping-text {
@@ -47,11 +58,19 @@
       justify-content: center;
       align-items: center;
       height: 350px;
-      max-width: 350px;
+      width: 350px;
       margin: auto;
 
       svg {
-        width: 288px;
+        width: 265px;
+
+        @media screen and (max-width: 374px) {
+          width: 200px;
+        }
+
+        @media @break-tablet {
+          width: 288px;
+        }
       }
 
       img {
@@ -93,7 +112,8 @@
       margin-left: auto;
       margin-top: @sizes-medium-3;
       img {
-        width: 100%;
+        width: 136px;
+        height: 122px;
       }
 
       @media screen and (min-width: 1024px) {
@@ -111,6 +131,7 @@
   &__find-new-color {
     padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
     position: relative;
+    overflow: hidden;
 
     &--wrapper {
       display: flex;
@@ -121,6 +142,7 @@
       width: 70%;
       @font-mobile-title-large-abril();
       text-align: center;
+      margin-top: 0;
 
       @media @break-tablet {
         width: 100%;
@@ -128,9 +150,22 @@
     }
   }
 
-  //Sections must have a width of 100% in order to implement smooth scroll effect in the future
   section {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 64px);
+
+    @media @break-tablet {
+      &:nth-of-type(4) {
+        height: 100vh;
+      }
+    }
+
+    @media @break-desktop {
+      height: 100vh;
+    }
   }
 
   .wrapper {

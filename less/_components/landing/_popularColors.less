@@ -16,12 +16,13 @@
     padding: @sizes-small-2;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
 
     @media @break-tablet {
       flex-direction: row;
+      overflow-y: visible;
+      flex-wrap: wrap;
     }
 
     div:nth-child(4) {
