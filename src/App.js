@@ -24,7 +24,7 @@ import { path } from './constants'
 function App() {
   const ThemeContext = React.createContext()
 
-  const [theme, setTheme] = useState('brand-1')
+  const [theme, setTheme] = useState('cream-colors')
 
   return (
     <div className={`App ${theme}`}>

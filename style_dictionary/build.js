@@ -1,11 +1,14 @@
-const { settings, transforms, formatters } = require('./config')
+const { settings, transforms, formats } = require('./config')
 
 // Create Style Dictionary by extending a configuration file
-const StyleDictionary = require('style-dictionary').extend(settings)
+const StyleDictionary = require('style-dictionary')
 
-// Register transforms
+// Initialize Cream Colors brand
+const CreamColorsSD = StyleDictionary.extend(settings.cream_colors)
+
+// Register Cream Colors transforms
 transforms.map((val) => {
-  StyleDictionary.registerTransform({
+  CreamColorsSD.registerTransform({
     name: val.name,
     type: val.type,
     matcher: val.matcher,
@@ -13,21 +16,30 @@ transforms.map((val) => {
   })
 })
 
-// Update Less transformGroup
-StyleDictionary.registerTransformGroup({
-  name: 'less',
-  transforms: StyleDictionary.transformGroup['less'].concat(
-    transforms.map((val) => val.name)
-  )
-})
-
-// Register formatters
-formatters.map((val) => {
-  StyleDictionary.registerFormat({
+// Register Cream Colors formats
+formats.map((val) => {
+  CreamColorsSD.registerFormat({
     name: val.name,
+    target: val.target,
     formatter: val.formatter
   })
 })
 
-// This function will run once we execute npm run build script and will build the design files for every chosen platform at configuration file
-StyleDictionary.buildAllPlatforms()
+// Update Less transformGroup
+CreamColorsSD.registerTransformGroup({
+  name: 'less',
+  transforms: CreamColorsSD.transformGroup['less'].concat(
+    transforms.map((val) => val.name)
+  )
+})
+
+CreamColorsSD.buildAllPlatforms()
+
+const TestBrand1SD = StyleDictionary.extend(settings.test_brand_1_settings)
+TestBrand1SD.buildAllPlatforms()
+
+const TestBrand2SD = StyleDictionary.extend(settings.test_brand_2_settings)
+TestBrand2SD.buildAllPlatforms()
+
+const TestBrand3SD = StyleDictionary.extend(settings.test_brand_3_settings)
+TestBrand3SD.buildAllPlatforms()

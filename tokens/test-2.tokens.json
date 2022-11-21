@@ -1,0 +1,26 @@
+{
+  "sizes": {
+    "small-1": {
+      "description": null,
+      "value": 20,
+      "type": "dimension",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": { "exportKey": "size" }
+      }
+    }
+  },
+  "color": {
+    "green": {
+      "description": "",
+      "type": "color",
+      "value": "#00ff00",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:b8d80cb8c2284a97fcbff18a660b470ed7722ac8,",
+          "exportKey": "color"
+        }
+      }
+    }
+  }
+}
