@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <>
       {isHeaderVertical && <div className="grid-placeholder"></div>}
-      {location.pathname !== path.CHECKOUT ? (
+      {location.pathname !== path.CHECKOUT && location.pathname !== path.CART && (
         <header className={`header${isHeaderVertical ? '--vertical' : ''}`}>
           <div className="header__wrapper">
             <button
@@ -39,7 +39,8 @@ const Header = () => {
             </Link>
           </div>
         </header>
-      ) : (
+      )}
+      {location.pathname === path.CHECKOUT && (
         <header className="header-checkout">
           <div className="header-checkout__wrapper">
             <Link to={path.CART}>
@@ -50,6 +51,22 @@ const Header = () => {
             </Link>
             <span className="header-checkout__title">Checkout</span>
             <Link to={path.LANDING} className="header-checkout__logo">
+              <img src={logo} alt="Cream Colors logo." />
+            </Link>
+          </div>
+        </header>
+      )}
+      {location.pathname === path.CART && (
+        <header className="header-cart">
+          <div className="header-cart__wrapper">
+            <Link to={path.PRODUCTS}>
+              <button className="header-cart__back-btn">
+                <img src={caretLeft} />
+                <span>Product List</span>
+              </button>
+            </Link>
+            <span className="header-cart__title">Shopping Cart</span>
+            <Link to={path.LANDING} className="header-cart__logo">
               <img src={logo} alt="Cream Colors logo." />
             </Link>
           </div>
