@@ -36,7 +36,7 @@ const buildCreamColorsTokens = (
 
     if (!excludeArray.includes(tokenCategory)) {
       builtTokens.push({
-        destination: `./_cream_colors/_${tokenCategory}.less`,
+        destination: `_cream_colors/_${tokenCategory}.less`,
         format: themableTokens.includes(tokenCategory)
           ? 'css/variables'
           : 'less/variables',

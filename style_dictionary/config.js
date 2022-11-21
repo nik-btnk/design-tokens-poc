@@ -50,7 +50,7 @@ const test_brand_1_settings = {
       buildPath: 'less/_tokens/',
       files: [
         {
-          destination: './set_1/_color.less',
+          destination: 'set_1/_color.less',
           format: 'css/variables',
           options: {
             showFileHeader: false
@@ -62,7 +62,7 @@ const test_brand_1_settings = {
           }
         },
         {
-          destination: './set_1/_sizes.less',
+          destination: 'set_1/_sizes.less',
           format: 'less/variables',
           options: {
             showFileHeader: false
@@ -87,7 +87,7 @@ const test_brand_2_settings = {
       buildPath: 'less/_tokens/',
       files: [
         {
-          destination: './set_2/_color.less',
+          destination: 'set_2/_color.less',
           format: 'css/variables',
           options: {
             showFileHeader: false
@@ -99,7 +99,7 @@ const test_brand_2_settings = {
           }
         },
         {
-          destination: './set_2/_sizes.less',
+          destination: 'set_2/_sizes.less',
           format: 'less/variables',
           options: {
             showFileHeader: false
@@ -124,7 +124,7 @@ const test_brand_3_settings = {
       buildPath: 'less/_tokens/',
       files: [
         {
-          destination: './set_3/_color.less',
+          destination: 'set_3/_color.less',
           format: 'css/variables',
           options: {
             showFileHeader: false
@@ -136,7 +136,7 @@ const test_brand_3_settings = {
           }
         },
         {
-          destination: './set_3/_sizes.less',
+          destination: 'set_3/_sizes.less',
           format: 'less/variables',
           options: {
             showFileHeader: false
