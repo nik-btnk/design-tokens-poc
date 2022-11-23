@@ -55,9 +55,9 @@
     }
 
     .product-card {
-      width: 100%;
       margin: 0 0 @sizes-medium-1 0;
       pointer-events: none !important;
+      width: 100%;
 
       @media screen and (min-width: @size-tablet) and (max-width: 700px) {
         margin: auto auto @sizes-medium-2 auto !important;
@@ -77,8 +77,8 @@
         display: none;
         content: '';
         position: absolute;
-        width: 305px;
-        height: 305px;
+        width: 305px !important;
+        height: 305px !important;
         border-radius: 50%;
         border: 10px solid;
         opacity: 0.2;

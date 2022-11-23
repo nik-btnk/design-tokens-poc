@@ -32,7 +32,8 @@ const buildTestTokens = (set) => [
     destination: `${set}/_color.less`,
     format: 'css/variables',
     options: {
-      showFileHeader: false
+      showFileHeader: false,
+      selector: `.${set.replaceAll('_', '-')}`
     },
     filter: {
       attributes: {
