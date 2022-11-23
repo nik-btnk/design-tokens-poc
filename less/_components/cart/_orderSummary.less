@@ -1,0 +1,96 @@
+@import '../../_tokens/_color.less';
+@import '../../_tokens/_sizes.less';
+@import '../../_tokens/_font-mixins';
+
+.order-summary {
+  border: 2px solid @color-light-mode-border-button-blue;
+  box-shadow: @effect-shadow-button-blue-default-0,
+    @effect-shadow-button-blue-default-1;
+  padding: @sizes-small-3 @sizes-small-3 @sizes-small-1;
+
+  &__header,
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: @sizes-small-1 0 @sizes-medium-1;
+  }
+
+  &__title {
+    @font-mobile-title-medium-quatt();
+  }
+
+  &__resume {
+    & > div {
+      padding: @sizes-small-2 0;
+    }
+  }
+
+  &__products-price {
+    display: flex;
+    flex-direction: column;
+    gap: @sizes-small-2;
+  }
+
+  &__product {
+    display: flex;
+    gap: @sizes-small-1;
+
+    &-name {
+      @font-mobile-title-small-quatt();
+    }
+
+    &-price {
+      margin-left: auto;
+      @font-mobile-title-small-abril();
+    }
+
+    &-qty {
+      @font-mobile-caption-quatt();
+      align-self: center;
+    }
+  }
+
+  &__amount-tax {
+    display: flex;
+    flex-direction: column;
+    gap: @sizes-small-2;
+  }
+
+  &__amount,
+  &__taxes {
+    display: flex;
+    gap: @sizes-small-1;
+
+    & span:nth-of-type(1) {
+      @font-mobile-title-small-quatt();
+    }
+
+    & span:nth-of-type(2) {
+      margin-left: auto;
+      @font-mobile-title-small-abril();
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: @color-light-mode-border-button-orange;
+    padding: 0 !important;
+    margin-bottom: @sizes-small-2;
+  }
+
+  &__total {
+    &-text {
+      @font-mobile-title-small-quatt();
+    }
+
+    &-price {
+      @font-mobile-title-small-abril();
+    }
+  }
+
+  .folded {
+    display: none;
+  }
+}

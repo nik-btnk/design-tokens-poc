@@ -7,7 +7,7 @@ import iconPlus from '../../assets/icons/control/Icon=circle-plus.png'
 
 const ShoppingCard = () => {
   return (
-    <article className="shopping-card" style={{ backgroundColor: 'lightblue' }}>
+    <article className="shopping-card">
       <div className="shopping-card__background">
         <div className="shopping-card__img-container">
           <div className="shopping-card__img">
