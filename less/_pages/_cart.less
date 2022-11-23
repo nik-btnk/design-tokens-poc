@@ -3,14 +3,14 @@
 @import '../_tokens/_font-mixins';
 
 .cart {
+  margin-bottom: @sizes-large-1;
   &__total-price {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: @sizes-small-3;
-    padding: @sizes-small-3;
+    padding: @sizes-small-3 @sizes-small-3 @sizes-medium-1;
     color: @color-light-mode-text-orange;
-    margin-bottom: @sizes-small-2;
 
     &--text {
       @font-mobile-title-medium-abril();
