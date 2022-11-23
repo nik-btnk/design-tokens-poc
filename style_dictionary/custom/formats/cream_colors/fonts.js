@@ -3,7 +3,7 @@ const { JSDOM } = require('jsdom')
 const {
   formatName,
   formatValue
-} = require('../helperFunctions/helperFunctions')
+} = require('../../helperFunctions/helperFunctions')
 
 // Node has no access to DOM, therefore create global document variable to check valid CSS.
 global.document = new JSDOM('<!DOCTYPE html><p>Hello world</p>').window.document

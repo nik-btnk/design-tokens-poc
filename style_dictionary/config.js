@@ -13,19 +13,50 @@ const excludeArray = ['effect', 'font', 'typography', 'grid']
 // This is needed mainly for colors to set up theming capabilities.
 const themableTokens = ['color']
 
-// Import custom transforms
-const sizes = require('./custom/transforms/sizes')
-const spacings = require('./custom/transforms/spacings')
-const fonts = require('./custom/transforms/fonts')
+// Import custom transforms for Cream Colors
+const sizes = require('./custom/transforms/cream_colors/sizes')
+const spacings = require('./custom/transforms/cream_colors/spacings')
+const fonts = require('./custom/transforms/cream_colors/fonts')
 
-// Import custom formats
-const fontFormat = require('./custom/formats/fonts')
-const effectsFormat = require('./custom/formats/effects')
+// Import custom formats for Cream Colors
+const fontFormat = require('./custom/formats/cream_colors/fonts')
+const effectsFormat = require('./custom/formats/cream_colors/effects')
 
-// Add new transformers and formatters to these arrays
+// Add new transformers and formatters for Cream Colors brand to these arrays
 const transforms = [sizes, spacings, fonts]
 const formats = [fontFormat, effectsFormat]
 
+// Note: configurations are not the same across all formats
+const buildTestTokens = (set) => [
+  {
+    destination: `${set}/_color.less`,
+    format: 'css/variables',
+    options: {
+      showFileHeader: false
+    },
+    filter: {
+      attributes: {
+        category: 'color'
+      }
+    }
+  },
+  {
+    destination: `${set}/_sizes.less`,
+    format: 'less/variables',
+    options: {
+      showFileHeader: false
+    },
+    filter: {
+      attributes: {
+        category: 'sizes'
+      }
+    }
+  }
+]
+
+// CREAM COLORS
+// NOTE FOR FUTURE: think of a way to streamline the build configuration. Exlcude array, themeable tokens, etc.
+// Possibly build a json config file for each brand?
 const cream_colors = {
   source: ['tokens/design-tokens.tokens.json'],
   platforms: {
@@ -42,113 +73,41 @@ const cream_colors = {
   }
 }
 
+// TEST BRAND 1
 const test_brand_1_settings = {
   source: ['tokens/test-1.tokens.json'],
   platforms: {
     less: {
       transformGroup: ['less'],
       buildPath: 'less/_tokens/',
-      files: [
-        {
-          destination: 'set_1/_color.less',
-          format: 'css/variables',
-          options: {
-            showFileHeader: false
-          },
-          filter: {
-            attributes: {
-              category: 'color'
-            }
-          }
-        },
-        {
-          destination: 'set_1/_sizes.less',
-          format: 'less/variables',
-          options: {
-            showFileHeader: false
-          },
-          filter: {
-            attributes: {
-              category: 'sizes'
-            }
-          }
-        }
-      ],
-      prefix: 'set-1'
+      files: buildTestTokens('test_brand_1'),
+      prefix: 'test-brand-1'
     }
   }
 }
 
+// TEST BRAND 2
 const test_brand_2_settings = {
   source: ['tokens/test-2.tokens.json'],
   platforms: {
     less: {
       transformGroup: ['less'],
       buildPath: 'less/_tokens/',
-      files: [
-        {
-          destination: 'set_2/_color.less',
-          format: 'css/variables',
-          options: {
-            showFileHeader: false
-          },
-          filter: {
-            attributes: {
-              category: 'color'
-            }
-          }
-        },
-        {
-          destination: 'set_2/_sizes.less',
-          format: 'less/variables',
-          options: {
-            showFileHeader: false
-          },
-          filter: {
-            attributes: {
-              category: 'sizes'
-            }
-          }
-        }
-      ],
-      prefix: 'set-2'
+      files: buildTestTokens('test_brand_2'),
+      prefix: 'test-brand-2'
     }
   }
 }
 
+// TEST BRAND 3
 const test_brand_3_settings = {
   source: ['tokens/test-3.tokens.json'],
   platforms: {
     less: {
       transformGroup: ['less'],
       buildPath: 'less/_tokens/',
-      files: [
-        {
-          destination: 'set_3/_color.less',
-          format: 'css/variables',
-          options: {
-            showFileHeader: false
-          },
-          filter: {
-            attributes: {
-              category: 'color'
-            }
-          }
-        },
-        {
-          destination: 'set_3/_sizes.less',
-          format: 'less/variables',
-          options: {
-            showFileHeader: false
-          },
-          filter: {
-            attributes: {
-              category: 'sizes'
-            }
-          }
-        }
-      ],
-      prefix: 'set-3'
+      files: buildTestTokens('test_brand_3'),
+      prefix: 'test-brand-3'
     }
   }
 }

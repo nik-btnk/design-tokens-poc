@@ -25,7 +25,7 @@ formats.map((val) => {
   })
 })
 
-// Update Less transformGroup
+// Update Less transformGroup for Cream Colors
 CreamColorsSD.registerTransformGroup({
   name: 'less',
   transforms: CreamColorsSD.transformGroup['less'].concat(
@@ -35,6 +35,8 @@ CreamColorsSD.registerTransformGroup({
 
 CreamColorsSD.buildAllPlatforms()
 
+// The below dictionaries are test functionality for multi-brand support
+
 const TestBrand1SD = StyleDictionary.extend(settings.test_brand_1_settings)
 TestBrand1SD.buildAllPlatforms()
 
@@ -43,3 +45,5 @@ TestBrand2SD.buildAllPlatforms()
 
 const TestBrand3SD = StyleDictionary.extend(settings.test_brand_3_settings)
 TestBrand3SD.buildAllPlatforms()
+
+// Fix animation shadow on details page
