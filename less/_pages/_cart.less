@@ -4,6 +4,12 @@
 
 .cart {
   margin-bottom: @sizes-large-1;
+
+  @media @break-tablet {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+  }
+
   &__total-price {
     display: flex;
     justify-content: flex-end;
@@ -19,6 +25,19 @@
     &--price {
       @font-mobile-title-large-abril();
     }
+
+    @media @break-tablet {
+      order: 2;
+      width: 80%;
+      max-width: 530px;
+      margin: 0 auto @sizes-medium-3;
+    }
+  }
+
+  &__shopping-cards {
+    @media @break-tablet {
+      order: 1;
+    }
   }
 
   &__continue-checkout {
@@ -27,6 +46,11 @@
     align-items: center;
     justify-content: center;
     margin-bottom: @sizes-medium-1;
+
+    @media @break-tablet {
+      order: 4;
+      margin-top: @sizes-medium-3;
+    }
 
     button {
       width: 90%;
@@ -45,6 +69,11 @@
 
       &:active {
         box-shadow: @effect-shadow-button-blue-active;
+      }
+
+      @media @break-tablet {
+        width: 100%;
+        max-width: 182px;
       }
     }
   }
