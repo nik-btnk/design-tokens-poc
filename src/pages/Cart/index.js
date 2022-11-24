@@ -1,11 +1,15 @@
 // Modules
-import React from 'react'
+import React, { useEffect } from 'react'
 
 //Assets
 import OrderSummary from '../../components/cart/OrderSummary'
 import ShoppingCard from '../../components/cart/ShoppingCard'
 
 const Cart = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
   return (
     <div className="cart">
       <OrderSummary></OrderSummary>

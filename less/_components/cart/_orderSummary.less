@@ -18,6 +18,10 @@
     order: 3;
   }
 
+  @media @break-desktop {
+    max-height: 363px;
+  }
+
   &__header,
   &__total {
     display: flex;
@@ -77,7 +81,7 @@
       @font-mobile-caption-quatt();
       align-self: center;
 
-      @media @break-tablet{
+      @media @break-tablet {
         @font-desktop-body-quatt();
       }
     }
