@@ -20,6 +20,19 @@ const ShoppingCard = () => {
           <span className="shopping-card__price">$2.99</span>
         </div>
       </div>
+      <div className="shopping-card__background--tablet">
+        <div className="shopping-card__img-container">
+          <div className="shopping-card__img">
+            <img src={imgPlaceholder} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="shopping-card__name-price-container--tablet">
+        <span className="shopping-card__name">Vivacious Violet</span>
+        <span className="shopping-card__price">
+          $2.99 <br></br>each
+        </span>
+      </div>
       <div className="shopping-card__remove">
         <img src={iconCross} alt="" />
       </div>
