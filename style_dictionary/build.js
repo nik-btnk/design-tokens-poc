@@ -1,49 +1,45 @@
-const { settings, transforms, formats } = require('./config')
+const { settings, formats } = require('./config')
+const { loadTransforms } = require('./custom/helperFunctions/helperFunctions')
 
 // Create Style Dictionary by extending a configuration file
 const StyleDictionary = require('style-dictionary')
 
-// Initialize Cream Colors brand
-const CreamColorsSD = StyleDictionary.extend(settings.cream_colors)
+const transforms = loadTransforms()
 
-// Register Cream Colors transforms
-transforms.map((val) => {
-  CreamColorsSD.registerTransform({
-    name: val.name,
-    type: val.type,
-    matcher: val.matcher,
-    transformer: val.transformer
+// This functionality initializes each brand and conditionallly applies transforms
+// based on the applyTransform property defined inside each transform. if property is not
+// defined, the transform will be applies to all brands.
+Object.values(settings).forEach((brand) => {
+  const initBrand = StyleDictionary.extend(brand)
+  const source = initBrand.options.source[0]
+    .replace('tokens/', '')
+    .replace('.tokens.json', '')
+
+  transforms.forEach((transform) => {
+    // Create functionality which applies transform to all brands if applyTtransform is omitted.
+    if (transform.applyTransform && transform.applyTransform.includes(source)) {
+      initBrand.registerTransform({
+        name: transform.name,
+        type: transform.type,
+        matcher: transform.matcher,
+        transformer: transform.transformer
+      })
+
+      initBrand.registerTransformGroup({
+        name: 'less',
+        transforms: initBrand.transformGroup['less'].concat(transform.name)
+      })
+    }
   })
+
+  initBrand.buildAllPlatforms()
 })
 
 // Register Cream Colors formats
-formats.map((val) => {
-  CreamColorsSD.registerFormat({
-    name: val.name,
-    target: val.target,
-    formatter: val.formatter
-  })
-})
-
-// Update Less transformGroup for Cream Colors
-CreamColorsSD.registerTransformGroup({
-  name: 'less',
-  transforms: CreamColorsSD.transformGroup['less'].concat(
-    transforms.map((val) => val.name)
-  )
-})
-
-CreamColorsSD.buildAllPlatforms()
-
-// The below dictionaries are test functionality for multi-brand support
-
-const TestBrand1SD = StyleDictionary.extend(settings.test_brand_1_settings)
-TestBrand1SD.buildAllPlatforms()
-
-const TestBrand2SD = StyleDictionary.extend(settings.test_brand_2_settings)
-TestBrand2SD.buildAllPlatforms()
-
-const TestBrand3SD = StyleDictionary.extend(settings.test_brand_3_settings)
-TestBrand3SD.buildAllPlatforms()
-
-// Fix animation shadow on details page
+// formats.map((val) => {
+//   CreamColorsSD.registerFormat({
+//     name: val.name,
+//     target: val.target,
+//     formatter: val.formatter
+//   })
+// })

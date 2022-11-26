@@ -13,17 +13,12 @@ const excludeArray = ['effect', 'font', 'typography', 'grid']
 // This is needed mainly for colors to set up theming capabilities.
 const themableTokens = ['color']
 
-// Import custom transforms for Cream Colors
-const sizes = require('./custom/transforms/cream_colors/sizes')
-const spacings = require('./custom/transforms/cream_colors/spacings')
-const fonts = require('./custom/transforms/cream_colors/fonts')
-
 // Import custom formats for Cream Colors
 const fontFormat = require('./custom/formats/cream_colors/fonts')
 const effectsFormat = require('./custom/formats/cream_colors/effects')
 
 // Add new transformers and formatters for Cream Colors brand to these arrays
-const transforms = [sizes, spacings, fonts]
+// const transforms = [sizes, spacings, fonts]
 const formats = [fontFormat, effectsFormat]
 
 // Note: configurations are not the same across all formats
@@ -114,7 +109,6 @@ const test_brand_3_settings = {
 }
 
 module.exports = {
-  transforms,
   formats,
   settings: {
     cream_colors,
