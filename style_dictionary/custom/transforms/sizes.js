@@ -1,5 +1,5 @@
 module.exports = {
-  applyTransform: ['design-tokens', 'test-1'],
+  applyTransform: ['design-tokens', 'test-1', 'test-2', 'test-3'],
   name: 'size/px',
   type: 'value',
   matcher: (token) => {

@@ -9,9 +9,8 @@ const formats = getDataForSD('formats')
 
 console.log(formats)
 
-// This functionality initializes each brand and conditionallly applies transforms
-// based on the applyTransform property defined inside each transform. if property is not
-// defined, the transform will be applies to all brands.
+// This functionality initializes each brand and conditionallly applies transforms and formats
+// based on the 'applyTransform' and 'applyFormat' properties defined in their respective files.
 Object.values(settings).forEach((brand) => {
   const initBrand = StyleDictionary.extend(brand)
   const source = initBrand.options.source[0]
