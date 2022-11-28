@@ -13,14 +13,6 @@ const excludeArray = ['effect', 'font', 'typography', 'grid']
 // This is needed mainly for colors to set up theming capabilities.
 const themableTokens = ['color']
 
-// Import custom formats for Cream Colors
-const fontFormat = require('./custom/formats/cream_colors/fonts')
-const effectsFormat = require('./custom/formats/cream_colors/effects')
-
-// Add new transformers and formatters for Cream Colors brand to these arrays
-// const transforms = [sizes, spacings, fonts]
-const formats = [fontFormat, effectsFormat]
-
 // Note: configurations are not the same across all formats
 const buildTestTokens = (set) => [
   {
@@ -59,12 +51,7 @@ const cream_colors = {
     less: {
       transformGroup: ['less'],
       buildPath: 'less/_tokens/',
-      files: buildCreamColorsTokens(
-        CREAM_COLORS,
-        excludeArray,
-        themableTokens,
-        formats
-      )
+      files: buildCreamColorsTokens(CREAM_COLORS, excludeArray, themableTokens)
     }
   }
 }
@@ -109,7 +96,6 @@ const test_brand_3_settings = {
 }
 
 module.exports = {
-  formats,
   settings: {
     cream_colors,
     test_brand_1_settings,

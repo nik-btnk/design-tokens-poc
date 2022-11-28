@@ -1,10 +1,13 @@
-const { settings, formats } = require('./config')
-const { loadTransforms } = require('./custom/helperFunctions/helperFunctions')
+const { settings } = require('./config')
+const { getDataForSD } = require('./custom/helperFunctions/helperFunctions')
 
 // Create Style Dictionary by extending a configuration file
 const StyleDictionary = require('style-dictionary')
 
-const transforms = loadTransforms()
+const transforms = getDataForSD('transforms')
+const formats = getDataForSD('formats')
+
+console.log(formats)
 
 // This functionality initializes each brand and conditionallly applies transforms
 // based on the applyTransform property defined inside each transform. if property is not
@@ -16,7 +19,6 @@ Object.values(settings).forEach((brand) => {
     .replace('.tokens.json', '')
 
   transforms.forEach((transform) => {
-    // Create functionality which applies transform to all brands if applyTtransform is omitted.
     if (transform.applyTransform && transform.applyTransform.includes(source)) {
       initBrand.registerTransform({
         name: transform.name,
@@ -32,14 +34,15 @@ Object.values(settings).forEach((brand) => {
     }
   })
 
+  formats.forEach((format) => {
+    if (format.applyFormat && format.applyFormat.includes(source)) {
+      initBrand.registerFormat({
+        name: format.name,
+        target: format.target,
+        formatter: format.formatter
+      })
+    }
+  })
+
   initBrand.buildAllPlatforms()
 })
-
-// Register Cream Colors formats
-// formats.map((val) => {
-//   CreamColorsSD.registerFormat({
-//     name: val.name,
-//     target: val.target,
-//     formatter: val.formatter
-//   })
-// })

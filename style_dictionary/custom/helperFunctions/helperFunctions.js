@@ -2,24 +2,16 @@ const fs = require('fs')
 const path = require('path')
 const { cssNoUnits, units } = require('../constants/constants')
 
-// This operation returns all transforms defined in folder as an array.
-const loadTransforms = () => {
-  const normalizedPath = path.join(__dirname, '..', 'transforms')
-  const transformsArray = []
+// This operation returns all transforms or formats defined in in respective folder as an array.
+const getDataForSD = (data) => {
+  // data needs to be 'transforms' or 'formats' for respective folders
+  const normalizedPath = path.join(__dirname, '..', data)
   const filesInDir = fs
     .readdirSync(normalizedPath)
     .filter((file) => path.extname(file) === '.js')
 
-  filesInDir.forEach((file) => {
-    const config = require(path.join(normalizedPath, file))
-    transformsArray.push(config)
-  })
-
-  return transformsArray
+  return filesInDir.map((file) => require(path.join(normalizedPath, file)))
 }
-
-// This operation returns all custom formats defined in folder as an array.
-const loadFormats = () => {}
 
 // Transform property name from camel case to hyphenated string usable by CSS.
 const formatName = (name) => {
@@ -44,13 +36,9 @@ const formatValue = (name, value) => {
 }
 
 // Build an array of objects that define creation of output token files for Cream Colors
-const buildCreamColorsTokens = (
-  rawTokenData,
-  excludeArray,
-  themableTokens,
-  formats
-) => {
+const buildCreamColorsTokens = (rawTokenData, excludeArray, themableTokens) => {
   const builtTokens = []
+  const formats = getDataForSD('formats')
 
   Object.keys(rawTokenData).forEach((tokenSet) => {
     const tokenCategory = tokenSet
@@ -77,20 +65,19 @@ const buildCreamColorsTokens = (
   })
 
   return [
-    ...builtTokens
-    // ...formats.map((format) => {
-    //   return {
-    //     destination: format.target,
-    //     format: format.name,
-    //     options: { showFileHeader: false }
-    //   }
-    // })
+    ...builtTokens,
+    ...formats.map((format) => {
+      return {
+        destination: format.target,
+        format: format.name,
+        options: { showFileHeader: false }
+      }
+    })
   ]
 }
 
 module.exports = {
-  loadTransforms,
-  loadFormats,
+  getDataForSD,
   formatName,
   formatValue,
   buildCreamColorsTokens

@@ -3,13 +3,14 @@ const { JSDOM } = require('jsdom')
 const {
   formatName,
   formatValue
-} = require('../../helperFunctions/helperFunctions')
+} = require('../helperFunctions/helperFunctions')
 
 // Node has no access to DOM, therefore create global document variable to check valid CSS.
 global.document = new JSDOM('<!DOCTYPE html><p>Hello world</p>').window.document
 
 // Custom formatter to create mixins for tokens with multiple properties in typography 'value'.
 module.exports = {
+  applyFormat: ['design-tokens'],
   name: 'mixin-less/variables',
   target: '_cream_colors/_font-mixins.less', // Destination file name
   formatter: ({ dictionary }) => {
