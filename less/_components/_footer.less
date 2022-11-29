@@ -1,6 +1,6 @@
-@import '../_tokens/_color.less';
-@import '../_tokens/_sizes.less';
-@import '../_tokens/_font-mixins.less';
+@import '../_tokens/_cream_colors/_color.less';
+@import '../_tokens/_cream_colors/_sizes.less';
+@import '../_tokens/_cream_colors/_font-mixins.less';
 
 .footer {
   display: grid;
@@ -8,8 +8,8 @@
   row-gap: @sizes-medium-1;
   justify-content: space-between;
   padding: @sizes-medium-3 @sizes-medium-2 @sizes-large-1 @sizes-medium-2;
-  background-color: @color-brand-white;
-  border-top: 2px solid @color-brand-pink-3;
+  background-color: var(--color-brand-white);
+  border-top: 2px solid var(--color-brand-pink-3);
 
   @media screen and (max-width: 300px) {
     justify-content: center;

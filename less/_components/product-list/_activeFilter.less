@@ -1,6 +1,6 @@
-@import '../../_tokens/_color.less';
-@import '../../_tokens/_sizes.less';
-@import '../../_tokens/_font-mixins.less';
+@import '../../_tokens/_cream_colors/_color.less';
+@import '../../_tokens/_cream_colors/_sizes.less';
+@import '../../_tokens/_cream_colors/_font-mixins.less';
 @import '../../_variables/_breakpoints.less';
 
 .active-filters-container {
@@ -24,13 +24,13 @@
   }
 
   &__no-filters {
-    color: @color-light-mode-text-black;
+    color: var(--color-light-mode-text-black);
   }
 
   &__title {
     @font-desktop-body-quatt();
     margin: 0;
-    color: @color-light-mode-text-black;
+    color: var(--color-light-mode-text-black);
 
     @media @break-tablet {
       @font-desktop-title-small-abril();
@@ -42,9 +42,9 @@
   display: inline-flex;
   justify-content: space-around;
   align-items: center;
-  background-color: @color-brand-orange-0;
+  background-color: var(--color-brand-orange-0);
   border-radius: @sizes-small-3;
-  border: 2px solid @color-brand-orange-2;
+  border: 2px solid var(--color-brand-orange-2);
   box-shadow: @effect-shadow-button-orange-default-0;
   min-width: 130px;
   height: @sizes-medium-1;

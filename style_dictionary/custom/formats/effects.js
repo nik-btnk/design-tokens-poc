@@ -1,6 +1,7 @@
 module.exports = {
+  applyFormat: ['design-tokens'],
   name: 'effects-less/variables',
-  target: '_effects.less',
+  target: '_cream_colors/_effects.less',
   formatter: ({ dictionary }) => {
     const target = 'custom-shadow'
 

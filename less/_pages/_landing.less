@@ -1,6 +1,6 @@
-@import '../_tokens/_color.less';
-@import '../_tokens/_sizes.less';
-@import '../_tokens/_font-mixins.less';
+@import '../_tokens/_cream_colors/_color.less';
+@import '../_tokens/_cream_colors/_sizes.less';
+@import '../_tokens/_cream_colors/_font-mixins.less';
 
 html {
   scroll-snap-type: y mandatory;
@@ -12,7 +12,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: @color-light-mode-background-page-white;
+  background-color: var(--color-light-mode-background-page-white);
 
   @media @break-tablet {
     h2 {
@@ -35,7 +35,7 @@ html {
     overflow: visible;
     display: block;
     animation: spin 30s linear infinite;
-    fill: @color-brand-orange-3;
+    fill: var(--color-brand-orange-3);
 
     @keyframes spin {
       100% {
@@ -171,71 +171,71 @@ html {
   .wrapper {
     &:nth-child(3n + 1) {
       .product-info-btn {
-        background-color: @color-light-mode-background-button-blue;
-        border: 2px solid @color-light-mode-border-button-blue;
+        background-color: var(--color-light-mode-background-button-blue);
+        border: 2px solid var(--color-light-mode-border-button-blue);
         box-shadow: @effect-shadow-button-blue-default-0,
           @effect-shadow-button-blue-default-1;
 
         &__info-icon-container {
-          background-color: @color-brand-blue-3;
+          background-color: var(--color-brand-blue-3);
         }
       }
 
       .add-to-cart-btn {
-        background-color: @color-light-mode-background-button-blue;
-        border: 2px solid @color-light-mode-border-button-blue;
+        background-color: var(--color-light-mode-background-button-blue);
+        border: 2px solid var(--color-light-mode-border-button-blue);
         box-shadow: @effect-shadow-button-blue-default-0,
           @effect-shadow-button-blue-default-1;
 
         svg path:first-child {
-          fill: @color-brand-blue-3;
+          fill: var(--color-brand-blue-3);
         }
       }
     }
 
     &:nth-child(3n + 2) {
       .product-info-btn {
-        background-color: @color-light-mode-background-button-pink;
-        border: 2px solid @color-light-mode-border-button-pink;
+        background-color: var(--color-light-mode-background-button-pink);
+        border: 2px solid var(--color-light-mode-border-button-pink);
         box-shadow: @effect-shadow-button-pink-default-0,
           @effect-shadow-button-pink-default-1;
 
         &__info-icon-container {
-          background-color: @color-brand-pink-3;
+          background-color: var(--color-brand-pink-3);
         }
       }
 
       .add-to-cart-btn {
-        background-color: @color-light-mode-background-button-pink;
-        border: 2px solid @color-light-mode-border-button-pink;
+        background-color: var(--color-light-mode-background-button-pink);
+        border: 2px solid var(--color-light-mode-border-button-pink);
         box-shadow: @effect-shadow-button-pink-default-0,
           @effect-shadow-button-pink-default-1;
 
         svg path:first-child {
-          fill: @color-brand-pink-3;
+          fill: var(--color-brand-pink-3);
         }
       }
     }
 
     &:nth-child(3n + 3) {
       .product-info-btn {
-        background-color: @color-light-mode-background-button-green;
-        border: 2px solid @color-light-mode-border-button-green;
+        background-color: var(--color-light-mode-background-button-green);
+        border: 2px solid var(--color-light-mode-border-button-green);
         box-shadow: @effect-shadow-button-green-default-0,
           @effect-shadow-button-green-default-1;
 
         &__info-icon-container {
-          background-color: @color-brand-green-3;
+          background-color: var(--color-brand-green-3);
         }
       }
       .add-to-cart-btn {
-        background-color: @color-light-mode-background-button-green;
-        border: 2px solid @color-light-mode-border-button-green;
+        background-color: var(--color-light-mode-background-button-green);
+        border: 2px solid var(--color-light-mode-border-button-green);
         box-shadow: @effect-shadow-button-green-default-0,
           @effect-shadow-button-green-default-1;
 
         svg path:first-child {
-          fill: @color-brand-green-3;
+          fill: var(--color-brand-green-3);
         }
       }
     }

@@ -1,61 +1,64 @@
-const tokens = require('../tokens/design-tokens.tokens.json')
+const {
+  buildCreamColorsTokens,
+  buildTestTokens
+} = require('./custom/helperFunctions/helperFunctions')
 
-// Import custom transforms
-const sizes = require('./custom/transforms/sizes')
-const spacings = require('./custom/transforms/spacings')
-const fonts = require('./custom/transforms/fonts')
-
-// Import custom formatters
-const fontFormatter = require('./custom/formatters/fonts')
-const effectsFormatter = require('./custom/formatters/effects')
-
-const tokensArray = []
-for (x in tokens) {
-  tokensArray.push({ [x]: tokens[x] })
+// CREAM COLORS
+const cream_colors = {
+  source: ['tokens/design-tokens.tokens.json'],
+  platforms: {
+    less: {
+      transformGroup: ['less'],
+      buildPath: 'less/_tokens/',
+      files: buildCreamColorsTokens()
+    }
+  }
 }
 
-// Add any token categories to be excluded from processing by Style Dictionary
-const excludeArray = ['effect', 'font', 'typography']
+// TEST BRAND 1
+const test_brand_1_settings = {
+  source: ['tokens/test-1.tokens.json'],
+  platforms: {
+    less: {
+      transformGroup: ['less'],
+      buildPath: 'less/_tokens/',
+      files: buildTestTokens('test_brand_1'),
+      prefix: 'test-brand-1'
+    }
+  }
+}
 
-// Add new transformers and formatters to these arrays
-const transforms = [sizes, spacings, fonts]
-const formatters = [fontFormatter, effectsFormatter]
+// TEST BRAND 2
+const test_brand_2_settings = {
+  source: ['tokens/test-2.tokens.json'],
+  platforms: {
+    less: {
+      transformGroup: ['less'],
+      buildPath: 'less/_tokens/',
+      files: buildTestTokens('test_brand_2'),
+      prefix: 'test-brand-2'
+    }
+  }
+}
+
+// TEST BRAND 3
+const test_brand_3_settings = {
+  source: ['tokens/test-3.tokens.json'],
+  platforms: {
+    less: {
+      transformGroup: ['less'],
+      buildPath: 'less/_tokens/',
+      files: buildTestTokens('test_brand_3'),
+      prefix: 'test-brand-3'
+    }
+  }
+}
 
 module.exports = {
-  transforms,
-  formatters,
   settings: {
-    source: ['tokens/*.tokens.json'],
-    platforms: {
-      less: {
-        transformGroup: ['less'],
-        buildPath: 'less/_tokens/',
-        files: [
-          ...tokensArray.map((token) => {
-            const tokenCategory = Object.keys(token)[0]
-
-            if (!excludeArray.includes(tokenCategory)) {
-              return {
-                destination: `_${tokenCategory}.less`,
-                format: 'less/variables',
-                options: { showFileHeader: false },
-                filter: {
-                  attributes: {
-                    category: tokenCategory
-                  }
-                }
-              }
-            }
-          }),
-          ...formatters.map((formatter) => {
-            return {
-              destination: formatter.target,
-              format: formatter.name,
-              options: { showFileHeader: false }
-            }
-          })
-        ]
-      }
-    }
+    cream_colors,
+    test_brand_1_settings,
+    test_brand_2_settings,
+    test_brand_3_settings
   }
 }

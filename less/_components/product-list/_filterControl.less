@@ -1,14 +1,14 @@
-@import '../../_tokens/_color.less';
-@import '../../_tokens/_sizes.less';
-@import '../../_tokens/_font-mixins.less';
+@import '../../_tokens/_cream_colors/_color.less';
+@import '../../_tokens/_cream_colors/_sizes.less';
+@import '../../_tokens/_cream_colors/_font-mixins.less';
 @import '../../_variables/_breakpoints.less';
 
 .filter {
   &-dropdown {
     position: relative;
     display: block;
-    border-right: 2px solid @color-light-mode-border-button-blue;
-    border-left: 2px solid @color-light-mode-border-button-blue;
+    border-right: 2px solid var(--color-light-mode-border-button-blue);
+    border-left: 2px solid var(--color-light-mode-border-button-blue);
 
     @media @break-tablet {
       border: none;
@@ -17,8 +17,8 @@
     &-btn {
       @font-desktop-body-quatt();
       font-weight: 700;
-      background-color: @color-light-mode-background-page-white;
-      border: 1px solid @color-light-mode-border-button-blue;
+      background-color: var(--color-light-mode-background-page-white);
+      border: 1px solid var(--color-light-mode-border-button-blue);
       border-bottom: none;
       height: 48px;
       width: 100%;
@@ -30,7 +30,7 @@
       &:hover,
       &:focus {
         box-shadow: none;
-        border: 1px solid @color-light-mode-border-button-blue;
+        border: 1px solid var(--color-light-mode-border-button-blue);
         border-bottom: none;
       }
 
@@ -46,15 +46,15 @@
         height: 40px;
         align-items: center;
         border-radius: @sizes-small-3;
-        border: 2px solid @color-light-mode-border-button-orange;
-        background-color: @color-light-mode-background-page-orange;
-        box-shadow: @effect-shadow-button-orange-default-0;
+        border: 2px solid var(--color-light-mode-border-button-orange);
+        background-color: var(--color-light-mode-background-page-orange);
+        box-shadow: var(--effect-shadow-button-orange-default-0);
         cursor: pointer;
 
         &:active,
         &:hover,
         &:focus {
-          border: 2px solid @color-brand-orange-4;
+          border: 2px solid var(--color-brand-orange-4);
           box-shadow: @effect-shadow-button-orange-active;
         }
       }
@@ -66,20 +66,20 @@
       margin: 0;
       border: none;
       border-radius: 0;
-      background-color: @color-light-mode-background-page-white;
+      background-color: var(--color-light-mode-background-page-white);
       @font-desktop-body-quatt();
       padding: @sizes-small-2 @sizes-small-3 @sizes-small-3 @sizes-small-3;
       box-shadow: none;
-      border-right: 1px solid @color-light-mode-border-button-blue;
-      border-left: 1px solid @color-light-mode-border-button-blue;
+      border-right: 1px solid var(--color-light-mode-border-button-blue);
+      border-left: 1px solid var(--color-light-mode-border-button-blue);
 
       @media @break-tablet {
         display: block;
         position: absolute;
         margin-top: @sizes-small-2;
-        border: @sizes-small-1 solid @color-brand-orange-2;
+        border: @sizes-small-1 solid var(--color-brand-orange-2);
         border-radius: @sizes-small-3;
-        background-color: @color-brand-orange-0;
+        background-color: var(--color-brand-orange-0);
         @font-desktop-body-quatt();
         padding: @sizes-small-2 @sizes-small-3;
         box-shadow: @effect-shadow-button-orange-default-0;
@@ -145,7 +145,7 @@
             left: 0;
             height: @sizes-small-3;
             width: @sizes-small-3;
-            border: 2px solid @color-brand-black;
+            border: 2px solid var(--color-brand-black);
             border-radius: @sizes-small-1;
             &:hover {
               text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
@@ -161,7 +161,7 @@
               border-radius: 2px;
               width: @sizes-small-2;
               height: @sizes-small-2;
-              background-color: @color-brand-black;
+              background-color: var(--color-brand-black);
             }
           }
         }
