@@ -7,7 +7,6 @@ import products from '../../product-storage'
 const CartContext = createContext()
 
 function CartProvider({ children }) {
-  //Make an array of objects with ID and QTY keys
   const [selectedProducts, setSelectedProducts] = useLocalStorage(
     'selectedProducts',
     []

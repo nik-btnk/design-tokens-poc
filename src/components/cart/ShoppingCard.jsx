@@ -7,8 +7,11 @@ import iconCross from '../../assets/icons/control/icon-x.png'
 import iconMinus from '../../assets/icons/control/icon-minus.png'
 import iconPlus from '../../assets/icons/control/Icon=circle-plus.png'
 
-const ShoppingCard = ({ product, productTotal }) => {
-  const className = `${product.name.split(' ')[0].toLowerCase()}-${product.name
+const ShoppingCard = ({
+  product: { name, price, id, quantity },
+  productTotal
+}) => {
+  const className = `${name.split(' ')[0].toLowerCase()}-${name
     .split(' ')[1]
     .toLowerCase()} `
 
@@ -20,34 +23,34 @@ const ShoppingCard = ({ product, productTotal }) => {
         <div className="shopping-card__img-container">
           <div className="shopping-card__img">
             <img
-              src={require(`../../assets/ice-creams/pic-${product.name}.png`)}
+              src={require(`../../assets/ice-creams/pic-${name}.png`)}
               alt=""
             />
           </div>
         </div>
         <div className="shopping-card__name-price-container">
-          <span className="shopping-card__name">{product.name}</span>
-          <span className="shopping-card__price">${product.price}</span>
+          <span className="shopping-card__name">{name}</span>
+          <span className="shopping-card__price">${price}</span>
         </div>
       </div>
       <div className={`shopping-card__background--tablet ${className}`}>
         <div className="shopping-card__img-container">
           <div className="shopping-card__img">
             <img
-              src={require(`../../assets/ice-creams/pic-${product.name}.png`)}
+              src={require(`../../assets/ice-creams/pic-${name}.png`)}
               alt=""
             />
           </div>
         </div>
       </div>
       <div className="shopping-card__name-price-container--tablet">
-        <span className="shopping-card__name">{product.name}</span>
+        <span className="shopping-card__name">{name}</span>
         <span className="shopping-card__price">
-          {product.price.toFixed(2)} <br></br>each
+          {price.toFixed(2)} <br></br>each
         </span>
       </div>
       <div className="shopping-card__remove">
-        <img src={iconCross} alt="" onClick={() => removeProduct(product.id)} />
+        <img src={iconCross} alt="" onClick={() => removeProduct(id)} />
       </div>
       <div className="shopping-card__qty-price-container">
         <div className="shopping-card__quantity">
@@ -55,16 +58,12 @@ const ShoppingCard = ({ product, productTotal }) => {
           <img
             src={iconMinus}
             className="remove-qty"
-            onClick={() => removeQty(product.id)}
+            onClick={() => removeQty(id)}
           />
           <div className="shopping-card__qty-bg">
-            <span className="shopping-card__qty-text">{product.quantity}</span>
+            <span className="shopping-card__qty-text">{quantity}</span>
           </div>
-          <img
-            src={iconPlus}
-            className="add-qty"
-            onClick={() => addQty(product.id)}
-          />
+          <img src={iconPlus} className="add-qty" onClick={() => addQty(id)} />
         </div>
         <span className="shopping-card__total-price">
           ${productTotal.toFixed(2)}

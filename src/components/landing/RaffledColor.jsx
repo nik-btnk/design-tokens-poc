@@ -61,7 +61,7 @@ export const RaffledColor = ({
           </div>
           <div className="raffled-color__info-container">
             <span className="raffled-color__name">{name}</span>
-            <span className="raffled-color__price">${price}</span>
+            <span className="raffled-color__price">${price.toFixed(2)}</span>
             <div className="raffled-color__info">
               <p className="raffled-color__description">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla,
