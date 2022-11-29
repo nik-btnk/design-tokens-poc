@@ -1,6 +1,27 @@
 @import '../../_tokens/_color.less';
 @import '../../_tokens/_sizes.less';
+@import '../../_tokens/_effects.less';
 @import '../../_tokens/_font-mixins';
+
+// Mixins______________________________________________________________
+.flavor-neon-selector(@class) {
+  @class-name: ~'.@{class}';
+
+  &:has(@{class-name}) {
+    .shopping-card__background,
+    .shopping-card__background--tablet {
+      box-shadow: ~'@{effect-shadow-product-card-@{class}}';
+      background: ~'@{color-flavor-@{class}-border}1A';
+      border-color: ~'@{color-flavor-@{class}-border}';
+
+      &:before {
+        border-color: ~'@{color-flavor-@{class}-border}';
+        box-shadow: inset ~'@{effect-shadow-product-card-@{class}}';
+      }
+    }
+  }
+}
+// ____________________________________________________________________
 
 .shopping-card {
   width: 100%;
@@ -32,9 +53,9 @@
     pointer-events: none;
     margin-bottom: @sizes-medium-1;
     border: 1px solid;
-    box-shadow: @effect-shadow-product-card-clockwork-orange;
+    /* box-shadow: @effect-shadow-product-card-clockwork-orange;
     background: @color-flavor-clockwork-orange-border 1A;
-    border-color: @color-flavor-clockwork-orange-border;
+    border-color: @color-flavor-clockwork-orange-border; */
 
     @media @break-tablet {
       display: none;
@@ -56,8 +77,8 @@
       border-radius: 50%;
       background-color: transparent;
       border: 1px solid;
-      border-color: @color-flavor-clockwork-orange-border;
-      box-shadow: inset @effect-shadow-product-card-clockwork-orange;
+      /* border-color: @color-flavor-clockwork-orange-border;
+      box-shadow: inset @effect-shadow-product-card-clockwork-orange; */
 
       @media @break-tablet {
         width: 170px;
@@ -227,4 +248,16 @@
       }
     }
   }
+
+  // Handling of neon ring colors for each flavor.
+  .flavor-neon-selector('clockwork-orange');
+  .flavor-neon-selector('red-planet');
+  .flavor-neon-selector('green-land');
+  .flavor-neon-selector('yellow-submarine');
+  .flavor-neon-selector('vivacious-violet');
+  .flavor-neon-selector('pink-panther');
+  .flavor-neon-selector('feeling-blue');
+  .flavor-neon-selector('blue-clue');
+  .flavor-neon-selector('gray-anatomy');
+  .flavor-neon-selector('puzzled-plum');
 }

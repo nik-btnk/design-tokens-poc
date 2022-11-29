@@ -63,7 +63,8 @@ const products = [
     allergy: [milk, eggs],
     category: "Hot 'n Spicy",
     calories: 220,
-    id: 465505
+    id: 465505,
+    quantity: 0
   },
   {
     name: 'Red Planet',
@@ -75,7 +76,8 @@ const products = [
     allergy: null,
     category: "Hot 'n Spicy",
     calories: 175,
-    id: 857537
+    id: 857537,
+    quantity: 0
   },
   {
     name: 'Green Land',
@@ -87,7 +89,8 @@ const products = [
     allergy: [milk, nuts, wheat],
     category: "Hot 'n Spicy",
     calories: 275,
-    id: 273168
+    id: 273168,
+    quantity: 0
   },
   {
     name: 'Yellow Submarine',
@@ -99,7 +102,8 @@ const products = [
     allergy: [fish],
     category: "Hot 'n Spicy",
     calories: 195,
-    id: 939085
+    id: 939085,
+    quantity: 0
   },
   {
     name: 'Vivacious Violet',
@@ -111,7 +115,8 @@ const products = [
     allergy: null,
     category: "Hot 'n Spicy",
     calories: 205,
-    id: 942287
+    id: 942287,
+    quantity: 0
   },
   {
     name: 'Pink Panther',
@@ -123,7 +128,8 @@ const products = [
     allergy: [milk, eggs],
     category: 'Cool as Ice',
     calories: 210,
-    id: 991571
+    id: 991571,
+    quantity: 0
   },
   {
     name: 'Feeling Blue',
@@ -135,7 +141,8 @@ const products = [
     allergy: [milk, eggs, nuts],
     category: 'Cool as Ice',
     calories: 235,
-    id: 197156
+    id: 197156,
+    quantity: 0
   },
   {
     name: 'Blue Clue',
@@ -147,7 +154,8 @@ const products = [
     allergy: [milk, nuts],
     category: 'Cool as Ice',
     calories: 220,
-    id: 467522
+    id: 467522,
+    quantity: 0
   },
   {
     name: 'Gray Anatomy',
@@ -159,7 +167,8 @@ const products = [
     allergy: [nuts],
     category: 'Cool as Ice',
     calories: 240,
-    id: 948055
+    id: 948055,
+    quantity: 0
   },
   {
     name: 'Puzzled Plum',
@@ -171,7 +180,8 @@ const products = [
     allergy: [wheat],
     category: 'Cool as Ice',
     calories: 235,
-    id: 847737
+    id: 847737,
+    quantity: 0
   }
 ]
 

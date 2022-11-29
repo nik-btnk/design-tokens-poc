@@ -121,6 +121,7 @@
 .cart__continue-checkout button {
   width: 90%;
   height: 38px;
+  cursor: pointer;
   border-radius: 16px;
   font-size: 16px;
   text-decoration: none;
@@ -1303,9 +1304,9 @@ html {
   pointer-events: none;
   margin-bottom: 24px;
   border: 1px solid;
-  box-shadow: 0 2px 8px 0 #f1b669ff;
-  background: #f1b669 1A;
-  border-color: #f1b669;
+  /* box-shadow: @effect-shadow-product-card-clockwork-orange;
+    background: @color-flavor-clockwork-orange-border 1A;
+    border-color: @color-flavor-clockwork-orange-border; */
 }
 @media screen and (min-width: 425px) {
   .shopping-card__background,
@@ -1330,8 +1331,8 @@ html {
   border-radius: 50%;
   background-color: transparent;
   border: 1px solid;
-  border-color: #f1b669;
-  box-shadow: inset 0 2px 8px 0 #f1b669ff;
+  /* border-color: @color-flavor-clockwork-orange-border;
+      box-shadow: inset @effect-shadow-product-card-clockwork-orange; */
 }
 @media screen and (min-width: 425px) {
   .shopping-card__background:before,
@@ -1530,6 +1531,236 @@ html {
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 0;
+}
+.shopping-card:has(.clockwork-orange) .shopping-card__background,
+.shopping-card:has(.clockwork-orange) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #f1b669ff;
+  background: #f1b6691A;
+  border-color: #f1b669;
+}
+.shopping-card:has(.clockwork-orange) .shopping-card__background:before,
+.shopping-card:has(.clockwork-orange) .shopping-card__background--tablet:before {
+  border-color: #f1b669;
+  box-shadow: inset 0 2px 8px 0 #f1b669ff;
+}
+.shopping-card:has(.clockwork-orange) .product-card__background {
+  box-shadow: 0 2px 8px 0 #f1b669ff;
+  background: #f1b6691A;
+  border-color: #f1b669;
+}
+.shopping-card:has(.clockwork-orange) .product-card__background:before {
+  border-color: #f1b669;
+  box-shadow: inset 0 2px 8px 0 #f1b669ff;
+}
+.shopping-card:has(.clockwork-orange) .product-card__info-container {
+  background-color: #f1b66980;
+}
+.shopping-card:has(.red-planet) .shopping-card__background,
+.shopping-card:has(.red-planet) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #e9322aff;
+  background: #e9322a1A;
+  border-color: #e9322a;
+}
+.shopping-card:has(.red-planet) .shopping-card__background:before,
+.shopping-card:has(.red-planet) .shopping-card__background--tablet:before {
+  border-color: #e9322a;
+  box-shadow: inset 0 2px 8px 0 #e9322aff;
+}
+.shopping-card:has(.red-planet) .product-card__background {
+  box-shadow: 0 2px 8px 0 #e9322aff;
+  background: #e9322a1A;
+  border-color: #e9322a;
+}
+.shopping-card:has(.red-planet) .product-card__background:before {
+  border-color: #e9322a;
+  box-shadow: inset 0 2px 8px 0 #e9322aff;
+}
+.shopping-card:has(.red-planet) .product-card__info-container {
+  background-color: #e9322a80;
+}
+.shopping-card:has(.green-land) .shopping-card__background,
+.shopping-card:has(.green-land) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #60d665ff;
+  background: #60d6651A;
+  border-color: #60d665;
+}
+.shopping-card:has(.green-land) .shopping-card__background:before,
+.shopping-card:has(.green-land) .shopping-card__background--tablet:before {
+  border-color: #60d665;
+  box-shadow: inset 0 2px 8px 0 #60d665ff;
+}
+.shopping-card:has(.green-land) .product-card__background {
+  box-shadow: 0 2px 8px 0 #60d665ff;
+  background: #60d6651A;
+  border-color: #60d665;
+}
+.shopping-card:has(.green-land) .product-card__background:before {
+  border-color: #60d665;
+  box-shadow: inset 0 2px 8px 0 #60d665ff;
+}
+.shopping-card:has(.green-land) .product-card__info-container {
+  background-color: #60d66580;
+}
+.shopping-card:has(.yellow-submarine) .shopping-card__background,
+.shopping-card:has(.yellow-submarine) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #fec513ff;
+  background: #fec5131A;
+  border-color: #fec513;
+}
+.shopping-card:has(.yellow-submarine) .shopping-card__background:before,
+.shopping-card:has(.yellow-submarine) .shopping-card__background--tablet:before {
+  border-color: #fec513;
+  box-shadow: inset 0 2px 8px 0 #fec513ff;
+}
+.shopping-card:has(.yellow-submarine) .product-card__background {
+  box-shadow: 0 2px 8px 0 #fec513ff;
+  background: #fec5131A;
+  border-color: #fec513;
+}
+.shopping-card:has(.yellow-submarine) .product-card__background:before {
+  border-color: #fec513;
+  box-shadow: inset 0 2px 8px 0 #fec513ff;
+}
+.shopping-card:has(.yellow-submarine) .product-card__info-container {
+  background-color: #fec51380;
+}
+.shopping-card:has(.vivacious-violet) .shopping-card__background,
+.shopping-card:has(.vivacious-violet) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #9154dfff;
+  background: #9154df1A;
+  border-color: #9154df;
+}
+.shopping-card:has(.vivacious-violet) .shopping-card__background:before,
+.shopping-card:has(.vivacious-violet) .shopping-card__background--tablet:before {
+  border-color: #9154df;
+  box-shadow: inset 0 2px 8px 0 #9154dfff;
+}
+.shopping-card:has(.vivacious-violet) .product-card__background {
+  box-shadow: 0 2px 8px 0 #9154dfff;
+  background: #9154df1A;
+  border-color: #9154df;
+}
+.shopping-card:has(.vivacious-violet) .product-card__background:before {
+  border-color: #9154df;
+  box-shadow: inset 0 2px 8px 0 #9154dfff;
+}
+.shopping-card:has(.vivacious-violet) .product-card__info-container {
+  background-color: #9154df80;
+}
+.shopping-card:has(.pink-panther) .shopping-card__background,
+.shopping-card:has(.pink-panther) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #ffb8b5ff;
+  background: #ffb8b51A;
+  border-color: #ffb8b5;
+}
+.shopping-card:has(.pink-panther) .shopping-card__background:before,
+.shopping-card:has(.pink-panther) .shopping-card__background--tablet:before {
+  border-color: #ffb8b5;
+  box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
+}
+.shopping-card:has(.pink-panther) .product-card__background {
+  box-shadow: 0 2px 8px 0 #ffb8b5ff;
+  background: #ffb8b51A;
+  border-color: #ffb8b5;
+}
+.shopping-card:has(.pink-panther) .product-card__background:before {
+  border-color: #ffb8b5;
+  box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
+}
+.shopping-card:has(.pink-panther) .product-card__info-container {
+  background-color: #ffb8b580;
+}
+.shopping-card:has(.feeling-blue) .shopping-card__background,
+.shopping-card:has(.feeling-blue) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #5d78d0ff;
+  background: #5d78d01A;
+  border-color: #5d78d0;
+}
+.shopping-card:has(.feeling-blue) .shopping-card__background:before,
+.shopping-card:has(.feeling-blue) .shopping-card__background--tablet:before {
+  border-color: #5d78d0;
+  box-shadow: inset 0 2px 8px 0 #5d78d0ff;
+}
+.shopping-card:has(.feeling-blue) .product-card__background {
+  box-shadow: 0 2px 8px 0 #5d78d0ff;
+  background: #5d78d01A;
+  border-color: #5d78d0;
+}
+.shopping-card:has(.feeling-blue) .product-card__background:before {
+  border-color: #5d78d0;
+  box-shadow: inset 0 2px 8px 0 #5d78d0ff;
+}
+.shopping-card:has(.feeling-blue) .product-card__info-container {
+  background-color: #5d78d080;
+}
+.shopping-card:has(.blue-clue) .shopping-card__background,
+.shopping-card:has(.blue-clue) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #3db1c9ff;
+  background: #3db1c91A;
+  border-color: #3db1c9;
+}
+.shopping-card:has(.blue-clue) .shopping-card__background:before,
+.shopping-card:has(.blue-clue) .shopping-card__background--tablet:before {
+  border-color: #3db1c9;
+  box-shadow: inset 0 2px 8px 0 #3db1c9ff;
+}
+.shopping-card:has(.blue-clue) .product-card__background {
+  box-shadow: 0 2px 8px 0 #3db1c9ff;
+  background: #3db1c91A;
+  border-color: #3db1c9;
+}
+.shopping-card:has(.blue-clue) .product-card__background:before {
+  border-color: #3db1c9;
+  box-shadow: inset 0 2px 8px 0 #3db1c9ff;
+}
+.shopping-card:has(.blue-clue) .product-card__info-container {
+  background-color: #3db1c980;
+}
+.shopping-card:has(.gray-anatomy) .shopping-card__background,
+.shopping-card:has(.gray-anatomy) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #98a1a8ff;
+  background: #98a1a81A;
+  border-color: #98a1a8;
+}
+.shopping-card:has(.gray-anatomy) .shopping-card__background:before,
+.shopping-card:has(.gray-anatomy) .shopping-card__background--tablet:before {
+  border-color: #98a1a8;
+  box-shadow: inset 0 2px 8px 0 #98a1a8ff;
+}
+.shopping-card:has(.gray-anatomy) .product-card__background {
+  box-shadow: 0 2px 8px 0 #98a1a8ff;
+  background: #98a1a81A;
+  border-color: #98a1a8;
+}
+.shopping-card:has(.gray-anatomy) .product-card__background:before {
+  border-color: #98a1a8;
+  box-shadow: inset 0 2px 8px 0 #98a1a8ff;
+}
+.shopping-card:has(.gray-anatomy) .product-card__info-container {
+  background-color: #98a1a880;
+}
+.shopping-card:has(.puzzled-plum) .shopping-card__background,
+.shopping-card:has(.puzzled-plum) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #ba9cffff;
+  background: #ba9cff1A;
+  border-color: #ba9cff;
+}
+.shopping-card:has(.puzzled-plum) .shopping-card__background:before,
+.shopping-card:has(.puzzled-plum) .shopping-card__background--tablet:before {
+  border-color: #ba9cff;
+  box-shadow: inset 0 2px 8px 0 #ba9cffff;
+}
+.shopping-card:has(.puzzled-plum) .product-card__background {
+  box-shadow: 0 2px 8px 0 #ba9cffff;
+  background: #ba9cff1A;
+  border-color: #ba9cff;
+}
+.shopping-card:has(.puzzled-plum) .product-card__background:before {
+  border-color: #ba9cff;
+  box-shadow: inset 0 2px 8px 0 #ba9cffff;
+}
+.shopping-card:has(.puzzled-plum) .product-card__info-container {
+  background-color: #ba9cff80;
 }
 .color-roulette {
   display: inline-block;
@@ -2878,6 +3109,17 @@ html {
   font-stretch: normal;
   letter-spacing: 0;
 }
+.product-card:has(.clockwork-orange) .shopping-card__background,
+.product-card:has(.clockwork-orange) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #f1b669ff;
+  background: #f1b6691A;
+  border-color: #f1b669;
+}
+.product-card:has(.clockwork-orange) .shopping-card__background:before,
+.product-card:has(.clockwork-orange) .shopping-card__background--tablet:before {
+  border-color: #f1b669;
+  box-shadow: inset 0 2px 8px 0 #f1b669ff;
+}
 .product-card:has(.clockwork-orange) .product-card__background {
   box-shadow: 0 2px 8px 0 #f1b669ff;
   background: #f1b6691A;
@@ -2889,6 +3131,17 @@ html {
 }
 .product-card:has(.clockwork-orange) .product-card__info-container {
   background-color: #f1b66980;
+}
+.product-card:has(.red-planet) .shopping-card__background,
+.product-card:has(.red-planet) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #e9322aff;
+  background: #e9322a1A;
+  border-color: #e9322a;
+}
+.product-card:has(.red-planet) .shopping-card__background:before,
+.product-card:has(.red-planet) .shopping-card__background--tablet:before {
+  border-color: #e9322a;
+  box-shadow: inset 0 2px 8px 0 #e9322aff;
 }
 .product-card:has(.red-planet) .product-card__background {
   box-shadow: 0 2px 8px 0 #e9322aff;
@@ -2902,6 +3155,17 @@ html {
 .product-card:has(.red-planet) .product-card__info-container {
   background-color: #e9322a80;
 }
+.product-card:has(.green-land) .shopping-card__background,
+.product-card:has(.green-land) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #60d665ff;
+  background: #60d6651A;
+  border-color: #60d665;
+}
+.product-card:has(.green-land) .shopping-card__background:before,
+.product-card:has(.green-land) .shopping-card__background--tablet:before {
+  border-color: #60d665;
+  box-shadow: inset 0 2px 8px 0 #60d665ff;
+}
 .product-card:has(.green-land) .product-card__background {
   box-shadow: 0 2px 8px 0 #60d665ff;
   background: #60d6651A;
@@ -2913,6 +3177,17 @@ html {
 }
 .product-card:has(.green-land) .product-card__info-container {
   background-color: #60d66580;
+}
+.product-card:has(.yellow-submarine) .shopping-card__background,
+.product-card:has(.yellow-submarine) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #fec513ff;
+  background: #fec5131A;
+  border-color: #fec513;
+}
+.product-card:has(.yellow-submarine) .shopping-card__background:before,
+.product-card:has(.yellow-submarine) .shopping-card__background--tablet:before {
+  border-color: #fec513;
+  box-shadow: inset 0 2px 8px 0 #fec513ff;
 }
 .product-card:has(.yellow-submarine) .product-card__background {
   box-shadow: 0 2px 8px 0 #fec513ff;
@@ -2926,6 +3201,17 @@ html {
 .product-card:has(.yellow-submarine) .product-card__info-container {
   background-color: #fec51380;
 }
+.product-card:has(.vivacious-violet) .shopping-card__background,
+.product-card:has(.vivacious-violet) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #9154dfff;
+  background: #9154df1A;
+  border-color: #9154df;
+}
+.product-card:has(.vivacious-violet) .shopping-card__background:before,
+.product-card:has(.vivacious-violet) .shopping-card__background--tablet:before {
+  border-color: #9154df;
+  box-shadow: inset 0 2px 8px 0 #9154dfff;
+}
 .product-card:has(.vivacious-violet) .product-card__background {
   box-shadow: 0 2px 8px 0 #9154dfff;
   background: #9154df1A;
@@ -2937,6 +3223,17 @@ html {
 }
 .product-card:has(.vivacious-violet) .product-card__info-container {
   background-color: #9154df80;
+}
+.product-card:has(.pink-panther) .shopping-card__background,
+.product-card:has(.pink-panther) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #ffb8b5ff;
+  background: #ffb8b51A;
+  border-color: #ffb8b5;
+}
+.product-card:has(.pink-panther) .shopping-card__background:before,
+.product-card:has(.pink-panther) .shopping-card__background--tablet:before {
+  border-color: #ffb8b5;
+  box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
 }
 .product-card:has(.pink-panther) .product-card__background {
   box-shadow: 0 2px 8px 0 #ffb8b5ff;
@@ -2950,6 +3247,17 @@ html {
 .product-card:has(.pink-panther) .product-card__info-container {
   background-color: #ffb8b580;
 }
+.product-card:has(.feeling-blue) .shopping-card__background,
+.product-card:has(.feeling-blue) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #5d78d0ff;
+  background: #5d78d01A;
+  border-color: #5d78d0;
+}
+.product-card:has(.feeling-blue) .shopping-card__background:before,
+.product-card:has(.feeling-blue) .shopping-card__background--tablet:before {
+  border-color: #5d78d0;
+  box-shadow: inset 0 2px 8px 0 #5d78d0ff;
+}
 .product-card:has(.feeling-blue) .product-card__background {
   box-shadow: 0 2px 8px 0 #5d78d0ff;
   background: #5d78d01A;
@@ -2961,6 +3269,17 @@ html {
 }
 .product-card:has(.feeling-blue) .product-card__info-container {
   background-color: #5d78d080;
+}
+.product-card:has(.blue-clue) .shopping-card__background,
+.product-card:has(.blue-clue) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #3db1c9ff;
+  background: #3db1c91A;
+  border-color: #3db1c9;
+}
+.product-card:has(.blue-clue) .shopping-card__background:before,
+.product-card:has(.blue-clue) .shopping-card__background--tablet:before {
+  border-color: #3db1c9;
+  box-shadow: inset 0 2px 8px 0 #3db1c9ff;
 }
 .product-card:has(.blue-clue) .product-card__background {
   box-shadow: 0 2px 8px 0 #3db1c9ff;
@@ -2974,6 +3293,17 @@ html {
 .product-card:has(.blue-clue) .product-card__info-container {
   background-color: #3db1c980;
 }
+.product-card:has(.gray-anatomy) .shopping-card__background,
+.product-card:has(.gray-anatomy) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #98a1a8ff;
+  background: #98a1a81A;
+  border-color: #98a1a8;
+}
+.product-card:has(.gray-anatomy) .shopping-card__background:before,
+.product-card:has(.gray-anatomy) .shopping-card__background--tablet:before {
+  border-color: #98a1a8;
+  box-shadow: inset 0 2px 8px 0 #98a1a8ff;
+}
 .product-card:has(.gray-anatomy) .product-card__background {
   box-shadow: 0 2px 8px 0 #98a1a8ff;
   background: #98a1a81A;
@@ -2985,6 +3315,17 @@ html {
 }
 .product-card:has(.gray-anatomy) .product-card__info-container {
   background-color: #98a1a880;
+}
+.product-card:has(.puzzled-plum) .shopping-card__background,
+.product-card:has(.puzzled-plum) .shopping-card__background--tablet {
+  box-shadow: 0 2px 8px 0 #ba9cffff;
+  background: #ba9cff1A;
+  border-color: #ba9cff;
+}
+.product-card:has(.puzzled-plum) .shopping-card__background:before,
+.product-card:has(.puzzled-plum) .shopping-card__background--tablet:before {
+  border-color: #ba9cff;
+  box-shadow: inset 0 2px 8px 0 #ba9cffff;
 }
 .product-card:has(.puzzled-plum) .product-card__background {
   box-shadow: 0 2px 8px 0 #ba9cffff;

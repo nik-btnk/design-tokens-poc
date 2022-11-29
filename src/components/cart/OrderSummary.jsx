@@ -1,11 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
+import CartContext from '../../contexts/CartContext/CartProvider.js'
+import { useContext } from 'react'
 
 //Assets
 import iconArrow from '../../assets/icons/caret/Icon=circle-caret-right.png'
 
 const OrderSummary = () => {
   const [isFolded, setIsFolded] = useState(true)
+  const { selectedProducts, calcProductTotal, productsTotal, taxes, total } =
+    useContext(CartContext)
 
   return (
     <div className="order-summary">
@@ -26,20 +30,19 @@ const OrderSummary = () => {
       </header>
       <div className={`order-summary__resume ${isFolded ? 'folded' : ''}`}>
         <div className="order-summary__products-price">
-          <div className="order-summary__product">
-            <span className="order-summary__product-name">
-              Vivacious Violet
-            </span>
-            <span className="order-summary__product-qty">x2</span>
-            <span className="order-summary__product-price">$5.98</span>
-          </div>
-          <div className="order-summary__product">
-            <span className="order-summary__product-name">
-              Vivacious Violet
-            </span>
-            <span className="order-summary__product-qty">x2</span>
-            <span className="order-summary__product-price">$5.98</span>
-          </div>
+          {selectedProducts.map((product) => (
+            <div key={product.id} className="order-summary__product">
+              <span className="order-summary__product-name">
+                {product.name}
+              </span>
+              <span className="order-summary__product-qty">
+                x{product.quantity}
+              </span>
+              <span className="order-summary__product-price">
+                ${calcProductTotal(product.id).toFixed(2)}
+              </span>
+            </div>
+          ))}
         </div>
 
         <div className="order-summary__line"></div>
@@ -47,11 +50,11 @@ const OrderSummary = () => {
         <div className="order-summary__amount-tax">
           <div className="order-summary__amount">
             <span>Product Price</span>
-            <span>$15.97</span>
+            <span>${productsTotal.toFixed(2)}</span>
           </div>
           <div className="order-summary__taxes">
             <span>Estimated taxes</span>
-            <span>$9.00</span>
+            <span>${taxes.toFixed(2)}</span>
           </div>
         </div>
 
@@ -59,7 +62,7 @@ const OrderSummary = () => {
       </div>
       <div className="order-summary__total">
         <span className="order-summary__total-text">Estimated Total</span>
-        <span className="order-summary__total-price">$24.97</span>
+        <span className="order-summary__total-price">${total.toFixed(2)}</span>
       </div>
 
       <div className={`cart__continue-checkout ${isFolded ? 'folded' : ''}`}>

@@ -1,4 +1,6 @@
 import React from 'react'
+import { useContext } from 'react'
+import CartContext from '../../contexts/CartContext/CartProvider'
 
 //Assets
 import mascot from '../../assets/mascot.png'
@@ -10,11 +12,15 @@ export const RaffledColor = ({
   name,
   price,
   nutrition,
-  allergy
+  allergy,
+  id
 }) => {
   const handleClick = () => {
     setShowModal((prev) => !prev)
   }
+
+  const { addProduct, removeProduct, isSelected } = useContext(CartContext)
+
   return (
     <>
       <div className="raffled-color__wrapper">
@@ -92,14 +98,29 @@ export const RaffledColor = ({
               </div>
             </div>
             <div className="raffled-color__cta">
-              <button className="raffled-color__add-to-cart-btn">
-                <img
-                  className="raffled-color__cart-icon"
-                  src={iconCart}
-                  alt=""
-                />
-                Add to cart
-              </button>
+              {isSelected(id) ? (
+                <button
+                  className="raffled-color__add-to-cart-btn"
+                  onClick={() => removeProduct(id)}>
+                  <img
+                    className="raffled-color__cart-icon"
+                    src={iconCart}
+                    alt=""
+                  />
+                  Remove
+                </button>
+              ) : (
+                <button
+                  className="raffled-color__add-to-cart-btn"
+                  onClick={() => addProduct(id)}>
+                  <img
+                    className="raffled-color__cart-icon"
+                    src={iconCart}
+                    alt=""
+                  />
+                  Add to cart
+                </button>
+              )}
             </div>
           </div>
         </article>

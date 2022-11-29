@@ -19,25 +19,26 @@ import Checkout from './pages/Checkout'
 
 // Utils
 import { path } from './constants'
+import { CartProvider } from './contexts/CartContext/CartProvider'
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <CartProvider>
+        <Header />
+        <Routes>
+          <Route path={path.LANDING} element={<Landing />} />
+          <Route path={path.TEST} element={<Test />} />
+          <Route path={path.PRODUCTS} element={<ProductList />} />
+          <Route path={path.CART} element={<Cart />} />
+          <Route path={path.DETAILS} element={<ProductDetails />} />
+          <Route path={path.CHECKOUT} element={<Checkout />} />
+          <Route path={path.NOTFOUND} element={<Page404 />} />
 
-      <Routes>
-        <Route path={path.LANDING} element={<Landing />} />
-        <Route path={path.TEST} element={<Test />} />
-        <Route path={path.PRODUCTS} element={<ProductList />} />
-        <Route path={path.CART} element={<Cart />} />
-        <Route path={path.DETAILS} element={<ProductDetails />} />
-        <Route path={path.CHECKOUT} element={<Checkout />} />
-        <Route path={path.NOTFOUND} element={<Page404 />} />
-
-        <Route path="*" element={<Navigate replace to={path.NOTFOUND} />} />
-      </Routes>
-
-      <Footer />
+          <Route path="*" element={<Navigate replace to={path.NOTFOUND} />} />
+        </Routes>
+        <Footer />
+      </CartProvider>
     </div>
   )
 }
