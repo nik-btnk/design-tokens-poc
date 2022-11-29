@@ -1,57 +1,16 @@
 const {
-  buildCreamColorsTokens
+  buildCreamColorsTokens,
+  buildTestTokens
 } = require('./custom/helperFunctions/helperFunctions')
 
-// Load json files
-const CREAM_COLORS = require('../tokens/design-tokens.tokens.json')
-
-// Add any token categories to be excluded from processing by Style Dictionary
-// Use of token category is not required, or when creating a custom format
-const excludeArray = ['effect', 'font', 'typography', 'grid']
-
-// Define which token categories would use CSS variables instead of less variables.
-// This is needed mainly for colors to set up theming capabilities.
-const themableTokens = ['color']
-
-// Note: configurations are not the same across all formats
-const buildTestTokens = (set) => [
-  {
-    destination: `${set}/_color.less`,
-    format: 'css/variables',
-    options: {
-      showFileHeader: false,
-      selector: `.${set.replaceAll('_', '-')}`
-    },
-    filter: {
-      attributes: {
-        category: 'color'
-      }
-    }
-  },
-  {
-    destination: `${set}/_sizes.less`,
-    format: 'less/variables',
-    options: {
-      showFileHeader: false
-    },
-    filter: {
-      attributes: {
-        category: 'sizes'
-      }
-    }
-  }
-]
-
 // CREAM COLORS
-// NOTE FOR FUTURE: think of a way to streamline the build configuration. Exlcude array, themeable tokens, etc.
-// Possibly build a json config file for each brand?
 const cream_colors = {
   source: ['tokens/design-tokens.tokens.json'],
   platforms: {
     less: {
       transformGroup: ['less'],
       buildPath: 'less/_tokens/',
-      files: buildCreamColorsTokens(CREAM_COLORS, excludeArray, themableTokens)
+      files: buildCreamColorsTokens()
     }
   }
 }

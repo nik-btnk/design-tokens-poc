@@ -1,22 +1,18 @@
+const StyleDictionary = require('style-dictionary')
 const { settings } = require('./config')
 const { getDataForSD } = require('./custom/helperFunctions/helperFunctions')
-
-// Create Style Dictionary by extending a configuration file
-const StyleDictionary = require('style-dictionary')
 
 const transforms = getDataForSD('transforms')
 const formats = getDataForSD('formats')
 
-console.log(formats)
-
-// This functionality initializes each brand and conditionallly applies transforms and formats
-// based on the 'applyTransform' and 'applyFormat' properties defined in their respective files.
 Object.values(settings).forEach((brand) => {
+  // Initialize brand by extending a brand configuration file
   const initBrand = StyleDictionary.extend(brand)
   const source = initBrand.options.source[0]
     .replace('tokens/', '')
     .replace('.tokens.json', '')
 
+  // Conditionally apply transforms to brand based on the 'applyTransform' property defined in transform file
   transforms.forEach((transform) => {
     if (transform.applyTransform && transform.applyTransform.includes(source)) {
       initBrand.registerTransform({
@@ -26,6 +22,7 @@ Object.values(settings).forEach((brand) => {
         transformer: transform.transformer
       })
 
+      // Transform group would need to be updated for each platform if multiple platforms are registered in brand config.
       initBrand.registerTransformGroup({
         name: 'less',
         transforms: initBrand.transformGroup['less'].concat(transform.name)
@@ -33,6 +30,7 @@ Object.values(settings).forEach((brand) => {
     }
   })
 
+  // Conditionally apply formats to brand based on the 'applyFormat' property defined in transform file
   formats.forEach((format) => {
     if (format.applyFormat && format.applyFormat.includes(source)) {
       initBrand.registerFormat({
@@ -43,5 +41,6 @@ Object.values(settings).forEach((brand) => {
     }
   })
 
+  // Build the brand after transforms and formats are applied
   initBrand.buildAllPlatforms()
 })

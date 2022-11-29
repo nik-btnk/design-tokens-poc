@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const { cssNoUnits, units } = require('../constants/constants')
+const CREAM_COLORS = require('../../../tokens/design-tokens.tokens.json')
 
 // This operation returns all transforms or formats defined in in respective folder as an array.
 const getDataForSD = (data) => {
@@ -36,22 +37,28 @@ const formatValue = (name, value) => {
 }
 
 // Build an array of objects that define creation of output token files for Cream Colors
-const buildCreamColorsTokens = (rawTokenData, excludeArray, themableTokens) => {
+const buildCreamColorsTokens = () => {
+  // Add any token categories to be excluded from processing by Style Dictionary
+  const excludeArray = ['effect', 'font', 'typography', 'grid']
+  // Define which token categories would use CSS variables instead of less variables.
+  // This is needed mainly for colors to set up theming capabilities.
+  const useCssVar = ['color']
+
   const builtTokens = []
   const formats = getDataForSD('formats')
 
-  Object.keys(rawTokenData).forEach((tokenSet) => {
+  Object.keys(CREAM_COLORS).forEach((tokenSet) => {
     const tokenCategory = tokenSet
 
     if (!excludeArray.includes(tokenCategory)) {
       builtTokens.push({
         destination: `_cream_colors/_${tokenCategory}.less`,
-        format: themableTokens.includes(tokenCategory)
+        format: useCssVar.includes(tokenCategory)
           ? 'css/variables'
           : 'less/variables',
         options: {
           showFileHeader: false,
-          selector: themableTokens.includes(tokenCategory)
+          selector: useCssVar.includes(tokenCategory)
             ? '.cream-colors'
             : undefined
         },
@@ -76,9 +83,38 @@ const buildCreamColorsTokens = (rawTokenData, excludeArray, themableTokens) => {
   ]
 }
 
+const buildTestTokens = (set) => [
+  {
+    destination: `${set}/_color.less`,
+    format: 'css/variables',
+    options: {
+      showFileHeader: false,
+      selector: `.${set.replaceAll('_', '-')}`
+    },
+    filter: {
+      attributes: {
+        category: 'color'
+      }
+    }
+  },
+  {
+    destination: `${set}/_sizes.less`,
+    format: 'less/variables',
+    options: {
+      showFileHeader: false
+    },
+    filter: {
+      attributes: {
+        category: 'sizes'
+      }
+    }
+  }
+]
+
 module.exports = {
   getDataForSD,
   formatName,
   formatValue,
-  buildCreamColorsTokens
+  buildCreamColorsTokens,
+  buildTestTokens
 }
