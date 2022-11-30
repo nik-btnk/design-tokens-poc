@@ -13,7 +13,10 @@ const Header = () => {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const isHeaderVertical = location.pathname === path.CHECKOUT ? false : true
+  const isHeaderVertical =
+    location.pathname === path.CHECKOUT || location.pathname === path.CART
+      ? false
+      : true
 
   useEffect(() => {
     console.log(`Menu is ${menuOpen ? 'open' : 'closed'}.`)
