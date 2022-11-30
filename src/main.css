@@ -113,14 +113,14 @@
   --color-flavor-puzzled-plum-fill-back-1: #ba9cff;
   --color-flavor-puzzled-plum-fill-front: #f5f1ff;
 }
+.test-brand-3 {
+  --test-brand-3-color-blue: #0000ff;
+}
 .test-brand-1 {
   --test-brand-1-color-red: #ff0000;
 }
 .test-brand-2 {
   --test-brand-2-color-green: #00ff00;
-}
-.test-brand-3 {
-  --test-brand-3-color-blue: #0000ff;
 }
 @font-face {
   font-family: 'Quattrocento Sans';
