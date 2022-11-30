@@ -119,6 +119,7 @@ const Landing = () => {
             price={selectedColor.price}
             nutrition={selectedColor.nutrition}
             allergy={selectedColor.allergy}
+            id={selectedColor.id}
           />
         )}
         <div className="landing__find-new-color--wrapper">

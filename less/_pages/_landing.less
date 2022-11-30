@@ -13,6 +13,9 @@ html {
   justify-content: center;
   align-items: center;
   background-color: var(--color-light-mode-background-page-white);
+  max-width: 1032px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media @break-tablet {
     h2 {
@@ -85,17 +88,12 @@ html {
     &--wrapper {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
 
       @media screen and (min-width: 1024px) {
         flex-direction: row;
         align-items: center;
-        width: 80%;
         margin: 0 auto;
-      }
-
-      @media @break-desktop {
-        width: 70%;
       }
     }
     &--title {
@@ -106,7 +104,6 @@ html {
     &--description {
       @font-mobile-title-small-quatt();
       line-height: @sizes-medium-1;
-      max-width: 90%;
     }
     &--mascot {
       margin-left: auto;
@@ -154,7 +151,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     height: calc(100vh - 64px);
 
     @media @break-tablet {
