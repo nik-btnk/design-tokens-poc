@@ -18,11 +18,13 @@
       border-color: var(~'--color-flavor-@{class}-border');
 
       &:before {
-        background-color: var(~'--color-flavor-@{class}-border');
-        opacity: 10%;
-
         border-color: var(~'--color-flavor-@{class}-border');
         box-shadow: inset ~'@{effect-shadow-product-card-@{class}}';
+      }
+
+      &:after{
+        background-color: var(~'--color-flavor-@{class}-border');
+        opacity: 10%;
       }
     }
   }
@@ -68,6 +70,20 @@
     }
 
     &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: calc(100% - 5px);
+      height: calc(100% - 5px);
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid;
+    }
+    &:after {
       content: '';
       position: absolute;
       top: 0;
