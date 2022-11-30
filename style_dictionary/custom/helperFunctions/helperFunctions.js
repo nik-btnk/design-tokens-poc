@@ -89,7 +89,7 @@ const buildTestTokens = (set) => [
     format: 'css/variables',
     options: {
       showFileHeader: false,
-      selector: `.${set.replaceAll('_', '-')}`
+      selector: `.${set.replace(/_/g, '-')}`
     },
     filter: {
       attributes: {
