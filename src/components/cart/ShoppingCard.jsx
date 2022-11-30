@@ -30,7 +30,7 @@ const ShoppingCard = ({
         </div>
         <div className="shopping-card__name-price-container">
           <span className="shopping-card__name">{name}</span>
-          <span className="shopping-card__price">${price}</span>
+          <span className="shopping-card__price">${price.toFixed(2)}</span>
         </div>
       </div>
       <div className={`shopping-card__background--tablet ${className}`}>

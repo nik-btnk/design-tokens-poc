@@ -1606,6 +1606,7 @@ html {
 .shopping-card:has(.clockwork-orange) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-clockwork-orange-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.clockwork-orange):before {
   content: '';
@@ -1659,6 +1660,7 @@ html {
 .shopping-card:has(.red-planet) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-red-planet-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.red-planet):before {
   content: '';
@@ -1712,6 +1714,7 @@ html {
 .shopping-card:has(.green-land) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-green-land-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.green-land):before {
   content: '';
@@ -1765,6 +1768,7 @@ html {
 .shopping-card:has(.yellow-submarine) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-yellow-submarine-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.yellow-submarine):before {
   content: '';
@@ -1818,6 +1822,7 @@ html {
 .shopping-card:has(.vivacious-violet) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-vivacious-violet-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.vivacious-violet):before {
   content: '';
@@ -1871,6 +1876,7 @@ html {
 .shopping-card:has(.pink-panther) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-pink-panther-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.pink-panther):before {
   content: '';
@@ -1924,6 +1930,7 @@ html {
 .shopping-card:has(.feeling-blue) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-feeling-blue-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.feeling-blue):before {
   content: '';
@@ -1977,6 +1984,7 @@ html {
 .shopping-card:has(.blue-clue) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-blue-clue-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.blue-clue):before {
   content: '';
@@ -2030,6 +2038,7 @@ html {
 .shopping-card:has(.gray-anatomy) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-gray-anatomy-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.gray-anatomy):before {
   content: '';
@@ -2083,6 +2092,7 @@ html {
 .shopping-card:has(.puzzled-plum) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-puzzled-plum-border);
   opacity: 10%;
+  z-index: -1;
 }
 .shopping-card:has(.puzzled-plum):before {
   content: '';
@@ -2118,97 +2128,6 @@ html {
   background-color: var(--color-flavor-puzzled-plum-fill-back-1);
   opacity: 80%;
   z-index: 0;
-}
-.button {
-  height: 50px;
-  min-width: 148px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-.button::before {
-  content: '+';
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 12px;
-  color: var(--color-brand-black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  font-weight: 700;
-}
-.button-blue {
-  background-color: var(--color-brand-blue-0);
-  border: solid 4px var(--color-brand-blue-2);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:hover {
-  border: 6.4px solid var(--color-brand-blue-2);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:active {
-  border: solid 4px var(--color-brand-blue-4);
-}
-.button-blue::before {
-  background-color: var(--color-brand-blue-3);
-}
-.button-pink {
-  background-color: var(--color-brand-pink-0);
-  border: solid 4px var(--color-brand-pink-2);
-  box-shadow: 0 4px 4px 0 #ff878280;
-}
-.button-pink:hover {
-  border: 6.4px solid var(--color-brand-pink-2);
-}
-.button-pink:active {
-  border: solid 4px var(--color-brand-pink-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-pink::before {
-  background-color: var(--color-brand-pink-3);
-}
-.button-green {
-  background-color: var(--color-brand-green-0);
-  border: solid 4px var(--color-brand-green-2);
-  box-shadow: 0 4px 4px 0 #5ecc37ff;
-}
-.button-green:hover {
-  border: 6.4px solid var(--color-brand-green-2);
-}
-.button-green:active {
-  border: solid 4px var(--color-brand-green-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-green::before {
-  background-color: var(--color-brand-green-3);
-}
-.button-orange {
-  background-color: var(--color-brand-orange-0);
-  border: solid 4px var(--color-brand-orange-2);
-  box-shadow: 0 4px 4px 0 #ed9f3a80;
-}
-.button-orange:hover {
-  border: 6.4px solid var(--color-brand-orange-2);
-}
-.button-orange:active {
-  border: solid 4px var(--color-brand-orange-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-orange::before {
-  background-color: var(--color-brand-orange-3);
 }
 .color-roulette {
   display: inline-block;
@@ -2700,6 +2619,97 @@ html {
   .raffled-color__add-to-cart-btn {
     width: 148px;
   }
+}
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.button::before {
+  content: '+';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: var(--color-brand-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.button-blue {
+  background-color: var(--color-brand-blue-0);
+  border: solid 4px var(--color-brand-blue-2);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:hover {
+  border: 6.4px solid var(--color-brand-blue-2);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:active {
+  border: solid 4px var(--color-brand-blue-4);
+}
+.button-blue::before {
+  background-color: var(--color-brand-blue-3);
+}
+.button-pink {
+  background-color: var(--color-brand-pink-0);
+  border: solid 4px var(--color-brand-pink-2);
+  box-shadow: 0 4px 4px 0 #ff878280;
+}
+.button-pink:hover {
+  border: 6.4px solid var(--color-brand-pink-2);
+}
+.button-pink:active {
+  border: solid 4px var(--color-brand-pink-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-pink::before {
+  background-color: var(--color-brand-pink-3);
+}
+.button-green {
+  background-color: var(--color-brand-green-0);
+  border: solid 4px var(--color-brand-green-2);
+  box-shadow: 0 4px 4px 0 #5ecc37ff;
+}
+.button-green:hover {
+  border: 6.4px solid var(--color-brand-green-2);
+}
+.button-green:active {
+  border: solid 4px var(--color-brand-green-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-green::before {
+  background-color: var(--color-brand-green-3);
+}
+.button-orange {
+  background-color: var(--color-brand-orange-0);
+  border: solid 4px var(--color-brand-orange-2);
+  box-shadow: 0 4px 4px 0 #ed9f3a80;
+}
+.button-orange:hover {
+  border: 6.4px solid var(--color-brand-orange-2);
+}
+.button-orange:active {
+  border: solid 4px var(--color-brand-orange-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-orange::before {
+  background-color: var(--color-brand-orange-3);
 }
 .health-info {
   padding: 40px 16px;
@@ -4143,6 +4153,7 @@ html {
 .product-card:has(.clockwork-orange) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-clockwork-orange-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.clockwork-orange):before {
   content: '';
@@ -4196,6 +4207,7 @@ html {
 .product-card:has(.red-planet) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-red-planet-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.red-planet):before {
   content: '';
@@ -4249,6 +4261,7 @@ html {
 .product-card:has(.green-land) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-green-land-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.green-land):before {
   content: '';
@@ -4302,6 +4315,7 @@ html {
 .product-card:has(.yellow-submarine) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-yellow-submarine-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.yellow-submarine):before {
   content: '';
@@ -4355,6 +4369,7 @@ html {
 .product-card:has(.vivacious-violet) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-vivacious-violet-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.vivacious-violet):before {
   content: '';
@@ -4408,6 +4423,7 @@ html {
 .product-card:has(.pink-panther) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-pink-panther-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.pink-panther):before {
   content: '';
@@ -4461,6 +4477,7 @@ html {
 .product-card:has(.feeling-blue) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-feeling-blue-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.feeling-blue):before {
   content: '';
@@ -4514,6 +4531,7 @@ html {
 .product-card:has(.blue-clue) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-blue-clue-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.blue-clue):before {
   content: '';
@@ -4567,6 +4585,7 @@ html {
 .product-card:has(.gray-anatomy) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-gray-anatomy-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.gray-anatomy):before {
   content: '';
@@ -4620,6 +4639,7 @@ html {
 .product-card:has(.puzzled-plum) .shopping-card__background--tablet:after {
   background-color: var(--color-flavor-puzzled-plum-border);
   opacity: 10%;
+  z-index: -1;
 }
 .product-card:has(.puzzled-plum):before {
   content: '';
