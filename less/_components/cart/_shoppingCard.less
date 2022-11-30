@@ -7,14 +7,20 @@
 .flavor-neon-selector(@class) {
   @class-name: ~'.@{class}';
 
+  &:before {
+    display: none;
+  }
+
   &:has(@{class-name}) {
     .shopping-card__background,
     .shopping-card__background--tablet {
       box-shadow: ~'@{effect-shadow-product-card-@{class}}';
-      // background: var(~'--color-flavor-@{class}-border'); CAN'T CONTROL OPACITY LIKE THIS ANYMORE. IMPLEMENT BACKGTOUND USING PSEUDO ELEMENTS
       border-color: var(~'--color-flavor-@{class}-border');
 
       &:before {
+        background-color: var(~'--color-flavor-@{class}-border');
+        opacity: 10%;
+
         border-color: var(~'--color-flavor-@{class}-border');
         box-shadow: inset ~'@{effect-shadow-product-card-@{class}}';
       }
@@ -53,9 +59,6 @@
     pointer-events: none;
     margin-bottom: @sizes-medium-1;
     border: 1px solid;
-    /* box-shadow: @effect-shadow-product-card-clockwork-orange;
-    background: @color-flavor-clockwork-orange-border 1A;
-    border-color: @color-flavor-clockwork-orange-border; */
 
     @media @break-tablet {
       display: none;
@@ -77,13 +80,6 @@
       border-radius: 50%;
       background-color: transparent;
       border: 1px solid;
-      /* border-color: @color-flavor-clockwork-orange-border;
-      box-shadow: inset @effect-shadow-product-card-clockwork-orange; */
-
-      @media @break-tablet {
-        width: 170px;
-        height: 170px;
-      }
     }
 
     &--tablet {
@@ -100,8 +96,8 @@
             height: 220px;
             width: 220px;
             border-radius: 50%;
-            bottom: 46px;
-            left: -20px;
+            bottom: 43px;
+            left: -22px;
           }
 
           &__img {
@@ -120,7 +116,7 @@
     height: 137px;
     width: 100%;
     border-radius: 45%;
-    bottom: 24px;
+    bottom: 21px;
   }
 
   &__img {

@@ -158,7 +158,8 @@
   src: url(https://fonts.gstatic.com/s/abrilfatface/v19/zOL64pLDlL1D99S8g8PtiKchm-A.ttf) format('truetype');
 }
 .cart {
-  margin-bottom: 64px;
+  padding-bottom: 64px;
+  background-color: var(--color-brand-white);
 }
 @media screen and (min-width: 425px) {
   .cart {
@@ -291,9 +292,6 @@ html {
   justify-content: center;
   align-items: center;
   background-color: var(--color-light-mode-background-page-white);
-  max-width: 1032px;
-  margin-left: auto;
-  margin-right: auto;
 }
 @media screen and (min-width: 425px) {
   .landing h2 {
@@ -417,6 +415,7 @@ html {
   padding: 40px 16px 80px 16px;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 .landing__find-new-color--wrapper {
   display: flex;
@@ -435,16 +434,14 @@ html {
   text-align: center;
   margin-top: 0;
 }
-@media screen and (min-width: 425px) {
-  .landing__find-new-color--title {
-    width: 100%;
-  }
-}
 .landing section {
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 64px);
+  max-width: 1032px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media screen and (min-width: 425px) {
   .landing section:nth-of-type(4) {
@@ -1088,6 +1085,97 @@ html {
     display: block;
   }
 }
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.button::before {
+  content: '+';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: var(--color-brand-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.button-blue {
+  background-color: var(--color-brand-blue-0);
+  border: solid 4px var(--color-brand-blue-2);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:hover {
+  border: 6.4px solid var(--color-brand-blue-2);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:active {
+  border: solid 4px var(--color-brand-blue-4);
+}
+.button-blue::before {
+  background-color: var(--color-brand-blue-3);
+}
+.button-pink {
+  background-color: var(--color-brand-pink-0);
+  border: solid 4px var(--color-brand-pink-2);
+  box-shadow: 0 4px 4px 0 #ff878280;
+}
+.button-pink:hover {
+  border: 6.4px solid var(--color-brand-pink-2);
+}
+.button-pink:active {
+  border: solid 4px var(--color-brand-pink-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-pink::before {
+  background-color: var(--color-brand-pink-3);
+}
+.button-green {
+  background-color: var(--color-brand-green-0);
+  border: solid 4px var(--color-brand-green-2);
+  box-shadow: 0 4px 4px 0 #5ecc37ff;
+}
+.button-green:hover {
+  border: 6.4px solid var(--color-brand-green-2);
+}
+.button-green:active {
+  border: solid 4px var(--color-brand-green-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-green::before {
+  background-color: var(--color-brand-green-3);
+}
+.button-orange {
+  background-color: var(--color-brand-orange-0);
+  border: solid 4px var(--color-brand-orange-2);
+  box-shadow: 0 4px 4px 0 #ed9f3a80;
+}
+.button-orange:hover {
+  border: 6.4px solid var(--color-brand-orange-2);
+}
+.button-orange:active {
+  border: solid 4px var(--color-brand-orange-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-orange::before {
+  background-color: var(--color-brand-orange-3);
+}
 .order-summary {
   border: 2px solid var(--color-light-mode-border-button-blue);
   box-shadow: 0 4px 4px 0 #37ccc980, 0 4px 4px 0 #2d313440;
@@ -1361,9 +1449,6 @@ html {
   pointer-events: none;
   margin-bottom: 24px;
   border: 1px solid;
-  /* box-shadow: @effect-shadow-product-card-clockwork-orange;
-    background: @color-flavor-clockwork-orange-border 1A;
-    border-color: @color-flavor-clockwork-orange-border; */
 }
 @media screen and (min-width: 425px) {
   .shopping-card__background,
@@ -1388,15 +1473,6 @@ html {
   border-radius: 50%;
   background-color: transparent;
   border: 1px solid;
-  /* border-color: @color-flavor-clockwork-orange-border;
-      box-shadow: inset @effect-shadow-product-card-clockwork-orange; */
-}
-@media screen and (min-width: 425px) {
-  .shopping-card__background:before,
-  .shopping-card__background--tablet:before {
-    width: 170px;
-    height: 170px;
-  }
 }
 .shopping-card__background--tablet,
 .shopping-card__background--tablet--tablet {
@@ -1415,8 +1491,8 @@ html {
     height: 220px;
     width: 220px;
     border-radius: 50%;
-    bottom: 46px;
-    left: -20px;
+    bottom: 43px;
+    left: -22px;
   }
   .shopping-card__background--tablet .shopping-card__img,
   .shopping-card__background--tablet--tablet .shopping-card__img {
@@ -1431,7 +1507,7 @@ html {
   height: 137px;
   width: 100%;
   border-radius: 45%;
-  bottom: 24px;
+  bottom: 21px;
 }
 .shopping-card__img {
   position: absolute;
@@ -1589,6 +1665,9 @@ html {
   font-stretch: normal;
   letter-spacing: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.clockwork-orange) .shopping-card__background,
 .shopping-card:has(.clockwork-orange) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #f1b669ff;
@@ -1596,6 +1675,8 @@ html {
 }
 .shopping-card:has(.clockwork-orange) .shopping-card__background:before,
 .shopping-card:has(.clockwork-orange) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-clockwork-orange-border);
+  opacity: 10%;
   border-color: var(--color-flavor-clockwork-orange-border);
   box-shadow: inset 0 2px 8px 0 #f1b669ff;
 }
@@ -1634,6 +1715,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.red-planet) .shopping-card__background,
 .shopping-card:has(.red-planet) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #e9322aff;
@@ -1641,6 +1725,8 @@ html {
 }
 .shopping-card:has(.red-planet) .shopping-card__background:before,
 .shopping-card:has(.red-planet) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-red-planet-border);
+  opacity: 10%;
   border-color: var(--color-flavor-red-planet-border);
   box-shadow: inset 0 2px 8px 0 #e9322aff;
 }
@@ -1679,6 +1765,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.green-land) .shopping-card__background,
 .shopping-card:has(.green-land) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #60d665ff;
@@ -1686,6 +1775,8 @@ html {
 }
 .shopping-card:has(.green-land) .shopping-card__background:before,
 .shopping-card:has(.green-land) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-green-land-border);
+  opacity: 10%;
   border-color: var(--color-flavor-green-land-border);
   box-shadow: inset 0 2px 8px 0 #60d665ff;
 }
@@ -1724,6 +1815,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.yellow-submarine) .shopping-card__background,
 .shopping-card:has(.yellow-submarine) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #fec513ff;
@@ -1731,6 +1825,8 @@ html {
 }
 .shopping-card:has(.yellow-submarine) .shopping-card__background:before,
 .shopping-card:has(.yellow-submarine) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-yellow-submarine-border);
+  opacity: 10%;
   border-color: var(--color-flavor-yellow-submarine-border);
   box-shadow: inset 0 2px 8px 0 #fec513ff;
 }
@@ -1769,6 +1865,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.vivacious-violet) .shopping-card__background,
 .shopping-card:has(.vivacious-violet) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #9154dfff;
@@ -1776,6 +1875,8 @@ html {
 }
 .shopping-card:has(.vivacious-violet) .shopping-card__background:before,
 .shopping-card:has(.vivacious-violet) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-vivacious-violet-border);
+  opacity: 10%;
   border-color: var(--color-flavor-vivacious-violet-border);
   box-shadow: inset 0 2px 8px 0 #9154dfff;
 }
@@ -1814,6 +1915,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.pink-panther) .shopping-card__background,
 .shopping-card:has(.pink-panther) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #ffb8b5ff;
@@ -1821,6 +1925,8 @@ html {
 }
 .shopping-card:has(.pink-panther) .shopping-card__background:before,
 .shopping-card:has(.pink-panther) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-pink-panther-border);
+  opacity: 10%;
   border-color: var(--color-flavor-pink-panther-border);
   box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
 }
@@ -1859,6 +1965,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.feeling-blue) .shopping-card__background,
 .shopping-card:has(.feeling-blue) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #5d78d0ff;
@@ -1866,6 +1975,8 @@ html {
 }
 .shopping-card:has(.feeling-blue) .shopping-card__background:before,
 .shopping-card:has(.feeling-blue) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-feeling-blue-border);
+  opacity: 10%;
   border-color: var(--color-flavor-feeling-blue-border);
   box-shadow: inset 0 2px 8px 0 #5d78d0ff;
 }
@@ -1904,6 +2015,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.blue-clue) .shopping-card__background,
 .shopping-card:has(.blue-clue) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #3db1c9ff;
@@ -1911,6 +2025,8 @@ html {
 }
 .shopping-card:has(.blue-clue) .shopping-card__background:before,
 .shopping-card:has(.blue-clue) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-blue-clue-border);
+  opacity: 10%;
   border-color: var(--color-flavor-blue-clue-border);
   box-shadow: inset 0 2px 8px 0 #3db1c9ff;
 }
@@ -1949,6 +2065,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.gray-anatomy) .shopping-card__background,
 .shopping-card:has(.gray-anatomy) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #98a1a8ff;
@@ -1956,6 +2075,8 @@ html {
 }
 .shopping-card:has(.gray-anatomy) .shopping-card__background:before,
 .shopping-card:has(.gray-anatomy) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-gray-anatomy-border);
+  opacity: 10%;
   border-color: var(--color-flavor-gray-anatomy-border);
   box-shadow: inset 0 2px 8px 0 #98a1a8ff;
 }
@@ -1994,6 +2115,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.shopping-card:before {
+  display: none;
+}
 .shopping-card:has(.puzzled-plum) .shopping-card__background,
 .shopping-card:has(.puzzled-plum) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #ba9cffff;
@@ -2001,6 +2125,8 @@ html {
 }
 .shopping-card:has(.puzzled-plum) .shopping-card__background:before,
 .shopping-card:has(.puzzled-plum) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-puzzled-plum-border);
+  opacity: 10%;
   border-color: var(--color-flavor-puzzled-plum-border);
   box-shadow: inset 0 2px 8px 0 #ba9cffff;
 }
@@ -2038,97 +2164,6 @@ html {
   background-color: var(--color-flavor-puzzled-plum-fill-back-1);
   opacity: 80%;
   z-index: 0;
-}
-.button {
-  height: 50px;
-  min-width: 148px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-.button::before {
-  content: '+';
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 12px;
-  color: var(--color-brand-black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  font-weight: 700;
-}
-.button-blue {
-  background-color: var(--color-brand-blue-0);
-  border: solid 4px var(--color-brand-blue-2);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:hover {
-  border: 6.4px solid var(--color-brand-blue-2);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:active {
-  border: solid 4px var(--color-brand-blue-4);
-}
-.button-blue::before {
-  background-color: var(--color-brand-blue-3);
-}
-.button-pink {
-  background-color: var(--color-brand-pink-0);
-  border: solid 4px var(--color-brand-pink-2);
-  box-shadow: 0 4px 4px 0 #ff878280;
-}
-.button-pink:hover {
-  border: 6.4px solid var(--color-brand-pink-2);
-}
-.button-pink:active {
-  border: solid 4px var(--color-brand-pink-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-pink::before {
-  background-color: var(--color-brand-pink-3);
-}
-.button-green {
-  background-color: var(--color-brand-green-0);
-  border: solid 4px var(--color-brand-green-2);
-  box-shadow: 0 4px 4px 0 #5ecc37ff;
-}
-.button-green:hover {
-  border: 6.4px solid var(--color-brand-green-2);
-}
-.button-green:active {
-  border: solid 4px var(--color-brand-green-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-green::before {
-  background-color: var(--color-brand-green-3);
-}
-.button-orange {
-  background-color: var(--color-brand-orange-0);
-  border: solid 4px var(--color-brand-orange-2);
-  box-shadow: 0 4px 4px 0 #ed9f3a80;
-}
-.button-orange:hover {
-  border: 6.4px solid var(--color-brand-orange-2);
-}
-.button-orange:active {
-  border: solid 4px var(--color-brand-orange-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-orange::before {
-  background-color: var(--color-brand-orange-3);
 }
 .color-roulette {
   display: inline-block;
@@ -2366,10 +2401,15 @@ html {
   border: 2px solid var(--color-light-mode-border-button-orange);
   border-radius: 16px;
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__card {
     flex-direction: row;
     align-items: center;
+    padding: 32px 32px 24px;
+  }
+}
+@media screen and (min-width: 615px) {
+  .raffled-color__card {
     padding: 32px 64px 24px;
   }
 }
@@ -2379,14 +2419,14 @@ html {
   gap: 8px;
   height: 50px;
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__header {
     position: absolute;
     right: 15px;
     top: 10px;
   }
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__header--title,
   .raffled-color__header--logo {
     display: none;
@@ -2479,7 +2519,7 @@ html {
   letter-spacing: 0;
   color: var(--color-light-mode-text-black);
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__mobile {
     display: none;
   }
@@ -2492,7 +2532,7 @@ html {
 .raffled-color__img-container {
   display: none;
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__img-container {
     display: initial;
     width: 158px;
@@ -2510,7 +2550,7 @@ html {
 .raffled-color__name {
   display: none;
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__name {
     display: initial;
     margin-bottom: 8px;
@@ -2527,7 +2567,7 @@ html {
 .raffled-color__price {
   display: none;
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__price {
     display: initial;
     font-size: 24px;
@@ -2577,7 +2617,7 @@ html {
   text-align: center;
   max-width: 45px;
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__cta {
     align-self: flex-start;
   }
@@ -2611,7 +2651,7 @@ html {
 .raffled-color__add-to-cart-btn img {
   height: 24px;
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 498px) {
   .raffled-color__add-to-cart-btn {
     width: 148px;
   }
@@ -4041,6 +4081,9 @@ html {
   font-stretch: normal;
   letter-spacing: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.clockwork-orange) .shopping-card__background,
 .product-card:has(.clockwork-orange) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #f1b669ff;
@@ -4048,6 +4091,8 @@ html {
 }
 .product-card:has(.clockwork-orange) .shopping-card__background:before,
 .product-card:has(.clockwork-orange) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-clockwork-orange-border);
+  opacity: 10%;
   border-color: var(--color-flavor-clockwork-orange-border);
   box-shadow: inset 0 2px 8px 0 #f1b669ff;
 }
@@ -4086,6 +4131,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.red-planet) .shopping-card__background,
 .product-card:has(.red-planet) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #e9322aff;
@@ -4093,6 +4141,8 @@ html {
 }
 .product-card:has(.red-planet) .shopping-card__background:before,
 .product-card:has(.red-planet) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-red-planet-border);
+  opacity: 10%;
   border-color: var(--color-flavor-red-planet-border);
   box-shadow: inset 0 2px 8px 0 #e9322aff;
 }
@@ -4131,6 +4181,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.green-land) .shopping-card__background,
 .product-card:has(.green-land) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #60d665ff;
@@ -4138,6 +4191,8 @@ html {
 }
 .product-card:has(.green-land) .shopping-card__background:before,
 .product-card:has(.green-land) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-green-land-border);
+  opacity: 10%;
   border-color: var(--color-flavor-green-land-border);
   box-shadow: inset 0 2px 8px 0 #60d665ff;
 }
@@ -4176,6 +4231,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.yellow-submarine) .shopping-card__background,
 .product-card:has(.yellow-submarine) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #fec513ff;
@@ -4183,6 +4241,8 @@ html {
 }
 .product-card:has(.yellow-submarine) .shopping-card__background:before,
 .product-card:has(.yellow-submarine) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-yellow-submarine-border);
+  opacity: 10%;
   border-color: var(--color-flavor-yellow-submarine-border);
   box-shadow: inset 0 2px 8px 0 #fec513ff;
 }
@@ -4221,6 +4281,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.vivacious-violet) .shopping-card__background,
 .product-card:has(.vivacious-violet) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #9154dfff;
@@ -4228,6 +4291,8 @@ html {
 }
 .product-card:has(.vivacious-violet) .shopping-card__background:before,
 .product-card:has(.vivacious-violet) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-vivacious-violet-border);
+  opacity: 10%;
   border-color: var(--color-flavor-vivacious-violet-border);
   box-shadow: inset 0 2px 8px 0 #9154dfff;
 }
@@ -4266,6 +4331,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.pink-panther) .shopping-card__background,
 .product-card:has(.pink-panther) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #ffb8b5ff;
@@ -4273,6 +4341,8 @@ html {
 }
 .product-card:has(.pink-panther) .shopping-card__background:before,
 .product-card:has(.pink-panther) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-pink-panther-border);
+  opacity: 10%;
   border-color: var(--color-flavor-pink-panther-border);
   box-shadow: inset 0 2px 8px 0 #ffb8b5ff;
 }
@@ -4311,6 +4381,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.feeling-blue) .shopping-card__background,
 .product-card:has(.feeling-blue) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #5d78d0ff;
@@ -4318,6 +4391,8 @@ html {
 }
 .product-card:has(.feeling-blue) .shopping-card__background:before,
 .product-card:has(.feeling-blue) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-feeling-blue-border);
+  opacity: 10%;
   border-color: var(--color-flavor-feeling-blue-border);
   box-shadow: inset 0 2px 8px 0 #5d78d0ff;
 }
@@ -4356,6 +4431,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.blue-clue) .shopping-card__background,
 .product-card:has(.blue-clue) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #3db1c9ff;
@@ -4363,6 +4441,8 @@ html {
 }
 .product-card:has(.blue-clue) .shopping-card__background:before,
 .product-card:has(.blue-clue) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-blue-clue-border);
+  opacity: 10%;
   border-color: var(--color-flavor-blue-clue-border);
   box-shadow: inset 0 2px 8px 0 #3db1c9ff;
 }
@@ -4401,6 +4481,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.gray-anatomy) .shopping-card__background,
 .product-card:has(.gray-anatomy) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #98a1a8ff;
@@ -4408,6 +4491,8 @@ html {
 }
 .product-card:has(.gray-anatomy) .shopping-card__background:before,
 .product-card:has(.gray-anatomy) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-gray-anatomy-border);
+  opacity: 10%;
   border-color: var(--color-flavor-gray-anatomy-border);
   box-shadow: inset 0 2px 8px 0 #98a1a8ff;
 }
@@ -4446,6 +4531,9 @@ html {
   opacity: 80%;
   z-index: 0;
 }
+.product-card:before {
+  display: none;
+}
 .product-card:has(.puzzled-plum) .shopping-card__background,
 .product-card:has(.puzzled-plum) .shopping-card__background--tablet {
   box-shadow: 0 2px 8px 0 #ba9cffff;
@@ -4453,6 +4541,8 @@ html {
 }
 .product-card:has(.puzzled-plum) .shopping-card__background:before,
 .product-card:has(.puzzled-plum) .shopping-card__background--tablet:before {
+  background-color: var(--color-flavor-puzzled-plum-border);
+  opacity: 10%;
   border-color: var(--color-flavor-puzzled-plum-border);
   box-shadow: inset 0 2px 8px 0 #ba9cffff;
 }

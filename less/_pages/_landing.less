@@ -13,9 +13,6 @@ html {
   justify-content: center;
   align-items: center;
   background-color: var(--color-light-mode-background-page-white);
-  max-width: 1032px;
-  margin-left: auto;
-  margin-right: auto;
 
   @media @break-tablet {
     h2 {
@@ -129,6 +126,7 @@ html {
     padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
     position: relative;
     overflow: hidden;
+    width: 100%;
 
     &--wrapper {
       display: flex;
@@ -140,10 +138,6 @@ html {
       @font-mobile-title-large-abril();
       text-align: center;
       margin-top: 0;
-
-      @media @break-tablet {
-        width: 100%;
-      }
     }
   }
 
@@ -152,6 +146,9 @@ html {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 64px);
+    max-width: 1032px;
+    margin-left: auto;
+    margin-right: auto;
 
     @media @break-tablet {
       &:nth-of-type(4) {
