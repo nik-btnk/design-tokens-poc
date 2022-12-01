@@ -14,7 +14,7 @@ import CartContext from '../contexts/CartContext/CartProvider'
 const Header = () => {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
-  const { selectedProducts } = useContext(CartContext)
+  const { totalQty } = useContext(CartContext)
 
   const isHeaderVertical =
     location.pathname === path.CHECKOUT || location.pathname === path.CART
@@ -42,9 +42,7 @@ const Header = () => {
             </Link>
             <Link to={path.CART} className="header__cart">
               <div className="header__cart-bubble">
-                <span className="header__cart-qty">
-                  {selectedProducts.length}
-                </span>
+                <span className="header__cart-qty">{totalQty}</span>
               </div>
               <img src={iconCart} alt="Cart icon." />
             </Link>
