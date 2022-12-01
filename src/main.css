@@ -936,6 +936,7 @@ html {
   }
 }
 .header__cart {
+  position: relative;
   display: none;
   height: 32px;
 }
@@ -943,6 +944,30 @@ html {
   .header__cart {
     display: block;
   }
+}
+.header__cart-bubble {
+  background-color: blue;
+  border-radius: 50%;
+  top: -7px;
+  right: -3px;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-brand-pink-4);
+  z-index: 2;
+}
+.header__cart-qty {
+  font-size: 14px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-brand-white);
 }
 .header-checkout,
 .header-cart {
@@ -1178,6 +1203,577 @@ html {
 }
 .button-orange::before {
   background-color: var(--color-brand-orange-3);
+}
+.health-info {
+  padding: 40px 16px;
+  background-color: var(--color-light-mode-background-page-orange);
+  border-top: 4px solid var(--color-light-mode-border-button-orange);
+  border-bottom: 4px solid var(--color-light-mode-border-button-orange);
+  width: 100%;
+}
+@media screen and (min-width: 425px) {
+  .health-info {
+    padding: 40px 32px;
+  }
+}
+.health-info__wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 24px;
+}
+@media screen and (min-width: 1440px) {
+  .health-info__wrapper {
+    max-width: 1032px;
+    width: 100%;
+    margin: auto;
+  }
+}
+.health-info__title {
+  font-size: 24px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-orange);
+}
+@media screen and (min-width: 425px) {
+  .health-info__title {
+    font-size: 32px;
+    text-decoration: none;
+    font-family: Abril Fatface;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+  }
+}
+.health-info__calories-container--title {
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-orange);
+}
+@media screen and (min-width: 425px) {
+  .health-info__calories-container--title {
+    font-size: 24px;
+    text-decoration: none;
+    font-family: Abril Fatface;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+  }
+}
+.health-info__calories-container--calories {
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-black);
+}
+@media screen and (min-width: 425px) {
+  .health-info__calories-container--calories {
+    font-size: 24px;
+    text-decoration: none;
+    font-family: Quattrocento Sans;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+  }
+}
+.health-info__items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media screen and (min-width: 425px) {
+  .health-info__items-container {
+    justify-content: flex-start;
+  }
+}
+.health-info__items-container--item {
+  justify-items: center;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 16px;
+  margin: 16px;
+}
+.health-info__items-container--item .icon {
+  height: 40px;
+}
+.health-info__items-container--item .name {
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-black);
+}
+@media screen and (min-width: 425px) {
+  .health-info__items-container--item .name {
+    font-size: 24px;
+    text-decoration: none;
+    font-family: Abril Fatface;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+  }
+}
+.health-info__items-container--item .description {
+  font-size: 12px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-black);
+}
+.more-products {
+  padding: 40px 16px 80px 16px;
+}
+@media screen and (min-width: 425px) {
+  .more-products {
+    padding: 64px 32px 96px 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .more-products {
+    max-width: 1032px;
+    width: 100%;
+    margin: auto;
+    padding: 80px 0 128px 0;
+  }
+}
+.more-products__title {
+  display: block;
+  font-size: 32px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  margin-bottom: 40px;
+  color: var(--color-light-mode-text-blue);
+}
+@media screen and (min-width: 425px) {
+  .more-products__title {
+    font-size: 48px;
+    text-decoration: none;
+    font-family: Abril Fatface;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .more-products__title {
+    margin-bottom: 64px;
+  }
+}
+.more-products__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 800px;
+  gap: 40px;
+}
+@media screen and (min-width: 425px) {
+  .more-products__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .more-products__container {
+    flex-wrap: nowrap;
+    gap: 0;
+    justify-content: space-between;
+    max-width: none;
+  }
+}
+.more-products .wrapper:nth-child(1) button,
+.more-products .wrapper:nth-child(4) button {
+  background-color: var(--color-light-mode-background-button-pink);
+  border: 2px solid var(--color-light-mode-border-button-pink);
+  box-shadow: 0 4px 4px 0 #ff878280;
+}
+.more-products .wrapper:nth-child(1) button .product-info-btn__info-icon-container,
+.more-products .wrapper:nth-child(4) button .product-info-btn__info-icon-container {
+  background-color: var(--color-brand-pink-3);
+}
+.more-products .wrapper:nth-child(1) button svg path:first-child,
+.more-products .wrapper:nth-child(4) button svg path:first-child {
+  fill: var(--color-brand-pink-3);
+}
+.more-products .wrapper:nth-child(2) button {
+  background-color: var(--color-light-mode-background-button-blue);
+  border: 2px solid var(--color-light-mode-border-button-blue);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.more-products .wrapper:nth-child(2) button .product-info-btn__info-icon-container {
+  background-color: var(--color-brand-blue-3);
+}
+.more-products .wrapper:nth-child(2) button svg path:first-child {
+  fill: var(--color-brand-blue-3);
+}
+.more-products .wrapper:nth-child(3) button {
+  background-color: var(--color-light-mode-background-button-green);
+  border: 2px solid var(--color-light-mode-border-button-green);
+  box-shadow: 0 4px 4px 0 #5ecc37ff;
+}
+.more-products .wrapper:nth-child(3) button .product-info-btn__info-icon-container {
+  background-color: var(--color-brand-green-3);
+}
+.more-products .wrapper:nth-child(3) button svg path:first-child {
+  fill: var(--color-brand-green-3);
+}
+.more-products .wrapper:nth-child(4) {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .more-products .wrapper:nth-child(4) {
+    display: block;
+  }
+}
+.product-info {
+  width: 100%;
+  padding: 40px 16px;
+  margin: auto;
+}
+@media screen and (min-width: 425px) and (max-width: 700px) {
+  .product-info {
+    padding: 64px 32px !important;
+  }
+}
+@media screen and (min-width: 425px) {
+  .product-info {
+    padding: 64px 32px 64px calc(32px + 16px);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .product-info {
+    max-width: 1032px;
+    padding: calc(80px + 16px) 0;
+  }
+}
+.product-info__title-mobile {
+  font-size: 24px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-black);
+  display: block;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 425px) {
+  .product-info__title-mobile {
+    display: none;
+  }
+}
+.product-info__content-wrapper {
+  display: grid;
+  column-gap: calc(24px + 16px);
+}
+@media screen and (min-width: 425px) and (max-width: 700px) {
+  .product-info__content-wrapper {
+    grid-auto-flow: row !important;
+  }
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper {
+    grid-auto-flow: column;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .product-info__content-wrapper {
+    max-width: 1032px;
+    width: 100%;
+    margin: auto;
+    column-gap: calc(128px + 16px);
+    grid-template-rows: minmax(400px, auto);
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 700px) {
+  .product-info__content-wrapper .wrapper {
+    display: flex;
+  }
+}
+.product-info__content-wrapper .product-card {
+  margin: 0 0 24px 0;
+  pointer-events: none !important;
+  width: 100%;
+}
+@media screen and (min-width: 425px) and (max-width: 700px) {
+  .product-info__content-wrapper .product-card {
+    margin: auto auto 32px auto !important;
+  }
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card {
+    width: fit-content !important;
+    margin: 0;
+    align-self: center;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .product-info__content-wrapper .product-card {
+    transform: scale(1.23);
+  }
+}
+.product-info__content-wrapper .product-card::before {
+  display: none;
+  content: '';
+  position: absolute;
+  background-color: transparent !important;
+  width: 305px !important;
+  height: 305px !important;
+  border-radius: 50%;
+  border: 10px solid;
+  opacity: 0.2 !important;
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card::before {
+    display: block;
+  }
+}
+.product-info__content-wrapper .product-card.red-planet::before {
+  border-color: var(--color-flavor-red-planet-border);
+}
+.product-info__content-wrapper .product-card.yellow-submarine::before {
+  border-color: var(--color-flavor-yellow-submarine-border);
+}
+.product-info__content-wrapper .product-card.clockwork-orange::before {
+  border-color: var(--color-flavor-clockwork-orange-border);
+}
+.product-info__content-wrapper .product-card.green-land::before {
+  border-color: var(--color-flavor-green-land-border);
+}
+.product-info__content-wrapper .product-card.puzzled-plum::before {
+  border-color: var(--color-flavor-puzzled-plum-border);
+}
+.product-info__content-wrapper .product-card.feeling-blue::before {
+  border-color: var(--color-flavor-feeling-blue-border);
+}
+.product-info__content-wrapper .product-card.vivacious-violet::before {
+  border-color: var(--color-flavor-vivacious-violet-border);
+}
+.product-info__content-wrapper .product-card.blue-clue::before {
+  border-color: var(--color-flavor-blue-clue-border);
+}
+.product-info__content-wrapper .product-card.gray-anatomy::before {
+  border-color: var(--color-flavor-gray-anatomy-border);
+}
+.product-info__content-wrapper .product-card.pink-panther::before {
+  border-color: var(--color-flavor-pink-panther-border);
+}
+.product-info__content-wrapper .product-card__background {
+  margin: 0;
+  background-color: transparent !important;
+  z-index: 100;
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card__background {
+    outline-offset: -10px !important;
+    height: 325px;
+    width: 325px;
+  }
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card__background::before {
+    box-shadow: inset 0 4px 20px !important;
+    width: 305px;
+    height: 305px;
+  }
+}
+.product-info__content-wrapper .product-card__background.red-planet::before {
+  color: var(--color-flavor-red-planet-border);
+}
+.product-info__content-wrapper .product-card__background.yellow-submarine::before {
+  color: var(--color-flavor-yellow-submarine-border);
+}
+.product-info__content-wrapper .product-card__background.clockwork-orange::before {
+  color: var(--color-flavor-clockwork-orange-border);
+}
+.product-info__content-wrapper .product-card__background.green-land::before {
+  color: var(--color-flavor-green-land-border);
+}
+.product-info__content-wrapper .product-card__background.puzzled-plum::before {
+  color: var(--color-flavor-puzzled-plum-border);
+}
+.product-info__content-wrapper .product-card__background.feeling-blue::before {
+  color: var(--color-flavor-feeling-blue-border);
+}
+.product-info__content-wrapper .product-card__background.vivacious-violet::before {
+  color: var(--color-flavor-vivacious-violet-border);
+}
+.product-info__content-wrapper .product-card__background.blue-clue::before {
+  color: var(--color-flavor-blue-clue-border);
+}
+.product-info__content-wrapper .product-card__background.gray-anatomy::before {
+  color: var(--color-flavor-gray-anatomy-border);
+}
+.product-info__content-wrapper .product-card__background.pink-panther::before {
+  color: var(--color-flavor-pink-panther-border);
+}
+@media screen and (min-width: 1440px) {
+  .product-info__content-wrapper .product-card__name-price-container {
+    right: 83px !important;
+    top: 91px !important;
+  }
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card__name {
+    font-size: 32px !important;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .product-info__content-wrapper .product-card__name {
+    font-size: 48px !important;
+    transform: scale(0.77);
+  }
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card__price {
+    display: none;
+  }
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card__name-price-container {
+    right: 65px;
+    top: 112px;
+  }
+}
+@media screen and (min-width: 425px) {
+  .product-info__content-wrapper .product-card__img {
+    transform: scale(1.9);
+    bottom: 91px;
+    left: 46px;
+  }
+}
+.product-info__content--title {
+  font-size: 24px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-black);
+  display: none;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 425px) {
+  .product-info__content--title {
+    font-size: 32px;
+    text-decoration: none;
+    font-family: Abril Fatface;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+    display: block;
+  }
+}
+.product-info__content--price {
+  font-size: 32px;
+  text-decoration: none;
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-pink);
+  display: none;
+  margin-top: 32px;
+}
+@media screen and (min-width: 425px) {
+  .product-info__content--price {
+    display: block;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .product-info__content--price {
+    font-size: 48px;
+    text-decoration: none;
+    font-family: Abril Fatface;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+  }
+}
+.product-info__content--description {
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: var(--color-light-mode-text-black);
+}
+.product-info__content--cta {
+  width: 100%;
+  height: 40px;
+  border-radius: 16px;
+  background-color: var(--color-light-mode-background-button-blue);
+  border: 2px solid var(--color-light-mode-border-button-blue);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 24px 0 40px 0;
+}
+@media screen and (min-width: 425px) {
+  .product-info__content--cta {
+    width: 180px;
+    margin: 32px 0 0 0;
+  }
+}
+.product-info__content--cta:active {
+  border: 2px solid var(--color-brand-blue-4);
+  box-shadow: 0 4px 4px 0 #077a7780;
+}
+.product-info__content--cta svg {
+  transform: scale(0.8);
+  margin-right: 8px;
+}
+.product-info__content--cta svg path:first-child {
+  filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg) brightness(95%) contrast(97%);
+}
+@media screen and (min-width: 425px) {
+  .product-info__content--cta {
+    width: 180px;
+  }
 }
 .order-summary {
   border: 2px solid var(--color-light-mode-border-button-blue);
@@ -2217,577 +2813,6 @@ html {
   background-color: var(--color-flavor-puzzled-plum-fill-back-1);
   opacity: 80%;
   z-index: 0;
-}
-.health-info {
-  padding: 40px 16px;
-  background-color: var(--color-light-mode-background-page-orange);
-  border-top: 4px solid var(--color-light-mode-border-button-orange);
-  border-bottom: 4px solid var(--color-light-mode-border-button-orange);
-  width: 100%;
-}
-@media screen and (min-width: 425px) {
-  .health-info {
-    padding: 40px 32px;
-  }
-}
-.health-info__wrapper {
-  display: grid;
-  grid-auto-flow: row;
-  gap: 24px;
-}
-@media screen and (min-width: 1440px) {
-  .health-info__wrapper {
-    max-width: 1032px;
-    width: 100%;
-    margin: auto;
-  }
-}
-.health-info__title {
-  font-size: 24px;
-  text-decoration: none;
-  font-family: Abril Fatface;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-orange);
-}
-@media screen and (min-width: 425px) {
-  .health-info__title {
-    font-size: 32px;
-    text-decoration: none;
-    font-family: Abril Fatface;
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: 0;
-  }
-}
-.health-info__calories-container--title {
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Abril Fatface;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-orange);
-}
-@media screen and (min-width: 425px) {
-  .health-info__calories-container--title {
-    font-size: 24px;
-    text-decoration: none;
-    font-family: Abril Fatface;
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: 0;
-  }
-}
-.health-info__calories-container--calories {
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-black);
-}
-@media screen and (min-width: 425px) {
-  .health-info__calories-container--calories {
-    font-size: 24px;
-    text-decoration: none;
-    font-family: Quattrocento Sans;
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: 0;
-  }
-}
-.health-info__items-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-@media screen and (min-width: 425px) {
-  .health-info__items-container {
-    justify-content: flex-start;
-  }
-}
-.health-info__items-container--item {
-  justify-items: center;
-  display: grid;
-  grid-auto-flow: row;
-  gap: 16px;
-  margin: 16px;
-}
-.health-info__items-container--item .icon {
-  height: 40px;
-}
-.health-info__items-container--item .name {
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Abril Fatface;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-black);
-}
-@media screen and (min-width: 425px) {
-  .health-info__items-container--item .name {
-    font-size: 24px;
-    text-decoration: none;
-    font-family: Abril Fatface;
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: 0;
-  }
-}
-.health-info__items-container--item .description {
-  font-size: 12px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-black);
-}
-.more-products {
-  padding: 40px 16px 80px 16px;
-}
-@media screen and (min-width: 425px) {
-  .more-products {
-    padding: 64px 32px 96px 32px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .more-products {
-    max-width: 1032px;
-    width: 100%;
-    margin: auto;
-    padding: 80px 0 128px 0;
-  }
-}
-.more-products__title {
-  display: block;
-  font-size: 32px;
-  text-decoration: none;
-  font-family: Abril Fatface;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  margin-bottom: 40px;
-  color: var(--color-light-mode-text-blue);
-}
-@media screen and (min-width: 425px) {
-  .more-products__title {
-    font-size: 48px;
-    text-decoration: none;
-    font-family: Abril Fatface;
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: 0;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .more-products__title {
-    margin-bottom: 64px;
-  }
-}
-.more-products__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 800px;
-  gap: 40px;
-}
-@media screen and (min-width: 425px) {
-  .more-products__container {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .more-products__container {
-    flex-wrap: nowrap;
-    gap: 0;
-    justify-content: space-between;
-    max-width: none;
-  }
-}
-.more-products .wrapper:nth-child(1) button,
-.more-products .wrapper:nth-child(4) button {
-  background-color: var(--color-light-mode-background-button-pink);
-  border: 2px solid var(--color-light-mode-border-button-pink);
-  box-shadow: 0 4px 4px 0 #ff878280;
-}
-.more-products .wrapper:nth-child(1) button .product-info-btn__info-icon-container,
-.more-products .wrapper:nth-child(4) button .product-info-btn__info-icon-container {
-  background-color: var(--color-brand-pink-3);
-}
-.more-products .wrapper:nth-child(1) button svg path:first-child,
-.more-products .wrapper:nth-child(4) button svg path:first-child {
-  fill: var(--color-brand-pink-3);
-}
-.more-products .wrapper:nth-child(2) button {
-  background-color: var(--color-light-mode-background-button-blue);
-  border: 2px solid var(--color-light-mode-border-button-blue);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.more-products .wrapper:nth-child(2) button .product-info-btn__info-icon-container {
-  background-color: var(--color-brand-blue-3);
-}
-.more-products .wrapper:nth-child(2) button svg path:first-child {
-  fill: var(--color-brand-blue-3);
-}
-.more-products .wrapper:nth-child(3) button {
-  background-color: var(--color-light-mode-background-button-green);
-  border: 2px solid var(--color-light-mode-border-button-green);
-  box-shadow: 0 4px 4px 0 #5ecc37ff;
-}
-.more-products .wrapper:nth-child(3) button .product-info-btn__info-icon-container {
-  background-color: var(--color-brand-green-3);
-}
-.more-products .wrapper:nth-child(3) button svg path:first-child {
-  fill: var(--color-brand-green-3);
-}
-.more-products .wrapper:nth-child(4) {
-  display: none;
-}
-@media screen and (min-width: 1440px) {
-  .more-products .wrapper:nth-child(4) {
-    display: block;
-  }
-}
-.product-info {
-  width: 100%;
-  padding: 40px 16px;
-  margin: auto;
-}
-@media screen and (min-width: 425px) and (max-width: 700px) {
-  .product-info {
-    padding: 64px 32px !important;
-  }
-}
-@media screen and (min-width: 425px) {
-  .product-info {
-    padding: 64px 32px 64px calc(32px + 16px);
-  }
-}
-@media screen and (min-width: 1440px) {
-  .product-info {
-    max-width: 1032px;
-    padding: calc(80px + 16px) 0;
-  }
-}
-.product-info__title-mobile {
-  font-size: 24px;
-  text-decoration: none;
-  font-family: Abril Fatface;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-black);
-  display: block;
-  margin-bottom: 24px;
-}
-@media screen and (min-width: 425px) {
-  .product-info__title-mobile {
-    display: none;
-  }
-}
-.product-info__content-wrapper {
-  display: grid;
-  column-gap: calc(24px + 16px);
-}
-@media screen and (min-width: 425px) and (max-width: 700px) {
-  .product-info__content-wrapper {
-    grid-auto-flow: row !important;
-  }
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper {
-    grid-auto-flow: column;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .product-info__content-wrapper {
-    max-width: 1032px;
-    width: 100%;
-    margin: auto;
-    column-gap: calc(128px + 16px);
-    grid-template-rows: minmax(400px, auto);
-  }
-}
-@media screen and (min-width: 425px) and (max-width: 700px) {
-  .product-info__content-wrapper .wrapper {
-    display: flex;
-  }
-}
-.product-info__content-wrapper .product-card {
-  margin: 0 0 24px 0;
-  pointer-events: none !important;
-  width: 100%;
-}
-@media screen and (min-width: 425px) and (max-width: 700px) {
-  .product-info__content-wrapper .product-card {
-    margin: auto auto 32px auto !important;
-  }
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper .product-card {
-    width: fit-content !important;
-    margin: 0;
-    align-self: center;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .product-info__content-wrapper .product-card {
-    transform: scale(1.23);
-  }
-}
-.product-info__content-wrapper .product-card::before {
-  display: none;
-  content: '';
-  position: absolute;
-  background-color: transparent !important;
-  width: 305px !important;
-  height: 305px !important;
-  border-radius: 50%;
-  border: 10px solid;
-  opacity: 0.2 !important;
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper .product-card::before {
-    display: block;
-  }
-}
-.product-info__content-wrapper .product-card.red-planet::before {
-  border-color: var(--color-flavor-red-planet-border);
-}
-.product-info__content-wrapper .product-card.yellow-submarine::before {
-  border-color: var(--color-flavor-yellow-submarine-border);
-}
-.product-info__content-wrapper .product-card.clockwork-orange::before {
-  border-color: var(--color-flavor-clockwork-orange-border);
-}
-.product-info__content-wrapper .product-card.green-land::before {
-  border-color: var(--color-flavor-green-land-border);
-}
-.product-info__content-wrapper .product-card.puzzled-plum::before {
-  border-color: var(--color-flavor-puzzled-plum-border);
-}
-.product-info__content-wrapper .product-card.feeling-blue::before {
-  border-color: var(--color-flavor-feeling-blue-border);
-}
-.product-info__content-wrapper .product-card.vivacious-violet::before {
-  border-color: var(--color-flavor-vivacious-violet-border);
-}
-.product-info__content-wrapper .product-card.blue-clue::before {
-  border-color: var(--color-flavor-blue-clue-border);
-}
-.product-info__content-wrapper .product-card.gray-anatomy::before {
-  border-color: var(--color-flavor-gray-anatomy-border);
-}
-.product-info__content-wrapper .product-card.pink-panther::before {
-  border-color: var(--color-flavor-pink-panther-border);
-}
-.product-info__content-wrapper .product-card__background {
-  margin: 0;
-  background-color: transparent !important;
-  z-index: 100;
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper .product-card__background {
-    outline-offset: -10px !important;
-    height: 325px;
-    width: 325px;
-  }
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper .product-card__background::before {
-    box-shadow: inset 0 4px 20px !important;
-    width: 305px;
-    height: 305px;
-  }
-}
-.product-info__content-wrapper .product-card__background.red-planet::before {
-  color: var(--color-flavor-red-planet-border);
-}
-.product-info__content-wrapper .product-card__background.yellow-submarine::before {
-  color: var(--color-flavor-yellow-submarine-border);
-}
-.product-info__content-wrapper .product-card__background.clockwork-orange::before {
-  color: var(--color-flavor-clockwork-orange-border);
-}
-.product-info__content-wrapper .product-card__background.green-land::before {
-  color: var(--color-flavor-green-land-border);
-}
-.product-info__content-wrapper .product-card__background.puzzled-plum::before {
-  color: var(--color-flavor-puzzled-plum-border);
-}
-.product-info__content-wrapper .product-card__background.feeling-blue::before {
-  color: var(--color-flavor-feeling-blue-border);
-}
-.product-info__content-wrapper .product-card__background.vivacious-violet::before {
-  color: var(--color-flavor-vivacious-violet-border);
-}
-.product-info__content-wrapper .product-card__background.blue-clue::before {
-  color: var(--color-flavor-blue-clue-border);
-}
-.product-info__content-wrapper .product-card__background.gray-anatomy::before {
-  color: var(--color-flavor-gray-anatomy-border);
-}
-.product-info__content-wrapper .product-card__background.pink-panther::before {
-  color: var(--color-flavor-pink-panther-border);
-}
-@media screen and (min-width: 1440px) {
-  .product-info__content-wrapper .product-card__name-price-container {
-    right: 83px !important;
-    top: 91px !important;
-  }
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper .product-card__name {
-    font-size: 32px !important;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .product-info__content-wrapper .product-card__name {
-    font-size: 48px !important;
-    transform: scale(0.77);
-  }
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper .product-card__price {
-    display: none;
-  }
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper .product-card__name-price-container {
-    right: 65px;
-    top: 112px;
-  }
-}
-@media screen and (min-width: 425px) {
-  .product-info__content-wrapper .product-card__img {
-    transform: scale(1.9);
-    bottom: 91px;
-    left: 46px;
-  }
-}
-.product-info__content--title {
-  font-size: 24px;
-  text-decoration: none;
-  font-family: Abril Fatface;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-black);
-  display: none;
-  margin-bottom: 24px;
-}
-@media screen and (min-width: 425px) {
-  .product-info__content--title {
-    font-size: 32px;
-    text-decoration: none;
-    font-family: Abril Fatface;
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: 0;
-    margin-bottom: 16px;
-    display: block;
-  }
-}
-.product-info__content--price {
-  font-size: 32px;
-  text-decoration: none;
-  font-family: Abril Fatface;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-pink);
-  display: none;
-  margin-top: 32px;
-}
-@media screen and (min-width: 425px) {
-  .product-info__content--price {
-    display: block;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .product-info__content--price {
-    font-size: 48px;
-    text-decoration: none;
-    font-family: Abril Fatface;
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: 0;
-  }
-}
-.product-info__content--description {
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  color: var(--color-light-mode-text-black);
-}
-.product-info__content--cta {
-  width: 100%;
-  height: 40px;
-  border-radius: 16px;
-  background-color: var(--color-light-mode-background-button-blue);
-  border: 2px solid var(--color-light-mode-border-button-blue);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin: 24px 0 40px 0;
-}
-@media screen and (min-width: 425px) {
-  .product-info__content--cta {
-    width: 180px;
-    margin: 32px 0 0 0;
-  }
-}
-.product-info__content--cta:active {
-  border: 2px solid var(--color-brand-blue-4);
-  box-shadow: 0 4px 4px 0 #077a7780;
-}
-.product-info__content--cta svg {
-  transform: scale(0.8);
-  margin-right: 8px;
-}
-.product-info__content--cta svg path:first-child {
-  filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg) brightness(95%) contrast(97%);
-}
-@media screen and (min-width: 425px) {
-  .product-info__content--cta {
-    width: 180px;
-  }
 }
 .color-roulette {
   display: inline-block;
