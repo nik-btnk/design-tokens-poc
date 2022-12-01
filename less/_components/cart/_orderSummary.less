@@ -3,18 +3,19 @@
 @import '../../_tokens/_cream_colors/_font-mixins';
 
 .order-summary {
-  border: 2px solid var(--color-light-mode-border-button-blue);
-  box-shadow: @effect-shadow-button-blue-default-0,
-    @effect-shadow-button-blue-default-1;
-  padding: @sizes-small-3 @sizes-small-3 @sizes-small-1;
-  margin-bottom: @sizes-medium-3;
+  border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
+  box-shadow: @creamcolors-effect-shadow-button-blue-default-0,
+    @creamcolors-effect-shadow-button-blue-default-1;
+  padding: @creamcolors-sizes-small-3 @creamcolors-sizes-small-3
+    @creamcolors-sizes-small-1;
+  margin-bottom: @creamcolors-sizes-medium-3;
 
   @media @break-tablet {
     width: 377px;
     margin: 0 auto;
-    border-radius: @sizes-medium-2;
-    border: 2px solid var(--color-light-mode-border-button-orange);
-    box-shadow: @effect-shadow-button-orange-default-0;
+    border-radius: @creamcolors-sizes-medium-2;
+    border: 2px solid var(--creamcolors-color-light-mode-border-button-orange);
+    box-shadow: @creamcolors-effect-shadow-button-orange-default-0;
     order: 3;
   }
 
@@ -23,14 +24,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: @sizes-small-1 0 @sizes-medium-1;
+    padding: @creamcolors-sizes-small-1 0 @creamcolors-sizes-medium-1;
   }
 
   &__title {
-    @font-mobile-title-medium-quatt();
+    @creamcolors-font-mobile-title-medium-quatt();
 
     @media @break-tablet {
-      @font-desktop-title-medium-quatt();
+      @creamcolors-font-desktop-title-medium-quatt();
     }
   }
 
@@ -42,43 +43,43 @@
 
   &__resume {
     & > div {
-      padding: @sizes-small-2 0;
+      padding: @creamcolors-sizes-small-2 0;
     }
   }
 
   &__products-price {
     display: flex;
     flex-direction: column;
-    gap: @sizes-small-2;
+    gap: @creamcolors-sizes-small-2;
   }
 
   &__product {
     display: flex;
-    gap: @sizes-small-1;
+    gap: @creamcolors-sizes-small-1;
 
     &-name {
-      @font-mobile-title-small-quatt();
+      @creamcolors-font-mobile-title-small-quatt();
 
       @media @break-tablet {
-        @font-desktop-title-small-quatt();
+        @creamcolors-font-desktop-title-small-quatt();
       }
     }
 
     &-price {
       margin-left: auto;
-      @font-mobile-title-small-abril();
+      @creamcolors-font-mobile-title-small-abril();
 
       @media @break-tablet {
-        @font-desktop-title-small-abril();
+        @creamcolors-font-desktop-title-small-abril();
       }
     }
 
     &-qty {
-      @font-mobile-caption-quatt();
+      @creamcolors-font-mobile-caption-quatt();
       align-self: center;
 
       @media @break-tablet {
-        @font-desktop-body-quatt();
+        @creamcolors-font-desktop-body-quatt();
       }
     }
   }
@@ -86,28 +87,28 @@
   &__amount-tax {
     display: flex;
     flex-direction: column;
-    gap: @sizes-small-2;
+    gap: @creamcolors-sizes-small-2;
   }
 
   &__amount,
   &__taxes {
     display: flex;
-    gap: @sizes-small-1;
+    gap: @creamcolors-sizes-small-1;
 
     & span:nth-of-type(1) {
-      @font-mobile-title-small-quatt();
+      @creamcolors-font-mobile-title-small-quatt();
 
       @media @break-tablet {
-        @font-desktop-title-small-quatt();
+        @creamcolors-font-desktop-title-small-quatt();
       }
     }
 
     & span:nth-of-type(2) {
       margin-left: auto;
-      @font-mobile-title-small-abril();
+      @creamcolors-font-mobile-title-small-abril();
 
       @media @break-tablet {
-        @font-desktop-title-small-abril();
+        @creamcolors-font-desktop-title-small-abril();
       }
     }
   }
@@ -115,25 +116,25 @@
   &__line {
     width: 100%;
     height: 1px;
-    background-color: var(--color-light-mode-border-button-orange);
+    background-color: var(--creamcolors-color-light-mode-border-button-orange);
     padding: 0 !important;
-    margin-bottom: @sizes-small-2;
+    margin-bottom: @creamcolors-sizes-small-2;
   }
 
   &__total {
     &-text {
-      @font-mobile-title-small-quatt();
+      @creamcolors-font-mobile-title-small-quatt();
 
       @media @break-tablet {
-        @font-desktop-title-small-quatt();
+        @creamcolors-font-desktop-title-small-quatt();
       }
     }
 
     &-price {
-      @font-mobile-title-small-abril();
+      @creamcolors-font-mobile-title-small-abril();
 
       @media @break-tablet {
-        @font-desktop-title-small-abril();
+        @creamcolors-font-desktop-title-small-abril();
       }
     }
   }

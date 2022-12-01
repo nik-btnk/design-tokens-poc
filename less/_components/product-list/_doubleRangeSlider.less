@@ -2,13 +2,13 @@
   position: relative;
   width: 128px;
   height: 20px;
-  margin: @sizes-medium-2 auto @sizes-small-2;
+  margin: @creamcolors-sizes-medium-2 auto @creamcolors-sizes-small-2;
 
   .slider__track {
     border-radius: 3px;
     position: absolute;
-    background-color: var(--color-brand-black);
-    height: @sizes-small-1;
+    background-color: var(--creamcolors-color-brand-black);
+    height: @creamcolors-sizes-small-1;
     width: 100%;
     z-index: 1;
     top: 0;
@@ -20,8 +20,8 @@
       -webkit-appearance: none;
       border-radius: 3px;
       position: absolute;
-      background-color: var(--color-brand-black);
-      height: @sizes-small-1;
+      background-color: var(--creamcolors-color-brand-black);
+      height: @creamcolors-sizes-small-1;
       width: 100%;
       z-index: 1;
       top: 0;
@@ -59,15 +59,15 @@
     &::-webkit-slider-thumb {
       background-image: radial-gradient(
         circle,
-        var(--color-brand-white) 25%,
-        var(--color-brand-orange-3) 30%
+        var(--creamcolors-color-brand-white) 25%,
+        var(--creamcolors-color-brand-orange-3) 30%
       );
       border: none;
       border-radius: 50%;
-      box-shadow: @effect-shadow-button-orange-default-1;
+      box-shadow: @creamcolors-effect-shadow-button-orange-default-1;
       cursor: pointer;
-      width: @sizes-medium-1;
-      height: @sizes-medium-1;
+      width: @creamcolors-sizes-medium-1;
+      height: @creamcolors-sizes-medium-1;
       pointer-events: all;
       position: relative;
     }
@@ -76,15 +76,15 @@
     &::-moz-range-thumb {
       background-image: radial-gradient(
         circle,
-        var(--color-brand-white) 25%,
-        var(--color-brand-orange-3) 30%
+        var(--creamcolors-color-brand-white) 25%,
+        var(--creamcolors-color-brand-orange-3) 30%
       );
       border: none;
       border-radius: 50%;
-      box-shadow: @effect-shadow-button-orange-default-1;
+      box-shadow: @creamcolors-effect-shadow-button-orange-default-1;
       cursor: pointer;
-      width: @sizes-medium-1;
-      height: @sizes-medium-1;
+      width: @creamcolors-sizes-medium-1;
+      height: @creamcolors-sizes-medium-1;
       pointer-events: all;
       position: relative;
     }
@@ -96,18 +96,18 @@
       top: -28px;
       left: 0;
       transform: translateX(-50%);
-      @font-desktop-body-quatt();
+      @creamcolors-font-desktop-body-quatt();
       /* Commented this for demo because dark mode is not fully implemented and font has same color as background
-      color: var(--color-light-mode-text-black); */
+      color: var(--creamcolors-color-light-mode-text-black); */
     }
     &__right {
       position: absolute;
       top: -28px;
       right: 0;
       transform: translateX(-14px);
-      @font-desktop-body-quatt();
+      @creamcolors-font-desktop-body-quatt();
       /* Commented this for demo because dark mode is not fully implemented and font has same color as background
-      color: var(--color-light-mode-text-black); */
+      color: var(--creamcolors-color-light-mode-text-black); */
     }
   }
 }
