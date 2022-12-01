@@ -20,6 +20,7 @@ import Playground from './pages/Playground'
 
 // Utils
 import { path } from './constants'
+import { CartProvider } from './contexts/CartContext/CartProvider'
 
 function App() {
   const ThemeContext = React.createContext()
@@ -29,22 +30,22 @@ function App() {
   return (
     <div className={`App ${theme}`}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <Header />
+        <CartProvider>
+          <Header />
+          <Routes>
+            <Route path={path.LANDING} element={<Landing />} />
+            <Route path={path.TEST} element={<Test />} />
+            <Route path={path.PRODUCTS} element={<ProductList />} />
+            <Route path={path.CART} element={<Cart />} />
+            <Route path={path.DETAILS} element={<ProductDetails />} />
+            <Route path={path.CHECKOUT} element={<Checkout />} />
+            <Route path={path.NOTFOUND} element={<Page404 />} />
+            <Route path="/playground" element={<Playground />} />
+            <Route path="*" element={<Navigate replace to={path.NOTFOUND} />} />
+          </Routes>
 
-        <Routes>
-          <Route path={path.LANDING} element={<Landing />} />
-          <Route path={path.TEST} element={<Test />} />
-          <Route path={path.PRODUCTS} element={<ProductList />} />
-          <Route path={path.CART} element={<Cart />} />
-          <Route path={path.DETAILS} element={<ProductDetails />} />
-          <Route path={path.CHECKOUT} element={<Checkout />} />
-          <Route path={path.NOTFOUND} element={<Page404 />} />
-          <Route path="/playground" element={<Playground />} />
-
-          <Route path="*" element={<Navigate replace to={path.NOTFOUND} />} />
-        </Routes>
-
-        <Footer />
+          <Footer />
+        </CartProvider>
       </ThemeContext.Provider>
     </div>
   )

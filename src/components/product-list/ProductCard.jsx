@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import CartContext from '../../contexts/CartContext/CartProvider'
 
 // Assets
 import iconInfo from '../../assets/icons/status/info.png'
@@ -77,6 +79,8 @@ const ProductCard = ({
       )
     }
   }
+
+  const { addProduct, removeProduct, isSelected } = useContext(CartContext)
 
   return (
     <div className="wrapper">
@@ -172,10 +176,19 @@ const ProductCard = ({
             </div>
           </button>
 
-          <button className="add-to-cart-btn">
-            <IconCart />
-            Add to Cart
-          </button>
+          {isSelected(id) ? (
+            <button
+              className="add-to-cart-btn"
+              onClick={() => removeProduct(id)}>
+              <IconCart />
+              Remove
+            </button>
+          ) : (
+            <button className="add-to-cart-btn" onClick={() => addProduct(id)}>
+              <IconCart />
+              Add to Cart
+            </button>
+          )}
         </>
       )}
     </div>
