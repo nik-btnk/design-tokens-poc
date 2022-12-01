@@ -134,11 +134,32 @@
   }
 
   &__cart {
+    position: relative;
     display: none;
     height: @sizes-medium-2;
 
     @media @break-tablet {
       display: block;
+    }
+
+    &-bubble {
+      background-color: blue;
+      border-radius: 50%;
+      top: -7px;
+      right: -3px;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-brand-pink-4);
+      z-index: 2;
+    }
+
+    &-qty {
+      @font-mobile-body-quatt();
+      color: var(--color-brand-white);
     }
   }
 }
