@@ -48,6 +48,35 @@
     }
   }
 }
+
+.svg-ring-style-selector(@class) {
+  @class-name: ~'.@{class}';
+
+  &:has(@{class-name}) {
+    fill: ~'var(--creamcolors-color-flavor-@{class}-fill-front)';
+    stroke: ~'var(--creamcolors-color-flavor-@{class}-border)';
+  }
+}
+
+.product-card-bg-style-selector(@class) {
+  @class-name: ~'.@{class}';
+
+  &:has(@{class-name}) {
+    &:after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 0;
+      bottom: 0;
+      width: calc(100% - 10px);
+      height: calc(100% - 33px);
+      border-radius: 50%;
+      opacity: 0.2;
+      background-color: ~'var(--creamcolors-color-flavor-@{class}-border)';
+    }
+  }
+}
 // ____________________________________________________________________
 
 .wrapper {
@@ -62,6 +91,18 @@
   position: relative;
   cursor: pointer;
   width: 100%;
+
+  // Handle background color selection for product card
+  .product-card-bg-style-selector('clockwork-orange');
+  .product-card-bg-style-selector('red-planet');
+  .product-card-bg-style-selector('green-land');
+  .product-card-bg-style-selector('yellow-submarine');
+  .product-card-bg-style-selector('vivacious-violet');
+  .product-card-bg-style-selector('pink-panther');
+  .product-card-bg-style-selector('feeling-blue');
+  .product-card-bg-style-selector('blue-clue');
+  .product-card-bg-style-selector('gray-anatomy');
+  .product-card-bg-style-selector('puzzled-plum');
 
   &__wrapping-text {
     position: absolute;
@@ -85,55 +126,17 @@
       font-size: 14px;
     }
 
-    .clockwork-orange {
-      fill: var(--creamcolors-color-flavor-clockwork-orange-fill-front);
-      stroke: var(--creamcolors-color-flavor-clockwork-orange-border);
-    }
-
-    .red-planet {
-      fill: var(--creamcolors-color-flavor-red-planet-fill-front);
-      stroke: var(--creamcolors-color-flavor-red-planet-border);
-    }
-
-    .green-land {
-      fill: var(--creamcolors-color-flavor-green-land-fill-front);
-      stroke: var(--creamcolors-color-flavor-green-land-border);
-    }
-
-    .yellow-submarine {
-      fill: var(--creamcolors-color-flavor-yellow-submarine-fill-front);
-      stroke: var(--creamcolors-color-flavor-yellow-submarine-border);
-    }
-
-    .vivacious-violet {
-      fill: var(--creamcolors-color-flavor-vivacious-violet-fill-front);
-      stroke: var(--creamcolors-color-flavor-vivacious-violet-border);
-    }
-
-    .pink-panther {
-      fill: var(--creamcolors-color-flavor-pink-panther-fill-front);
-      stroke: var(--creamcolors-color-flavor-pink-panther-border);
-    }
-
-    .feeling-blue {
-      fill: var(--creamcolors-color-flavor-feeling-blue-fill-front);
-      stroke: var(--creamcolors-color-flavor-feeling-blue-border);
-    }
-
-    .blue-clue {
-      fill: var(--creamcolors-color-flavor-blue-clue-fill-front);
-      stroke: var(--creamcolors-color-flavor-blue-clue-border);
-    }
-
-    .gray-anatomy {
-      fill: var(--creamcolors-color-flavor-gray-anatomy-fill-front);
-      stroke: var(--creamcolors-color-flavor-gray-anatomy-border);
-    }
-
-    .puzzled-plum {
-      fill: var(--creamcolors-color-flavor-puzzled-plum-fill-front);
-      stroke: var(--creamcolors-color-flavor-puzzled-plum-border);
-    }
+    // Handling of styling for animated text color on details page.
+    .svg-ring-style-selector('clockwork-orange');
+    .svg-ring-style-selector('red-planet');
+    .svg-ring-style-selector('green-land');
+    .svg-ring-style-selector('yellow-submarine');
+    .svg-ring-style-selector('vivacious-violet');
+    .svg-ring-style-selector('pink-panther');
+    .svg-ring-style-selector('feeling-blue');
+    .svg-ring-style-selector('blue-clue');
+    .svg-ring-style-selector('gray-anatomy');
+    .svg-ring-style-selector('puzzled-plum');
   }
 
   &__background {
