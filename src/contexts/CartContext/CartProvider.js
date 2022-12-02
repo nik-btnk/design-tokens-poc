@@ -15,6 +15,7 @@ function CartProvider({ children }) {
   const [productsTotal, setProductsTotal] = useLocalStorage('productsTotal', 0)
   const [taxes, setTaxes] = useLocalStorage('taxes', 0)
   const [total, setTotal] = useLocalStorage('total', 0)
+  const [totalQty, setTotalQty] = useLocalStorage('totalQty', 0)
 
   const calcProductsTotal = () => {
     let total = 0
@@ -35,8 +36,17 @@ function CartProvider({ children }) {
     setTotal(newValue)
   }
 
+  const calcTotalQty = () => {
+    let sum = 0
+    selectedProducts.forEach((product) => {
+      sum += product.quantity
+    })
+    setTotalQty(sum)
+  }
+
   useEffect(() => {
     calcProductsTotal()
+    calcTotalQty()
   }, [selectedProducts])
 
   useEffect(() => {
@@ -126,7 +136,8 @@ function CartProvider({ children }) {
     calcProductTotal,
     productsTotal,
     taxes,
-    total
+    total,
+    totalQty
   }
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>

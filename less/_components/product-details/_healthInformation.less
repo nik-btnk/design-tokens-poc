@@ -1,19 +1,20 @@
 .health-info {
-  padding: @sizes-medium-3 @sizes-small-3;
-  background-color: var(--color-light-mode-background-page-orange);
-  border-top: @sizes-small-1 solid var(--color-light-mode-border-button-orange);
-  border-bottom: @sizes-small-1 solid
-    var(--color-light-mode-border-button-orange);
+  padding: @creamcolors-sizes-medium-3 @creamcolors-sizes-small-3;
+  background-color: var(--creamcolors-color-light-mode-background-page-orange);
+  border-top: @creamcolors-sizes-small-1 solid
+    var(--creamcolors-color-light-mode-border-button-orange);
+  border-bottom: @creamcolors-sizes-small-1 solid
+    var(--creamcolors-color-light-mode-border-button-orange);
   width: 100%;
 
   @media @break-tablet {
-    padding: @sizes-medium-3 @sizes-medium-2;
+    padding: @creamcolors-sizes-medium-3 @creamcolors-sizes-medium-2;
   }
 
   &__wrapper {
     display: grid;
     grid-auto-flow: row;
-    gap: @sizes-medium-1;
+    gap: @creamcolors-sizes-medium-1;
 
     @media @break-desktop {
       max-width: 1032px;
@@ -23,30 +24,30 @@
   }
 
   &__title {
-    @font-desktop-title-small-abril();
-    color: var(--color-light-mode-text-orange);
+    @creamcolors-font-desktop-title-small-abril();
+    color: var(--creamcolors-color-light-mode-text-orange);
 
     @media @break-tablet {
-      @font-desktop-title-medium-abril();
+      @creamcolors-font-desktop-title-medium-abril();
     }
   }
 
   &__calories-container {
     &--title {
-      @font-mobile-title-small-abril();
-      color: var(--color-light-mode-text-orange);
+      @creamcolors-font-mobile-title-small-abril();
+      color: var(--creamcolors-color-light-mode-text-orange);
 
       @media @break-tablet {
-        @font-desktop-title-small-abril();
+        @creamcolors-font-desktop-title-small-abril();
       }
     }
 
     &--calories {
-      @font-desktop-body-quatt();
-      color: var(--color-light-mode-text-black);
+      @creamcolors-font-desktop-body-quatt();
+      color: var(--creamcolors-color-light-mode-text-black);
 
       @media @break-tablet {
-        @font-desktop-title-small-quatt();
+        @creamcolors-font-desktop-title-small-quatt();
       }
     }
   }
@@ -64,25 +65,25 @@
       justify-items: center;
       display: grid;
       grid-auto-flow: row;
-      gap: @sizes-small-3;
-      margin: @sizes-small-3;
+      gap: @creamcolors-sizes-small-3;
+      margin: @creamcolors-sizes-small-3;
 
       .icon {
-        height: @sizes-medium-3;
+        height: @creamcolors-sizes-medium-3;
       }
 
       .name {
-        @font-mobile-title-small-abril();
-        color: var(--color-light-mode-text-black);
+        @creamcolors-font-mobile-title-small-abril();
+        color: var(--creamcolors-color-light-mode-text-black);
 
         @media @break-tablet {
-          @font-desktop-title-small-abril();
+          @creamcolors-font-desktop-title-small-abril();
         }
       }
 
       .description {
-        @font-desktop-caption-quatt();
-        color: var(--color-light-mode-text-black);
+        @creamcolors-font-desktop-caption-quatt();
+        color: var(--creamcolors-color-light-mode-text-black);
       }
     }
   }

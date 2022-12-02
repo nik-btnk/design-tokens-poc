@@ -1,27 +1,28 @@
 .product-info {
   width: 100%;
-  padding: @sizes-medium-3 @sizes-small-3;
+  padding: @creamcolors-sizes-medium-3 @creamcolors-sizes-small-3;
   margin: auto;
 
   @media screen and (min-width: @size-tablet) and (max-width: 700px) {
-    padding: @sizes-large-1 @sizes-medium-2 !important;
+    padding: @creamcolors-sizes-large-1 @creamcolors-sizes-medium-2 !important;
   }
 
   @media @break-tablet {
-    padding: @sizes-large-1 @sizes-medium-2 @sizes-large-1
-      calc(@sizes-medium-2 + @sizes-small-3);
+    padding: @creamcolors-sizes-large-1 @creamcolors-sizes-medium-2
+      @creamcolors-sizes-large-1
+      calc(@creamcolors-sizes-medium-2 + @creamcolors-sizes-small-3);
   }
 
   @media @break-desktop {
     max-width: 1032px;
-    padding: calc(@sizes-large-2 + @sizes-small-3) 0;
+    padding: calc(@creamcolors-sizes-large-2 + @creamcolors-sizes-small-3) 0;
   }
 
   &__title-mobile {
-    @font-desktop-title-small-abril();
-    color: var(--color-light-mode-text-black);
+    @creamcolors-font-desktop-title-small-abril();
+    color: var(--creamcolors-color-light-mode-text-black);
     display: block;
-    margin-bottom: @sizes-medium-1;
+    margin-bottom: @creamcolors-sizes-medium-1;
 
     @media @break-tablet {
       display: none;
@@ -30,7 +31,7 @@
 
   &__content-wrapper {
     display: grid;
-    column-gap: calc(@sizes-medium-1 + @sizes-small-3);
+    column-gap: calc(@creamcolors-sizes-medium-1 + @creamcolors-sizes-small-3);
 
     @media screen and (min-width: @size-tablet) and (max-width: 700px) {
       grid-auto-flow: row !important;
@@ -44,7 +45,7 @@
       max-width: 1032px;
       width: 100%;
       margin: auto;
-      column-gap: calc(@sizes-large-3 + @sizes-small-3);
+      column-gap: calc(@creamcolors-sizes-large-3 + @creamcolors-sizes-small-3);
       grid-template-rows: minmax(400px, auto);
     }
 
@@ -52,15 +53,23 @@
       @media screen and (min-width: @size-tablet) and (max-width: 700px) {
         display: flex;
       }
+
+      .product-card::after {
+        height: calc(100% - 8px);
+
+        @media @break-tablet {
+          display: none;
+        }
+      }
     }
 
     .product-card {
-      margin: 0 0 @sizes-medium-1 0;
+      margin: 0 0 @creamcolors-sizes-medium-1 0;
       pointer-events: none !important;
       width: 100%;
 
       @media screen and (min-width: @size-tablet) and (max-width: 700px) {
-        margin: auto auto @sizes-medium-2 auto !important;
+        margin: auto auto @creamcolors-sizes-medium-2 auto !important;
       }
 
       @media @break-tablet {
@@ -90,43 +99,43 @@
       }
 
       &.red-planet::before {
-        border-color: var(--color-flavor-red-planet-border);
+        border-color: var(--creamcolors-color-flavor-red-planet-border);
       }
 
       &.yellow-submarine::before {
-        border-color: var(--color-flavor-yellow-submarine-border);
+        border-color: var(--creamcolors-color-flavor-yellow-submarine-border);
       }
 
       &.clockwork-orange::before {
-        border-color: var(--color-flavor-clockwork-orange-border);
+        border-color: var(--creamcolors-color-flavor-clockwork-orange-border);
       }
 
       &.green-land::before {
-        border-color: var(--color-flavor-green-land-border);
+        border-color: var(--creamcolors-color-flavor-green-land-border);
       }
 
       &.puzzled-plum::before {
-        border-color: var(--color-flavor-puzzled-plum-border);
+        border-color: var(--creamcolors-color-flavor-puzzled-plum-border);
       }
 
       &.feeling-blue::before {
-        border-color: var(--color-flavor-feeling-blue-border);
+        border-color: var(--creamcolors-color-flavor-feeling-blue-border);
       }
 
       &.vivacious-violet::before {
-        border-color: var(--color-flavor-vivacious-violet-border);
+        border-color: var(--creamcolors-color-flavor-vivacious-violet-border);
       }
 
       &.blue-clue::before {
-        border-color: var(--color-flavor-blue-clue-border);
+        border-color: var(--creamcolors-color-flavor-blue-clue-border);
       }
 
       &.gray-anatomy::before {
-        border-color: var(--color-flavor-gray-anatomy-border);
+        border-color: var(--creamcolors-color-flavor-gray-anatomy-border);
       }
 
       &.pink-panther::before {
-        border-color: var(--color-flavor-pink-panther-border);
+        border-color: var(--creamcolors-color-flavor-pink-panther-border);
       }
 
       &__background {
@@ -149,43 +158,43 @@
         }
 
         &.red-planet::before {
-          color: var(--color-flavor-red-planet-border);
+          color: var(--creamcolors-color-flavor-red-planet-border);
         }
 
         &.yellow-submarine::before {
-          color: var(--color-flavor-yellow-submarine-border);
+          color: var(--creamcolors-color-flavor-yellow-submarine-border);
         }
 
         &.clockwork-orange::before {
-          color: var(--color-flavor-clockwork-orange-border);
+          color: var(--creamcolors-color-flavor-clockwork-orange-border);
         }
 
         &.green-land::before {
-          color: var(--color-flavor-green-land-border);
+          color: var(--creamcolors-color-flavor-green-land-border);
         }
 
         &.puzzled-plum::before {
-          color: var(--color-flavor-puzzled-plum-border);
+          color: var(--creamcolors-color-flavor-puzzled-plum-border);
         }
 
         &.feeling-blue::before {
-          color: var(--color-flavor-feeling-blue-border);
+          color: var(--creamcolors-color-flavor-feeling-blue-border);
         }
 
         &.vivacious-violet::before {
-          color: var(--color-flavor-vivacious-violet-border);
+          color: var(--creamcolors-color-flavor-vivacious-violet-border);
         }
 
         &.blue-clue::before {
-          color: var(--color-flavor-blue-clue-border);
+          color: var(--creamcolors-color-flavor-blue-clue-border);
         }
 
         &.gray-anatomy::before {
-          color: var(--color-flavor-gray-anatomy-border);
+          color: var(--creamcolors-color-flavor-gray-anatomy-border);
         }
 
         &.pink-panther::before {
-          color: var(--color-flavor-pink-panther-border);
+          color: var(--creamcolors-color-flavor-pink-panther-border);
         }
       }
 
@@ -198,7 +207,7 @@
 
       &__name {
         @media @break-tablet {
-          font-size: @sizes-medium-2 !important;
+          font-size: @creamcolors-sizes-medium-2 !important;
         }
 
         @media @break-desktop {
@@ -232,66 +241,68 @@
 
   &__content {
     &--title {
-      @font-desktop-title-small-abril();
-      color: var(--color-light-mode-text-black);
+      @creamcolors-font-desktop-title-small-abril();
+      color: var(--creamcolors-color-light-mode-text-black);
       display: none;
-      margin-bottom: @sizes-medium-1;
+      margin-bottom: @creamcolors-sizes-medium-1;
 
       @media @break-tablet {
-        @font-desktop-title-medium-abril();
-        margin-bottom: @sizes-small-3;
+        @creamcolors-font-desktop-title-medium-abril();
+        margin-bottom: @creamcolors-sizes-small-3;
         display: block;
       }
     }
 
     &--price {
-      @font-desktop-title-medium-abril();
-      color: var(--color-light-mode-text-pink);
+      @creamcolors-font-desktop-title-medium-abril();
+      color: var(--creamcolors-color-light-mode-text-pink);
       display: none;
-      margin-top: @sizes-medium-2;
+      margin-top: @creamcolors-sizes-medium-2;
 
       @media @break-tablet {
         display: block;
       }
 
       @media @break-desktop {
-        @font-desktop-title-large-abril();
+        @creamcolors-font-desktop-title-large-abril();
       }
     }
 
     &--description {
-      @font-desktop-body-quatt();
-      color: var(--color-light-mode-text-black);
+      @creamcolors-font-desktop-body-quatt();
+      color: var(--creamcolors-color-light-mode-text-black);
     }
 
     &--cta {
       width: 100%;
       height: 40px;
-      border-radius: @sizes-small-3;
-      background-color: var(--color-light-mode-background-button-blue);
-      border: 2px solid var(--color-light-mode-border-button-blue);
-      box-shadow: @effect-shadow-button-blue-default-0;
-      @font-mobile-title-small-quatt();
+      border-radius: @creamcolors-sizes-small-3;
+      background-color: var(
+        --creamcolors-color-light-mode-background-button-blue
+      );
+      border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
+      box-shadow: @creamcolors-effect-shadow-button-blue-default-0;
+      @creamcolors-font-mobile-title-small-quatt();
       font-weight: 700;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      margin: @sizes-medium-1 0 @sizes-medium-3 0;
+      margin: @creamcolors-sizes-medium-1 0 @creamcolors-sizes-medium-3 0;
 
       @media @break-tablet {
         width: 180px;
-        margin: @sizes-medium-2 0 0 0;
+        margin: @creamcolors-sizes-medium-2 0 0 0;
       }
 
       &:active {
-        border: 2px solid var(--color-brand-blue-4);
-        box-shadow: @effect-shadow-button-blue-active;
+        border: 2px solid var(--creamcolors-color-brand-blue-4);
+        box-shadow: @creamcolors-effect-shadow-button-blue-active;
       }
 
       svg {
         transform: scale(0.8);
-        margin-right: @sizes-small-2;
+        margin-right: @creamcolors-sizes-small-2;
 
         path:first-child {
           filter: invert(69%) sepia(15%) saturate(1615%) hue-rotate(130deg)
