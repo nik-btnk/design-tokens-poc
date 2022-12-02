@@ -51,14 +51,22 @@ function CartProvider({ children }) {
     const newProduct = products.find((product) => product.id === id)
 
     if (newProduct === undefined) return
-
-    setSelectedProducts([
-      ...selectedProducts,
-      {
-        ...newProduct,
-        quantity: newProduct.quantity === 0 ? 1 : 0
-      }
-    ])
+    const updateState = () =>
+      selectedProducts.map((obj) => {
+        if (obj.id === newProduct.id) {
+          return { ...obj, quantity: ++obj.quantity }
+        }
+        return obj
+      })
+    selectedProducts.some((product) => product.id == newProduct.id)
+      ? setSelectedProducts(updateState)
+      : setSelectedProducts([
+          ...selectedProducts,
+          {
+            ...newProduct,
+            quantity: newProduct.quantity === 0 ? 1 : 0
+          }
+        ])
   }
 
   const removeProduct = (id) => {
