@@ -12,11 +12,11 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-light-mode-background-page-white);
+  background-color: var(--creamcolors-color-light-mode-background-page-white);
 
   @media @break-tablet {
     h2 {
-      margin-bottom: @sizes-medium-3;
+      margin-bottom: @creamcolors-sizes-medium-3;
     }
   }
 
@@ -35,7 +35,7 @@ html {
     overflow: visible;
     display: block;
     animation: spin 30s linear infinite;
-    fill: var(--color-brand-orange-3);
+    fill: var(--creamcolors-color-brand-orange-3);
 
     @keyframes spin {
       100% {
@@ -45,13 +45,14 @@ html {
     }
 
     text {
-      @font-desktop-title-medium-abril();
+      @creamcolors-font-desktop-title-medium-abril();
       font-size: 16px;
     }
   }
 
   &__hero {
-    padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
+    padding: @creamcolors-sizes-medium-3 @creamcolors-sizes-small-3
+      @creamcolors-sizes-large-2 @creamcolors-sizes-small-3;
 
     &--banner {
       display: flex;
@@ -80,7 +81,8 @@ html {
   }
 
   &__presentation {
-    padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
+    padding: @creamcolors-sizes-medium-3 @creamcolors-sizes-small-3
+      @creamcolors-sizes-large-2 @creamcolors-sizes-small-3;
 
     &--wrapper {
       display: flex;
@@ -94,17 +96,17 @@ html {
       }
     }
     &--title {
-      @font-mobile-title-medium-abril();
+      @creamcolors-font-mobile-title-medium-abril();
       margin: 0;
     }
 
     &--description {
-      @font-mobile-title-small-quatt();
-      line-height: @sizes-medium-1;
+      @creamcolors-font-mobile-title-small-quatt();
+      line-height: @creamcolors-sizes-medium-1;
     }
     &--mascot {
       margin-left: auto;
-      margin-top: @sizes-medium-3;
+      margin-top: @creamcolors-sizes-medium-3;
       img {
         width: 136px;
         height: 122px;
@@ -123,7 +125,8 @@ html {
   }
 
   &__find-new-color {
-    padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
+    padding: @creamcolors-sizes-medium-3 @creamcolors-sizes-small-3
+      @creamcolors-sizes-large-2 @creamcolors-sizes-small-3;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -135,7 +138,7 @@ html {
     }
     &--title {
       width: 70%;
-      @font-mobile-title-large-abril();
+      @creamcolors-font-mobile-title-large-abril();
       text-align: center;
       margin-top: 0;
     }
@@ -164,71 +167,85 @@ html {
   .wrapper {
     &:nth-child(3n + 1) {
       .product-info-btn {
-        background-color: var(--color-light-mode-background-button-blue);
-        border: 2px solid var(--color-light-mode-border-button-blue);
-        box-shadow: @effect-shadow-button-blue-default-0,
-          @effect-shadow-button-blue-default-1;
+        background-color: var(
+          --creamcolors-color-light-mode-background-button-blue
+        );
+        border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
+        box-shadow: @creamcolors-effect-shadow-button-blue-default-0,
+          @creamcolors-effect-shadow-button-blue-default-1;
 
         &__info-icon-container {
-          background-color: var(--color-brand-blue-3);
+          background-color: var(--creamcolors-color-brand-blue-3);
         }
       }
 
       .add-to-cart-btn {
-        background-color: var(--color-light-mode-background-button-blue);
-        border: 2px solid var(--color-light-mode-border-button-blue);
-        box-shadow: @effect-shadow-button-blue-default-0,
-          @effect-shadow-button-blue-default-1;
+        background-color: var(
+          --creamcolors-color-light-mode-background-button-blue
+        );
+        border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
+        box-shadow: @creamcolors-effect-shadow-button-blue-default-0,
+          @creamcolors-effect-shadow-button-blue-default-1;
 
         svg path:first-child {
-          fill: var(--color-brand-blue-3);
+          fill: var(--creamcolors-color-brand-blue-3);
         }
       }
     }
 
     &:nth-child(3n + 2) {
       .product-info-btn {
-        background-color: var(--color-light-mode-background-button-pink);
-        border: 2px solid var(--color-light-mode-border-button-pink);
-        box-shadow: @effect-shadow-button-pink-default-0,
-          @effect-shadow-button-pink-default-1;
+        background-color: var(
+          --creamcolors-color-light-mode-background-button-pink
+        );
+        border: 2px solid var(--creamcolors-color-light-mode-border-button-pink);
+        box-shadow: @creamcolors-effect-shadow-button-pink-default-0,
+          @creamcolors-effect-shadow-button-pink-default-1;
 
         &__info-icon-container {
-          background-color: var(--color-brand-pink-3);
+          background-color: var(--creamcolors-color-brand-pink-3);
         }
       }
 
       .add-to-cart-btn {
-        background-color: var(--color-light-mode-background-button-pink);
-        border: 2px solid var(--color-light-mode-border-button-pink);
-        box-shadow: @effect-shadow-button-pink-default-0,
-          @effect-shadow-button-pink-default-1;
+        background-color: var(
+          --creamcolors-color-light-mode-background-button-pink
+        );
+        border: 2px solid var(--creamcolors-color-light-mode-border-button-pink);
+        box-shadow: @creamcolors-effect-shadow-button-pink-default-0,
+          @creamcolors-effect-shadow-button-pink-default-1;
 
         svg path:first-child {
-          fill: var(--color-brand-pink-3);
+          fill: var(--creamcolors-color-brand-pink-3);
         }
       }
     }
 
     &:nth-child(3n + 3) {
       .product-info-btn {
-        background-color: var(--color-light-mode-background-button-green);
-        border: 2px solid var(--color-light-mode-border-button-green);
-        box-shadow: @effect-shadow-button-green-default-0,
-          @effect-shadow-button-green-default-1;
+        background-color: var(
+          --creamcolors-color-light-mode-background-button-green
+        );
+        border: 2px solid
+          var(--creamcolors-color-light-mode-border-button-green);
+        box-shadow: @creamcolors-effect-shadow-button-green-default-0,
+          @creamcolors-effect-shadow-button-green-default-1;
 
         &__info-icon-container {
-          background-color: var(--color-brand-green-3);
+          background-color: var(--creamcolors-color-brand-green-3);
         }
       }
       .add-to-cart-btn {
-        background-color: var(--color-light-mode-background-button-green);
-        border: 2px solid var(--color-light-mode-border-button-green);
-        box-shadow: @effect-shadow-button-green-default-0,
-          @effect-shadow-button-green-default-1;
+        background-color: var(
+          --creamcolors-color-light-mode-background-button-green
+        );
+        border: 2px solid
+          var(--creamcolors-color-light-mode-border-button-green);
+        box-shadow: @creamcolors-effect-shadow-button-green-default-0,
+          @creamcolors-effect-shadow-button-green-default-1;
 
         svg path:first-child {
-          fill: var(--color-brand-green-3);
+          fill: var(--creamcolors-color-brand-green-3);
         }
       }
     }

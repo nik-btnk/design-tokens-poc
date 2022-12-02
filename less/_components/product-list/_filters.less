@@ -9,7 +9,7 @@
   padding: 0 20px 0 16px;
 
   @media @break-tablet {
-    padding: 36px @sizes-medium-2 0 @sizes-medium-2;
+    padding: 36px @creamcolors-sizes-medium-2 0 @creamcolors-sizes-medium-2;
     display: inline-flex;
   }
 
@@ -21,7 +21,7 @@
   }
 
   &__title {
-    color: var(--color-light-mode-text-black);
+    color: var(--creamcolors-color-light-mode-text-black);
 
     @media @break-tablet {
       display: none;
@@ -37,7 +37,7 @@
   }
 
   h4 {
-    @font-desktop-title-small-abril();
+    @creamcolors-font-desktop-title-small-abril();
     margin: 0;
   }
 
@@ -46,14 +46,14 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    gap: @sizes-medium-1;
+    gap: @creamcolors-sizes-medium-1;
 
     @media @break-tablet {
       display: flex;
     }
 
     h4 {
-      color: var(--color-light-mode-text-black);
+      color: var(--creamcolors-color-light-mode-text-black);
     }
   }
 
@@ -76,7 +76,7 @@
     position: absolute;
     cursor: pointer;
     top: 0;
-    right: @sizes-small-3;
+    right: @creamcolors-sizes-small-3;
 
     @media @break-tablet {
       display: none;
@@ -84,11 +84,11 @@
   }
 
   .mobile-divider {
-    background-color: var(--color-brand-blue-3);
-    box-shadow: @effect-shadow-button-blue-default-0;
+    background-color: var(--creamcolors-color-brand-blue-3);
+    box-shadow: @creamcolors-effect-shadow-button-blue-default-0;
     position: absolute;
     left: 0;
-    bottom: -@sizes-small-3;
+    bottom: -@creamcolors-sizes-small-3;
     z-index: 0;
     height: 2px;
     width: 100%;
@@ -105,22 +105,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: @effect-shadow-button-blue-default-0;
-    background-color: var(--color-light-mode-background-page-white);
-    border: 1px solid var(--color-light-mode-border-button-blue);
-    border-right: 3px solid var(--color-light-mode-border-button-blue);
-    border-left: 3px solid var(--color-light-mode-border-button-blue);
+    box-shadow: @creamcolors-effect-shadow-button-blue-default-0;
+    background-color: var(--creamcolors-color-light-mode-background-page-white);
+    border: 1px solid var(--creamcolors-color-light-mode-border-button-blue);
+    border-right: 3px solid
+      var(--creamcolors-color-light-mode-border-button-blue);
+    border-left: 3px solid
+      var(--creamcolors-color-light-mode-border-button-blue);
 
     @media @break-tablet {
       display: none;
     }
 
     #apply-filters-btn {
-      @font-desktop-body-quatt();
+      @creamcolors-font-desktop-body-quatt();
       font-weight: 700;
       height: 38px;
       width: 80%;
-      border-radius: @sizes-small-3;
+      border-radius: @creamcolors-sizes-small-3;
     }
   }
 }

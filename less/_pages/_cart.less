@@ -3,8 +3,8 @@
 @import '../_tokens/_cream_colors/_font-mixins';
 
 .cart {
-  padding-bottom: @sizes-large-1;
-  background-color: var(--color-light-mode-background-page-white);
+  padding-bottom: @creamcolors-sizes-large-1;
+  background-color: var(--creamcolors-color-light-mode-background-page-white);
 
   &__wrapper {
     @media @break-tablet {
@@ -27,23 +27,24 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: @sizes-small-3;
-    padding: @sizes-small-3 @sizes-small-3 @sizes-medium-1;
-    color: var(--color-light-mode-text-orange);
+    gap: @creamcolors-sizes-small-3;
+    padding: @creamcolors-sizes-small-3 @creamcolors-sizes-small-3
+      @creamcolors-sizes-medium-1;
+    color: var(--creamcolors-color-light-mode-text-orange);
 
     &--text {
-      @font-mobile-title-medium-abril();
+      @creamcolors-font-mobile-title-medium-abril();
     }
 
     &--price {
-      @font-mobile-title-large-abril();
+      @creamcolors-font-mobile-title-large-abril();
     }
 
     @media @break-tablet {
       order: 2;
       width: 80%;
       max-width: 530px;
-      margin: 0 auto @sizes-medium-3;
+      margin: 0 auto @creamcolors-sizes-medium-3;
     }
 
     @media @break-desktop {
@@ -64,11 +65,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: @sizes-medium-1;
+    margin-bottom: @creamcolors-sizes-medium-1;
 
     @media @break-tablet {
       order: 4;
-      margin-top: @sizes-medium-3;
+      margin-top: @creamcolors-sizes-medium-3;
     }
 
     @media @break-desktop {
@@ -80,20 +81,22 @@
       width: 90%;
       height: 38px;
       cursor: pointer;
-      border-radius: @sizes-small-3;
-      @font-mobile-title-small-quatt();
+      border-radius: @creamcolors-sizes-small-3;
+      @creamcolors-font-mobile-title-small-quatt();
       font-weight: 700;
-      background-color: var(--color-light-mode-background-button-blue);
-      border: 2px solid var(--color-light-mode-border-button-blue);
-      box-shadow: @effect-shadow-button-blue-default-0,
-        @effect-shadow-button-blue-default-1;
+      background-color: var(
+        --creamcolors-color-light-mode-background-button-blue
+      );
+      border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
+      box-shadow: @creamcolors-effect-shadow-button-blue-default-0,
+        @creamcolors-effect-shadow-button-blue-default-1;
 
       &:hover {
-        box-shadow: @effect-shadow-button-blue-hover;
+        box-shadow: @creamcolors-effect-shadow-button-blue-hover;
       }
 
       &:active {
-        box-shadow: @effect-shadow-button-blue-active;
+        box-shadow: @creamcolors-effect-shadow-button-blue-active;
       }
 
       @media @break-tablet {

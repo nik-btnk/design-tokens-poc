@@ -10,7 +10,8 @@ const cream_colors = {
     less: {
       transformGroup: ['less'],
       buildPath: 'less/_tokens/',
-      files: buildCreamColorsTokens()
+      files: buildCreamColorsTokens(),
+      prefix: 'creamcolors'
     }
   }
 }

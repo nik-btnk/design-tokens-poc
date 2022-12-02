@@ -1,19 +1,21 @@
 .popular-colors {
   &__wrapper {
-    padding: @sizes-medium-3 @sizes-small-3 @sizes-large-2 @sizes-small-3;
+    padding: @creamcolors-sizes-medium-3 @creamcolors-sizes-small-3
+      @creamcolors-sizes-large-2 @creamcolors-sizes-small-3;
 
     @media @break-tablet {
-      padding: @sizes-large-1 @sizes-medium-2 96px @sizes-medium-2;
+      padding: @creamcolors-sizes-large-1 @creamcolors-sizes-medium-2 96px
+        @creamcolors-sizes-medium-2;
     }
   }
 
   &__title {
-    @font-mobile-title-large-abril();
+    @creamcolors-font-mobile-title-large-abril();
     text-align: center;
   }
 
   &__container {
-    padding: @sizes-small-2;
+    padding: @creamcolors-sizes-small-2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,23 +46,25 @@
 
     button {
       cursor: pointer;
-      margin-top: @sizes-medium-2;
+      margin-top: @creamcolors-sizes-medium-2;
       height: 38px;
       width: 100%;
-      border-radius: @sizes-small-3;
-      @font-mobile-title-small-quatt();
+      border-radius: @creamcolors-sizes-small-3;
+      @creamcolors-font-mobile-title-small-quatt();
       font-weight: 700;
-      background-color: var(--color-light-mode-background-button-orange);
-      border: 2px solid var(--color-light-mode-border-button-orange);
-      box-shadow: @effect-shadow-button-orange-default-0,
-        @effect-shadow-button-orange-default-1;
+      background-color: var(
+        --creamcolors-color-light-mode-background-button-orange
+      );
+      border: 2px solid var(--creamcolors-color-light-mode-border-button-orange);
+      box-shadow: @creamcolors-effect-shadow-button-orange-default-0,
+        @creamcolors-effect-shadow-button-orange-default-1;
 
       &:hover {
-        box-shadow: @effect-shadow-button-orange-hover;
+        box-shadow: @creamcolors-effect-shadow-button-orange-hover;
       }
 
       &:active {
-        box-shadow: @effect-shadow-button-orange-active;
+        box-shadow: @creamcolors-effect-shadow-button-orange-active;
       }
 
       @media @break-tablet {
