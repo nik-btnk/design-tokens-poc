@@ -85,7 +85,7 @@ function CartProvider({ children }) {
     ])
   }
 
-  const isSelected = (id) => {
+  const isAdded = (id) => {
     return selectedProducts.some((product) => product.id === id)
   }
 
@@ -130,7 +130,7 @@ function CartProvider({ children }) {
     selectedProducts,
     addProduct,
     removeProduct,
-    isSelected,
+    isAdded,
     addQty,
     removeQty,
     calcProductTotal,

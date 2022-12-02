@@ -1,19 +1,13 @@
 // Modules
 import React from 'react'
-import { useContext } from 'react'
-import CartContext from '../../contexts/CartContext/CartProvider'
 
 // Components
 import ProductCard from '../product-list/ProductCard'
-
-// Assets
-import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
+import CartButton from '../cart/CartButton'
 
 const ProductInfo = ({
   product: { name, description, price, subtitle, id }
 }) => {
-  const { addProduct, removeProduct, isSelected } = useContext(CartContext)
-
   return (
     <div className="product-info">
       <div className="product-info__content-wrapper">
@@ -33,21 +27,9 @@ const ProductInfo = ({
           <span className="product-info__content--price">{`$${price.toFixed(
             2
           )}`}</span>
-          {isSelected(id) ? (
-            <button
-              className="product-info__content--cta"
-              onClick={() => removeProduct(id)}>
-              <IconCart />
-              Remove
-            </button>
-          ) : (
-            <button
-              className="product-info__content--cta"
-              onClick={() => addProduct(id)}>
-              <IconCart />
-              Add to Cart
-            </button>
-          )}
+          <div className="product-info__content--cta">
+            <CartButton id={id} />
+          </div>
         </div>
       </div>
     </div>
