@@ -20,11 +20,17 @@ const AddToCartBtn = ({ id }) => {
       setIsAdded(true)
     }, 1200)
   }
+
   return (
     <>
       {isAdded ? (
         <button className="add-to-cart-btn">
-          <QuantitySelector id={id} quantity={myProduct.quantity} />
+          <QuantitySelector
+            id={id}
+            quantity={myProduct?.quantity}
+            setIsAdded={setIsAdded}
+            setBtnDisplay={setBtnDisplay}
+          />
         </button>
       ) : (
         <>
