@@ -28,7 +28,24 @@
     margin-right: @creamcolors-sizes-small-2;
 
     & path:first-child {
-        fill: var(--creamcolors-color-brand-orange-3);
-      }
+      fill: var(--creamcolors-color-brand-orange-3);
+    }
+  }
+}
+
+.added span,
+.added svg {
+  animation: appear 1.2s ease-in;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
   }
 }
