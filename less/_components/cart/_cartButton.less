@@ -33,8 +33,10 @@
   }
 }
 
-.added span,
-.added svg {
+.added {
+  display: flex;
+  align-items: center;
+  pointer-events: none;
   animation: appear 1.2s ease-in;
 }
 
@@ -45,7 +47,7 @@
   50% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 }

@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import CartContext from '../../contexts/CartContext/CartProvider'
 import QuantitySelector from './QuantitySelector'
 
-//Assets
+// Assets
 import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
 import { ReactComponent as IconCheck } from '../../assets/icons/status/Icon=check.svg'
 
@@ -12,7 +12,8 @@ const AddToCartBtn = ({ id }) => {
   const myProduct = selectedProducts.find((product) => product.id == id)
   const [isAdded, setIsAdded] = useState(myProduct?.quantity > 0)
   const [btnDisplay, setBtnDisplay] = useState(false)
-  const handleClick = () => {
+
+  const handleAddToCart = () => {
     addProduct(id)
     setBtnDisplay((prev) => !prev)
 
@@ -22,35 +23,32 @@ const AddToCartBtn = ({ id }) => {
   }
 
   return (
-    <>
+    <button
+      className="add-to-cart-btn"
+      onClick={!isAdded && !btnDisplay ? handleAddToCart : undefined}>
       {isAdded ? (
-        <button className="add-to-cart-btn">
-          <QuantitySelector
-            id={id}
-            quantity={myProduct?.quantity}
-            setIsAdded={setIsAdded}
-            setBtnDisplay={setBtnDisplay}
-          />
-        </button>
+        <QuantitySelector
+          id={id}
+          quantity={myProduct?.quantity}
+          setIsAdded={setIsAdded}
+          setBtnDisplay={setBtnDisplay}
+        />
       ) : (
         <>
-          <button
-            className="add-to-cart-btn added"
-            style={btnDisplay ? { display: 'flex' } : { display: 'none' }}>
-            <IconCheck />
-            <span>Added</span>
-          </button>
-
-          <button
-            className="add-to-cart-btn"
-            onClick={handleClick}
-            style={btnDisplay ? { display: 'none' } : { display: 'flex' }}>
-            <IconCart />
-            Add to Cart
-          </button>
+          {btnDisplay ? (
+            <div className="added">
+              <IconCheck />
+              <span>Added</span>
+            </div>
+          ) : (
+            <>
+              <IconCart />
+              Add to Cart
+            </>
+          )}
         </>
       )}
-    </>
+    </button>
   )
 }
 

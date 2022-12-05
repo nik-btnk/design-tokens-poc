@@ -116,11 +116,11 @@
 .test-brand-1 {
   --test-brand-1-color-red: #ff0000;
 }
-.test-brand-3 {
-  --test-brand-3-color-blue: #0000ff;
-}
 .test-brand-2 {
   --test-brand-2-color-green: #00ff00;
+}
+.test-brand-3 {
+  --test-brand-3-color-blue: #0000ff;
 }
 @font-face {
   font-family: 'Quattrocento Sans';
@@ -1162,6 +1162,97 @@ html {
     display: block;
   }
 }
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.button::before {
+  content: '+';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: var(--creamcolors-color-brand-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.button-blue {
+  background-color: var(--creamcolors-color-brand-blue-0);
+  border: solid 4px var(--creamcolors-color-brand-blue-2);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:hover {
+  border: 6.4px solid var(--creamcolors-color-brand-blue-2);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:active {
+  border: solid 4px var(--creamcolors-color-brand-blue-4);
+}
+.button-blue::before {
+  background-color: var(--creamcolors-color-brand-blue-3);
+}
+.button-pink {
+  background-color: var(--creamcolors-color-brand-pink-0);
+  border: solid 4px var(--creamcolors-color-brand-pink-2);
+  box-shadow: 0 4px 4px 0 #ff878280;
+}
+.button-pink:hover {
+  border: 6.4px solid var(--creamcolors-color-brand-pink-2);
+}
+.button-pink:active {
+  border: solid 4px var(--creamcolors-color-brand-pink-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-pink::before {
+  background-color: var(--creamcolors-color-brand-pink-3);
+}
+.button-green {
+  background-color: var(--creamcolors-color-brand-green-0);
+  border: solid 4px var(--creamcolors-color-brand-green-2);
+  box-shadow: 0 4px 4px 0 #5ecc37ff;
+}
+.button-green:hover {
+  border: 6.4px solid var(--creamcolors-color-brand-green-2);
+}
+.button-green:active {
+  border: solid 4px var(--creamcolors-color-brand-green-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-green::before {
+  background-color: var(--creamcolors-color-brand-green-3);
+}
+.button-orange {
+  background-color: var(--creamcolors-color-brand-orange-0);
+  border: solid 4px var(--creamcolors-color-brand-orange-2);
+  box-shadow: 0 4px 4px 0 #ed9f3a80;
+}
+.button-orange:hover {
+  border: 6.4px solid var(--creamcolors-color-brand-orange-2);
+}
+.button-orange:active {
+  border: solid 4px var(--creamcolors-color-brand-orange-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-orange::before {
+  background-color: var(--creamcolors-color-brand-orange-3);
+}
 .add-to-cart-btn {
   width: 100%;
   height: 40px;
@@ -1198,8 +1289,10 @@ html {
 .add-to-cart-btn svg path:first-child {
   fill: var(--creamcolors-color-brand-orange-3);
 }
-.added span,
-.added svg {
+.added {
+  display: flex;
+  align-items: center;
+  pointer-events: none;
   animation: appear 1.2s ease-in;
 }
 @keyframes appear {
@@ -2783,97 +2876,6 @@ html {
   background-color: var(--creamcolors-color-brand-blue-0);
   border: 1px solid var(--creamcolors-color-brand-blue-3);
   box-shadow: 0 4px 4px 0 #37ccc980, 0 4px 4px 0 #2d313440;
-}
-.button {
-  height: 50px;
-  min-width: 148px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-.button::before {
-  content: '+';
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 12px;
-  color: var(--creamcolors-color-brand-black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  font-weight: 700;
-}
-.button-blue {
-  background-color: var(--creamcolors-color-brand-blue-0);
-  border: solid 4px var(--creamcolors-color-brand-blue-2);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:hover {
-  border: 6.4px solid var(--creamcolors-color-brand-blue-2);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:active {
-  border: solid 4px var(--creamcolors-color-brand-blue-4);
-}
-.button-blue::before {
-  background-color: var(--creamcolors-color-brand-blue-3);
-}
-.button-pink {
-  background-color: var(--creamcolors-color-brand-pink-0);
-  border: solid 4px var(--creamcolors-color-brand-pink-2);
-  box-shadow: 0 4px 4px 0 #ff878280;
-}
-.button-pink:hover {
-  border: 6.4px solid var(--creamcolors-color-brand-pink-2);
-}
-.button-pink:active {
-  border: solid 4px var(--creamcolors-color-brand-pink-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-pink::before {
-  background-color: var(--creamcolors-color-brand-pink-3);
-}
-.button-green {
-  background-color: var(--creamcolors-color-brand-green-0);
-  border: solid 4px var(--creamcolors-color-brand-green-2);
-  box-shadow: 0 4px 4px 0 #5ecc37ff;
-}
-.button-green:hover {
-  border: 6.4px solid var(--creamcolors-color-brand-green-2);
-}
-.button-green:active {
-  border: solid 4px var(--creamcolors-color-brand-green-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-green::before {
-  background-color: var(--creamcolors-color-brand-green-3);
-}
-.button-orange {
-  background-color: var(--creamcolors-color-brand-orange-0);
-  border: solid 4px var(--creamcolors-color-brand-orange-2);
-  box-shadow: 0 4px 4px 0 #ed9f3a80;
-}
-.button-orange:hover {
-  border: 6.4px solid var(--creamcolors-color-brand-orange-2);
-}
-.button-orange:active {
-  border: solid 4px var(--creamcolors-color-brand-orange-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-orange::before {
-  background-color: var(--creamcolors-color-brand-orange-3);
 }
 .health-info {
   padding: 40px 16px;
