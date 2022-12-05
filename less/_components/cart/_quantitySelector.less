@@ -1,0 +1,50 @@
+.quantity-selector {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: @creamcolors-sizes-small-2;
+
+  &__remove-qty,
+  &__add-qty {
+    cursor: pointer;
+  }
+
+  &__txt {
+    display: none;
+    width: 52px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    @creamcolors-font-mobile-body-quatt();
+  }
+
+  &__qty-bg {
+    background-color: var(--creamcolors-color-brand-orange-0);
+    border: 1px solid var(--creamcolors-color-brand-orange-3);
+    border-radius: @creamcolors-sizes-small-2;
+    height: 30px;
+    width: 49px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: @creamcolors-effect-shadow-button-orange-default-0,
+      @creamcolors-effect-shadow-button-orange-default-1;
+  }
+
+  &__qty-txt {
+    @creamcolors-font-desktop-body-quatt();
+  }
+
+  svg {
+    margin-right: 0px;
+  }
+
+  &__bin{
+    width: 32px;
+  }
+}

@@ -225,37 +225,38 @@
     @media @break-tablet-custom {
       align-self: flex-start;
     }
-  }
 
-  &__add-to-cart-btn {
-    width: 100%;
-    height: 40px;
-    border-radius: @creamcolors-sizes-small-3;
-    background-color: var(
-      --creamcolors-color-light-mode-background-button-blue
-    );
-    border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
-    box-shadow: @creamcolors-effect-shadow-button-blue-default-0;
-    @creamcolors-font-mobile-title-small-quatt();
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: @creamcolors-sizes-small-2;
-    cursor: pointer;
-    margin: auto;
+    .add-to-cart-btn {
+      width: 100%;
+      background-color: var(
+        --creamcolors-color-light-mode-background-button-blue
+      );
+      border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
+      box-shadow: @creamcolors-effect-shadow-button-blue-default-0;
 
-    &:active {
-      border: 2px solid var(--creamcolors-color-brand-blue-4);
-      box-shadow: @creamcolors-effect-shadow-button-blue-active;
+      &:active {
+        border: 2px solid var(--creamcolors-color-brand-blue-4);
+        box-shadow: @creamcolors-effect-shadow-button-blue-active;
+      }
+
+      svg {
+        path:first-child {
+          fill: var(--creamcolors-color-brand-blue-3);
+        }
+      }
+
+      @media @break-tablet-custom {
+        width: 148px;
+      }
     }
 
-    img {
-      height: 24px;
-    }
-
-    @media @break-tablet-custom {
-      width: 148px;
+    .quantity-selector {
+      &__qty-bg {
+        background-color: var(--creamcolors-color-brand-blue-0);
+        border: 1px solid var(--creamcolors-color-brand-blue-3);
+        box-shadow: @creamcolors-effect-shadow-button-blue-default-0,
+          @creamcolors-effect-shadow-button-blue-default-1;
+      }
     }
   }
 }

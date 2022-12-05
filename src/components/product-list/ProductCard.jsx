@@ -3,15 +3,13 @@ import React, { useState } from 'react'
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useContext } from 'react'
-import CartContext from '../../contexts/CartContext/CartProvider'
+import CartButton from '../cart/CartButton'
 
 // Assets
 import iconInfo from '../../assets/icons/status/info.png'
 import iconCross from '../../assets/icons/status/cross.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
 import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
-import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
 
 const ProductCard = ({
   name,
@@ -79,8 +77,6 @@ const ProductCard = ({
       )
     }
   }
-
-  const { addProduct, removeProduct, isSelected } = useContext(CartContext)
 
   return (
     <div className="wrapper">
@@ -175,20 +171,7 @@ const ProductCard = ({
               <img src={isInfo ? iconCross : iconInfo} alt="" />
             </div>
           </button>
-
-          {isSelected(id) ? (
-            <button
-              className="add-to-cart-btn"
-              onClick={() => removeProduct(id)}>
-              <IconCart />
-              Remove
-            </button>
-          ) : (
-            <button className="add-to-cart-btn" onClick={() => addProduct(id)}>
-              <IconCart />
-              Add to Cart
-            </button>
-          )}
+          <CartButton id={id} />
         </>
       )}
     </div>

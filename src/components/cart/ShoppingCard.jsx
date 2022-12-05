@@ -4,8 +4,7 @@ import { useContext } from 'react'
 
 //Assets
 import iconCross from '../../assets/icons/control/icon-x.png'
-import iconMinus from '../../assets/icons/control/icon-minus.png'
-import iconPlus from '../../assets/icons/control/Icon=circle-plus.png'
+import QuantitySelector from './QuantitySelector.jsx'
 
 const ShoppingCard = ({
   product: { name, price, id, quantity },
@@ -15,7 +14,7 @@ const ShoppingCard = ({
     .split(' ')[1]
     .toLowerCase()} `
 
-  const { addQty, removeQty, removeProduct } = useContext(CartContext)
+  const { removeProduct } = useContext(CartContext)
 
   return (
     <article className={`shopping-card ${className}`}>
@@ -53,18 +52,7 @@ const ShoppingCard = ({
         <img src={iconCross} alt="" onClick={() => removeProduct(id)} />
       </div>
       <div className="shopping-card__qty-price-container">
-        <div className="shopping-card__quantity">
-          <span className="shopping-card__quantity-txt">Quantity</span>
-          <img
-            src={iconMinus}
-            className="remove-qty"
-            onClick={() => removeQty(id)}
-          />
-          <div className="shopping-card__qty-bg">
-            <span className="shopping-card__qty-text">{quantity}</span>
-          </div>
-          <img src={iconPlus} className="add-qty" onClick={() => addQty(id)} />
-        </div>
+        <QuantitySelector id={id} quantity={quantity} />
         <span className="shopping-card__total-price">
           ${productTotal.toFixed(2)}
         </span>
