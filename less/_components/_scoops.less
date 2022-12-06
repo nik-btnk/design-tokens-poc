@@ -1,0 +1,87 @@
+@distanceX: 50vw - 12px;
+
+.scoops {
+  z-index: 1000;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  display: none;
+  opacity: 0;
+
+  @media @break-tablet {
+    animation: scoopsAnimation 2s ease;
+    display: block;
+  }
+
+  @media screen and (min-width: 535px) {
+    animation: scoopsAnimation535 2s ease;
+  }
+
+  @media screen and (min-width: 710px) {
+    animation: scoopsAnimation710 2s ease;
+  }
+
+  @media screen and (min-width: 1000px) {
+    animation: scoopsAnimation1000 2s ease;
+  }
+
+  @media @break-desktop {
+    left: initial;
+    right: 15px;
+    animation: scoopsAnimationDesktop 2s ease forwards;
+  }
+}
+
+.scoops img {
+  width: 40px;
+}
+
+@keyframes scoopsAnimation {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(30vw);
+  }
+}
+
+@keyframes scoopsAnimation535 {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(36vw);
+  }
+}
+
+@keyframes scoopsAnimation710 {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(40vw);
+  }
+}
+
+@keyframes scoopsAnimation1000 {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(43vw);
+  }
+}
+
+@keyframes scoopsAnimationDesktop {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 100px);
+  }
+}

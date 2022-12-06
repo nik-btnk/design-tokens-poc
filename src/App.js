@@ -43,7 +43,6 @@ function App() {
             <Route path="/playground" element={<Playground />} />
             <Route path="*" element={<Navigate replace to={path.NOTFOUND} />} />
           </Routes>
-
           <Footer />
         </CartProvider>
       </ThemeContext.Provider>
