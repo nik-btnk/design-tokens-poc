@@ -6,10 +6,10 @@ import CartContext from '../contexts/CartContext/CartProvider'
 import iconScoops from '../assets/mascot-flipped.png'
 
 const Scoops = () => {
-  const { displayScoops } = useContext(CartContext)
+  const { displayCartAnimation } = useContext(CartContext)
   return (
     <>
-      {displayScoops && (
+      {displayCartAnimation && (
         <div className="scoops">
           <img src={iconScoops} alt="" />
         </div>

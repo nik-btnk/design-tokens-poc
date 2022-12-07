@@ -17,7 +17,7 @@ import Scoops from './Scoops'
 const Header = () => {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
-  const { totalQty } = useContext(CartContext)
+  const { totalQty, displayCartAnimation } = useContext(CartContext)
 
   const isHeaderVertical =
     location.pathname === path.CHECKOUT || location.pathname === path.CART
@@ -43,7 +43,11 @@ const Header = () => {
             <Link to={path.LANDING} className="header__logo">
               <img src={logo} alt="Cream Colors logo." />
             </Link>
-            <Link to={path.CART} className="header__cart">
+            <Link
+              to={path.CART}
+              className={`header__cart ${
+                displayCartAnimation ? 'cart-animation' : undefined
+              }`}>
               <div className="header__cart-bubble">
                 <span className="header__cart-qty">{totalQty}</span>
               </div>

@@ -16,7 +16,7 @@ function CartProvider({ children }) {
   const [taxes, setTaxes] = useLocalStorage('taxes', 0)
   const [total, setTotal] = useLocalStorage('total', 0)
   const [totalQty, setTotalQty] = useLocalStorage('totalQty', 0)
-  const [displayScoops, setDisplayScoops] = useState(false)
+  const [displayCartAnimation, setDisplayCartAnimation] = useState(false)
   const calcProductsTotal = () => {
     let total = 0
     selectedProducts.forEach((product) => {
@@ -41,7 +41,12 @@ function CartProvider({ children }) {
     selectedProducts.forEach((product) => {
       sum += product.quantity
     })
-    setTotalQty(sum)
+
+    if (sum >= totalQty) {
+      setTimeout(() => {
+        setTotalQty(sum)
+      }, 1400)
+    } else setTotalQty(sum)
   }
 
   useEffect(() => {
@@ -77,10 +82,10 @@ function CartProvider({ children }) {
             quantity: newProduct.quantity === 0 ? 1 : 0
           }
         ])
-    setDisplayScoops(true)
+    setDisplayCartAnimation(true)
 
     setTimeout(() => {
-      setDisplayScoops(false)
+      setDisplayCartAnimation(false)
     }, 2000)
   }
 
@@ -106,12 +111,13 @@ function CartProvider({ children }) {
     })
 
     setSelectedProducts(newState)
-    if (displayScoops === false) {
+
+    if (displayCartAnimation === false) {
       {
-        setDisplayScoops(true)
+        setDisplayCartAnimation(true)
 
         setTimeout(() => {
-          setDisplayScoops(false)
+          setDisplayCartAnimation(false)
         }, 2000)
       }
     }
@@ -152,7 +158,7 @@ function CartProvider({ children }) {
     taxes,
     total,
     totalQty,
-    displayScoops
+    displayCartAnimation
   }
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>

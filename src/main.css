@@ -116,11 +116,11 @@
 .test-brand-1 {
   --test-brand-1-color-red: #ff0000;
 }
-.test-brand-3 {
-  --test-brand-3-color-blue: #0000ff;
-}
 .test-brand-2 {
   --test-brand-2-color-green: #00ff00;
+}
+.test-brand-3 {
+  --test-brand-3-color-blue: #0000ff;
 }
 @font-face {
   font-family: 'Quattrocento Sans';
@@ -1009,7 +1009,7 @@ html {
   z-index: 2;
 }
 .header__cart-qty {
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
   font-family: Quattrocento Sans;
   font-weight: 400;
@@ -1162,10 +1162,26 @@ html {
     display: block;
   }
 }
+.cart-animation {
+  animation: cartAnimation 2s ease;
+}
+@keyframes cartAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .scoops {
-  z-index: 1000;
   position: absolute;
-  top: 18px;
+  top: 20px;
   left: 50%;
   display: none;
   opacity: 0;
@@ -1202,140 +1218,69 @@ html {
   width: 40px;
 }
 @keyframes scoopsAnimation {
+  0% {
+    transform: scale(1) translate(0);
+  }
   50% {
     opacity: 1;
+    transform: scale(1) translate(15vw);
   }
   100% {
     opacity: 0;
-    transform: translate(30vw);
+    transform: scale(0.8) translate(36vw);
   }
 }
 @keyframes scoopsAnimation535 {
+  0% {
+    transform: scale(1) translate(0);
+  }
   50% {
     opacity: 1;
+    transform: scale(1) translate(18vw);
   }
   100% {
     opacity: 0;
-    transform: translate(36vw);
+    transform: scale(0.8) translate(44vw);
   }
 }
 @keyframes scoopsAnimation710 {
+  0% {
+    transform: scale(1) translate(0);
+  }
   50% {
     opacity: 1;
+    transform: scale(1) translate(20vw);
   }
   100% {
     opacity: 0;
-    transform: translate(40vw);
+    transform: scale(0.8) translate(48vw);
   }
 }
 @keyframes scoopsAnimation1000 {
+  0% {
+    transform: scale(1) translate(0);
+  }
   50% {
     opacity: 1;
+    transform: scale(1) translate(22vw);
   }
   100% {
     opacity: 0;
-    transform: translate(43vw);
+    transform: scale(0.8) translate(54vw);
   }
 }
 @keyframes scoopsAnimationDesktop {
+  0% {
+    transform: scale(1) translate(0);
+  }
   50% {
     opacity: 1;
+    transform: scale(1) translate(0, 60px);
   }
   100% {
     opacity: 0;
-    transform: translate(0, 100px);
+    transform: scale(0.8) translate(0, 115px);
   }
-}
-.button {
-  height: 50px;
-  min-width: 148px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  font-size: 16px;
-  text-decoration: none;
-  font-family: Quattrocento Sans;
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-.button::before {
-  content: '+';
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 12px;
-  color: var(--creamcolors-color-brand-black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  font-weight: 700;
-}
-.button-blue {
-  background-color: var(--creamcolors-color-brand-blue-0);
-  border: solid 4px var(--creamcolors-color-brand-blue-2);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:hover {
-  border: 6.4px solid var(--creamcolors-color-brand-blue-2);
-  box-shadow: 0 4px 4px 0 #37ccc980;
-}
-.button-blue:active {
-  border: solid 4px var(--creamcolors-color-brand-blue-4);
-}
-.button-blue::before {
-  background-color: var(--creamcolors-color-brand-blue-3);
-}
-.button-pink {
-  background-color: var(--creamcolors-color-brand-pink-0);
-  border: solid 4px var(--creamcolors-color-brand-pink-2);
-  box-shadow: 0 4px 4px 0 #ff878280;
-}
-.button-pink:hover {
-  border: 6.4px solid var(--creamcolors-color-brand-pink-2);
-}
-.button-pink:active {
-  border: solid 4px var(--creamcolors-color-brand-pink-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-pink::before {
-  background-color: var(--creamcolors-color-brand-pink-3);
-}
-.button-green {
-  background-color: var(--creamcolors-color-brand-green-0);
-  border: solid 4px var(--creamcolors-color-brand-green-2);
-  box-shadow: 0 4px 4px 0 #5ecc37ff;
-}
-.button-green:hover {
-  border: 6.4px solid var(--creamcolors-color-brand-green-2);
-}
-.button-green:active {
-  border: solid 4px var(--creamcolors-color-brand-green-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-green::before {
-  background-color: var(--creamcolors-color-brand-green-3);
-}
-.button-orange {
-  background-color: var(--creamcolors-color-brand-orange-0);
-  border: solid 4px var(--creamcolors-color-brand-orange-2);
-  box-shadow: 0 4px 4px 0 #ed9f3a80;
-}
-.button-orange:hover {
-  border: 6.4px solid var(--creamcolors-color-brand-orange-2);
-}
-.button-orange:active {
-  border: solid 4px var(--creamcolors-color-brand-orange-4);
-  box-shadow: 0 4px 4px 0 #2d313440;
-}
-.button-orange::before {
-  background-color: var(--creamcolors-color-brand-orange-3);
 }
 .add-to-cart-btn {
   overflow: visible;
@@ -2482,6 +2427,97 @@ html {
   background-color: var(--creamcolors-color-flavor-puzzled-plum-fill-back-1);
   opacity: 80%;
   z-index: 0;
+}
+.button {
+  height: 50px;
+  min-width: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Quattrocento Sans;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.button::before {
+  content: '+';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: var(--creamcolors-color-brand-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.button-blue {
+  background-color: var(--creamcolors-color-brand-blue-0);
+  border: solid 4px var(--creamcolors-color-brand-blue-2);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:hover {
+  border: 6.4px solid var(--creamcolors-color-brand-blue-2);
+  box-shadow: 0 4px 4px 0 #37ccc980;
+}
+.button-blue:active {
+  border: solid 4px var(--creamcolors-color-brand-blue-4);
+}
+.button-blue::before {
+  background-color: var(--creamcolors-color-brand-blue-3);
+}
+.button-pink {
+  background-color: var(--creamcolors-color-brand-pink-0);
+  border: solid 4px var(--creamcolors-color-brand-pink-2);
+  box-shadow: 0 4px 4px 0 #ff878280;
+}
+.button-pink:hover {
+  border: 6.4px solid var(--creamcolors-color-brand-pink-2);
+}
+.button-pink:active {
+  border: solid 4px var(--creamcolors-color-brand-pink-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-pink::before {
+  background-color: var(--creamcolors-color-brand-pink-3);
+}
+.button-green {
+  background-color: var(--creamcolors-color-brand-green-0);
+  border: solid 4px var(--creamcolors-color-brand-green-2);
+  box-shadow: 0 4px 4px 0 #5ecc37ff;
+}
+.button-green:hover {
+  border: 6.4px solid var(--creamcolors-color-brand-green-2);
+}
+.button-green:active {
+  border: solid 4px var(--creamcolors-color-brand-green-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-green::before {
+  background-color: var(--creamcolors-color-brand-green-3);
+}
+.button-orange {
+  background-color: var(--creamcolors-color-brand-orange-0);
+  border: solid 4px var(--creamcolors-color-brand-orange-2);
+  box-shadow: 0 4px 4px 0 #ed9f3a80;
+}
+.button-orange:hover {
+  border: 6.4px solid var(--creamcolors-color-brand-orange-2);
+}
+.button-orange:active {
+  border: solid 4px var(--creamcolors-color-brand-orange-4);
+  box-shadow: 0 4px 4px 0 #2d313440;
+}
+.button-orange::before {
+  background-color: var(--creamcolors-color-brand-orange-3);
 }
 .color-roulette {
   display: inline-block;
