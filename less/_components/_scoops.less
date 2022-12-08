@@ -1,33 +1,17 @@
-@distanceX: 50vw - 12px;
-
 .scoops {
+  --translateX: 0px;
+  z-index: 5;
   position: absolute;
-  top: 20px;
-  left: 50%;
   display: none;
-  opacity: 0;
 
   @media @break-tablet {
     animation: scoopsAnimation 2s ease;
     display: block;
   }
 
-  @media screen and (min-width: 535px) {
-    animation: scoopsAnimation535 2s ease;
-  }
-
-  @media screen and (min-width: 710px) {
-    animation: scoopsAnimation710 2s ease;
-  }
-
-  @media screen and (min-width: 1000px) {
-    animation: scoopsAnimation1000 2s ease;
-  }
-
   @media @break-desktop {
     left: initial;
     right: 15px;
-    animation: scoopsAnimationDesktop 2s ease forwards;
   }
 }
 
@@ -37,70 +21,14 @@
 
 @keyframes scoopsAnimation {
   0% {
+    opacity: 0;
     transform: scale(1) translate(0);
   }
   50% {
     opacity: 1;
-    transform: scale(1) translate(15vw);
   }
   100% {
     opacity: 0;
-    transform: scale(0.8) translate(36vw);
-  }
-}
-
-@keyframes scoopsAnimation535 {
-  0% {
-    transform: scale(1) translate(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) translate(18vw);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8) translate(44vw);
-  }
-}
-
-@keyframes scoopsAnimation710 {
-  0% {
-    transform: scale(1) translate(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) translate(20vw);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8) translate(48vw);
-  }
-}
-
-@keyframes scoopsAnimation1000 {
-  0% {
-    transform: scale(1) translate(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) translate(22vw);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8) translate(54vw);
-  }
-}
-
-@keyframes scoopsAnimationDesktop {
-  0% {
-    transform: scale(1) translate(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) translate(0,60px);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8) translate(0, 115px);
+    transform: scale(0.8) translate(calc(var(--translateX)), var(--translateY));
   }
 }
