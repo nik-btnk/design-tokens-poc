@@ -1,12 +1,12 @@
 import React from 'react'
-
-//Assets
-import iconScoops from '../assets/Scoop-color.svg'
 import { useRef } from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
 import CartContext from '../contexts/CartContext/CartProvider'
+
+//Assets
+import { ReactComponent as IconScoops } from '../assets/Scoop-color.svg'
 
 const Scoops = ({ cartIconPosition, mousePos }) => {
   const { total, displayCartAnimation } = useContext(CartContext)
@@ -48,7 +48,7 @@ const Scoops = ({ cartIconPosition, mousePos }) => {
   return (
     <>
       <div className="scoops" ref={scoopRef}>
-        <img src={iconScoops} alt="" />
+        <IconScoops />
       </div>
     </>
   )
