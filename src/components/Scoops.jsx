@@ -25,11 +25,23 @@ const Scoops = ({ cartIconPosition, mousePos }) => {
 
   //Add new values to scoops style when adding items to cart (when scoops is displayed) to set positioning and translate coordinates
   useEffect(() => {
+    const vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    )
+
     if (displayCartAnimation) {
-      scoopRef.current.style.cssText = `--translateX: ${offsetX}px;
-      --translateY: ${offsetY}px;
-      left:${mousePos.x - 20}px;
-      top: ${mousePos.y - 20}px;`
+      if (vw < 1440) {
+        scoopRef.current.style.cssText = `--translateX: ${offsetX}px;
+        --translateY: ${offsetY}px;
+        left:${mousePos.x - 20}px;
+        top: ${mousePos.y - 20}px;`
+      } else {
+        scoopRef.current.style.cssText = `--translateX: ${offsetX}px;
+        --translateY: ${offsetY}px;
+        left:-${offsetX}px;
+        top: ${mousePos.y - 20}px;`
+      }
     }
   }, [total])
 
@@ -37,7 +49,6 @@ const Scoops = ({ cartIconPosition, mousePos }) => {
     <>
       <div className="scoops" ref={scoopRef}>
         <img src={iconScoops} alt="" />
-        {console.log(mousePos.x)}
       </div>
     </>
   )
