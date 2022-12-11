@@ -16,19 +16,25 @@
 }
 
 .scoops img {
-  width: 40px;
+  width: 45px;
 }
 
 @keyframes scoopsAnimation {
   0% {
     opacity: 0;
-    transform: scale(1) translate(0);
+    transform: translate(0);
   }
-  50% {
+  30% {
     opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  90%{
+    opacity: 0;
   }
   100% {
     opacity: 0;
-    transform: scale(0.8) translate(calc(var(--translateX)), var(--translateY));
+    transform: translate(calc(var(--translateX)), var(--translateY));
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 //Assets
-import iconScoops from '../assets/mascot-flipped.png'
+import iconScoops from '../assets/Scoop-color.svg'
 import { useRef } from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -19,7 +19,7 @@ const Scoops = ({ cartIconPosition, mousePos }) => {
     let newOffsetX = cartIconPosition.x - mousePos.x + 20
     setOffsetX(newOffsetX)
 
-    let newOffsetY = cartIconPosition.y - mousePos.y - 40
+    let newOffsetY = cartIconPosition.y - mousePos.y + 20
     setOffsetY(newOffsetY)
   }, [mousePos])
 
