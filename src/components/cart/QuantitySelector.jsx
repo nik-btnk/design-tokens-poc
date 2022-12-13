@@ -18,7 +18,10 @@ const QuantitySelector = ({ id, quantity, setIsAdded, setBtnDisplay }) => {
     <div className="quantity-selector">
       <span className="quantity-selector__txt">Quantity</span>
       {quantity > 1 ? (
-        <IconMinus onClick={() => removeQty(id)} />
+        <IconMinus
+          onClick={() => removeQty(id)}
+          className="quantity-selector__remove-qty"
+        />
       ) : (
         <IconBin onClick={handleRemove} className="quantity-selector__bin" />
       )}
@@ -26,7 +29,10 @@ const QuantitySelector = ({ id, quantity, setIsAdded, setBtnDisplay }) => {
       <div className="quantity-selector__qty-bg">
         <span className="quantity-selector__qty-txt">{quantity}</span>
       </div>
-      <IconPlus onClick={() => addQty(id)} />
+      <IconPlus
+        onClick={() => addQty(id)}
+        className="quantity-selector__add-qty"
+      />
     </div>
   )
 }
