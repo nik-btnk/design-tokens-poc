@@ -16,7 +16,6 @@ const AddToCartBtn = ({ id }) => {
   const handleAddToCart = () => {
     addProduct(id)
     setBtnDisplay((prev) => !prev)
-
     setTimeout(() => {
       setIsAdded(true)
     }, 1200)

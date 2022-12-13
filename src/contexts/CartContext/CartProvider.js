@@ -1,4 +1,4 @@
-import React, { createContext, useEffect } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import useLocalStorage from '../../hooks/useLocalStorage'
 
 //Util
@@ -16,7 +16,7 @@ function CartProvider({ children }) {
   const [taxes, setTaxes] = useLocalStorage('taxes', 0)
   const [total, setTotal] = useLocalStorage('total', 0)
   const [totalQty, setTotalQty] = useLocalStorage('totalQty', 0)
-
+  const [displayCartAnimation, setDisplayCartAnimation] = useState(false)
   const calcProductsTotal = () => {
     let total = 0
     selectedProducts.forEach((product) => {
@@ -41,7 +41,12 @@ function CartProvider({ children }) {
     selectedProducts.forEach((product) => {
       sum += product.quantity
     })
-    setTotalQty(sum)
+
+    if (sum >= totalQty) {
+      setTimeout(() => {
+        setTotalQty(sum)
+      }, 1400)
+    } else setTotalQty(sum)
   }
 
   useEffect(() => {
@@ -77,6 +82,11 @@ function CartProvider({ children }) {
             quantity: newProduct.quantity === 0 ? 1 : 0
           }
         ])
+    setDisplayCartAnimation(true)
+
+    setTimeout(() => {
+      setDisplayCartAnimation(false)
+    }, 2000)
   }
 
   const removeProduct = (id) => {
@@ -101,6 +111,16 @@ function CartProvider({ children }) {
     })
 
     setSelectedProducts(newState)
+
+    if (displayCartAnimation === false) {
+      {
+        setDisplayCartAnimation(true)
+
+        setTimeout(() => {
+          setDisplayCartAnimation(false)
+        }, 2000)
+      }
+    }
   }
 
   const removeQty = (id) => {
@@ -137,7 +157,8 @@ function CartProvider({ children }) {
     productsTotal,
     taxes,
     total,
-    totalQty
+    totalQty,
+    displayCartAnimation
   }
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>

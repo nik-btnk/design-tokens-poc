@@ -1,0 +1,38 @@
+// translateX and translateY variables are declared dynamically on Scoops.jsx file
+
+.scoops {
+  --translateX: 0px;
+  z-index: 5;
+  position: absolute;
+  display: none;
+
+  @media @break-tablet {
+    animation: scoopsAnimation 2s ease;
+    display: block;
+  }
+
+  @media @break-desktop {
+    left: initial;
+    right: 15px;
+  }
+}
+
+@keyframes scoopsAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--translateX)), var(--translateY));
+  }
+}

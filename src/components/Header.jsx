@@ -1,20 +1,51 @@
 // Modules
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { path } from '../constants'
+import { useContext } from 'react'
+import CartContext from '../contexts/CartContext/CartProvider'
 
 // Assets
 import menuBars from '../assets/Icon=menu-bars.png'
 import logo from '../assets/logo.png'
 import iconCart from '../assets/Icon=cart-menu.png'
 import caretLeft from '../assets/icons/caret/Icon=circle-caret-left.png'
-import { path } from '../constants'
-import { useContext } from 'react'
-import CartContext from '../contexts/CartContext/CartProvider'
+
+//Components
+import Scoops from './Scoops'
 
 const Header = () => {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
-  const { totalQty } = useContext(CartContext)
+  const { totalQty, displayCartAnimation } = useContext(CartContext)
+  const [mousePos, setMousePos] = useState({})
+
+  // We are taking cartIcon position and sending it to Scoops so that we can use it to determine how much it would need to translate in order to make the animation
+  const [cartIconPos, setCartIconPos] = useState({})
+  const cartIconRef = useRef()
+  const getCartIconPosition = () => {
+    const cartPosition = cartIconRef.current.getBoundingClientRect()
+    setCartIconPos(cartPosition)
+  }
+
+  //Get mouse position
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      setMousePos({ x: event.clientX, y: event.clientY })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
+
+  //After loading page, we want to know cartIcon position and add an event listener to the window that will update cart icon position when windows is resized
+  useEffect(() => {
+    getCartIconPosition()
+    window.addEventListener('resize', getCartIconPosition)
+  }, [])
 
   const isHeaderVertical =
     location.pathname === path.CHECKOUT || location.pathname === path.CART
@@ -40,12 +71,20 @@ const Header = () => {
             <Link to={path.LANDING} className="header__logo">
               <img src={logo} alt="Cream Colors logo." />
             </Link>
-            <Link to={path.CART} className="header__cart">
+            <Link
+              to={path.CART}
+              className={`header__cart ${
+                displayCartAnimation ? 'cart-animation' : undefined
+              }`}
+              ref={cartIconRef}>
               <div className="header__cart-bubble">
                 <span className="header__cart-qty">{totalQty}</span>
               </div>
               <img src={iconCart} alt="Cart icon." />
             </Link>
+            {displayCartAnimation && (
+              <Scoops cartIconPosition={cartIconPos} mousePos={mousePos} />
+            )}
           </div>
         </header>
       )}
