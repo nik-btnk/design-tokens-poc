@@ -13,6 +13,7 @@ import caretLeft from '../assets/icons/caret/Icon=circle-caret-left.png'
 
 //Components
 import Scoops from './Scoops'
+import Menu from './Menu'
 
 const Header = () => {
   const location = useLocation()
@@ -85,6 +86,7 @@ const Header = () => {
             {displayCartAnimation && (
               <Scoops cartIconPosition={cartIconPos} mousePos={mousePos} />
             )}
+            <Menu />
           </div>
         </header>
       )}
