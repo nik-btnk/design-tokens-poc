@@ -113,14 +113,14 @@
   --creamcolors-color-flavor-puzzled-plum-fill-back-1: #ba9cff;
   --creamcolors-color-flavor-puzzled-plum-fill-front: #f5f1ff;
 }
-.test-brand-1 {
-  --test-brand-1-color-red: #ff0000;
+.test-brand-3 {
+  --test-brand-3-color-blue: #0000ff;
 }
 .test-brand-2 {
   --test-brand-2-color-green: #00ff00;
 }
-.test-brand-3 {
-  --test-brand-3-color-blue: #0000ff;
+.test-brand-1 {
+  --test-brand-1-color-red: #ff0000;
 }
 @font-face {
   font-family: 'Quattrocento Sans';
@@ -1232,20 +1232,33 @@ html {
   }
 }
 .menu__close {
-  display: flex;
+  text-align: left;
+}
+@media screen and (min-width: 425px) {
+  .menu__close {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .menu__close {
+    text-align-last: left;
+  }
+}
+.menu__close--container {
+  display: inline-flex;
   align-items: center;
   gap: 4px;
   padding-left: 4px;
 }
 @media screen and (min-width: 425px) {
-  .menu__close {
+  .menu__close--container {
     justify-content: right;
     flex-direction: row-reverse;
     padding-right: 16px;
   }
 }
 @media screen and (min-width: 1440px) {
-  .menu__close {
+  .menu__close--container {
     justify-content: left;
     flex-direction: row;
     padding-right: 0;
@@ -1271,6 +1284,10 @@ html {
   flex-direction: column;
   gap: 16px;
   padding-left: 0;
+}
+.menu__options a {
+  text-decoration: none;
+  color: black;
 }
 .menu__options li {
   background-color: var(--creamcolors-color-brand-pink-1);

@@ -86,7 +86,7 @@ const Header = () => {
             {displayCartAnimation && (
               <Scoops cartIconPosition={cartIconPos} mousePos={mousePos} />
             )}
-            <Menu />
+            {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
           </div>
         </header>
       )}
