@@ -162,6 +162,14 @@ html {
     @media @break-desktop {
       height: 100vh;
     }
+
+    &.landing__popular-colors {
+      height: auto;
+
+      @media @break-tablet {
+        height: calc(100vh - 64px);
+      }
+    }
   }
 
   .wrapper {
