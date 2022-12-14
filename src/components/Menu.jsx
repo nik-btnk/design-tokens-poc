@@ -5,10 +5,13 @@ import { path } from '../constants'
 
 //Assets
 import iconCross from '../assets/icons/control/icon-x.png'
+import CartPreview from './cart/CartPreview'
+import { useState } from 'react'
 
 const Menu = ({ setMenuOpen }) => {
+  const [cartOpen, setCartOpen] = useState(false)
   return (
-    <div className="menu">
+    <div className={`menu ${cartOpen && 'cart-open'}`}>
       <div className="menu__close">
         <div
           className="menu__close--container"
@@ -20,29 +23,34 @@ const Menu = ({ setMenuOpen }) => {
         </div>
       </div>
 
-      <ul className="menu__options">
-        <Link
-          to={path.LANDING}
-          onClick={() => {
-            setMenuOpen(false)
-          }}>
-          <li className="menu__options--home">Home</li>
-        </Link>
-        <Link
-          to={path.PRODUCTS}
-          onClick={() => {
-            setMenuOpen(false)
-          }}>
-          <li className="menu__options--catalog">Flavor Catalog</li>
-        </Link>
-        <Link
-          to={path.CART}
-          onClick={() => {
-            setMenuOpen(false)
-          }}>
-          <li className="menu__options--cart">Shopping Cart</li>
-        </Link>
-      </ul>
+      {cartOpen ? (
+        <CartPreview />
+      ) : (
+        <ul className="menu__options">
+          <Link
+            to={path.LANDING}
+            onClick={() => {
+              setMenuOpen(false)
+            }}>
+            <li className="menu__options--home">Home</li>
+          </Link>
+          <Link
+            to={path.PRODUCTS}
+            onClick={() => {
+              setMenuOpen(false)
+            }}>
+            <li className="menu__options--catalog">Flavor Catalog</li>
+          </Link>
+
+          <li
+            className="menu__options--cart"
+            onClick={() => {
+              setCartOpen(true)
+            }}>
+            Shopping Cart
+          </li>
+        </ul>
+      )}
     </div>
   )
 }
