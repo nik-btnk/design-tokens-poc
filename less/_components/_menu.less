@@ -5,6 +5,7 @@
 .menu {
   position: absolute;
   width: 98%;
+  max-height: calc(100vh - 64px);
   background-color: red;
   left: 0;
   right: 0;
@@ -20,6 +21,7 @@
   padding-top: @creamcolors-sizes-medium-2;
 
   @media @break-tablet {
+    max-height: calc(100vh - 80px);
     margin-right: 0;
     margin-left: 0;
     width: 268px;
