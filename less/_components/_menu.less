@@ -33,11 +33,12 @@
 
   @media @break-desktop {
     left: -260px;
-    width: 500px;
+    width: 100vw;
     top: @creamcolors-sizes-large-2 + @creamcolors-sizes-medium-1;
   }
 
   &__close {
+    z-index: 3;
     text-align: left;
 
     @media @break-tablet {
@@ -110,6 +111,8 @@
   }
 
   &.cart-open {
+    overflow-y: scroll;
+
     @media @break-tablet {
       max-width: 544px;
       width: 98%;
@@ -117,8 +120,9 @@
 
     @media @break-desktop {
       max-width: none;
-      width: 830px;
-      left: -634px;
+      width: 100vw;
+      max-height: calc(100vh - 100px);
+      left: -400px;
     }
   }
 }
