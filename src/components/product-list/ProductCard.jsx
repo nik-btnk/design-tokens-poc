@@ -19,7 +19,8 @@ const ProductCard = ({
   category,
   id,
   showInfo = true,
-  showTextWrap = false
+  showTextWrap = false,
+  colorClassName
 }) => {
   const [isInfo, setInfo] = useState(false)
   const navigate = useNavigate()
@@ -79,7 +80,7 @@ const ProductCard = ({
   }
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper ${colorClassName}`}>
       <article
         className={`product-card ${className}`}
         onClick={() => navigate(`/product/${id}`)}
