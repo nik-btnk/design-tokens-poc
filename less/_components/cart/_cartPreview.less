@@ -1,0 +1,41 @@
+@import '../../_tokens/_cream_colors/_color.less';
+@import '../../_tokens/_cream_colors/_sizes.less';
+@import '../../_tokens/_cream_colors/_font-mixins';
+
+.cart-preview {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @media @break-tablet {
+    padding-left: @creamcolors-sizes-medium-2;
+  }
+
+  @media @break-desktop {
+    padding-left: 0;
+    padding-right: 170px;
+    position: absolute;
+    left: 0;
+  }
+
+  &__text {
+    text-align: center;
+    @creamcolors-font-desktop-title-small-quatt();
+  }
+
+  .order-summary__line {
+    width: 90%;
+    margin: 0 auto @creamcolors-sizes-small-2;
+  }
+
+  .cart__total-price {
+    margin-bottom: 0;
+  }
+
+  .cart__continue-checkout {
+    margin-top: 0;
+
+    @media @break-desktop {
+      margin-bottom: @creamcolors-sizes-medium-2;
+    }
+  }
+}

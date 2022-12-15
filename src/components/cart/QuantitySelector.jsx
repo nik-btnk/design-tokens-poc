@@ -1,8 +1,10 @@
-import React from 'react'
-import { useContext } from 'react'
+// Modules
+import React, { useContext } from 'react'
+
+// Utils
 import CartContext from '../../contexts/CartContext/CartProvider'
 
-//Assets
+// Assets
 import { ReactComponent as IconMinus } from '../../assets/icons/control/Icon=circle-minus.svg'
 import { ReactComponent as IconPlus } from '../../assets/icons/control/Icon=circle-plus.svg'
 import { ReactComponent as IconBin } from '../../assets/icons/control/icon-basket.svg'
@@ -14,6 +16,7 @@ const QuantitySelector = ({ id, quantity, setIsAdded, setBtnDisplay }) => {
     setIsAdded(false)
     setBtnDisplay(false)
   }
+
   return (
     <div className="quantity-selector">
       <span className="quantity-selector__txt">Quantity</span>

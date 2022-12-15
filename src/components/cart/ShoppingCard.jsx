@@ -1,8 +1,10 @@
-import React from 'react'
-import CartContext from '../../contexts/CartContext/CartProvider.js'
-import { useContext } from 'react'
+// Modules
+import React, { useContext } from 'react'
 
-//Assets
+// Utils
+import CartContext from '../../contexts/CartContext/CartProvider.js'
+
+// Assets
 import iconCross from '../../assets/icons/control/icon-x.png'
 import QuantitySelector from './QuantitySelector.jsx'
 

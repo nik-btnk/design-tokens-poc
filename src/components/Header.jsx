@@ -1,8 +1,9 @@
 // Modules
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+
+// Utils
 import { path } from '../constants'
-import { useContext } from 'react'
 import CartContext from '../contexts/CartContext/CartProvider'
 
 // Assets
@@ -13,6 +14,7 @@ import caretLeft from '../assets/icons/caret/Icon=circle-caret-left.png'
 
 //Components
 import Scoops from './Scoops'
+import Menu from './Menu'
 
 const Header = () => {
   const location = useLocation()
@@ -85,6 +87,7 @@ const Header = () => {
             {displayCartAnimation && (
               <Scoops cartIconPosition={cartIconPos} mousePos={mousePos} />
             )}
+            {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
           </div>
         </header>
       )}
