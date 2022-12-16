@@ -18,6 +18,12 @@ body {
 }
 
 .color-pink {
+  .icon-plus,
+  .icon-minus,
+  .icon-cross {
+    background-color: var(--creamcolors-color-brand-pink-3);
+  }
+
   .product-info-btn {
     background-color: var(
       --creamcolors-color-light-mode-background-button-pink
@@ -61,6 +67,11 @@ body {
 }
 
 .color-blue {
+  .icon-plus,
+  .icon-minus,
+  .icon-cross {
+    background-color: var(--creamcolors-color-brand-blue-3);
+  }
   .product-info-btn {
     background-color: var(
       --creamcolors-color-light-mode-background-button-blue
@@ -104,6 +115,11 @@ body {
 }
 
 .color-green {
+  .icon-plus,
+  .icon-minus,
+  .icon-cross {
+    background-color: var(--creamcolors-color-brand-green-3);
+  }
   .product-info-btn {
     background-color: var(
       --creamcolors-color-light-mode-background-button-green
@@ -143,5 +159,106 @@ body {
         fill: var(--creamcolors-color-brand-green-3);
       }
     }
+  }
+}
+
+.icon-plus {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background-color: var(--creamcolors-color-brand-orange-3);
+  border-radius: 50%;
+
+  &:before {
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 3px;
+    height: 13px;
+    border-radius: 20px;
+  }
+
+  &:after {
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 13px;
+    height: 3px;
+    border-radius: 20px;
+  }
+}
+
+.icon-minus {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background-color: var(--creamcolors-color-brand-orange-3);
+  border-radius: 50%;
+
+  &:before {
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 13px;
+    height: 3px;
+    border-radius: 20px;
+  }
+}
+
+.icon-cross {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: var(--creamcolors-color-brand-orange-3);
+  border-radius: 50%;
+
+  @media @break-tablet {
+    width: 32px;
+    height: 32px;
+  }
+
+  &:before {
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 14px;
+    height: 3px;
+    border-radius: 20px;
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 14px;
+    height: 3px;
+    border-radius: 20px;
+    transform: rotate(-45deg);
   }
 }

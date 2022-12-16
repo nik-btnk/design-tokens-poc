@@ -7,7 +7,6 @@ import CartButton from '../cart/CartButton'
 
 // Assets
 import iconInfo from '../../assets/icons/status/info.png'
-import iconCross from '../../assets/icons/status/cross.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
 import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
 
@@ -169,7 +168,11 @@ const ProductCard = ({
             ref={infoButton}
             onClick={handleClick}>
             <div className="product-info-btn__info-icon-container">
-              <img src={isInfo ? iconCross : iconInfo} alt="" />
+              {isInfo ? (
+                <img src={iconInfo} alt="" />
+              ) : (
+                <div className="icon-cross"></div>
+              )}
             </div>
           </button>
           <CartButton id={id} />

@@ -3,7 +3,6 @@ import CartButton from '../cart/CartButton'
 
 //Assets
 import mascot from '../../assets/mascot.png'
-import iconCross from '../../assets/icons/control/icon-x.png'
 
 export const RaffledColor = ({
   setShowModal,
@@ -24,12 +23,9 @@ export const RaffledColor = ({
           <div className="raffled-color__header">
             <h4 className="raffled-color__header--title">I found for you</h4>
             <img className="raffled-color__header--logo" src={mascot} alt="" />
-            <img
-              onClick={handleClick}
-              src={iconCross}
-              alt=""
-              className="raffled-color__header--cross"
-            />
+            <div
+              className="raffled-color__header--cross icon-cross"
+              onClick={handleClick}></div>
           </div>
 
           {/* Mobile */}

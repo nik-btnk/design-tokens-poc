@@ -3,7 +3,6 @@ import CartContext from '../../contexts/CartContext/CartProvider.js'
 import { useContext } from 'react'
 
 //Assets
-import iconCross from '../../assets/icons/control/icon-x.png'
 import QuantitySelector from './QuantitySelector.jsx'
 
 const ShoppingCard = ({
@@ -49,7 +48,7 @@ const ShoppingCard = ({
         </span>
       </div>
       <div className="shopping-card__remove">
-        <img src={iconCross} alt="" onClick={() => removeProduct(id)} />
+        <div className="icon-cross" onClick={() => removeProduct(id)}></div>
       </div>
       <div className="shopping-card__qty-price-container">
         <QuantitySelector id={id} quantity={quantity} />

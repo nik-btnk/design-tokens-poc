@@ -7,7 +7,6 @@ import { useState } from 'react'
 import { useRef } from 'react'
 
 //Assets
-import iconCross from '../assets/icons/control/icon-x.png'
 import CartPreview from './cart/CartPreview'
 
 const Menu = ({ setMenuOpen }) => {
@@ -22,7 +21,7 @@ const Menu = ({ setMenuOpen }) => {
           onClick={() => {
             setMenuOpen(false)
           }}>
-          <img src={iconCross} alt="" className="menu__close--cross" />
+          <div className="icon-cross menu__close--cross"></div>
           <span className="menu__close--text">Close menu</span>
         </div>
       </div>
