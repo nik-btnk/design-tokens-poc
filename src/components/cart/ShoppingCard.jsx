@@ -1,6 +1,8 @@
-import React from 'react'
+// Modules
+import React, { useContext } from 'react'
+
+// Utils
 import CartContext from '../../contexts/CartContext/CartProvider.js'
-import { useContext } from 'react'
 
 //Assets
 import QuantitySelector from './QuantitySelector.jsx'

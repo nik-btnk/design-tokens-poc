@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
-import { useContext } from 'react'
+// Modules
+import React, { useState, useContext } from 'react'
+
+// Utils
 import CartContext from '../../contexts/CartContext/CartProvider'
-import QuantitySelector from './QuantitySelector'
 
 // Assets
 import { ReactComponent as IconCart } from '../../assets/Icon=cart-add.svg'
 import { ReactComponent as IconCheck } from '../../assets/icons/status/Icon=check.svg'
+
+// Components
+import QuantitySelector from './QuantitySelector'
 
 const AddToCartBtn = ({ id }) => {
   const { addProduct, selectedProducts } = useContext(CartContext)

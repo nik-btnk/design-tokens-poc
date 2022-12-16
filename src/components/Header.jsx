@@ -1,8 +1,9 @@
 // Modules
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+
+// Utils
 import { path } from '../constants'
-import { useContext } from 'react'
 import CartContext from '../contexts/CartContext/CartProvider'
 
 // Assets

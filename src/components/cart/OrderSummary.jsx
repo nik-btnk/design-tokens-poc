@@ -1,9 +1,10 @@
-import React from 'react'
-import { useState } from 'react'
-import CartContext from '../../contexts/CartContext/CartProvider.js'
-import { useContext } from 'react'
+// Modules
+import React, { useState, useContext } from 'react'
 
-//Assets
+// Utils
+import CartContext from '../../contexts/CartContext/CartProvider.js'
+
+// Assets
 import iconArrow from '../../assets/icons/caret/Icon=circle-caret-right.png'
 
 const OrderSummary = () => {

@@ -1,10 +1,13 @@
-//Modules
-import React from 'react'
-import { useContext } from 'react'
+// Modules
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import CartContext from '../../contexts/CartContext/CartProvider'
-import ShoppingCard from './ShoppingCard'
+
+// Utils
 import { path } from '../../constants'
+import CartContext from '../../contexts/CartContext/CartProvider'
+
+// Components
+import ShoppingCard from './ShoppingCard'
 
 const CartPreview = () => {
   const { selectedProducts, calcProductTotal, productsTotal } =

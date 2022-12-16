@@ -1,7 +1,8 @@
+// Modules
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-//assets
+// Assets
 import mascot from '../assets/mascot.png'
 import iconTikTok from '../assets/cib_tiktok.png'
 import iconIg from '../assets/carbon_logo-instagram.png'

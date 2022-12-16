@@ -1,5 +1,7 @@
-import React from 'react'
-import { useContext } from 'react'
+// Modules
+import React, { useContext } from 'react'
+
+// Utils
 import CartContext from '../../contexts/CartContext/CartProvider'
 
 //Assets
@@ -12,6 +14,7 @@ const QuantitySelector = ({ id, quantity, setIsAdded, setBtnDisplay }) => {
     setIsAdded(false)
     setBtnDisplay(false)
   }
+
   return (
     <div className="quantity-selector">
       <span className="quantity-selector__txt">Quantity</span>

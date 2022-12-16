@@ -1,11 +1,10 @@
-import React from 'react'
-import { useRef } from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { useContext } from 'react'
+// Modules
+import React, { useState, useRef, useEffect, useContext } from 'react'
+
+// Utils
 import CartContext from '../contexts/CartContext/CartProvider'
 
-//Assets
+// Assets
 import { ReactComponent as IconScoops } from '../assets/Scoop-color.svg'
 
 const Scoops = ({ cartIconPosition, mousePos }) => {

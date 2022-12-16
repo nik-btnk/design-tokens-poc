@@ -1,10 +1,10 @@
-//Modules
-import React from 'react'
+// Modules
+import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
+
+// Utils
 import { path } from '../constants'
 import useOutsideAlerter from '../hooks/useOutsideAlerter'
-import { useState } from 'react'
-import { useRef } from 'react'
 
 //Assets
 import CartPreview from './cart/CartPreview'
@@ -13,6 +13,7 @@ const Menu = ({ setMenuOpen }) => {
   const [cartOpen, setCartOpen] = useState(false)
   const menuRef = useRef(null)
   useOutsideAlerter(menuRef, setMenuOpen)
+
   return (
     <div className={`menu ${cartOpen && 'cart-open'}`} ref={menuRef}>
       <div className="menu__close">
