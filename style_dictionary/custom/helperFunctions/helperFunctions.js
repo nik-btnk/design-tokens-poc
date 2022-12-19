@@ -59,7 +59,7 @@ const buildCreamColorsTokens = () => {
         options: {
           showFileHeader: false,
           selector: useCssVar.includes(tokenCategory)
-            ? '.cream-colors'
+            ? '.creamcolors'
             : undefined
         },
         filter: {

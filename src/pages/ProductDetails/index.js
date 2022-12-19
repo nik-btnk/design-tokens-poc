@@ -14,7 +14,9 @@ import { path } from '../../constants'
 const ProductDetails = () => {
   const location = useLocation()
   const navigate = useNavigate()
-  const productId = parseInt(location.pathname.split('/')[2])
+  const productId = parseInt(
+    location.pathname.split('/')[location.pathname.split('/').length - 1]
+  )
   const selectedProduct = products.filter(
     (product) => product.id === productId
   )[0]

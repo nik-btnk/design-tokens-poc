@@ -1,6 +1,11 @@
+// Modules
 import React from 'react'
-import { path } from '../../constants'
 import { Link } from 'react-router-dom'
+
+// Utils
+import { path } from '../../constants'
+
+// Components
 import ProductCard from '../../components/product-list/ProductCard'
 
 const PopularColors = ({ popularColors }) => {

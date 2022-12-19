@@ -1,17 +1,19 @@
 // Modules
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 // Utils
 import { path } from '../constants'
 import useOutsideAlerter from '../hooks/useOutsideAlerter'
+import { BrandContext } from '../contexts/brandContext'
 
-//Assets
+// Assets
 import CartPreview from './cart/CartPreview'
 
 const Menu = ({ setMenuOpen }) => {
   const [cartOpen, setCartOpen] = useState(false)
   const menuRef = useRef(null)
+  const { brand } = useContext(BrandContext)
   useOutsideAlerter(menuRef, setMenuOpen)
 
   return (
@@ -32,14 +34,14 @@ const Menu = ({ setMenuOpen }) => {
       ) : (
         <ul className="menu__options">
           <Link
-            to={path.LANDING}
+            to={`${brand}/${path.LANDING}`}
             onClick={() => {
               setMenuOpen(false)
             }}>
             <li className="menu__options--home">Home</li>
           </Link>
           <Link
-            to={path.PRODUCTS}
+            to={`${brand}/${path.PRODUCTS}`}
             onClick={() => {
               setMenuOpen(false)
             }}>

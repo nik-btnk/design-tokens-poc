@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 // Utils
 import { path } from '../constants'
 import CartContext from '../contexts/CartContext/CartProvider'
+import { BrandContext } from '../contexts/brandContext'
 
 // Assets
 import menuBars from '../assets/Icon=menu-bars.png'
@@ -12,7 +13,7 @@ import logo from '../assets/logo.png'
 import iconCart from '../assets/Icon=cart-menu.png'
 import caretLeft from '../assets/icons/caret/Icon=circle-caret-left.png'
 
-//Components
+// Components
 import Scoops from './Scoops'
 import Menu from './Menu'
 
@@ -21,6 +22,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const { totalQty, displayCartAnimation } = useContext(CartContext)
   const [mousePos, setMousePos] = useState({})
+  const { brand } = useContext(BrandContext)
 
   // We are taking cartIcon position and sending it to Scoops so that we can use it to determine how much it would need to translate in order to make the animation
   const [cartIconPos, setCartIconPos] = useState({})
@@ -70,11 +72,11 @@ const Header = () => {
               <img src={menuBars} alt="Menu icon." />
               <span>Menu</span>
             </button>
-            <Link to={path.LANDING} className="header__logo">
+            <Link to={`${brand}/${path.LANDING}`} className="header__logo">
               <img src={logo} alt="Cream Colors logo." />
             </Link>
             <Link
-              to={path.CART}
+              to={`${brand}/${path.CART}`}
               className={`header__cart ${
                 displayCartAnimation ? 'cart-animation' : undefined
               }`}
