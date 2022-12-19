@@ -21,6 +21,10 @@
       margin-right: auto;
       margin-left: auto;
     }
+
+    .cart__continue-checkout {
+      text-align: center;
+    }
   }
 
   &__total-price {
@@ -62,19 +66,33 @@
 
   &__continue-checkout {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: @creamcolors-sizes-medium-1;
 
     @media @break-tablet {
       order: 4;
       margin-top: @creamcolors-sizes-medium-3;
+      margin-right: 50px;
     }
 
     @media @break-desktop {
       margin-top: 0;
       margin-bottom: 0;
+    }
+
+    a {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media @break-tablet {
+        justify-content: end;
+        padding-right: 66px;
+      }
+
+      @media @break-desktop {
+        padding-right: 16px;
+      }
     }
 
     button {
@@ -90,6 +108,10 @@
       border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
       box-shadow: @creamcolors-effect-shadow-button-blue-default-0,
         @creamcolors-effect-shadow-button-blue-default-1;
+
+      @media @break-tablet {
+        min-width: 240px;
+      }
 
       &:hover {
         box-shadow: @creamcolors-effect-shadow-button-blue-hover;

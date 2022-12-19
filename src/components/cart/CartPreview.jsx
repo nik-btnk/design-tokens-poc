@@ -37,15 +37,15 @@ const CartPreview = ({ setCartOpen, setMenuOpen }) => {
         </span>
       </div>
       <div className="cart__continue-checkout">
-        <button
-          onClick={() => {
-            setCartOpen(false)
-            setMenuOpen(false)
-          }}>
-          <Link to={cartUrl} style={{ textDecoration: 'none', color: 'black' }}>
+        <Link to={cartUrl} style={{ textDecoration: 'none', color: 'black' }}>
+          <button
+            onClick={() => {
+              setCartOpen(false)
+              setMenuOpen(false)
+            }}>
             View Full Cart
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
     </div>
   )
