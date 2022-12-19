@@ -19,7 +19,7 @@ const MoreProducts = ({ product: { name } }) => {
     <div className="more-products">
       <span className="more-products__title">More Adventure</span>
       <div className="more-products__container">
-        {indexArray.map((itemIndex) => {
+        {indexArray.map((itemIndex, index) => {
           return (
             <ProductCard
               key={products[itemIndex].name}
@@ -29,6 +29,13 @@ const MoreProducts = ({ product: { name } }) => {
               nutrition={products[itemIndex].nutrition}
               allergy={products[itemIndex].allergy}
               id={products[itemIndex].id}
+              colorClassName={
+                index % 4 === 0
+                  ? 'color-blue'
+                  : index % 3 === 0 || index === 1
+                  ? 'color-pink'
+                  : 'color-green'
+              }
             />
           )
         })}

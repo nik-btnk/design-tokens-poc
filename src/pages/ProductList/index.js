@@ -74,6 +74,13 @@ const Storefront = () => {
                 allergy={iceCream.allergy}
                 category={iceCream.category}
                 id={iceCream.id}
+                colorClassName={
+                  index % 4 === 0
+                    ? 'color-blue'
+                    : index % 3 === 0 || index === 1
+                    ? 'color-pink'
+                    : 'color-green'
+                }
               />
             ))}
         </div>

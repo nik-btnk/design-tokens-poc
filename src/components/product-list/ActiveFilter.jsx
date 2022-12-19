@@ -3,7 +3,6 @@ import generalData from '../../general-data'
 
 //assets
 import allergyIcon from '../../assets/icons/descriptive/icon-Allergy.png'
-import crossIcon from '../../assets/icons/control/icon-x.png'
 
 const ActiveFilters = ({ priceRange, removeAll, removeFilter, type }) => {
   const filterName = type
@@ -29,39 +28,26 @@ const ActiveFilters = ({ priceRange, removeAll, removeFilter, type }) => {
           ) : (
             <span>{filterName}</span>
           )}
-          <div className="active-filter__spacer"></div>
-          <img
-            src={crossIcon}
-            alt=""
-            className="active-filter__cross"
+          <div
+            className="icon-cross active-filter__cross"
             onClick={() => {
               removeFilter(filterName)
-            }}
-          />
+            }}></div>
         </div>
       ) : filterName === 'Price' ? (
         <div className="active-filter">
           <span>
             Price Range: ${priceRange[0]} - ${priceRange[1]}
           </span>
-          <div className="active-filter__spacer"></div>
-          <img
-            src={crossIcon}
-            alt=""
-            className="active-filter__cross"
-            onClick={() => removeFilter(filterName)}
-          />
         </div>
       ) : (
         <div className="active-filter">
           <span>{filterName} All</span>
-          <div className="active-filter__spacer"></div>
-          <img
-            src={crossIcon}
-            alt=""
-            className="active-filter__cross"
-            onClick={() => removeAll()}
-          />
+          <div
+            className="icon-cross active-filter__cross"
+            onClick={() => {
+              removeAll()
+            }}></div>
         </div>
       )}
     </>

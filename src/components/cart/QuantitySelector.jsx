@@ -4,9 +4,7 @@ import React, { useContext } from 'react'
 // Utils
 import CartContext from '../../contexts/CartContext/CartProvider'
 
-// Assets
-import { ReactComponent as IconMinus } from '../../assets/icons/control/Icon=circle-minus.svg'
-import { ReactComponent as IconPlus } from '../../assets/icons/control/Icon=circle-plus.svg'
+//Assets
 import { ReactComponent as IconBin } from '../../assets/icons/control/icon-basket.svg'
 
 const QuantitySelector = ({ id, quantity, setIsAdded, setBtnDisplay }) => {
@@ -21,10 +19,7 @@ const QuantitySelector = ({ id, quantity, setIsAdded, setBtnDisplay }) => {
     <div className="quantity-selector">
       <span className="quantity-selector__txt">Quantity</span>
       {quantity > 1 ? (
-        <IconMinus
-          onClick={() => removeQty(id)}
-          className="quantity-selector__remove-qty"
-        />
+        <div className="icon-minus" onClick={() => removeQty(id)}></div>
       ) : (
         <IconBin onClick={handleRemove} className="quantity-selector__bin" />
       )}
@@ -32,10 +27,7 @@ const QuantitySelector = ({ id, quantity, setIsAdded, setBtnDisplay }) => {
       <div className="quantity-selector__qty-bg">
         <span className="quantity-selector__qty-txt">{quantity}</span>
       </div>
-      <IconPlus
-        onClick={() => addQty(id)}
-        className="quantity-selector__add-qty"
-      />
+      <div className="icon-plus" onClick={() => addQty(id)}></div>
     </div>
   )
 }

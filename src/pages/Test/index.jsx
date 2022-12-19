@@ -43,6 +43,7 @@ const Test = () => {
           {priceRange[0]} - {priceRange[1]}
         </span>
       </div>
+      <div className="icon-plus"></div>
     </div>
   )
 }
