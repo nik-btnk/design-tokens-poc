@@ -1,5 +1,5 @@
 // Modules
-import React, { useState, useRef, useContext } from 'react'
+import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // Components
@@ -12,7 +12,7 @@ import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
 
 // Utils
 import useOutsideAlerter from '../../hooks/useOutsideAlerter'
-import { BrandContext } from '../../contexts/brandContext'
+import { useBrandedUrl } from '../../hooks/useBrandedUrl'
 
 const ProductCard = ({
   name,
@@ -25,7 +25,6 @@ const ProductCard = ({
   showTextWrap = false,
   colorClassName
 }) => {
-  const { brand } = useContext(BrandContext)
   const [isInfo, setInfo] = useState(false)
   const navigate = useNavigate()
   const infoButton = useRef(null)
@@ -83,11 +82,13 @@ const ProductCard = ({
     }
   }
 
+  const productUrl = useBrandedUrl(`product/${id}`)
+
   return (
     <div className={`wrapper ${colorClassName}`}>
       <article
         className={`product-card ${className}`}
-        onClick={() => navigate(`/${brand}/product/${id}`)}
+        onClick={() => navigate(productUrl)}
         style={{ pointerEvents: isInfo ? 'none' : 'auto' }}>
         {showTextWrap && (
           <svg className={'product-card__wrapping-text'} viewBox="0 0 190 190">

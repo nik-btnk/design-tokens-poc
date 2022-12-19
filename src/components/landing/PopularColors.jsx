@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom'
 
 // Utils
 import { path } from '../../constants'
+import { useBrandedUrl } from '../../hooks/useBrandedUrl'
 
 // Components
 import ProductCard from '../../components/product-list/ProductCard'
 
 const PopularColors = ({ popularColors }) => {
+  const productsUrl = useBrandedUrl(path.PRODUCTS)
+
   return (
     <div className="popular-colors__wrapper">
       <h2 className="popular-colors__title">Our Most Popular Colors</h2>
@@ -34,7 +37,7 @@ const PopularColors = ({ popularColors }) => {
         ))}
       </div>
       <div className="popular-colors__more-colors">
-        <Link to={path.PRODUCTS}>
+        <Link to={productsUrl}>
           <button>More colors</button>
         </Link>
       </div>

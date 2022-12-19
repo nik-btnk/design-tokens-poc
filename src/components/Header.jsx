@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 // Utils
 import { path } from '../constants'
 import CartContext from '../contexts/CartContext/CartProvider'
-import { BrandContext } from '../contexts/brandContext'
+import { useBrandedUrl } from '../hooks/useBrandedUrl'
 
 // Assets
 import menuBars from '../assets/Icon=menu-bars.png'
@@ -22,7 +22,9 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const { totalQty, displayCartAnimation } = useContext(CartContext)
   const [mousePos, setMousePos] = useState({})
-  const { brand } = useContext(BrandContext)
+  const landingUrl = useBrandedUrl(path.LANDING)
+  const cartUrl = useBrandedUrl(path.CART)
+  const productsUrl = useBrandedUrl(path.PRODUCTS)
 
   // We are taking cartIcon position and sending it to Scoops so that we can use it to determine how much it would need to translate in order to make the animation
   const [cartIconPos, setCartIconPos] = useState({})
@@ -56,10 +58,6 @@ const Header = () => {
       ? false
       : true
 
-  useEffect(() => {
-    console.log(`Menu is ${menuOpen ? 'open' : 'closed'}.`)
-  }, [menuOpen])
-
   return (
     <>
       {isHeaderVertical && <div className="grid-placeholder"></div>}
@@ -72,11 +70,11 @@ const Header = () => {
               <img src={menuBars} alt="Menu icon." />
               <span>Menu</span>
             </button>
-            <Link to={`${brand}/${path.LANDING}`} className="header__logo">
+            <Link to={landingUrl} className="header__logo">
               <img src={logo} alt="Cream Colors logo." />
             </Link>
             <Link
-              to={`${brand}/${path.CART}`}
+              to={cartUrl}
               className={`header__cart ${
                 displayCartAnimation ? 'cart-animation' : undefined
               }`}
@@ -96,14 +94,14 @@ const Header = () => {
       {location.pathname === path.CHECKOUT && (
         <header className="header-checkout">
           <div className="header-checkout__wrapper">
-            <Link to={path.CART}>
+            <Link to={cartUrl}>
               <button className="header-checkout__back-btn">
                 <img src={caretLeft} />
                 <span>Back to Cart</span>
               </button>
             </Link>
             <span className="header-checkout__title">Checkout</span>
-            <Link to={path.LANDING} className="header-checkout__logo">
+            <Link to={landingUrl} className="header-checkout__logo">
               <img src={logo} alt="Cream Colors logo." />
             </Link>
           </div>
@@ -112,14 +110,14 @@ const Header = () => {
       {location.pathname === path.CART && (
         <header className="header-cart">
           <div className="header-cart__wrapper">
-            <Link to={path.PRODUCTS}>
+            <Link to={productsUrl}>
               <button className="header-cart__back-btn">
                 <img src={caretLeft} />
                 <span>Product List</span>
               </button>
             </Link>
             <span className="header-cart__title">Shopping Cart</span>
-            <Link to={path.LANDING} className="header-cart__logo">
+            <Link to={landingUrl} className="header-cart__logo">
               <img src={logo} alt="Cream Colors logo." />
             </Link>
           </div>
