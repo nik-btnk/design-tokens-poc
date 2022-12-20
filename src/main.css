@@ -489,6 +489,7 @@ html {
   }
 }
 .not-found-wrapper {
+  width: 100%;
   background-color: var(--creamcolors-color-brand-white);
   padding: 24px 16px 64px 16px;
 }
@@ -499,7 +500,6 @@ html {
 }
 @media screen and (min-width: 1440px) {
   .not-found-wrapper {
-    max-width: 1032px;
     margin: 0 auto;
   }
 }
