@@ -10,10 +10,12 @@ import MoreProducts from '../../components/product-details/MoreProducts'
 // Utils
 import products from '../../product-storage'
 import { path } from '../../constants'
+import { useBrandedUrl } from '../../hooks/useBrandedUrl'
 
 const ProductDetails = () => {
   const location = useLocation()
   const navigate = useNavigate()
+  const notFoundUrl = useBrandedUrl(path.NOTFOUND)
   const productId = parseInt(
     location.pathname.split('/')[location.pathname.split('/').length - 1]
   )
@@ -23,7 +25,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     if (!products.map((item) => item.id).includes(productId))
-      navigate(path.NOTFOUND)
+      navigate(notFoundUrl)
   }, [])
 
   useEffect(() => {

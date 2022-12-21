@@ -14,12 +14,12 @@
   &:has(@{class-name}) {
     .shopping-card__background,
     .shopping-card__background--tablet {
-      box-shadow: ~'@{creamcolors-effect-shadow-product-card-@{class}}';
+      box-shadow: var(~'--creamcolors-effect-shadow-product-card-@{class}');
       border-color: var(~'--creamcolors-color-flavor-@{class}-border');
 
       &:before {
         border-color: var(~'--creamcolors-color-flavor-@{class}-border');
-        box-shadow: inset ~'@{creamcolors-effect-shadow-product-card-@{class}}';
+        box-shadow: inset ~'var(--creamcolors-effect-shadow-product-card-@{class})';
       }
 
       &:after {
@@ -216,46 +216,44 @@
     justify-content: space-between;
     align-items: center;
 
-    
-      .quantity-selector {
-        display: flex;
-        position: relative;
-        align-items: center;
-        gap: @creamcolors-sizes-small-2;
+    .quantity-selector {
+      display: flex;
+      position: relative;
+      align-items: center;
+      gap: @creamcolors-sizes-small-2;
 
-        &__txt {
-          display: block;
-          width: 52px;
-          position: absolute;
-          top: -20px;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin-right: auto;
-          margin-left: auto;
-          @creamcolors-font-mobile-body-quatt();
-        }
+      &__txt {
+        display: block;
+        width: 52px;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-right: auto;
+        margin-left: auto;
+        @creamcolors-font-mobile-body-quatt();
       }
-      &__qty-bg {
-        background-color: var(--creamcolors-color-brand-orange-0);
-        border: 1px solid var(--creamcolors-color-brand-orange-3);
-        border-radius: @creamcolors-sizes-small-2;
-        height: 30px;
-        width: 49px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: @creamcolors-effect-shadow-button-orange-default-0,
-          @creamcolors-effect-shadow-button-orange-default-1;
-      }
-      &__qty-txt {
-        @creamcolors-font-desktop-body-quatt();
-      }
-      &__total-price {
-        @creamcolors-font-desktop-title-small-abril();
-      }
-    
+    }
+    &__qty-bg {
+      background-color: var(--creamcolors-color-brand-orange-0);
+      border: 1px solid var(--creamcolors-color-brand-orange-3);
+      border-radius: @creamcolors-sizes-small-2;
+      height: 30px;
+      width: 49px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--creamcolors-effect-shadow-button-orange-default-0),
+        var(--creamcolors-effect-shadow-button-orange-default-1);
+    }
+    &__qty-txt {
+      @creamcolors-font-desktop-body-quatt();
+    }
+    &__total-price {
+      @creamcolors-font-desktop-title-small-abril();
+    }
   }
 
   // Handling of neon ring colors for each flavor.

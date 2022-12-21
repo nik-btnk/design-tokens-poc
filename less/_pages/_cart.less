@@ -106,19 +106,19 @@
         --creamcolors-color-light-mode-background-button-blue
       );
       border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
-      box-shadow: @creamcolors-effect-shadow-button-blue-default-0,
-        @creamcolors-effect-shadow-button-blue-default-1;
+      box-shadow: var(--creamcolors-effect-shadow-button-blue-default-0),
+        var(--creamcolors-effect-shadow-button-blue-default-1);
 
       @media @break-tablet {
         min-width: 240px;
       }
 
       &:hover {
-        box-shadow: @creamcolors-effect-shadow-button-blue-hover;
+        box-shadow: var(--creamcolors-effect-shadow-button-blue-hover);
       }
 
       &:active {
-        box-shadow: @creamcolors-effect-shadow-button-blue-active;
+        box-shadow: var(--creamcolors-effect-shadow-button-blue-active);
       }
 
       @media @break-tablet {

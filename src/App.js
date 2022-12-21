@@ -63,7 +63,7 @@ function App() {
             })
           }
         }}>
-        {brand === 'creamcolors' ? '=> AFTERDARK' : '=> CREAMCOLORS'}
+        {brand === 'creamcolors' ? 'TO: AFTERDARK' : 'TO: CREAMCOLORS'}
       </button>
 
       <Header />

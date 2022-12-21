@@ -17,6 +17,7 @@ module.exports = {
 
     // const generatedMessage = `\n// Do not edit directly \n// Generated on ${new Date().toUTCString()}\n\n`
     let tokenValue = ''
+    const useCssVar = true
 
     filteredTokens.forEach((token, index) => {
       let value = ''
@@ -41,11 +42,15 @@ module.exports = {
           token.value.color
         }`
         tokenValue = tokenValue.concat(
-          `${index === 0 ? '' : '\n'}@${token.name}: ${value};`
+          `${index === 0 ? '' : '\n'}${useCssVar ? '\u0020\u0020--' : '@'}${
+            token.name
+          }: ${value};`
         )
       }
     })
-    return tokenValue
+
+    return useCssVar ? `.creamcolors {\n${tokenValue}\n}` : tokenValue
+
     // return generatedMessage + tokenValue
   }
 }
