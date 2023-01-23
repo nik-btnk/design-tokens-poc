@@ -31,7 +31,7 @@ const ColorRoulette = ({ setSelectedColor, setShowModal }) => {
 
   useEffect(() => {
     setRouletteValue(number > 360 ? number % 360 : 1)
-    console.log('New roulette value: ' + rouletteValue)
+    // console.log('New roulette value: ' + rouletteValue)
   }, [number])
 
   const handleClick = () => {

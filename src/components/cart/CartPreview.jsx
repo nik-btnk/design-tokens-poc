@@ -5,13 +5,16 @@ import { Link } from 'react-router-dom'
 // Utils
 import { path } from '../../constants'
 import CartContext from '../../contexts/CartContext/CartProvider'
+import { useBrandedUrl } from '../../hooks/useBrandedUrl'
 
 // Components
 import ShoppingCard from './ShoppingCard'
 
-const CartPreview = () => {
+const CartPreview = ({ setCartOpen, setMenuOpen }) => {
   const { selectedProducts, calcProductTotal, productsTotal } =
     useContext(CartContext)
+  const cartUrl = useBrandedUrl(path.CART)
+
   return (
     <div className="cart-preview">
       <h4 className="cart-preview__text">Cart Preview</h4>
@@ -34,13 +37,15 @@ const CartPreview = () => {
         </span>
       </div>
       <div className="cart__continue-checkout">
-        <button>
-          <Link
-            to={path.CART}
-            style={{ textDecoration: 'none', color: 'black' }}>
+        <Link to={cartUrl} style={{ textDecoration: 'none', color: 'black' }}>
+          <button
+            onClick={() => {
+              setCartOpen(false)
+              setMenuOpen(false)
+            }}>
             View Full Cart
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
     </div>
   )

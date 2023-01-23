@@ -9,11 +9,19 @@ import App from './App'
 // CSS and assets
 import './index.css'
 
+// Utils
+import { BrandProvider } from './contexts/brandContext'
+import { CartProvider } from './contexts/CartContext/CartProvider'
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <CartProvider>
+        <BrandProvider>
+          <App />
+        </BrandProvider>
+      </CartProvider>
     </BrowserRouter>
   </React.StrictMode>
 )

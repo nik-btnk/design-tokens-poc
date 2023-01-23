@@ -1,14 +1,18 @@
 // Modules
-import React, { useState } from 'react'
-import useOutsideAlerter from '../../hooks/useOutsideAlerter'
-import { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+// Components
 import CartButton from '../cart/CartButton'
 
 // Assets
 import iconInfo from '../../assets/icons/status/info.png'
 import iconCool from '../../assets/icons/descriptive/icon-Cool as Ice.png'
 import iconHot from "../../assets/icons/descriptive/icon-Hot 'n Spicy.png"
+
+// Utils
+import useOutsideAlerter from '../../hooks/useOutsideAlerter'
+import { useBrandedUrl } from '../../hooks/useBrandedUrl'
 
 const ProductCard = ({
   name,
@@ -78,11 +82,13 @@ const ProductCard = ({
     }
   }
 
+  const productUrl = useBrandedUrl(`product/${id}`)
+
   return (
     <div className={`wrapper ${colorClassName}`}>
       <article
         className={`product-card ${className}`}
-        onClick={() => navigate(`/product/${id}`)}
+        onClick={() => navigate(productUrl)}
         style={{ pointerEvents: isInfo ? 'none' : 'auto' }}>
         {showTextWrap && (
           <svg className={'product-card__wrapping-text'} viewBox="0 0 190 190">

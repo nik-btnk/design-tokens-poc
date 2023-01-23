@@ -7,7 +7,13 @@ import mascot from '../assets/mascot.png'
 import iconTikTok from '../assets/cib_tiktok.png'
 import iconIg from '../assets/carbon_logo-instagram.png'
 
+// Utils
+import { useBrandedUrl } from '../hooks/useBrandedUrl'
+import { path } from '../constants'
+
 const Footer = () => {
+  const landingUrl = useBrandedUrl(path.LANDING)
+
   return (
     <footer className="footer">
       <div className="footer__contact">
@@ -15,7 +21,7 @@ const Footer = () => {
         <span className="footer__contact--phone">+1 (999) 123-1212</span>
       </div>
       <div className="footer__logo">
-        <Link to="/">
+        <Link to={landingUrl}>
           <img src={mascot} alt="Cream Colors Logo." />
         </Link>
       </div>

@@ -33,8 +33,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: @creamcolors-effect-shadow-button-orange-default-0,
-      @creamcolors-effect-shadow-button-orange-default-1;
+    box-shadow: var(--creamcolors-effect-shadow-button-orange-default-0),
+      var(--creamcolors-effect-shadow-button-orange-default-1);
   }
 
   &__qty-txt {
@@ -44,5 +44,10 @@
   svg {
     display: block;
     margin-right: 0px;
+  }
+
+  .icon-plus,
+  .icon-minus {
+    cursor: pointer;
   }
 }

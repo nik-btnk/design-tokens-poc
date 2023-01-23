@@ -81,7 +81,9 @@
       z-index: 3;
       pointer-events: none;
       border: 1px solid;
-      box-shadow: @creamcolors-effect-shadow-product-card-clockwork-orange;
+      box-shadow: var(
+        --creamcolors-effect-shadow-product-card-clockwork-orange
+      );
       border-color: var(--creamcolors-color-flavor-clockwork-orange-border);
 
       &:before {
@@ -99,7 +101,7 @@
         border: 1px solid;
         border-color: var(--creamcolors-color-flavor-clockwork-orange-border);
         box-shadow: inset
-          @creamcolors-effect-shadow-product-card-clockwork-orange;
+          var(--creamcolors-effect-shadow-product-card-clockwork-orange);
       }
     }
 
@@ -232,11 +234,11 @@
         --creamcolors-color-light-mode-background-button-blue
       );
       border: 2px solid var(--creamcolors-color-light-mode-border-button-blue);
-      box-shadow: @creamcolors-effect-shadow-button-blue-default-0;
+      box-shadow: var(--creamcolors-effect-shadow-button-blue-default-0);
 
       &:active {
         border: 2px solid var(--creamcolors-color-brand-blue-4);
-        box-shadow: @creamcolors-effect-shadow-button-blue-active;
+        box-shadow: var(--creamcolors-effect-shadow-button-blue-active);
       }
 
       svg {
@@ -254,8 +256,8 @@
       &__qty-bg {
         background-color: var(--creamcolors-color-brand-blue-0);
         border: 1px solid var(--creamcolors-color-brand-blue-3);
-        box-shadow: @creamcolors-effect-shadow-button-blue-default-0,
-          @creamcolors-effect-shadow-button-blue-default-1;
+        box-shadow: var(--creamcolors-effect-shadow-button-blue-default-0),
+          var(--creamcolors-effect-shadow-button-blue-default-1);
       }
 
       &__bin {

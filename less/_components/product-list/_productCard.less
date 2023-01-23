@@ -23,12 +23,12 @@
     }
 
     .product-card__background {
-      box-shadow: ~'@{creamcolors-effect-shadow-product-card-@{class}}';
+      box-shadow: var(~'--creamcolors-effect-shadow-product-card-@{class}');
       border-color: var(~'--creamcolors-color-flavor-@{class}-border');
 
       &:before {
         border-color: var(~'--creamcolors-color-flavor-@{class}-border');
-        box-shadow: inset ~'@{creamcolors-effect-shadow-product-card-@{class}}';
+        box-shadow: inset ~'var(--creamcolors-effect-shadow-product-card-@{class})';
       }
     }
 
@@ -263,7 +263,7 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      box-shadow: @creamcolors-effect-shadow-button-orange-default-0;
+      box-shadow: var(--creamcolors-effect-shadow-button-orange-default-0);
       position: relative;
 
       &:first-child {
@@ -349,14 +349,14 @@
       &.cold {
         background-color: var(--creamcolors-color-brand-blue-4);
         border-radius: @creamcolors-sizes-small-3;
-        box-shadow: @creamcolors-effect-shadow-button-blue-default-0;
+        box-shadow: var(--creamcolors-effect-shadow-button-blue-default-0);
         color: var(--creamcolors-color-brand-white);
       }
 
       &.hot {
         background-color: var(--creamcolors-color-brand-pink-0);
         border-radius: @creamcolors-sizes-small-3;
-        box-shadow: @creamcolors-effect-shadow-button-pink-default-0;
+        box-shadow: var(--creamcolors-effect-shadow-button-pink-default-0);
         color: var(--creamcolors-color-brand-black);
       }
 
@@ -394,7 +394,7 @@
     --creamcolors-color-light-mode-background-button-orange
   );
   border: 2px solid var(--creamcolors-color-light-mode-border-button-orange);
-  box-shadow: @creamcolors-effect-shadow-button-orange-default-0;
+  box-shadow: var(--creamcolors-effect-shadow-button-orange-default-0);
   z-index: 2;
   cursor: pointer;
   pointer-events: all;
@@ -425,11 +425,11 @@
   }
 
   &:hover {
-    box-shadow: @creamcolors-effect-shadow-button-orange-hover;
+    box-shadow: var(--creamcolors-effect-shadow-button-orange-hover);
   }
 
   &:active {
     border: 2px solid var(--creamcolors-color-brand-orange-4);
-    box-shadow: @creamcolors-effect-shadow-button-orange-active;
+    box-shadow: var(--creamcolors-effect-shadow-button-orange-active);
   }
 }
