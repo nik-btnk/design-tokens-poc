@@ -8,6 +8,7 @@ const DoubleRangeSlider = ({ priceRange, setPriceRange }) => {
   const [percR, setPercR] = useState((priceRange[1] - min) / (max - min))
   const [offsetL, setOffsetL] = useState(thumbWidth / 2 - thumbWidth * percL)
   const [offsetR, setOffsetR] = useState(thumbWidth / 2 - thumbWidth * percR)
+  const currency = localStorage.getItem('currency') || 'hryvnia'
 
   const handleChange = (e) => {
     const { min, max } = e.target
@@ -51,12 +52,20 @@ const DoubleRangeSlider = ({ priceRange, setPriceRange }) => {
         className="price-value__left"
         style={{
           left: `calc(${percL * 100}% + ${offsetL}px)`
-        }}>{`$${priceRange[0]}`}</span>
+        }}>
+        {currency === 'usd' && '$'}
+        {`${priceRange[0]}`}
+        {currency === 'hryvnia' && '₴'}
+      </span>
       <span
         className="price-value__right"
         style={{
           left: `calc(${percR * 100}% + ${offsetR}px)`
-        }}>{`$${priceRange[1]}`}</span>
+        }}>
+        {currency === 'usd' && '$'}
+        {`${priceRange[1]}`}
+        {currency === 'hryvnia' && '₴'}
+      </span>
     </div>
   )
 }
