@@ -14,7 +14,7 @@ const Storefront = () => {
   }, [pathname])
 
   const min = 0
-  const max = 10
+  const max = 80
   const [priceRange, setPriceRange] = useState([min, max])
   const [selected, setSelected] = useState([])
 

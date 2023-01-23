@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const DoubleRangeSlider = ({ priceRange, setPriceRange }) => {
   const thumbWidth = 24
   const min = 0
-  const max = 10
+  const max = 80
   const [percL, setPercL] = useState((priceRange[0] - min) / (max - min))
   const [percR, setPercR] = useState((priceRange[1] - min) / (max - min))
   const [offsetL, setOffsetL] = useState(thumbWidth / 2 - thumbWidth * percL)
@@ -32,7 +32,7 @@ const DoubleRangeSlider = ({ priceRange, setPriceRange }) => {
         type="range"
         data-range="left"
         min={0}
-        max={10}
+        max={80}
         value={priceRange[0]}
         onChange={handleChange}
         className="thumb thumb--zindex-3"
@@ -41,7 +41,7 @@ const DoubleRangeSlider = ({ priceRange, setPriceRange }) => {
         type="range"
         data-range="right"
         min={0}
-        max={10}
+        max={80}
         value={priceRange[1]}
         onChange={handleChange}
         className="thumb thumb--zindex-4"
