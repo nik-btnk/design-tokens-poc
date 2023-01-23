@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 // Modules
 import React, { useState, useContext } from 'react'
 
@@ -25,7 +27,12 @@ const AddToCartBtn = ({ id }) => {
     }, 1200)
   }
 
-  return (
+  return !myProduct ? (
+    <button className="add-to-cart-btn" onClick={handleAddToCart}>
+      <IconCart />
+      Add to Cart
+    </button>
+  ) : (
     <button
       className="add-to-cart-btn"
       onClick={!isAdded && !btnDisplay ? handleAddToCart : undefined}>

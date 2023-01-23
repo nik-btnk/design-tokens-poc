@@ -1,5 +1,5 @@
 // Modules
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import {
   Routes,
   Route,
@@ -35,6 +35,14 @@ function App() {
   } = useContext(BrandContext)
   // const location = useLocation()
   // const navigate = useNavigate()
+
+  // Temporarily set currency to Ukrainian Hryvnia
+  useEffect(() => {
+    const currency = localStorage.getItem('currency')
+
+    if (!currency || currency !== 'hryvnia')
+      localStorage.setItem('currency', 'hryvnia')
+  })
 
   return (
     <div className={`App ${brand}`}>

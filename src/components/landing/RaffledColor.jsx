@@ -16,6 +16,8 @@ export const RaffledColor = ({
     setShowModal((prev) => !prev)
   }
 
+  const currency = localStorage.getItem('currency') || 'hryvnia'
+
   return (
     <>
       <div className="raffled-color__wrapper">
@@ -39,7 +41,11 @@ export const RaffledColor = ({
               </div>
               <div className="raffled-color__mobile--name-price-container">
                 <span className="raffled-color__mobile--name">{name}</span>
-                <span className="raffled-color__mobile--price">${price}</span>
+                <span className="raffled-color__mobile--price">
+                  {currency === 'usd' && '$'}
+                  {`${price[currency].amount.toFixed(2)}`}
+                  {currency === 'hryvnia' && '₴'}
+                </span>
               </div>
             </div>
           </div>
@@ -53,7 +59,11 @@ export const RaffledColor = ({
           </div>
           <div className="raffled-color__info-container">
             <span className="raffled-color__name">{name}</span>
-            <span className="raffled-color__price">${price.toFixed(2)}</span>
+            <span className="raffled-color__price">
+              {currency === 'usd' && '$'}
+              {`${price[currency].amount.toFixed(2)}`}
+              {currency === 'hryvnia' && '₴'}
+            </span>
             <div className="raffled-color__info">
               <p className="raffled-color__description">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla,

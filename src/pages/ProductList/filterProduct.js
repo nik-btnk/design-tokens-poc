@@ -2,6 +2,7 @@ import generalData from '../../general-data'
 
 export const filterProduct = (product, selected, priceRange) => {
   let filter = true
+  const currency = localStorage.getItem('currency') || 'hryvnia'
 
   //If the product contains allergy ingredient, filter it
   if (product.allergy !== null) {
@@ -25,7 +26,10 @@ export const filterProduct = (product, selected, priceRange) => {
   })
 
   //If product price is not between price range, filter it
-  if (product.price < priceRange[0] || product.price > priceRange[1])
+  if (
+    product?.price[currency]?.amount < priceRange[0] ||
+    product?.price[currency]?.amount > priceRange[1]
+  )
     filter = false
 
   return filter

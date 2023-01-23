@@ -8,6 +8,8 @@ import CartButton from '../cart/CartButton'
 const ProductInfo = ({
   product: { name, description, price, subtitle, id }
 }) => {
+  const currency = localStorage.getItem('currency') || 'hryvnia'
+
   return (
     <div className="product-info">
       <div className="product-info__content-wrapper">
@@ -24,9 +26,11 @@ const ProductInfo = ({
           <span className="product-info__content--description">
             {description}
           </span>
-          <span className="product-info__content--price">{`$${price.toFixed(
-            2
-          )}`}</span>
+          <span className="product-info__content--price">
+            {currency === 'usd' && '$'}
+            {`${price[currency].amount.toFixed(2)}`}
+            {currency === 'hryvnia' && '₴'}
+          </span>
           <div className="product-info__content--cta">
             <CartButton id={id} />
           </div>
