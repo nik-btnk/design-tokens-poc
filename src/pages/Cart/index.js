@@ -15,6 +15,8 @@ const Cart = () => {
   const { selectedProducts, calcProductTotal, productsTotal } =
     useContext(CartContext)
 
+  const currency = localStorage.getItem('currency') || 'hryvnia'
+
   return (
     <div className="cart">
       <div className="cart__wrapper">
@@ -36,7 +38,9 @@ const Cart = () => {
         <div className="cart__total-price">
           <span className="cart__total-price--text">Total Price</span>
           <span className="cart__total-price--price">
-            ${productsTotal.toFixed(2)}
+            {currency === 'usd' && '$'}
+            {productsTotal.toFixed(2)}
+            {currency === 'hryvnia' && '₴'}
           </span>
         </div>
         <div className="cart__continue-checkout">

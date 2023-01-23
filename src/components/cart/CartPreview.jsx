@@ -15,6 +15,8 @@ const CartPreview = ({ setCartOpen, setMenuOpen }) => {
     useContext(CartContext)
   const cartUrl = useBrandedUrl(path.CART)
 
+  const currency = localStorage.getItem('currency') || 'hryvnia'
+
   return (
     <div className="cart-preview">
       <h4 className="cart-preview__text">Cart Preview</h4>
@@ -33,7 +35,9 @@ const CartPreview = ({ setCartOpen, setMenuOpen }) => {
       <div className="cart__total-price">
         <span className="cart__total-price--text">Total Price</span>
         <span className="cart__total-price--price">
-          ${productsTotal.toFixed(2)}
+          {currency === 'usd' && '$'}
+          {productsTotal.toFixed(2)}
+          {currency === 'hryvnia' && '₴'}
         </span>
       </div>
       <div className="cart__continue-checkout">

@@ -29,6 +29,7 @@ const ProductCard = ({
   const navigate = useNavigate()
   const infoButton = useRef(null)
   useOutsideAlerter(infoButton, setInfo)
+  const currency = localStorage.getItem('currency') || 'hryvnia'
 
   const handleClick = () => {
     setInfo((prevState) => !prevState)
@@ -119,7 +120,15 @@ const ProductCard = ({
             className="product-card__name-price-container"
             style={isInfo ? { display: 'none' } : { display: 'flex' }}>
             <span className="product-card__name">{name}</span>
-            <span className="product-card__price">${price.toFixed(2)}</span>
+            <span className="product-card__price">
+              {currency && (
+                <>
+                  {currency === 'usd' && '$'}
+                  {price[currency].amount.toFixed(2)}
+                  {currency === 'hryvnia' && '₴'}
+                </>
+              )}
+            </span>
           </div>
 
           {showInfo && (
@@ -174,7 +183,7 @@ const ProductCard = ({
             ref={infoButton}
             onClick={handleClick}>
             <div className="product-info-btn__info-icon-container">
-              {isInfo ? (
+              {!isInfo ? (
                 <img src={iconInfo} alt="" />
               ) : (
                 <div className="icon-cross"></div>

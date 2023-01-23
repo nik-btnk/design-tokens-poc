@@ -17,6 +17,8 @@ const ShoppingCard = ({
 
   const { removeProduct } = useContext(CartContext)
 
+  const currency = localStorage.getItem('currency') || 'hryvnia'
+
   return (
     <article className={`shopping-card ${className}`}>
       <div className={`shopping-card__background ${className}`}>
@@ -30,7 +32,11 @@ const ShoppingCard = ({
         </div>
         <div className="shopping-card__name-price-container">
           <span className="shopping-card__name">{name}</span>
-          <span className="shopping-card__price">${price.toFixed(2)}</span>
+          <span className="shopping-card__price">
+            {currency === 'usd' && '$'}
+            {price[currency]?.amount?.toFixed(2)}
+            {currency === 'hryvnia' && '₴'}
+          </span>
         </div>
       </div>
       <div className={`shopping-card__background--tablet ${className}`}>
@@ -46,7 +52,7 @@ const ShoppingCard = ({
       <div className="shopping-card__name-price-container--tablet">
         <span className="shopping-card__name">{name}</span>
         <span className="shopping-card__price">
-          {price.toFixed(2)} <br></br>each
+          {price[currency]?.amount?.toFixed(2)} <br></br>each
         </span>
       </div>
       <div className="shopping-card__remove">
@@ -55,7 +61,9 @@ const ShoppingCard = ({
       <div className="shopping-card__qty-price-container">
         <QuantitySelector id={id} quantity={quantity} />
         <span className="shopping-card__total-price">
-          ${productTotal.toFixed(2)}
+          {currency === 'usd' && '$'}
+          {productTotal.toFixed(2)}
+          {currency === 'hryvnia' && '₴'}
         </span>
       </div>
     </article>

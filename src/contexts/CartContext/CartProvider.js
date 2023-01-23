@@ -6,6 +6,8 @@ import products from '../../product-storage'
 
 const CartContext = createContext()
 
+const currency = localStorage.getItem('currency') || 'hryvnia'
+
 function CartProvider({ children }) {
   const [selectedProducts, setSelectedProducts] = useLocalStorage(
     'selectedProducts',
@@ -20,7 +22,7 @@ function CartProvider({ children }) {
   const calcProductsTotal = () => {
     let total = 0
     selectedProducts.forEach((product) => {
-      total += product.price * product.quantity
+      total += product?.price[currency]?.amount * product.quantity
     })
 
     setProductsTotal(total)
@@ -141,7 +143,7 @@ function CartProvider({ children }) {
     const myProduct = selectedProducts.find((product) => product.id === id)
     if (myProduct !== undefined) {
       let total
-      total = myProduct.price * myProduct.quantity
+      total = myProduct?.price[currency]?.amount * myProduct.quantity
       return total
     }
   }
