@@ -3,9 +3,9 @@ import React, { useContext } from 'react'
 import {
   Routes,
   Route,
-  Navigate,
-  useLocation,
-  useNavigate
+  Navigate
+  // useLocation,
+  // useNavigate
 } from 'react-router-dom'
 
 // CSS and asets
@@ -29,13 +29,17 @@ import { path } from './constants'
 import { BrandContext } from './contexts/brandContext'
 
 function App() {
-  const { brand, setBrand } = useContext(BrandContext)
-  const location = useLocation()
-  const navigate = useNavigate()
+  const {
+    brand
+    // setBrand
+  } = useContext(BrandContext)
+  // const location = useLocation()
+  // const navigate = useNavigate()
 
   return (
     <div className={`App ${brand}`}>
-      <button
+      {/* Theme toggle button to be enabled when ready to implement a second theme. */}
+      {/* <button
         style={{
           position: 'fixed',
           right: '0',
@@ -64,7 +68,7 @@ function App() {
           }
         }}>
         {brand === 'creamcolors' ? 'TO: AFTERDARK' : 'TO: CREAMCOLORS'}
-      </button>
+      </button> */}
 
       <Header />
 
